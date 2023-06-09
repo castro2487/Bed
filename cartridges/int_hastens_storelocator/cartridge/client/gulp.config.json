@@ -1,0 +1,35 @@
+{
+  "paths": {
+    "source": {
+      "scripts": [
+        "cartridges/int_hastens_storelocator/cartridge/client/default/js/storeLocator.js"
+      ]
+    },
+    "destination": {
+      "scripts": "cartridges/int_hastens_storelocator/cartridge/static/default/js"
+    },
+    "upload": [
+      "cartridges/int_hastens_storelocator/cartridge/static/default/**"
+    ]
+  },
+  "sfcc": {
+    "config": "./dw.json"
+  },
+  "modernizr": {
+    "classPrefix": "",
+    "enableClasses": true,
+    "enableJSClass": true,
+    "scriptGlobalName": "window",
+    "usePrefixes": true,
+    "minify": true,
+    "options": [
+      "setClasses"
+    ],
+    "feature-detects": [
+      "css/flexbox",
+      "css/objectfit",
+      "css/positionsticky"
+    ]
+  },
+  "enableUpload": false
+}

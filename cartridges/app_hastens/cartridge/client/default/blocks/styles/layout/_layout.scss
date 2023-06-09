@@ -1,0 +1,55 @@
+@import "./grid";
+@import "./splitBlock";
+@import "./colorsGrid";
+
+// To prevent jumping we hide the footer temporarily until the javascript has loaded
+body.has-loading-js #footercontent {
+    display: none;
+}
+
+.experience-main,
+.experiance-footer {
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+.show-bottom-spacing .experience-main {
+    padding-bottom: 10px;
+    @include media-breakpoint-up(md) {
+        padding-bottom: 76px;
+    }
+}
+
+.experience-main > .experience-component:not(.experience-hastens-header2):not(.experience-hastens-cta8):not(.experience-hastens-videoList):not(.experience-hastens-slideshow) {
+    max-width: $max-block-width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.show-component-spacing .experience-main > .experience-component + .experience-component:not(.hide-top-spacing),
+.hide-component-spacing .experience-main > .experience-component + .experience-component.show-top-spacing {
+    margin-top: 10px;
+    &.spacing-size--70 {
+        margin-top: 70px;
+    }
+}
+
+.has-page-theme--dark {
+    background-color: #000;
+    color: #fff;
+}
+
+// Quickfix for dremer campaign
+.experience-hastens_dremer-beddings + .experience-hastens-cta2 {
+    max-width: none !important;
+    background-color: #fff;
+    padding: 10px 0;
+    @include media-breakpoint-up(md) {
+        padding: 40px 0;
+    }
+    section {
+        max-width: $max-block-width;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

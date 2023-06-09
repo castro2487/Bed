@@ -1,0 +1,10 @@
+{
+  "caches": [
+    {
+      "id": "countriesJSONOrganizationPreferences"
+    },
+    {
+      "id": "countryNamesJSONOrganizationPreferences"
+    }
+  ]
+}

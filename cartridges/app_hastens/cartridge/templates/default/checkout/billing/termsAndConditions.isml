@@ -1,0 +1,28 @@
+<iscomment>Terms & Conditions checkbox</iscomment>
+  
+
+<form class="place-order-form" <isprint value=${pdict.forms.placeOrderForm.attributes} encoding="off"/>>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox" id="isTermsAndConditions" name="isTermsAndConditions" value="true"
+                        <isprint value="${pdict.forms.placeOrderForm.isTermsAndConditions.attributes}" encoding="off" />
+                    >
+                    <label for="isTermsAndConditions" class="custom-control-label checkout-checkbox">
+                        <span>
+                            ${Resource.msg('check.order.terms', 'checkout', null)}
+                        </span>
+                        <a href="${pdict.urls.termsAndConditions}" target="blank1">                        
+                            ${Resource.msg('link.order.terms', 'checkout', null)}
+                        </a>
+                        <span>and</span>
+                        <a href="${pdict.urls.privacyPolicy}" target="blank2">                        
+                            ${Resource.msg('link.shipping.newsletterPrivacy', 'checkout', null)}
+                        </a>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>  
+</form>

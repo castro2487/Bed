@@ -1,0 +1,49 @@
+{
+    "name": "drēmər Headboards",
+    "description": "",
+    "group": "hastens_dremer",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "body",
+                    "name": "Body text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "details",
+                    "name": "Details",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "ctaBody",
+                    "name": "CTA body text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "linkText",
+                    "name": "Link text",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "newsletterFormHeading",
+                    "name": "Newsletter form heading",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

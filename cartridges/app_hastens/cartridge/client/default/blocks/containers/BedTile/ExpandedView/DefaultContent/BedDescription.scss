@@ -1,0 +1,53 @@
+@import "../../../../../shared/styles/utils/utils";
+
+.has-bed-tile__bed-description {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 10px 30px 30px;
+    }
+    @include media-breakpoint-up(xl) {
+        margin-right: -20px;
+    }
+    .slot-1 {
+        @include media-breakpoint-up(xl) {
+            order: 1;
+        }
+    }
+    .slot-2 {
+        @include media-breakpoint-up(xl) {
+            order: 3;
+        }
+    }
+    .slot-3 {
+        @include media-breakpoint-up(xl) {
+            order: 2;
+        }
+    }
+    .slot-4 {
+        @include media-breakpoint-up(xl) {
+            order: 4;
+        }
+    }
+    .slot-1, .slot-2 {
+        @include media-breakpoint-up(xl) {
+            width: 65%;
+            padding-right: 2rem;
+            border-right: solid 0.5px;
+        }
+    }
+    .slot-3, .slot-4 {
+        @include media-breakpoint-up(xl) {
+            width: 35%;
+            padding-left: 2rem;
+            border-left: solid 0.5px;
+        }
+    }
+
+    p {
+       white-space: pre-wrap;
+    }
+}

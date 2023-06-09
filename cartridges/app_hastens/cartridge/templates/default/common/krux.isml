@@ -1,0 +1,49 @@
+<!--- TEMPLATENAME: krux.isml --->
+<script class="kxct" data-id="udxtke77b" data-timing="async" data-version="3.0" type="text/javascript">
+    window.Krux || ((Krux = function() {
+        Krux.q.push(arguments)
+    }).q = []);
+    (function() {
+        var k = document.createElement('script');
+        k.type = 'text/javascript';
+        k.async = true;
+        k.src = (location.protocol === 'https:' ? 'https:' : 'http:') + '//cdn.krxd.net/controltag/udxtke77b.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(k, s);
+    }());
+
+    window.addEventListener('CookiebotOnAccept', function (e) {
+        if (Cookiebot.consent.marketing === true) {
+            Krux('ns:hastens', 'consent:set', {
+                dc: true,
+                tg: true,
+                al: true,
+                cd: true,
+                sh: true,
+                re: true
+            });
+        }
+    }, false);
+</script>
+
+<script type="text/javascript">
+    <iscomment>
+        Set cacheable values directly.
+
+        `isprint` uses `htmlsinglequote` encoding since that looks most like
+        what we had previously. Maybe it would be more correct to use `jshtml`.
+    </iscomment>
+    var salesForceDataLayer = {
+        page: {
+            segment: '${pdict.breadcrumbs ? (pdict.breadcrumbs.length > 2 ? pdict.breadcrumbs.slice(-2)[0].htmlValue : pdict.breadcrumbs[0].htmlValue) : ""}' || null,
+            page: '<isprint value="${pdict.CurrentPageMetaData.title || ''}" encoding="htmlsinglequote"/>' || null,
+            language: '${request.locale}'
+        },
+        user: {
+            email_sha256: null,
+            'logged-in': null,
+            country: null,
+            device: null
+        }
+    };
+</script>

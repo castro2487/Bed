@@ -1,0 +1,95 @@
+<isdecorate template="common/layout/pageMyAccount">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/addressBook.min.js');
+        assets.addCss('/css/account/dashboard.css');
+        assets.addCss('/css/account/addressBook.css'); 
+    </isscript>
+    <isinclude template="account/deleteAddressModal"/> 
+    
+    <div class="container" >
+    <!---Breadcrumbs--->
+        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+    </div>
+
+    <div class="container container-profile-cards" >
+        <isif condition="${pdict.addressBook.length === 0}">
+             <div class="row justify-content-center">
+                 <div class="col-12">
+                     <h3 class="text-align-center mb-4">${Resource.msg('msg.no.saved.addresses','address',null)}</h3>
+                 </div>
+            </div>
+        </isif>
+         <div class="row">
+            <div class="col-12">
+                <h1 class="headline-2 text-align-center mb-4 d-md-none">
+                    ${Resource.msg('label.addressbook','account',null)}
+                </h1>
+            </div>
+         </div>
+        <!-- Rows for addresses in the Address Book -->
+        <isloop items="${pdict.addressBook}" var="address">
+            <div class="row justify-content-center" id="uuid-${address.address.UUID}">
+                <div class="col-sm-12 col-md-6">
+                    <div class="card">
+                        <div class="card-header card-address-header">
+                            <div class="comtainer-address-title">
+                                <h2 class="address-heading pull-left">${address.address.ID}</h2>
+                                <isif condition="${address.address.countryCode.value === pdict.currentCountry}">
+                                    <a href="${URLUtils.url('Address-EditAddress', 'addressId', address.address.ID)}" class="pull-right" aria-label="${Resource.msg('label.addressbook.editaddress','account',null)} : ${address.address.ID == pdict.addressBook[0].address.ID ? pdict.addressBook[0].address.ID+' ('+Resource.msg('label.addressbook.defaultaddress','account',null)+')' : address.address.ID}">${Resource.msg('link.edit','account',null)}</a>                                
+                                </isif>                            
+                            </div> 
+                            <isif condition="${address.address.ID == pdict.addressBook[0].address.ID}">
+                                <div class="default-address-label">${Resource.msg('label.addressbook.defaultaddress','account',null)}</div>
+                            </isif>
+                        </div>
+                        <div class="card-body card-body-positioning">
+                            <div>${address.address.firstName} ${address.address.lastName}</div>
+                            <div>${address.address.address1}</div>
+                            <isif condition="${address.address.address2 !== null}">
+                                <div>${address.address.address2}</div>
+                            </isif>
+                            <div>${address.address.city}, ${address.address.stateCode || ''} ${address.address.postalCode}</div>
+                            <div class="phone-number">${address.address.prefix || ''} ${address.address.phone}</div>
+                            <div class="container-address-card-cta">
+                                <button
+                                    type="button"
+                                    class="remove-btn remove-address btn-light normal red-link"
+                                    data-toggle="modal"
+                                    data-target="#deleteAddressModal"
+                                    data-id="${address.address.ID}"
+                                    data-url="${pdict.actionUrls.deleteActionUrl}"
+                                    aria-label="${Resource.msg('label.addressbook.deleteaddress','account',null)}"
+                                    <isprint value="${ address.address.ID == pdict.addressBook[0].address.ID ? 'data-default="true"' : '' }" encoding="off" />>
+                                    ${Resource.msg('label.addressbook.deleteaddress','account',null)}
+                                </button>
+                                <isif condition="${address.address.countryCode.value === pdict.currentCountry}">
+                                    <isif condition="${address.address.ID !== pdict.addressBook[0].address.ID}">
+                                        <div class="card-make-default-link">
+                                            <a href="${URLUtils.url('Address-SetDefault', 'addressId', address.address.ID)}" aria-label="${Resource.msg('label.addressbook.makedefaultaddress','account',null)}">${Resource.msg('link.addressbook.makedefault','account',null)}</a>
+                                        </div>
+                                    </isif>
+                                </isif>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </isloop>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <div class="row">  
+                    <isif condition="${pdict.addressBook.length !== 0}"> 
+                        <div class="col-12 col-md-6 offset-md-6">
+                            <a href="${URLUtils.url('Address-AddAddress')}" class="btn btn-save btn-block btn btn-secondary" aria-label="${Resource.msg('label.addressbook.addnewaddress','account',null)}">${Resource.msg('button.addnew','account',null)}</a>
+                        </div>
+                    <iselse>
+                        <div class="col-12 col-md-6 offset-md-3">
+                            <a href="${URLUtils.url('Address-AddAddress')}" class="btn btn-save btn-block btn btn-secondary" aria-label="${Resource.msg('label.addressbook.addnewaddress','account',null)}">${Resource.msg('button.addnew','account',null)}</a>
+                        </div>
+                    </isif> 
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

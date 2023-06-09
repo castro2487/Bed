@@ -1,0 +1,11 @@
+{
+    "name": "RichTextEditor",
+    "description": "",
+    "resources": {
+        "scripts": [
+            "https://hastens-content.s3.eu-central-1.amazonaws.com/3rd-party/tinymce/js/tinymce/tinymce.min.js",
+            "/js/hastens/bmMain.js"
+        ],
+        "styles": [ ]
+    }
+}

@@ -1,0 +1,9 @@
+<div class="splash-country-selector">
+    <isset name="countryCode" value="${pdict.currentLocale.ID === 'en' ? 'un' : pdict.currentLocale.country.toLowerCase()}" scope="page"/>
+    <i class="flag-icon flag-icon-${countryCode} flag-icon-squared"></i> 
+    <a class="current-country" data-toggle="modal" data-target="#splash-modal" tabindex="0" role="button">
+        ${pdict.currentLocale.displayCountry ? pdict.currentLocale.displayCountry : "International"}
+        ${pdict.listOfCountryWithPurchaseOption.indexOf(countryCode.toUpperCase()) > -1 && pdict.currencySymbol ? ' | ' + pdict.currencySymbol : ''}
+    </a>
+    <isinclude template="components/footer/countrySelector/modalSplash" />
+</div>

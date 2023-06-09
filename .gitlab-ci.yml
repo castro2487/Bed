@@ -1,0 +1,26 @@
+image: node:14-buster
+
+cache:
+  paths:
+    - node_modules/
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+job:on-schedule:
+  only:
+    - schedules
+  script:
+    - npm install -g npm@8.3.0
+    - echo "Installing ci.."
+    - apt-get update
+    - apt-get install zip
+    - mv ./CI/sfcc-ci-linux /usr/local/bin/sfcc-ci
+    - chmod 755 /usr/local/bin/sfcc-ci
+    - chmod +x ./Sandbox_alignment_bitbucket.sh
+    - chmod +x ./Deploy_bitbucket_sandbox.sh
+    - chmod +x ./Deploy_bitbucket_development.sh
+    - chmod +x ./Deploy_bitbucket_staging.sh
+    - if [[ $PIPELINE_TYPE == "Sandbox_alignment_bitbucket" ]]; then ./Sandbox_alignment_bitbucket.sh; fi
+    - if [[ $PIPELINE_TYPE == "Deploy_bitbucket_sandbox" ]]; then ./Deploy_bitbucket_sandbox.sh; fi
+    - if [[ $PIPELINE_TYPE == "Deploy_bitbucket_development" ]]; then ./Deploy_bitbucket_development.sh; fi
+    - if [[ $PIPELINE_TYPE == "Deploy_bitbucket_staging" ]]; then ./Deploy_bitbucket_staging.sh; fi

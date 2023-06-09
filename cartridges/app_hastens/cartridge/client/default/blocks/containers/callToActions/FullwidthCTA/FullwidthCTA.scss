@@ -1,0 +1,165 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-fullwidth-cta {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    .content-wrapper {
+        display: flex;
+        height: 580px;
+        padding: 30px 15px;
+        @include media-breakpoint-up(md) {
+            height: 600px;
+            padding: 60px 15px;
+        }
+        @include media-breakpoint-up(lg) {
+            height: 700px;
+        }
+        .main-text {
+            @include media-breakpoint-down(sm) {
+                flex: 1;
+            }
+            @include media-breakpoint-up(md) {
+                max-width: 50%;
+                margin-left: 50px;
+                margin-right: 50px;
+            }
+            .heading {
+                @include media-breakpoint-up(md) {
+                    white-space: pre-line;
+                }
+                sup {
+                    font-size: 60%;
+                }
+            }
+            .body {
+                white-space: pre-line;
+                font-size: 14px;
+                line-height: 22px;
+                font-weight: 300;
+                @include media-breakpoint-up(md) {
+                    font-size: 20px;
+                    line-height: 30px;
+                    letter-spacing: 0.03em;
+                }
+            }
+            .has-button {
+                margin-top: 5px;
+                @include media-breakpoint-up(md) {
+                    margin-top: 20px;
+                }
+            }
+        }
+        &.text-shadow {
+            .heading {
+                text-shadow: 0 0 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 0, 0, 0.6);
+            }
+            .body {
+                text-shadow: 0 0 30px #000, 0 0 20px #000, 0 0 10px #000;
+            }
+        }
+        &.mobile-text-position--top {
+            align-items: flex-start;
+            justify-content: center;
+        }
+        &.mobile-text-position--center {
+            align-items: center;
+            justify-content: center;
+        }
+        &.mobile-text-position--bottom {
+            align-items: flex-end;
+            justify-content: center;
+        }
+        &.text-position--winter-top {
+            // Added for winter campaign
+            @include media-breakpoint-up(md) {
+                align-items: flex-start;
+                justify-content: center;
+            }
+            .main-text {
+                @include media-breakpoint-up(md) {
+                    max-width: none;
+                }
+            }
+        }
+        &.text-position--left-top {
+            @include media-breakpoint-up(md) {
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+        }
+        &.text-position--left-center {
+            @include media-breakpoint-up(md) {
+                align-items: center;
+                justify-content: flex-start;
+            }
+        }
+        &.text-position--left-bottom {
+            @include media-breakpoint-up(md) {
+                align-items: flex-end;
+                justify-content: flex-start;
+            }
+        }
+        &.text-position--center-top {
+            @include media-breakpoint-up(md) {
+                align-items: flex-start;
+                justify-content: center;
+            }
+        }
+        &.text-position--center-center {
+            @include media-breakpoint-up(md) {
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        &.text-position--center-bottom {
+            @include media-breakpoint-up(md) {
+                align-items: flex-end;
+                justify-content: center;
+            }
+        }
+        &.text-position--right-top {
+            @include media-breakpoint-up(md) {
+                align-items: flex-start;
+                justify-content: flex-end;
+            }
+        }
+        &.text-position--right-center {
+            @include media-breakpoint-up(md) {
+                align-items: center;
+                justify-content: flex-end;
+            }
+        }
+        &.text-position--right-bottom {
+            @include media-breakpoint-up(md) {
+                align-items: flex-end;
+                justify-content: flex-end;
+            }
+        }
+        &.mobile-text-align--left {
+            text-align: left;
+        }
+        &.mobile-text-align--center {
+            text-align: center;
+        }
+        &.mobile-text-align--right {
+            text-align: right;
+        }
+        &.text-align--left {
+            @include media-breakpoint-up(md) {
+                text-align: left;
+            }
+        }
+        &.text-align--center {
+            @include media-breakpoint-up(md) {
+                text-align: center;
+            }
+        }
+        &.text-align--right {
+            @include media-breakpoint-up(md) {
+                text-align: right;
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+<div class="has-tabs">
+    <ul>
+        <isloop items="${pdict.tabs}" var="tab">
+            <li>
+                <a data-hastens-tab="${tab.slug}" data-title="${tab.pageTitle}">${tab.text}</a>
+            </li>
+        </isloop>
+    </ul>
+</div>
+<isloop items="${pdict.tabs}" var="tab">
+    <div data-hastens-tab-region="${tab.slug}" class="has-tab-region">
+        <isprint value="${pdict.regions[tab.region].render()}" encoding="off" />
+    </div>
+</isloop>

@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-header clearfix">
+        <h2 class="pull-left">${Resource.msg('label.addressbook', 'account', null)}</h2>
+        <isif condition="${pdict.account.preferredAddress}">
+            <a href="${URLUtils.url('Address-List')}" class="pull-right" rel="nofollow"
+                aria-label="${Resource.msg('label.addressbook.viewaddress', 'account', null)}">${Resource.msg('link.view', 'account', null)}</a>
+        </isif>
+    </div>
+    <div class="card-body">
+        <isif condition="${pdict.account.preferredAddress}">
+            <div>
+                <div class="dashboard-cards-block-title">
+                    ${Resource.msg('label.addressbook.defaultaddress', 'account', null)}</div>
+                <div class="dashboard-info">${pdict.account.preferredAddress.address.ID}</div>
+                <div>${pdict.account.preferredAddress.address.firstName}
+                    ${pdict.account.preferredAddress.address.lastName}</div>
+                <div>${pdict.account.preferredAddress.address.address1}</div>
+                <div>${pdict.account.preferredAddress.address.city}, ${pdict.account.preferredAddress.address.stateCode || ''}
+                    ${pdict.account.preferredAddress.address.postalCode}</div>
+                <div class="last-dashboard-card-block-title">
+                    ${pdict.account.preferredAddress.address.prefix || ''} ${pdict.account.preferredAddress.address.phone}
+                </div>
+            </div>
+            <a href="${URLUtils.url('Address-AddAddress')}" rel="nofollow" class="btn btn-tertiary"
+                aria-label="'label.addressbook.addnewaddress', 'account', null)}">${Resource.msg('link.addnew', 'account', null)}
+            </a>
+        <iselse/>
+            <a href="${URLUtils.url('Address-AddAddress')}" rel="nofollow" class="btn btn-tertiary mt-4"
+                aria-label="'label.addressbook.addnewaddress', 'account', null)}">${Resource.msg('link.addnew', 'account', null)}
+            </a>
+        </isif>
+    </div>
+</div>

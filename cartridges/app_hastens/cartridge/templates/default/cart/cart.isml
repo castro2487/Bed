@@ -1,0 +1,102 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/cart.css');
+        assets.addJs('/js/uikit.min.js');
+    </isscript>
+
+    <isset name="cart" value="${true}" scope="page" />
+    <isset name="miniCart" value="${false}" scope="page" />
+
+    <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+
+    <div class="container">
+        <div class="row cart-header">
+            <div class="col-sm-12">
+                <div class="container-continue-shopping-link">
+                    <a class="continue-shopping-link btn-text-link" href="${URLUtils.url('Home-Show')}"
+                        title="${Resource.msg('link.continue.shopping', 'cart', null)}" rel="nofollow">
+                        <i class="fa fa-chevron-up text-hastens-blue" aria-hidden="true"></i>
+                        <span class="continue-shopping-link-text">
+                            ${Resource.msg('link.continue.shopping', 'cart', null)}
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-12 text-center">
+                <h1 class="headline-1 cart-title-page">${Resource.msg('title.cart', 'cart', null)}</h1>
+            </div>
+        </div>
+    </div>
+
+    <isif condition="${pdict.items.length === 0}">
+        <div class="container cart-empty">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <isif condition="${pdict.paypalError && pdict.paypalError === 'order.placement'}">
+                        <div>
+                            ${Resource.msg('error.paypal.' + pdict.paypalError, 'cart', null)}
+                        </div>
+                        <br>
+                    </isif>
+                    <div>
+                        ${Resource.msg('info.cart.empty.msg', 'cart', null)}
+                    </div>
+                    <div class="container-empty-msg">
+                        <div>
+                            ${Resource.msg('info.cart.empty.msg2', 'cart', null)}
+                        </div>
+                        <a href="${URLUtils.url('Search-Show', 'cgid', 'Hastens_accessories')}">${Resource.msg('info.cart.empty.link', 'cart', null)}</a>
+                        <div>
+                            ${Resource.msg('info.cart.empty.msg3', 'cart', null)}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <iselse/>
+        <div class="container cart cart-page">
+            <div class="row">
+                <!---product cards--->
+                <div class="col-12 col-lg-7 col-xl-8">
+                    <isloop items="${pdict.items}" var="lineItem">
+                        <isif condition="${lineItem.productType === 'bundle'}">
+                            <isinclude template="cart/productCard/cartBundleCard" />
+                        <iselse/>
+                            <isif condition="${lineItem.noProduct === true}">
+                                <isinclude template="cart/productCard/uncategorizedCartProductCard" />
+                            <iselse/>
+                                <isinclude template="cart/productCard/cartProductCard" />
+                            </isif>
+                        </isif>
+                    </isloop>
+                    <isinclude template="cart/cartApproachingDiscount" />
+                    <div class="card content-slot-container">
+                        <isslot id="cart-recommendations-m" description="Recommended products" context="global" />
+                    </div>
+                </div>
+                <!---totals, and checkout actions--->
+                <div class="col-12 col-lg-5 col-xl-4 totals">
+                    <div class="container-totals">
+                        <div class="row">
+                            <isinclude template="cart/cartShippingMethodSelection" />
+                        </div>
+                        <isinclude template="cart/cartTotals" />
+                        <div class="row">
+                            <div class="col-12 checkout-continue">
+                                <isinclude template="cart/checkoutButtons" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </isif>
+
+    <isinclude template="cart/modalCart" />
+    <isinclude template="/components/footer/newsLetter" />
+
+</isdecorate>

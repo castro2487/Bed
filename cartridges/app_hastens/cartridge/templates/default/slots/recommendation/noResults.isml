@@ -1,0 +1,4 @@
+<div class="recommendations">
+    <h2 class="headline-1 text-center">${Resource.msg('label.noresults.recommendations', 'search', null)}</h5>
+    <isinclude template="components/productCarousel" />
+</div>

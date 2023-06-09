@@ -1,0 +1,12 @@
+<isdecorate template="uikit/layout">
+    <h2>Utilities</h2>
+
+    <p>Bootstrap spacing, visibility, and responsive utility classes must be used to build UI components whenever possible.</p>
+
+    <div class="examples">
+        <code>&lt;div class=&quot;box bg-info-light text-info px-3 py-2 d-inline-block&quot;&gt;</code><br>
+        <div class="box bg-info-light text-info px-3 py-2 d-inline-block">
+            <p class="mb-0">This box is built using utility classes and no custom CSS.</p>
+        </div>
+    </div>
+</isdecorate>

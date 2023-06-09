@@ -1,0 +1,3 @@
+<div class="store-exclusive">
+    <span>${Resource.msg('product.store-exclusive.label', 'productTile', null)}</span>
+</div>

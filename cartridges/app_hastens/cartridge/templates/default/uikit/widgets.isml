@@ -1,0 +1,25 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/homePage.css');
+        assets.addJs('/js/homePage.js');
+    </isscript>
+
+    <div class="uikit mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="page-title">${Resource.msg('page.widget.heading', 'uikit', null)}</h1>
+                </div>
+            </div>
+            <!--- Page Designer Components --->
+            <isinclude template="experience/components/assets/homeWidget1" />
+            <isinclude template="experience/components/assets/homeWidget2" />
+            <isinclude template="experience/components/assets/homeWidget5" />
+        </div>
+        <!--- Page Designer Components --->
+        <isinclude template="experience/components/assets/homeWidget3" />
+    </div>
+    <isinclude template="experience/components/assets/homeWidget4" />
+    <isinclude template="experience/components/assets/homeWidgetHero" />
+</isdecorate>

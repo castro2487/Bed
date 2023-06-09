@@ -1,0 +1,45 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-designer-banner-1 {
+    padding: 30px 15px;
+    @include media-breakpoint-only(xs) {
+        background-repeat: no-repeat;
+        height: 40% !important;
+        background-position: 50% 50% !important;
+    }
+    .content-wrapper {
+        max-width: 990px;
+        margin: 0 auto;
+        padding-top: 7 / 12 * 100%;
+        padding-bottom: 10px;
+        @include media-breakpoint-up(md) {
+            padding: 60px 15px 80px;
+            top: 0;
+            left: 0;
+            text-align: left;
+            position: relative;
+        }
+
+        .content {
+            top: 0;
+            left: 0;
+            text-align: center;
+            position: relative;
+            @include media-breakpoint-up(md) {
+                text-align: left;
+            }
+        }
+
+        .story {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            line-height: 1.25;
+            font-weight: 400;
+            letter-spacing: 1px;
+            white-space: pre-line;
+            @include media-breakpoint-up(md) {
+                margin-right: 50%;
+            }
+        }
+    }
+}

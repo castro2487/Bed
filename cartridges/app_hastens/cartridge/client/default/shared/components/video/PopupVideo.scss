@@ -1,0 +1,82 @@
+@import "~video-react/styles/scss/video-react";
+@import "../../styles/utils/utils";
+
+.has-popup-video {
+    .button-wrapper {
+        position: relative;
+        padding-bottom: 9 / 16 * 100%;
+        &.ratio--3-2 {
+            padding-bottom: 2 / 3 * 100%;
+        }
+        .has-play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -30px;
+            z-index: 2;
+            @include media-breakpoint-up(sm) {
+                margin: -60px;
+            }
+        }
+    }
+    .text-wrapper {
+        padding: 15px;
+        position: relative;
+        &.text-position--left {
+            @include media-breakpoint-up(md) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+            header {
+                @include media-breakpoint-up(md) {
+                    max-width: 990px;
+                    margin: 0 auto;
+                }
+            }
+            .heading {
+                margin: 0 0 10px;
+                @include media-breakpoint-up(md) {
+                    padding-right: calc(50% + 60px);
+                }
+            }
+            .body {
+                @include media-breakpoint-up(md) {
+                    padding-right: calc(50% + 100px);
+                }
+            }
+        }
+        &.text-position--bottom {
+            @include media-breakpoint-up(md) {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 100%;
+                height: 50%;
+                display: flex;
+                align-items: flex-start;
+            }
+            header {
+                @include media-breakpoint-up(md) {
+                    max-width: 660px;
+                    margin: 0 auto;
+                    text-align: center;
+                    padding-top: 70px;
+                }
+            }
+        }
+    }
+    .ios-player {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        z-index: -1;
+        overflow: hidden;
+    }
+}

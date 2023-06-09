@@ -1,0 +1,60 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-request-catalog-3 {
+    background-color: #eee;
+    .banner {
+        background-color: #4f5e57;
+        color: #fff;
+        .top-image {
+            background-image: url("https://static.hastens.com/768/blocks/campaigns/we-sleep-do-you/embrace_chaos.jpg");
+            background-position: center;
+            background-size: cover;
+            padding-bottom: 50%;
+            @include media-breakpoint-up(md) {
+                background-image: url("https://static.hastens.com/1200/blocks/campaigns/we-sleep-do-you/embrace_chaos.jpg");
+            }
+            @include media-breakpoint-up(lg) {
+                background-image: url("https://static.hastens.com/1500/blocks/campaigns/we-sleep-do-you/embrace_chaos.jpg");
+            }
+        }
+        .text {
+            max-width: 990px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 40px 15px 60px;
+            text-align: center;
+            header {
+                h2 {
+                    margin-top: 0;
+                    margin-bottom: 0.15em;
+                    sup {
+                        font-size: 65%;
+                    }
+                }
+                p {
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    margin-bottom: 35px;
+                    font-size: 14px;
+                    letter-spacing: 0.05em;
+                    @include media-breakpoint-up(md) {
+                        font-size: 16px;
+                    }
+                }
+            }
+            .body {
+                text-align: left;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    .expandable-view {
+        // Add a border to fix problem with block growing upwards when expanded in Chrome/Firefox
+        border-top: 1px solid #000;
+        transition-delay: 600ms;
+        &.expanded {
+            border-color: #eee;
+            transition-delay: 0ms;
+        }
+    }
+}

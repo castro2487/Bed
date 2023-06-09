@@ -1,0 +1,74 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-accessory-image {
+    height: 200px;
+    position: relative;
+    padding-bottom: 50%;
+    @include media-breakpoint-up(sm) {
+        height: 300px;
+        padding-bottom: 33.3333%;
+    }
+    @include media-breakpoint-up(md) {
+        height: 400px;
+    }
+    a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: #000;
+        &.theme--dark {
+            color: #fff;
+        }
+        span {
+            position: absolute;
+            display: flex;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            justify-content: center;
+            text-align: center;
+            @include media-breakpoint-up(lg) {
+                font-size: 18px;
+            }
+            &.text-position--bottom {
+                @include media-breakpoint-up(lg) {
+                    padding: 15px 15px 45px;
+                }
+            }
+            &.text-position--left {
+                @include media-breakpoint-up(md) {
+                    bottom: 0;
+                    left: 0;
+                    right: 70%;
+                    top: 0;
+                    padding: 15px 15px 15px 45px;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                }
+            }
+            &.text-position--right {
+                @include media-breakpoint-up(md) {
+                    bottom: 0;
+                    left: 70%;
+                    right: 0;
+                    top: 0;
+                    padding: 15px 45px 15px 15px;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

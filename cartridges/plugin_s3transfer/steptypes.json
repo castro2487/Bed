@@ -1,0 +1,302 @@
+{
+    "step-types": {
+        "script-module-step": [
+            {
+                "@type-id": "custom.S3Transfer",
+                "module": "plugin_s3transfer/cartridge/scripts/transfer/s3Transfer",
+                "function": "S3Transfer",
+                "parameters": {
+                    "parameters": [{
+                            "@name": "bucketName",
+                            "description": "Bucket Name",
+                            "@type": "string",
+                            "@required": "true"
+                        },
+                        {
+                            "@name": "remoteFolder",
+                            "description": "Remote Folder (e.g. staging/toDWRE/)",
+                            "@type": "string",
+                            "@required": "true"
+                        },
+                        {
+                            "@name": "S3ArchiveFolder",
+                            "description": "Archive Folder in S3",
+                            "@type": "string",
+                            "@required": "false"
+                        },
+                        {
+                            "@name": "S3ErrorFolder",
+                            "description": "Error Folder in S3",
+                            "@type": "string",
+                            "@required": "false"
+                        },
+                        {
+                            "@name": "RemoveFromS3",
+                            "description": "True when you wish to remove files in S3 when file is processed successfully",
+                            "@type": "boolean",
+                            "@required": "false"
+                        },
+                        {
+                            "@name": "accessKey",
+                            "description": "AWS Access Key",
+                            "@type": "string",
+                            "@required": "true"
+                        },
+                        {
+                            "@name": "secretAccessKey",
+                            "description": "AWS Secret Access Key",
+                            "@type": "string",
+                            "@required": "true"
+                        },
+                        {
+                            "@name": "region",
+                            "description": "Region",
+                            "@type": "string",
+                            "@trim": "true",
+                            "enum-values": {
+                                "value": [
+                                    "us-east-1",
+                                    "us-west-1",
+                                    "us-west-2",
+                                    "eu-west-1",
+                                    "eu-central-1",
+                                    "ap-northeast-1",
+                                    "ap-northeast-2",
+                                    "ap-southeast-1",
+                                    "ap-southeast-2",
+                                    "sa-east-1"
+                                ]
+                            },
+                            "@required": "true"
+                        },
+                        {
+                            "@name": "timeout",
+                            "description": "AWS Timeout in ms (defaults to 1000ms)",
+                            "@type": "string",
+                            "@required": "false"
+                        },
+                        {
+                            "@name": "contentType",
+                            "description": "Content Type",
+                            "@type": "string",
+                            "enum-values": {
+                                "value": [
+                                    "image/jpeg",
+                                    "text/plain",
+                                    "text/xml",
+                                    "application/octet-stream",
+                                    "image/png",
+                                    "image/*"
+                                ]
+                            },
+                            "@required": "true"
+                        },
+                        {
+                            "@name": "RootDirectoryWebDav",
+                            "description": "Target Root Folder",
+                            "@type": "string",
+                            "enum-values": {
+                                "value": [
+                                    "IMPEX",
+                                    "TEMP",
+                                    "CATALOGS",
+                                    "LIBRARIES",
+                                    "STATIC"
+                                ]
+                            },
+                            "@required": "true"
+                        },
+                        {
+                            "@name": "catalogOrLibraryName",
+                            "description": "Catalog or Library Name (in CATALOGS or LIBRARIES)",
+                            "@type": "string",
+                            "@required": "false"
+                        },
+                        {
+                            "@name": "TargetSFCCFolder",
+                            "description": "Target Folder in SFCC WEBDAV",
+                            "@type": "string",
+                            "@required": "false"
+                        },
+                        {
+                            "@name": "ContinueDirectory",
+                            "description": "Continue path directory in webadv. Example: TargetSFCCFolder/RemoteFolderBucket.",
+                            "@type": "boolean",
+                            "@required": "false",
+                            "default-value": "false"
+                        },
+                        {
+                            "@name": "ReplaceSameFiles",
+                            "description": "If true replace files with same names, if false skip.",
+                            "@type": "boolean",
+                            "@required": "false",
+                            "default-value": "false"
+                        },
+                        {
+                            "@name": "IsDateForGetFiles",
+                            "description": "If true, download the files with a date greater than the last execution of the job.",
+                            "@type": "boolean",
+                            "@required": "false"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when everything went well."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.S3Upload",
+                "module": "plugin_s3transfer/cartridge/scripts/transfer/s3Upload",
+                "function": "S3Upload",
+                "parameters": {
+                    "parameters": [{
+                            "@name": "bucketName",
+                            "description": "Bucket Name",
+                            "@type": "string",
+                            "@required": "true"
+                        },
+                        {
+                            "@name": "remoteFolder",
+                            "description": "Remote Folder (e.g. staging/toDWRE/)",
+                            "@type": "string",
+                            "@required": "true"
+                        },
+                        {
+                            "@name": "S3ArchiveFolder",
+                            "description": "Archive Folder in S3",
+                            "@type": "string",
+                            "@required": "false"
+                        },
+                        {
+                            "@name": "S3ErrorFolder",
+                            "description": "Error Folder in S3",
+                            "@type": "string",
+                            "@required": "false"
+                        },
+                        {
+                            "@name": "accessKey",
+                            "description": "AWS Access Key",
+                            "@type": "string",
+                            "@required": "true"
+                        },
+                        {
+                            "@name": "secretAccessKey",
+                            "description": "AWS Secret Access Key",
+                            "@type": "string",
+                            "@required": "true"
+                        },
+                        {
+                            "@name": "region",
+                            "description": "Region",
+                            "@type": "string",
+                            "@trim": "true",
+                            "enum-values": {
+                                "value": [
+                                    "us-east-1",
+                                    "us-west-1",
+                                    "us-west-2",
+                                    "eu-west-1",
+                                    "eu-central-1",
+                                    "ap-northeast-1",
+                                    "ap-northeast-2",
+                                    "ap-southeast-1",
+                                    "ap-southeast-2",
+                                    "sa-east-1"
+                                ]
+                            },
+                            "@required": "true"
+                        },
+                        {
+                            "@name": "timeout",
+                            "description": "AWS Timeout in ms (defaults to 1000ms)",
+                            "@type": "string",
+                            "@required": "false"
+                        },
+                        {
+                            "@name": "contentType",
+                            "description": "Content Type",
+                            "@type": "string",
+                            "enum-values": {
+                                "value": [
+                                    "image/jpeg",
+                                    "text/plain",
+                                    "text/xml",
+                                    "application/octet-stream",
+                                    "image/png",
+                                    "image/*"
+                                ]
+                            },
+                            "@required": "true"
+                        },
+                        {
+                            "@name": "RootDirectoryWebDav",
+                            "description": "Target Root Folder",
+                            "@type": "string",
+                            "enum-values": {
+                                "value": [
+                                    "IMPEX",
+                                    "TEMP",
+                                    "CATALOGS",
+                                    "LIBRARIES",
+                                    "STATIC"
+                                ]
+                            },
+                            "@required": "true"
+                        },
+                        {
+                            "@name": "catalogOrLibraryName",
+                            "description": "Catalog or Library Name (in CATALOGS or LIBRARIES)",
+                            "@type": "string",
+                            "@required": "false"
+                        },
+                        {
+                            "@name": "TargetSFCCFolder",
+                            "description": "Target Folder in SFCC WEBDAV",
+                            "@type": "string",
+                            "@required": "false"
+                        },
+                        {
+                            "@name": "ContinueDirectory",
+                            "description": "Continue path directory in webadv. Example: TargetSFCCFolder/RemoteFolderBucket.",
+                            "@type": "boolean",
+                            "@required": "false",
+                            "default-value": "false"
+                        },
+                        {
+                            "@name": "ReplaceSameFiles",
+                            "description": "If true replace files with same names, if false skip.",
+                            "@type": "boolean",
+                            "@required": "false",
+                            "default-value": "false"
+                        },
+                        {
+                            "@name": "IsDateForGetFiles",
+                            "description": "If true, download the files with a date greater than the last execution of the job.",
+                            "@type": "boolean",
+                            "@required": "false"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when everything went well."
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

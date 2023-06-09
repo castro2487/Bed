@@ -1,0 +1,88 @@
+<!--- Subtotal --->
+<div class="row leading-lines subtotal-item">
+    <div class="col-12 no-padding"> 
+        <p class="container-total order-receipt-label">
+            <span class="product-card-total-label">${Resource.msg('label.order.subtotal','confirmation', null)}</span>
+            <span class="dotted-row"></span>
+            <span class="dashboard-order-card-footer-value pricing line-item-total-price-amount sub-total">
+            ${pdict.order.totals.subTotal}
+            </span>
+        </p>  
+    </div>
+</div>
+
+<!--- Order Discount --->
+<div class="row leading-lines order-discount <isif condition="${pdict.order.totals.orderLevelDiscountTotal.value === 0}">hide-order-discount</isif>"> 
+    <div class="col-12 no-padding"> 
+        <p class="container-total order-receipt-label">
+            <span class="product-card-total-label">${Resource.msg('label.order.discount', 'common', null)}</span>
+            <span class="dotted-row"></span>
+            <span class="dashboard-order-card-footer-value pricing line-item-total-price-amount order-discount-total">
+            ${pdict.order.totals.orderLevelDiscountTotal.formatted}
+            </span>
+        </p>  
+    </div>
+</div>
+
+<!--- Shipping Cost --->
+<div class="row leading-lines shipping-item"> 
+    <div class="col-12 no-padding"> 
+        <p class="container-total order-receipt-label">
+            <span class="product-card-total-label">${Resource.msg('label.order.shipping.cost','confirmation', null)}</span>
+            <span class="dotted-row"></span>
+            <span class="dashboard-order-card-footer-value pricing line-item-total-price-amount shipping-total-cost">
+            ${pdict.order.totals.totalShippingCost}
+            </span>
+        </p>  
+    </div>
+</div>
+
+<!--- Shipping Discount --->
+<div class="row leading-lines shipping-discount <isif condition="${pdict.order.totals.shippingLevelDiscountTotal.value === 0}">hide-shipping-discount</isif>"> 
+    <div class="col-12 no-padding"> 
+        <p class="container-total order-receipt-label">
+            <span class="product-card-total-label">${Resource.msg('label.shipping.discount', 'common', null)}</span>
+            <span class="dotted-row"></span>
+            <span class="dashboard-order-card-footer-value pricing line-item-total-price-amount shipping-discount-total">
+            ${pdict.order.totals.shippingLevelDiscountTotal.formatted}
+            </span>
+        </p>  
+    </div>
+</div>
+
+<!--- Sales Tax --->
+<div class="row leading-lines sales-tax-item" data-net-taxation="${pdict.netTaxation}">
+    <div class="col-12 no-padding"> 
+        <p class="container-total order-receipt-label">
+            <span class="product-card-total-label net-taxation ${pdict.netTaxation ? 'd-inline' : 'd-none'}">
+                ${Resource.msg(pdict.avataxEnabled ? 'label.calculate.tax.at.payment' : 'label.no.tax','confirmation', null)}
+            </span>
+            <span class="product-card-total-label gross-taxation ${!pdict.netTaxation ? 'd-inline' : 'd-none'} ${pdict.taxRate ? 'tax-rate' : ''}">
+                ${pdict.taxRate ?
+                Resource.msgf('label.order.sales.tax.rate','confirmation', null, pdict.taxRate.toString()) :
+                Resource.msg(pdict.avataxEnabled ? 'label.order.sales.tax' : 'label.no.tax','confirmation', null)}
+            </span>
+            <span class="dotted-row"></span>
+            <isif condition="${!pdict.taxRate && pdict.avataxEnabled}">
+                <span class="dashboard-order-card-footer-value pricing line-item-total-price-amount tax-total ${pdict.netTaxation ? 'd-none' : ''}">
+                    ${pdict.order.totals.totalTax}
+                </span>
+            </isif>
+        </p>  
+    </div>
+</div>
+
+<!--- Grand Total --->
+<hr>
+<div class="row grand-total leading-lines">
+    <div class="col-6 start-lines">
+        <p class="order-receipt-label headline-5"><span>${Resource.msg('label.order.grand.total','confirmation', null)}</span></p>
+    </div>
+    <div class="col-6 end-lines">
+        <p class="text-right headline-5">
+        <span class="grand-total-sum net-taxation ${pdict.netTaxation ? 'd-inline' : 'd-none'}">${pdict.order.totals.totalNetPrice}</span>
+        <span class="grand-total-sum gross-taxation ${!pdict.netTaxation ? 'd-inline' : 'd-none'}">${pdict.order.totals.grandTotal}</span>
+        </p>
+    </div>
+</div>
+

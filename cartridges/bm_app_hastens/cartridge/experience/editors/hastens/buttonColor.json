@@ -1,0 +1,12 @@
+{
+    "name": "ButtonColorEditor",
+    "description": "",
+    "resources": {
+        "scripts": [
+            "/js/hastens/bmMain.js"
+        ],
+        "styles": [
+            "/css/hastens/bmMain.css"
+        ]
+    }
+}

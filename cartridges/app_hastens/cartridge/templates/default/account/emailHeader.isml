@@ -1,0 +1,11 @@
+<table class="email-header" style="background-color:trasparent; border:0;" border="0" cellspacing="0">
+    <tr>
+        <td style="background-color:#fff; border:0; height: 90px;">
+            <a class="logo-home" href="${URLUtils.abs('Home-Show')}" title="${Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg(
+                                                                            'global.home', 'common', null))}">
+                <img src="${URLUtils.absStatic('/images/logo-black.png')}"
+                    alt="${Resource.msg('global.storename', 'common', null)}"  height="45" width="145" />
+            </a>
+        </td>
+    </tr>
+</table>

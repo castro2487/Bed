@@ -1,0 +1,28 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-animated-header {
+    position: relative;
+
+    .video {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .section-text {
+        position: relative;
+        padding: 0 15px;
+        text-align: center;
+        text-transform: uppercase;
+        margin: auto;
+        z-index: 1;
+        .heading {
+            padding: 10% 0;
+            margin: 0;
+            @include media-breakpoint-down(lg) {
+                font-size: 5vw;
+            }
+        }
+    }
+}

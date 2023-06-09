@@ -1,0 +1,63 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-winter-campaign-request-catalog {
+    .banner {
+        position: relative;
+        .content-wrapper {
+            max-width: 990px;
+            margin: 0 auto;
+            padding: 30px 15px 45px;
+            text-align: center;
+            position: relative;
+            @include media-breakpoint-up(lg) {
+                padding: 130px 15px;
+                text-align: left;
+            }
+            .heading {
+                white-space: pre-line;
+                @include media-breakpoint-up(lg) {
+                    margin-bottom: 4px;
+                }
+            }
+            .link,
+            .body {
+                margin-top: 20px;
+            }
+            .link,
+            .body,
+            .heading {
+                @include media-breakpoint-up(lg) {
+                    margin-right: 50%;
+                }
+            }
+        }
+        .image {
+            background-image: url("https://static.hastens.com/768/blocks/campaigns/wake-up/Catalog.jpg");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-bottom: 51%;
+            margin-top: 40px;
+            @include media-breakpoint-up(md) {
+                background-image: url("https://static.hastens.com/1200/blocks/campaigns/wake-up/Catalog.jpg");
+            }
+            @include media-breakpoint-up(lg) {
+                background-image: url("https://static.hastens.com/750/blocks/campaigns/wake-up/Catalog.jpg");
+                background-size: auto 94%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 50%;
+                padding-bottom: 0;
+                margin-top: 0;
+            }
+        }
+    }
+    .expandable-view {
+        background-color: #eee;
+        color: #000;
+        // Add a border to fix problem with block growing upwards when expanded in Chrome/Firefox
+        border-top: 1px solid #fff;
+    }
+}

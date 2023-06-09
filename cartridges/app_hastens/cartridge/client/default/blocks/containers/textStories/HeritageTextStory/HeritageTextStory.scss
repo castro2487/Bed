@@ -1,0 +1,40 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-heritage-text-story {
+    padding: 60px 15px;
+    .content-wrapper {
+        max-width: 960px;
+        margin: 0 auto;
+        @include media-breakpoint-up(md) {
+            display: flex;
+        }
+    }
+    .column-1,
+    .column-2 {
+        @include media-breakpoint-up(md) {
+            flex: 1;
+        }
+    }
+    .column-2 {
+        @include media-breakpoint-up(md) {
+            margin-left: 60px;
+        }
+    }
+    .heading {
+        font-size: inherit;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    figure {
+        display: inline-block;
+        width: 100%;
+    }
+    img {
+        width: 100%;
+    }
+    figcaption {
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 4px;
+    }
+}

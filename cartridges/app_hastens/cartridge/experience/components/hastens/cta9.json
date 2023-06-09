@@ -1,0 +1,42 @@
+{
+    "name": "Wait List CTA",
+    "description": "",
+    "group": "hastens_cta",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "body",
+                    "name": "Body text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "linkText",
+                    "name": "Link text",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "linkUrl",
+                    "name": "Link url",
+                    "description": "",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "anchor",
+                    "name": "Anchor",
+                    "description": "The anchor is used to scroll to block on same page or another page when different 'Link url' is provided. You can copy block id by hovering over the 'i' tag on the required block. Block id is easier copied when page is in preview.",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

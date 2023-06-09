@@ -1,0 +1,24 @@
+// @import "mixins/mixins";
+
+@import "bootstrap/scss/functions";
+
+// font-awesome font file locations in relation to target location of the css file.
+$fa-font-path: "../fonts" !default;
+
+// flag icons location in relation to target location of the css file.
+$flag-icon-css-path: "../fonts/flags/" !default;
+
+// UTILS
+// @import "setup/variables/utils";
+
+// COLORS
+@import "setup/variables/colors";
+
+// LAYOUT
+@import "setup/variables/layout";
+
+// TYPO
+@import "setup/variables/typo";
+
+// CONTROLS
+@import "setup/variables/controls";

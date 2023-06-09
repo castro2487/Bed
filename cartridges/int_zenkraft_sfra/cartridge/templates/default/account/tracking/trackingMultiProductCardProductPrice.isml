@@ -1,0 +1,23 @@
+<div class="col-lg-8 product-card-footer">
+    <isif condition="${!lineItem.isBonusProductLineItem}"/>
+        <div class="row">
+
+            <!--- line item total price --->
+            <div class="col-12 line-item-total-price">
+                <isinclude template="cart/productCard/cartProductCardHeader" />
+                <div class="item-total-${lineItem.UUID}" style="color: #999;">
+                    <isinclude template="checkout/productCard/productCardProductTotalPrice" />
+                </div>
+                <div>
+                    <span class="line-item-total-text qty-card-quantity-label">
+                    ${Resource.msg('field.selectquantity','cart',null)}
+                    </span>: 
+                    <span class="qty-card-quantity-count line-item-total-text"><isprint value="${lineItem.quantity}" formatter="##" /></span>
+                </div>
+            </div>
+
+            <!--- extra slot for spacing reasons due to large remove button --->
+            <div class="col-lg-1 hidden-md-down remove-line-item-lg"></div>
+        </div>
+    </isif>
+</div>

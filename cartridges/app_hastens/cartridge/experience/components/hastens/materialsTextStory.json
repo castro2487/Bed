@@ -1,0 +1,112 @@
+{
+    "name": "Materials Text Story",
+    "description": "",
+    "group": "hastens_textstories",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "headingMain",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "bodyMain",
+                    "name": "Top text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "body",
+                    "name": "Body",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.richTextEditor"
+                    },
+                    "required": true
+                },
+                {
+                    "id": "columns",
+                    "name": "Number of columns",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "One",
+                                    "value": 1
+                                },
+                                {
+                                    "name": "Two",
+                                    "value": 2
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "theme",
+                    "name": "Theme",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.theme"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "image",
+                    "name": "Desktop image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "tabletImage",
+                    "name": "Tablet image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "mobileImage",
+                    "name": "Mobile image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "background",
+                    "name": "Background color",
+                    "description": "Example: #000000",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "disableImageInheritance",
+                    "name": "Disable image inheritance",
+                    "description": "",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "imageAlt",
+                    "name": "Image description",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

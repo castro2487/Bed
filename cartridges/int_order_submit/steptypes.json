@@ -1,0 +1,175 @@
+{
+    "step-types": {
+        "script-module-step": [
+            {
+                "@type-id": "custom.orderSubmitAsync",
+                "module": "int_order_submit/cartridge/scripts/job/orderSubmitAsync",
+                "function": "OrderExport",
+                "parameters": {
+                    "parameters": [
+                        {
+                            "@name": "OrderExportStatus",
+                            "description": "Status of the orders to export",
+                            "@type": "string",
+                            "enum-values": {
+                                "value": [
+                                    "EXPORT_STATUS_READY",
+                                    "EXPORT_STATUS_FAILED"
+                                ]
+                            },
+                            "@required": "true"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when everything went well."
+                        },
+                        {
+                            "@code": "MAX_EXPORT_ATTEMPTS_EXCEEDED",
+                            "description": "Used when reaching the maximum number of export attents."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.orderStatusUpdate",
+                "module": "int_order_submit/cartridge/scripts/job/orderStatusUpdate",
+                "function": "OrderStatusUpdate",
+                "parameters": {
+                    "parameters": [
+                        {
+                            "@name": "WorkingFolder",
+                            "description": "Folder Files Path (relative to the IMPEX/src folder)",
+                            "@type": "string",
+                            "@required": "true"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when everything went well."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.DeleteOrArchiveFiles",
+                "module": "int_order_submit/cartridge/scripts/job/deleteOrArchiveFiles",
+                "function": "DeleteOrArchiveFiles",
+                "parameters": {
+                    "parameters": [{
+                            "@name": "WorkingFolder",
+                            "description": "Folder Files Path",
+                            "@type": "string",
+                            "@required": "true"
+                        },
+                        {
+                            "@name": "FileNameSFCC",
+                            "description": "File Name SFCC. If this field exists get only the file with this name from the folder. Example: filename.txt",
+                            "@type": "string",
+                            "@required": "false"
+                        },
+                        {
+                            "@name": "RootDirectoryWebDav",
+                            "description": "Target Root Folder",
+                            "@type": "string",
+                            "enum-values": {
+                                "value": [
+                                    "IMPEX",
+                                    "CATALOGS",
+                                    "LIBRARIES",
+                                    "TEMP",
+                                    "STATIC"
+                                ]
+                            },
+                            "@required": "true",
+                            "default-value": "IMPEX"
+                        },
+                        {
+                            "@name": "catalogOrLibraryName",
+                            "description": "Catalog or Library Name (in CATALOGS or LIBRARIES)",
+                            "@type": "string",
+                            "@required": "false"
+                        },
+                        {
+                            "@name": "ArchiveOrDeleteFiles",
+                            "description": "Archive or Delete Files",
+                            "@type": "string",
+                            "enum-values": {
+                                "value": [
+                                    "ARCHIVE",
+                                    "DELETE"
+                                ]
+                            },
+                            "@required": "true",
+                            "default-value": ""
+                        },
+                        {
+                            "@name": "FolderArchive",
+                            "description": "Folder Archive Name",
+                            "@type": "string",
+                            "@required": "false"
+                        },
+                        {
+                            "@name":"DateDeleteFiles",
+                            "@type":"long",
+                            "@required":"false",
+                            "description":"An optional days number parameter (delete all files except the ones created within the last DateDeleteFiles days)."
+                        },
+                        {
+                            "@name":"IsDateStampArchiveFiles",
+                            "@type":"boolean",
+                            "@required":"false",
+                            "@target-type":"date",
+                            "default-value": "false",
+                            "description":"An optional boolean parameter (if true puts all archived files in a folder named with today date, if false put all archived files in one directory with the parameter FolderArchive)."
+                        },
+                        {
+                            "@name":"IsDeleteDirectory",
+                            "@type":"boolean",
+                            "@required":"false",
+                            "default-value": "false",
+                            "description":"An optional boolean number parameter (if true deletes also folders, if false skips the folders)."
+                        },
+                        {
+                            "@name":"IsDeleteContinueDirectory",
+                            "@type":"boolean",
+                            "@required":"false",
+                            "default-value": "false",
+                            "description":"An optional boolean number parameter (if true deletes all files starting from working folder, if false deletes only files in working folder)."
+                        },
+                        {
+                            "@name":"IsDeleteAfterArchive",
+                            "@type":"boolean",
+                            "@required":"false",
+                            "default-value": "false",
+                            "description":"An optional boolean number parameter (if true deletes all files after archive, if false keeps the files in the source folder even after their archive)."
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when everything went well."
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,100 @@
+{
+    "name": "Slider",
+    "description": "",
+    "group": "hastens_layout",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "body",
+                    "name": "Body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "showArrows",
+                    "name": "Show arrow controls",
+                    "description": "",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "animation",
+                    "name": "Animation",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Blur",
+                                    "value": "default"
+                                },
+                                {
+                                    "name": "Slide",
+                                    "value": "slide"
+                                }
+                            ],
+                            "default_value": "default"
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "adjustWidth",
+                    "name": "Adjust width on larger screen",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Default",
+                                    "value": "default"
+                                },
+                                {
+                                    "name": "Full width",
+                                    "value": "fullWidth"
+                                }
+                            ],
+                            "default_value": "default"
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "theme",
+                    "name": "Theme",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.theme",
+                        "configuration": {
+                            "default_value": "primary-1"
+                        }
+                    },
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id": "items",
+            "name": "Items",
+            "component_type_exclusions": []
+        }
+    ]
+}

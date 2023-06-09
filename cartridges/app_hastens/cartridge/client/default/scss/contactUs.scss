@@ -1,0 +1,26 @@
+@import "variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "components/formFields";
+@import "components/toastMessage";
+
+.contact-us-banner {
+    background-image: url('../images/contact-us.jpg');
+    background-position-y: 20%;
+}
+
+.contact-us-signup-message {
+    @include toast-message();
+}
+
+.contact-us-signup-alert {
+    @include toast-alert();
+}
+
+.dropdown-menu.dropdown-prefix-selector {
+    top: calc(100% - 18px);
+}
+
+.form-group.required .form-control-label::before {
+    content: none;
+}

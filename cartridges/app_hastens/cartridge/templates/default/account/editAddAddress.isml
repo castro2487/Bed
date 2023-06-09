@@ -1,0 +1,29 @@
+<isdecorate template="common/layout/pageMyAccount">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/account/dashboard.css');
+        assets.addCss('/css/account/addressBook.css'); 
+        assets.addCss('/css/account/profile.css');
+        assets.addJs('/js/addressBook.min.js');
+    </isscript> 
+    <div class="container">
+        <!---Breadcrumbs--->
+        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+        <div class="row justify-content-center container-profile-cards">
+            <div class="col-sm-12 col-md-6">
+                <div class="card">
+                    <div class="card-header card-address-header">
+                    <isif condition="${pdict.addressId}">
+                        <h3>${Resource.msg('label.addressbook.editaddress','account',null)}</h3>
+                        <iselse>
+                            <h2>${Resource.msg('label.addressbook.addnewaddress','account',null)}</h2>
+                    </isif>
+                    </div>
+                    <div class="card-body">
+                        <isinclude template="account/addressForm"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

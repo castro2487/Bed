@@ -1,0 +1,135 @@
+/**
+ * Headings
+ */
+
+@mixin heading-size-12 {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+}
+
+@mixin heading-size-18 {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.1em;
+}
+
+@mixin heading-size-24 {
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.05em;
+}
+
+@mixin heading-size-28 {
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 0.05em;
+}
+
+@mixin heading-size-32 {
+    font-size: 32px;
+    line-height: 34px;
+    letter-spacing: 0.05em;
+}
+
+@mixin heading-size-40 {
+    font-size: 40px;
+    line-height: 42px;
+    letter-spacing: 0.05em;
+}
+
+@mixin heading-size-60 {
+    font-size: 60px;
+    line-height: 62px;
+    letter-spacing: 0.04em;
+}
+
+@mixin heading-size-70 {
+    font-size: 70px;
+    line-height: 72px;
+    letter-spacing: 0.03em;
+}
+
+@mixin heading-xs {
+    @include heading-size-12;
+    @include media-breakpoint-up(md) {
+        @include heading-size-18;
+    }
+}
+
+@mixin heading-sm {
+    @include heading-size-24;
+    @include media-breakpoint-up(md) {
+        @include heading-size-32;
+    }
+}
+
+@mixin heading-md {
+    @include heading-size-28;
+    @include media-breakpoint-up(md) {
+        @include heading-size-40;
+    }
+}
+
+@mixin heading-lg {
+    @include heading-size-28;
+    @include media-breakpoint-up(md) {
+        @include heading-size-40;
+    }
+    @include media-breakpoint-up(lg) {
+        @include heading-size-60;
+    }
+}
+
+@mixin heading-xl {
+    @include heading-size-28;
+    @include media-breakpoint-up(md) {
+        @include heading-size-40;
+    }
+    @include media-breakpoint-up(lg) {
+        @include heading-size-70;
+    }
+}
+
+/**
+ * Paragraphs
+ */
+
+@mixin paragraph-xs {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+@mixin paragraph-sm {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+@mixin paragraph-md {
+    font-size: 14px;
+    line-height: 22px;
+    @include media-breakpoint-up(md) {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+@mixin paragraph-lg {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.03em;
+    @include media-breakpoint-up(md) {
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+
+/**
+ * Font family
+ */
+
+@mixin garamond-premier-pro {
+    font-family: "Garamond Premier Pro", serif;
+    -webkit-font-smoothing: antialiased;
+}

@@ -1,0 +1,42 @@
+{
+    "name": "Partner Slide",
+    "description": "",
+    "group": "hastens",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "name",
+                    "name": "Name",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "location",
+                    "name": "Location",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "quote",
+                    "name": "quote",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "image",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

@@ -1,0 +1,53 @@
+.has-list-select-field {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    .listbox-option {
+        display: flex;
+        position: relative;
+        cursor: pointer;
+        height: 45px;
+        transition: all 200ms;
+        + .listbox-option {
+            margin-top: 6px;
+        }
+        img {
+            width: 45px;
+        }
+        span {
+            flex: 1;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            padding: 0 45px 0 15px;
+        }
+        svg {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            font-size: 20px;
+            margin-top: -10px;
+            color: #2c6fbc;
+        }
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 3px;
+            background-color: transparent;
+            transition: background-color 200ms;
+        }
+        &.selected,
+        &.focused,
+        &:hover {
+            background-color: #f7f7f7;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+        &.selected::before {
+            background-color: #2c6fbc;
+        }
+    }
+}

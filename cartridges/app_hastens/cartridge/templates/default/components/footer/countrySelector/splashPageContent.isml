@@ -1,0 +1,81 @@
+<div class="country-selector country-selector-js accordion" data-url="${URLUtils.url('Page-SetLocale')}" data-error-url="${URLUtils.url('Home-ErrorNotFound')}" tabindex="0">
+    <isloop items="${pdict.continents}" var="continent">
+        <isset name="continentCountries" value="${continent.countries}" scope="page"/>
+        <isif condition="${continentCountries.length > 0}">
+
+            <iscomment> desktop header </iscomment>
+            <isif condition="${continent.id === 'europe'}">
+            <div class="row d-none d-md-flex">
+                <div class="col-12 col-md-8">
+            </isif>
+
+            <isif condition="${continent.id === 'asia'}">
+                <div class="col-12 col-md-4">
+                    <div class="row">
+                        <div class="col-6 col-md-12">
+            </isif>
+
+            <isif condition="${continent.id === 'america'}">
+                <div class="col-6 col-md-12">
+            </isif>
+
+            <isif condition="${continent.id === 'other'}">
+                <div class="col-6 col-md-12">
+            </isif>
+
+            <p class="continent d-none d-md-block">${continent.displayName}</p>
+
+                <isif condition="${continent.id === 'europe'}">
+                    <div class="europe-cols">
+                </isif>
+
+                            <div id="${continent.id}-locale-list" class="continent-locale-list collapse">
+                                <isinclude template="components/footer/countrySelector/continentLocales" />
+                            </div>
+
+                <isif condition="${continent.id === 'europe'}">
+                    </div>
+                </div>
+                </isif>
+
+                <isif condition="${continent.id === 'asia'}">
+                    </div>
+                </isif>
+
+                <isif condition="${continent.id === 'america'}">
+                    </div>
+                </isif>
+
+                <isif condition="${continent.id === 'other'}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </isif>
+        </isif>
+    </isloop>
+</div>
+
+<div class="country-selector country-selector-js accordion d-md-none" data-url="${URLUtils.url('Page-SetLocale')}" data-error-url="${URLUtils.url('Home-ErrorNotFound')}" tabindex="0">
+    <isloop items="${pdict.continents}" var="continent">
+        <isset name="continentCountries" value="${continent.countries}" scope="page"/>
+        <isif condition="${continentCountries.length > 0}">
+            <iscomment> mobile header </iscomment>
+            <div class="d-md-none">
+                <button class="title btn text-left btn-block collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="${'#'+continent.id}"
+                    aria-controls="${continent.id}"
+                    aria-expanded="false"
+                >
+                    <h2 class="title d-inline-block continent">${continent.displayName}</h2>
+                    <i class="fa fa-plus d-inline-block"></i>
+                </button>
+            </div>
+            <div id="${continent.id}" class="continent-locale-list collapse">
+                <isinclude template="components/footer/countrySelector/continentLocales" />
+            </div>
+        </isif>
+    </isloop>
+</div>

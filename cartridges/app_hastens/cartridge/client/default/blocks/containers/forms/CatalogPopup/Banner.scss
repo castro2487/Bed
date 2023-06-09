@@ -1,0 +1,23 @@
+.has-catalog-popup__banner {
+    max-width: 100%;
+    width: 480px;
+    text-align: center;
+    background-color: #f0f0f0;
+    flex: 1;
+    img {
+        width: 100%;
+    }
+    h2 {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 0.05em;
+    }
+    p {
+        margin-bottom: 30px;
+    }
+    .text-wrapper {
+        padding: 30px;
+    }
+}

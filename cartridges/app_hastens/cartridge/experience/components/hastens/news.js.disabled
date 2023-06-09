@@ -1,0 +1,26 @@
+'use strict';
+
+var RenderHelper = require('~/cartridge/experience/utilities/RenderHelper.js');
+var Resource = require('dw/web/Resource');
+
+/**
+ * @param {dw.experience.ComponentScriptContext} context
+ * @returns {string}
+ */
+module.exports.render = function (context) {
+
+    const WordpressPWA = require('~/cartridge/scripts/backend/WordpressPWA');
+    const newsData = WordpressPWA.newsfeed();
+
+    if (newsData.status !== 'OK') {
+        // @todo Handle error somehow
+    }
+
+    return RenderHelper.renderStandardComponent('News', {
+        text: {
+            posted: Resource.msg('news.posted', 'hastens', null),
+        },
+        items: newsData.body
+    });
+
+};

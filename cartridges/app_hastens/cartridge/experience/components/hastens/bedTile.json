@@ -1,0 +1,159 @@
+{
+    "name": "Bed Tile",
+    "description": "",
+    "group": "hastens",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "componentId",
+                    "name": "Block id",
+                    "description": "Block id should contain no spaces, use '-' to concat two words",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "bed",
+                    "name": "Bed",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "2000T",
+                                    "value": "2000t"
+                                },
+                                {
+                                    "name": "Adjustable",
+                                    "value": "adjustable"
+                                },
+                                {
+                                    "name": "Appaloosa",
+                                    "value": "appaloosa"
+                                },
+                                {
+                                    "name": "Eala",
+                                    "value": "eala"
+                                },
+                                {
+                                    "name": "Excel",
+                                    "value": "excel"
+                                },
+                                {
+                                    "name": "Grand Vividus",
+                                    "value": "grandVividus"
+                                },
+                                {
+                                    "name": "Herlewing",
+                                    "value": "herlewing"
+                                },
+                                {
+                                    "name": "Maranga",
+                                    "value": "maranga"
+                                },
+                                {
+                                    "name": "Marquis",
+                                    "value": "marquis"
+                                },
+                                {
+                                    "name": "Marwari",
+                                    "value": "marwari"
+                                },
+                                {
+                                    "name": "Superia",
+                                    "value": "superia"
+                                },
+                                {
+                                    "name": "Vividus",
+                                    "value": "vividus"
+                                }
+                            ]
+                        }
+                    },
+                    "required": true
+                },
+                {
+                    "id": "subheading",
+                    "name": "Bed subheading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "subheading2",
+                    "name": "Bed subheading 2",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "description1",
+                    "name": "Description 1 (Bed introduction)",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "description2",
+                    "name": "Description 2 (Below introduction)",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "bedWeight",
+                    "name": "Bed weight",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "bedHeight",
+                    "name": "Bed height",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "bedLayers",
+                    "name": "Number of layers",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "description3",
+                    "name": "Description 3 (Below details)",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "bedImage",
+                    "name": "Bed image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id": "region1",
+            "name": "Bed Colors",
+            "max_components": 1,
+            "component_type_exclusions": []
+        },
+        {
+            "id": "region2",
+            "name": "Information Table",
+            "max_components": 1,
+            "component_type_exclusions": []
+        }
+    ]
+}

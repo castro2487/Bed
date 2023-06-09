@@ -1,0 +1,197 @@
+{
+    "name": "Information Table (Use with Bed Tile)",
+    "description": "",
+    "group": "hastens",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "name": "",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "infoTableType",
+                    "name": "Type",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableFirmness",
+                    "name": "Firmness",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableWeight",
+                    "name": "Weight",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableHeight",
+                    "name": "Height",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableFabricBolster",
+                    "name": "Fabric bolster",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableFabricStretch",
+                    "name": "Fabric stretch",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTablePiping",
+                    "name": "Piping",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableStitching",
+                    "name": "Stitching",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableLayers",
+                    "name": "Layers",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableFilling",
+                    "name": "Filling",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableSpringsNumber",
+                    "name": "Number of steel springs",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableSpringsSystem",
+                    "name": "Spring system",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableSpringsCorner",
+                    "name": "Reinforced corner springs",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableSpringsEdge",
+                    "name": "Reinforced edge springs",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTablePadding",
+                    "name": "Corner padding",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableSpringsSystem2",
+                    "name": "Spring system 2",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableSpringsEdge2",
+                    "name": "Reinforced edge springs 2",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTablePadding2",
+                    "name": "Corner padding 2",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableSpringsSystem3",
+                    "name": "Spring system 3",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableFrame",
+                    "name": "Frame in pine",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableUnderlining",
+                    "name": "Underlining",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableCornerFitting",
+                    "name": "Corner Fitting",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableEngravedPlaque",
+                    "name": "Engraved plaque",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableEmbroideredName",
+                    "name": "Embroidered name",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableOekoCertificate",
+                    "name": "Oeko-Tex 100 certificate",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "infoTableLatexFree",
+                    "name": "Latex free",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

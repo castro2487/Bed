@@ -1,0 +1,17 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<isdecorate template="common/layout/pdStorePage">
+    <div class="store-page show-component-spacing" id="cancel-appointment">
+        <div class="container text-align-center my-5">
+                <h1 class="image-headline-2">
+                    ${Resource.msg('privateappointment.cancel.heading', 'hastens', null)}</h1>
+                <p class="article-2">${Resource.msg('privateappointment.cancel.text', 'hastens', null)}</p>
+                <form action="https://api.hastens.com/en/private-session/cancel-web" method="post">
+                    <input type="hidden" name="bookingID" value="${pdict.bookingID}"/>
+                    <button class="btn btn-primary">
+                        ${Resource.msg('privateappointment.cancel.button', 'hastens', null)}
+                    </button>
+                </form>
+        </div>
+    </div>
+</isdecorate>

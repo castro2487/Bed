@@ -1,0 +1,19 @@
+{
+  "hostname": "", // dev00-eu01-cottontraders.demandware.net
+  "username": "", // j.doe
+  "password": "", // sandbox password
+  "version": "", // j_doe
+  "root": "cartridges", //!impotrant -> 'cartridges'
+  "cartridge": [
+    "app_cotton",
+    "app_arch",
+    "app_edits",
+    "app_preview",
+    "app_storefront_core",
+    "app_storefront_core_ext",
+    "app_storefront_controllers",
+    "modules",
+    "bc_integrationframework",
+    "bc_importexport"
+  ]
+}

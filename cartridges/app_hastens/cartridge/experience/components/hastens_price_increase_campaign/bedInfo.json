@@ -1,0 +1,133 @@
+{
+    "name": "Price Increase Campaign Bed Info",
+    "description": "",
+    "group": "hastens_price_increase_campaign",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "description",
+                    "name": "Description 1",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "description2",
+                    "name": "Description 2",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "priceBefore",
+                    "name": "Price before",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "priceBeforeDescription",
+                    "name": "Price before description",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "priceAfter",
+                    "name": "Price after",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "priceAfterDescription",
+                    "name": "Price after description",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "moneySaved",
+                    "name": "Money saved",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "linkText",
+                    "name": "Link text",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "linkUrl",
+                    "name": "Link url",
+                    "description": "",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "image",
+                    "name": "Image",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "2000T",
+                                    "value": "2000t"
+                                },
+                                {
+                                    "name": "Maranga",
+                                    "value": "maranga"
+                                },
+                                {
+                                    "name": "Superia",
+                                    "value": "superia"
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "imagePosition",
+                    "name": "Image position",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Left",
+                                    "value": "left"
+                                },
+                                {
+                                    "name": "Right",
+                                    "value": "right"
+                                }
+                            ],
+                            "default_value": "right"
+                        }
+                    },
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

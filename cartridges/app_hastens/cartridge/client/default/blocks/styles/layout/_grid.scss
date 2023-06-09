@@ -1,0 +1,90 @@
+.experience-hastens-grid {
+    display: flex;
+    flex-direction: column;
+    .has-grid-heading-container {
+        width: 100%;
+        .has-heading {
+            max-width: 960px;
+            margin: 0 auto 35px;
+            text-align: center;
+        }
+    }
+}
+
+.experience-columns--two,
+.experience-columns--three {
+    flex-grow: 1;
+    @include media-breakpoint-up(lg) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &.adjust-width--990 {
+        @include media-breakpoint-up(lg) {
+            max-width: 990px;
+            width: 100%;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+    }
+    > .experience-component > section {
+        height: 100%;
+    }
+}
+
+.show-component-spacing .experience-columns--two:not(.grid-gap--hide),
+.show-component-spacing .experience-columns--three:not(.grid-gap--hide),
+.hide-component-spacing .experience-columns--two.grid-gap--show,
+.hide-component-spacing .experience-columns--three.grid-gap--show {
+    margin: -5px;
+    @media (max-width: $max-block-width) {
+        margin: -5px 5px;
+    }
+    &.no-outer-vertical-padding-mobile {
+        @media (max-width: $max-block-width) {
+            margin: -5px;
+        }
+    }
+    > .experience-component {
+        padding: 5px;
+    }
+}
+
+.experience-columns--two {
+    > .experience-component {
+        @include media-breakpoint-up(lg) {
+            width: 50%;
+        }
+        &.colspan-2 { // Child controlled colspan
+            @include media-breakpoint-up(lg) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.experience-columns--three {
+    > .experience-component {
+        @include media-breakpoint-up(lg) {
+            width: 33.33333%;
+        }
+        &.colspan-2 { // Child controlled colspan
+            @include media-breakpoint-up(lg) {
+                width: 66.6666%;
+            }
+        }
+    }
+}
+
+.experience-component.experience-hastens-image2 {
+    @include media-breakpoint-down(md) {
+        width: 50%;
+        padding-bottom: 0 !important;
+        display: inline-block;
+        &:nth-of-type(2n) {
+            padding-right: 5px;
+        }
+        &:nth-of-type(2n+1) {
+            padding-left: 5px;
+        }
+    }
+}

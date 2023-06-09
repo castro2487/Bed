@@ -1,0 +1,148 @@
+{
+    "name": "Request A Catalog",
+    "description": "",
+    "group": "hastens_forms",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "hideBanner",
+                    "name": "Hide banner",
+                    "description": "Show form without using banner as trigger",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "componentId",
+                    "name": "Block Id",
+                    "description": "Fill this with desired id that will be referenced if on scroll to component behavior is required.",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "bannerHeading",
+                    "name": "Banner heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "bannerBody",
+                    "name": "Banner body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "bannerButtonText",
+                    "name": "Banner button text",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "formHeading",
+                    "name": "Form heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "formBody",
+                    "name": "Form body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "confirmationHeading",
+                    "name": "Confirmation heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "confirmationBody",
+                    "name": "Confirmation body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "bannerTheme",
+                    "name": "Banner theme",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.theme"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "bannerButtonColor",
+                    "name": "Banner button color",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.buttonColor"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "image",
+                    "name": "Desktop image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "tabletImage",
+                    "name": "Tablet image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "mobileImage",
+                    "name": "Mobile image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "imageAlt",
+                    "name": "Image description",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "topSpacing",
+                    "name": "Top spacing",
+                    "description": "Override page level setting",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Show top spacing",
+                                    "value": "show-top-spacing"
+                                },
+                                {
+                                    "name": "Hide top spacing",
+                                    "value": "hide-top-spacing"
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                }
+            ]
+        }
+
+    ],
+    "region_definitions": []
+}

@@ -1,0 +1,141 @@
+@import "../variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "account";
+@import "../utilities/deleteCardButton";
+
+.container-profile-cards {
+    margin-top: 1.875rem;
+    margin-bottom: 3.75rem;
+
+    @include media-breakpoint-up(md) {
+        margin-top: 1.25rem;
+        margin-bottom: 4.375rem;
+    }
+
+    .card-body-positioning {
+        margin-top: 1.875rem;
+        padding-bottom: 1.875rem;
+        position: relative;
+
+        @include media-breakpoint-up(md) {
+            padding-bottom: 1.625rem;
+        }
+
+        .phone-number {
+            margin-top: 1.875rem;
+        }
+    }
+
+    .remove-btn {
+        width: 3rem;
+        padding: 0;
+        text-transform: capitalize;
+    }
+
+    .comtainer-address-title {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .default-address-label {
+        font-size: 0.6875rem;
+        line-height: 0.8125rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $black;
+        margin-top: 0.625rem;
+    }
+
+    .card-address-header h2,
+    h3 {
+        text-transform: capitalize;
+        font-family: 'Montserrat SemiBold';
+        @extend .headline-2
+    }
+
+    .container-address-card-cta {
+        display: flex;
+        align-items: center;
+        margin-top: 1.25rem;
+
+        .red-link {
+            color: $red;
+            font-family: 'Montserrat SemiBold';
+
+            &.normal {
+                background-color: transparent;
+                border: 0;
+                width: auto;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .card-make-default-link {
+            margin-top: 0;
+            margin-left: 1.25rem;
+        }
+    }
+
+    .container-edit-address {
+        margin-top: 1.875rem;
+    }
+
+    .form-group.required .form-label::after {
+        content: "*";
+        position: absolute;
+    }
+}
+
+// modal
+#deleteAddressModal {
+    .modal-dialog {
+        .modal-header {
+            border-bottom: 0;
+            padding: 1.875rem 1.25rem 4px;
+
+            .close {
+                transform: scale(0.65);
+                padding: 0;
+                position: absolute;
+                right: 1.625rem;
+                top: 2.1875rem;
+                opacity: 1;
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+        }
+
+        .modal-body {
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+
+            &.delete-confirmation-body .confirm-message {
+                color: $grey5;
+            }
+        }
+
+        .product-to-remove {
+            margin-top: 1.875rem;
+        }
+
+        .modal-footer {
+            border-top: 0;
+            display: flex;
+            justify-content: center;
+            padding-top: 14px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+}

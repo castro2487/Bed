@@ -1,0 +1,7 @@
+<div class="designer">
+    <isif condition="${product.designerName}">
+        <span>${Resource.msgf('product.designer.label', 'productTile', null, product.designerName.toUpperCase())}</span>
+    <iselse>
+        <span>&nbsp;</span>
+    </isif>
+</div>

@@ -1,0 +1,170 @@
+{
+    "name": "Video",
+    "description": "",
+    "group": "hastens_media",
+    "attribute_definition_groups": [
+        {
+            "id": "VideoBlock",
+            "attribute_definitions": [
+                {
+                    "id": "video",
+                    "name": "Video url",
+                    "description": "",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "body",
+                    "name": "Body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "textPosition",
+                    "name": "Text position",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Left",
+                                    "value": "left"
+                                },
+                                {
+                                    "name": "Bottom",
+                                    "value": "bottom"
+                                }
+                            ],
+                            "default_value": "left"
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "ratio",
+                    "name": "Ratio",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "16-9",
+                                    "value": "16-9"
+                                },
+                                {
+                                    "name": "3-2",
+                                    "value": "3-2"
+                                }
+                            ],
+                            "default_value": "16-9"
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "theme",
+                    "name": "Theme",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.theme"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "dialogTheme",
+                    "name": "Dialog theme",
+                    "description": "Background color of the overlay when video is playing",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Dark",
+                                    "value": "dark"
+                                },
+                                {
+                                    "name": "Light",
+                                    "value": "light"
+                                }
+                            ],
+                            "default_value": "dark"
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "image",
+                    "name": "Desktop image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "tabletImage",
+                    "name": "Tablet image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "mobileImage",
+                    "name": "Mobile image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "imageAlt",
+                    "name": "Image description",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "topSpacing",
+                    "name": "Top spacing",
+                    "description": "Override page level setting",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Show top spacing",
+                                    "value": "show-top-spacing"
+                                },
+                                {
+                                    "name": "Hide top spacing",
+                                    "value": "hide-top-spacing"
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "componentId",
+                    "name": "Block id",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

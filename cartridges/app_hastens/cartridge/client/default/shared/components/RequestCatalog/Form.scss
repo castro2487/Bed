@@ -1,0 +1,44 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-request-catalog-form {
+    padding: 50px 15px 65px;
+    @include media-breakpoint-up(md) {
+        padding: 70px 15px 85px;
+    }
+    .heading {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    .intro {
+        text-align: center;
+        font-size: 16px;
+        margin: 0 auto 30px;
+        max-width: 870px;
+        @include media-breakpoint-up(md) {
+            font-size: 17px;
+        }
+    }
+    .heading + .grid-wrapper {
+        margin-top: 30px;
+    }
+    .required-field-note {
+        color: #6c6c6c;
+        text-align: right;
+        margin-top: 15px;
+    }
+    .form-data-consent {
+        color: #6c6c6c;
+        margin-bottom: 10px;
+    }
+    .g-recaptcha > div {
+        margin: 22px auto 0;
+    }
+    .btn-container {
+        text-align: center;
+        margin-top: 24px;
+        button + button {
+            margin-left: 10px;
+        }
+    }
+}

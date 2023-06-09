@@ -1,0 +1,30 @@
+<div class="site-search closed">
+    <form role="search"
+          action="${URLUtils.url('Search-Show')}"
+          method="get"
+          name="simpleSearch">
+        <fieldset>
+            <legend class="d-none">${Resource.msg('label.header.searchwatermark', 'common', null)}</legend>
+            <input class="form-control search-field"
+                type="text"
+                name="q"
+                value=""
+                placeholder="${Resource.msg('label.header.searchwatermark', 'common', null)}"
+                role="combobox"
+                aria-describedby="${pdict.searchPrefix}-search-assistive-text"
+                aria-haspopup="listbox"
+                aria-owns="${pdict.searchPrefix}-search-results"
+                aria-expanded="false"
+                aria-autocomplete="list"
+                aria-controls="${pdict.searchPrefix}-search-results"
+                aria-label="${Resource.msg('simplesearch.searchtext', 'common', null)}"
+                autocomplete="off" />
+            <button type="button" name="close-button" class="fa fa-times close-button" aria-label="${Resource.msg('link.header.menu.close', 'common', null)}"></button>
+            <div class="suggestions-wrapper" id="${pdict.searchPrefix}-search-results" data-url="${URLUtils.url('SearchServices-GetSuggestions', 'q')}"></div>
+            <input type="hidden" value="${pdict.locale}" name="lang" />
+            <span id="${pdict.searchPrefix}-search-assistive-text" class="sr-only">
+                ${Resource.msg('label.header.search.assistive_msg', 'common', null)}
+            </span>
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,65 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-winter-campaign-book-bed-test {
+    .banner {
+        position: relative;
+        .content-wrapper {
+            max-width: 990px;
+            margin: 0 auto;
+            padding: 0 15px 45px;
+            text-align: center;
+            position: relative;
+            @include media-breakpoint-up(lg) {
+                padding: 100px 15px;
+                text-align: left;
+            }
+            .heading {
+                white-space: pre-line;
+                @include media-breakpoint-up(lg) {
+                    margin-bottom: 4px;
+                }
+                span {
+                    font-weight: 400;
+                    text-transform: none;
+                }
+            }
+            .link,
+            .body {
+                margin-top: 20px;
+            }
+            .link,
+            .body,
+            .heading {
+                @include media-breakpoint-up(lg) {
+                    margin-left: 60%;
+                }
+            }
+        }
+        .image {
+            background-image: url("https://static.hastens.com/768/blocks/campaigns/wake-up/Hastens_2000T_Blue_Check.jpg");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-bottom: 65%;
+            @include media-breakpoint-up(md) {
+                background-image: url("https://static.hastens.com/1200/blocks/campaigns/wake-up/Hastens_2000T_Blue_Check.jpg");
+            }
+            @include media-breakpoint-up(lg) {
+                background-image: url("https://static.hastens.com/750/blocks/campaigns/wake-up/Hastens_2000T_Blue_Check.jpg");
+                background-size: auto 110%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 55%;
+                padding-bottom: 0;
+            }
+        }
+    }
+    .expandable-view {
+        background-color: #000431;
+        color: #fff;
+        // Add a border to fix problem with block growing upwards when expanded in Chrome/Firefox
+        border-top: 1px solid #000;
+    }
+}

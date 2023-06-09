@@ -1,0 +1,21 @@
+<isset name="Site" value="${require('dw/system/Site')}" scope="page" />
+<isset name="listOfCountryWithPurchaseOption" value="${Site.getCurrent().getCustomPreferenceValue('listOfCountryWithPurchaseOption')}" scope="page" />
+
+<isset name="Locale" value="${require('dw/util/Locale')}" scope="page" />
+<isset name="currentCountry" value="${Locale.getLocale(request.getLocale()).country}" scope="page" />
+
+<isset name="purchaseDisabled" value="${listOfCountryWithPurchaseOption.indexOf(currentCountry) < 0}" scope="page" />
+
+<isif condition="${pdict.name === null}">
+    <iscomment> Adapt margin when Cart icon is removed </iscomment>
+    <div class="user hidden-md-down"  <isif condition="${purchaseDisabled}">style="margin: 0 26px !important;"</isif>   >        <a href="${URLUtils.https('Login-Show')}" rel="nofollow" aria-label="sign-in">
+            <i class="fa fa-sign-in" title="sign-in" aria-hidden="true"></i>
+        </a>
+    </div>
+<iselse/>
+    <iscomment> Adapt margin when Cart icon is removed </iscomment>
+    <div class="user hidden-md-down"  <isif condition="${purchaseDisabled}">style="margin: 0 26px !important;"</isif>   >        <a href="${URLUtils.https('Account-Show')}" rel="nofollow">
+            <i class="fa fa-sign-in" title="My account" aria-hidden="true"></i>
+        </a>
+    </div>
+</isif>

@@ -1,0 +1,60 @@
+$font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$max-block-width: 1440px;
+$header-width: 1070px;
+
+$brand-primary: #000030;
+$brand-secondary: #0072e3;
+$brand-secondary-hover: #0054a8;
+
+$theme-primary-1: (
+    "background-color": $brand-primary,
+    "color": #fff,
+    "link-color": #0078e0,
+);
+$theme-black-1: (
+    "background-color": #000,
+    "color": #fff,
+    "link-color": #0078cc,
+);
+$theme-white-1: (
+    "background-color": #fff,
+    "color": #000,
+    "link-color": #0071c1,
+);
+$theme-purple-1: (
+    "background-color": #281c24,
+    "color": #fff,
+    "link-color": #008aeb,
+);
+$theme-grey-1: (
+    "background-color": #505050,
+    "color": #fff,
+    "link-color": #7fcaff,
+);
+$theme-grey-2: (
+    "background-color": #d9d9d9,
+    "color": #000,
+    "link-color": #0071c1,
+);
+$theme-grey-3: (
+    "background-color": #f4f4f6,
+    "color": #505050,
+    "link-color": #0071c1,
+);
+$theme-grey-4: (
+    "background-color": #909090,
+    "color": #000,
+    "link-color": #0071c1,
+);
+
+$themes: (
+    primary-1: $theme-primary-1,
+    black-1: $theme-black-1,
+    white-1: $theme-white-1,
+    purple-1: $theme-purple-1,
+    grey-1: $theme-grey-1,
+    grey-2: $theme-grey-2,
+    grey-3: $theme-grey-3,
+    grey-4: $theme-grey-4,
+);

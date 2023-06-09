@@ -1,0 +1,18 @@
+<div class="primary-images col-12 col-sm-6 col-lg-7">
+    <div class="container-pdp-images">
+        <isset name="firstImage" value="${product.images['large'][0]}" scope="page" />
+        <img src="${firstImage.url}" class="img-fluid img-expanded"
+            alt="${firstImage.alt} image number ${firstImage.index}" title="${firstImage.title}" itemprop="image" />
+
+        <div class="row gallery">
+            <isloop items="${product.images['large']}" var="image" status="loopStatus">
+                <div class="column">
+                    <img src="${image.resizedURL}"
+                        class="d-block img-fluid img-small ${image.index === '0' ? 'selected' : ''}"
+                        alt="${image.alt} image number ${image.index}" title="${image.title}"
+                        data-large-src="${image.url}" itemprop="image" />
+                </div>
+            </isloop>
+        </div>
+    </div>
+</div>

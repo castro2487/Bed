@@ -1,0 +1,35 @@
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <p>The orders below failed to be exported, please contact support to handle them manually.</p>
+    <br />
+    <table>
+        <tr>
+            <th>NUMBER</th>
+            <th>CREATION DATE</th> 
+        </tr>
+        <isloop items="${pdict.orders}" var="order">
+            <tr>
+                <td>${order.orderNo}</td>
+                <td>${order.creationDate}</td>
+            </tr>
+        </isloop>
+    </table>
+</body>

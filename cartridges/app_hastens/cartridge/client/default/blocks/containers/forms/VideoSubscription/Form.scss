@@ -1,0 +1,21 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-video-subscription-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 55px;
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+    }
+    .email-input {
+        max-width: 350px;
+    }
+    button {
+        margin: 15px 0 0;
+        @include media-breakpoint-up(md) {
+            margin: 0 0 0 15px;
+        }
+    }
+}

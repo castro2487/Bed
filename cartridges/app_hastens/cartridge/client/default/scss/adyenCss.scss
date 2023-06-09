@@ -1,0 +1,36 @@
+@import "variables";
+
+.paymentMethod {
+  list-style-type: none;
+  margin: 0.5em 0 0.5em 0;
+}
+
+.paymentMethod_img {
+  margin: 0 0.25em 0 0.25em;
+}
+
+.additionalFields {
+  display: inline-block;
+  width: 100%;
+}
+
+.adyen-checkout__input-wrapper .adyen-checkout__dropdown__list {
+  z-index: 10;
+}
+
+#paymentMethodsUl {
+  width: 80%;
+  padding-inline-start: 0;
+  margin: auto;
+}
+
+.adyen-checkout__label__text,
+.adyen-checkout__input, 
+.payment-form .credit-card-content .adyen-checkout__input-wrapper .adyen-checkout__input {
+  font-family: $font-family-base;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: $black;
+}

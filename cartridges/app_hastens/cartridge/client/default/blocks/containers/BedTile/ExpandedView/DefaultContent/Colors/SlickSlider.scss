@@ -1,0 +1,45 @@
+@import "~slick-carousel/slick/slick";
+
+.has-slick-slider {
+    .slick-track {
+        margin-left: 0;
+    }
+    .slick-list {
+        font-size: 0;
+    }
+    .slick-prev,
+    .slick-next {
+        position: absolute;
+        display: block;
+        background-color: transparent;
+        color: #fff;
+        top: 50%;
+        transform: translate(0, -50%);
+        padding: 0;
+        border: none;
+        z-index: 1;
+        appearance: none;
+        font-size: 12px;
+        &.slick-disabled {
+            opacity: 0.5;
+            cursor: default;
+            pointer-events: none;
+        }
+        i {
+            padding: 6px 0;
+            text-shadow: 0 0 5px #000;
+        }
+    }
+    .slick-prev {
+        left: 15px;
+        i {
+            transform: rotate(90deg);
+        }
+    }
+    .slick-next {
+        right: 15px;
+        i {
+            transform: rotate(270deg);
+        }
+    }
+}

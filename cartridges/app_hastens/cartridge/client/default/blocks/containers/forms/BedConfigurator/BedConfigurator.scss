@@ -1,0 +1,53 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-bed-configurator {
+    .bg-mobile {
+        background-size: 100% auto;
+    }
+    .block-wrapper {
+        padding: 90px 20px;
+        position: relative;
+        @include media-breakpoint-down(sm) {
+            padding: 40px 20px 43%;
+            text-align: center;
+        }
+    }
+    .content-wrapper {
+        margin: 0 auto;
+        max-width: 960px;
+        header {
+            .heading {
+                margin-bottom: 0.15em;
+                white-space: pre-line;
+                @include media-breakpoint-up(md) {
+                    max-width: 600px;
+                }
+                @include media-breakpoint-up(lg) {
+                    max-width: 680px;
+                }
+            }
+            p {
+                text-transform: uppercase;
+                font-weight: 600;
+                margin-bottom: 25px;
+                font-size: 14px;
+                letter-spacing: 0.05em;
+                @include media-breakpoint-up(md) {
+                    width: 60%;
+                }
+                @include media-breakpoint-up(md) {
+                    font-size: 16px;
+                }
+            }
+        }
+        .body {
+            margin: 15px 0;
+            @include media-breakpoint-up(md) {
+                width: 50%;
+            }
+        }
+        .buttons {
+            margin-top: 35px;
+        }
+    }
+}

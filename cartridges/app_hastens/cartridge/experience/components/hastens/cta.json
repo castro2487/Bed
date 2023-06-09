@@ -1,0 +1,286 @@
+{
+    "name": "Large CTA",
+    "description": "",
+    "group": "hastens_cta",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "headingSize",
+                    "name": "Heading size",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Small",
+                                    "value": "md"
+                                },
+                                {
+                                    "name": "Medium",
+                                    "value": "lg"
+                                },
+                                {
+                                    "name": "Large",
+                                    "value": "xl"
+                                }
+                            ],
+                            "default_value": "xl"
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "afterHeading",
+                    "name": "After heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "body",
+                    "name": "Body text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "linkText",
+                    "name": "Link text",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "linkUrl",
+                    "name": "Link url",
+                    "description": "",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "anchor",
+                    "name": "Anchor",
+                    "description": "The anchor is used to scroll to block on same page or another page when different 'Link url' is provided. You can copy block id by hovering over the 'i' tag on the required block. Block id is easier copied when page is in preview.",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "horizontalAlignment",
+                    "name": "Horizontal alignment",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Left",
+                                    "value": "left"
+                                },
+                                {
+                                    "name": "Center",
+                                    "value": "center"
+                                },
+                                {
+                                    "name": "Right",
+                                    "value": "right"
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "verticalAlignment",
+                    "name": "Vertical alignment",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Top",
+                                    "value": "top"
+                                },
+                                {
+                                    "name": "Center",
+                                    "value": "center"
+                                },
+                                {
+                                    "name": "Bottom",
+                                    "value": "bottom"
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "verticalAlignmentMobile",
+                    "name": "Vertical alignment mobile",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Top",
+                                    "value": "top"
+                                },
+                                {
+                                    "name": "Center",
+                                    "value": "center"
+                                },
+                                {
+                                    "name": "Bottom",
+                                    "value": "bottom"
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "pushButtonToBottomOnMobile",
+                    "name": "Push button to bottom on mobile",
+                    "description": "",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "pushButtonToBottom",
+                    "name": "Push button to bottom on bigger screen",
+                    "description": "",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "textShadow",
+                    "name": "Add text shadow",
+                    "description": "",
+                    "type": "boolean",
+                    "required": false,
+                    "default_value": false
+                },
+                {
+                    "id": "footer",
+                    "name": "Footer",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "theme",
+                    "name": "Theme",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.theme"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "buttonColor",
+                    "name": "Button color",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.buttonColor"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "buttonAppearance",
+                    "name": "Button type",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Standard",
+                                    "value": "standard"
+                                },
+                                {
+                                    "name": "Simple",
+                                    "value": "simple"
+                                },
+                                {
+                                    "name": "Apple app store",
+                                    "value": "appleAppStore"
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "image",
+                    "name": "Desktop image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "tabletImage",
+                    "name": "Tablet image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "mobileImage",
+                    "name": "Mobile image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "imageAlt",
+                    "name": "Image description",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "topSpacing",
+                    "name": "Top spacing",
+                    "description": "Override page level setting",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Show top spacing",
+                                    "value": "show-top-spacing"
+                                },
+                                {
+                                    "name": "Hide top spacing",
+                                    "value": "hide-top-spacing"
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

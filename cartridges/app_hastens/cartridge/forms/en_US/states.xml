@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+	<field formid="stateCode" label="label.input.state" type="string" mandatory="true" binding="stateCode" missing-error="address.state.missing" value-error="address.field.invalid" parse-error="error.message.required">
+		<options>
+			<option optionid="" label="resource.select" value="" />
+			<option optionid="AL" value="AL" label="state.us.AL" />
+			<option optionid="AK" value="AK" label="state.us.AK" />
+			<option optionid="AZ" value="AZ" label="state.us.AZ" />
+			<option optionid="AR" value="AR" label="state.us.AR" />
+			<option optionid="CA" value="CA" label="state.us.CA" />
+			<option optionid="CO" value="CO" label="state.us.CO" />
+			<option optionid="CT" value="CT" label="state.us.CT" />
+			<option optionid="DE" value="DE" label="state.us.DE" />
+			<option optionid="DC" value="DC" label="state.us.DC" />
+			<option optionid="FL" value="FL" label="state.us.FL" />
+			<option optionid="GA" value="GA" label="state.us.GA" />
+			<option optionid="HI" value="HI" label="state.us.HI" />
+			<option optionid="ID" value="ID" label="state.us.ID" />
+			<option optionid="IL" value="IL" label="state.us.IL" />
+			<option optionid="IN" value="IN" label="state.us.IN" />
+			<option optionid="IA" value="IA" label="state.us.IA" />
+			<option optionid="KS" value="KS" label="state.us.KS" />
+			<option optionid="KY" value="KY" label="state.us.KY" />
+			<option optionid="LA" value="LA" label="state.us.LA" />
+			<option optionid="ME" value="ME" label="state.us.ME" />
+			<option optionid="MD" value="MD" label="state.us.MD" />
+			<option optionid="MA" value="MA" label="state.us.MA" />
+			<option optionid="MI" value="MI" label="state.us.MI" />
+			<option optionid="MN" value="MN" label="state.us.MN" />
+			<option optionid="MS" value="MS" label="state.us.MS" />
+			<option optionid="MO" value="MO" label="state.us.MO" />
+			<option optionid="MT" value="MT" label="state.us.MT" />
+			<option optionid="NE" value="NE" label="state.us.NE" />
+			<option optionid="NV" value="NV" label="state.us.NV" />
+			<option optionid="NH" value="NH" label="state.us.NH" />
+			<option optionid="NJ" value="NJ" label="state.us.NJ" />
+			<option optionid="NM" value="NM" label="state.us.NM" />
+			<option optionid="NY" value="NY" label="state.us.NY" />
+			<option optionid="NC" value="NC" label="state.us.NC" />
+			<option optionid="ND" value="ND" label="state.us.ND" />
+			<option optionid="OH" value="OH" label="state.us.OH" />
+			<option optionid="OK" value="OK" label="state.us.OK" />
+			<option optionid="OR" value="OR" label="state.us.OR" />
+			<option optionid="PA" value="PA" label="state.us.PA" />
+			<option optionid="PR" value="PR" label="state.us.PR" />
+			<option optionid="RI" value="RI" label="state.us.RI" />
+			<option optionid="SC" value="SC" label="state.us.SC" />
+			<option optionid="SD" value="SD" label="state.us.SD" />
+			<option optionid="TN" value="TN" label="state.us.TN" />
+			<option optionid="TX" value="TX" label="state.us.TX" />
+			<option optionid="UT" value="UT" label="state.us.UT" />
+			<option optionid="VT" value="VT" label="state.us.VT" />
+			<option optionid="VA" value="VA" label="state.us.VA" />
+			<option optionid="VI" value="VI" label="state.us.VI" />
+			<option optionid="WA" value="WA" label="state.us.WA" />
+			<option optionid="WV" value="WV" label="state.us.WV" />
+			<option optionid="WI" value="WI" label="state.us.WI" />
+			<option optionid="WY" value="WY" label="state.us.WY" />
+		</options>
+	</field>
+</form>

@@ -1,0 +1,96 @@
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 34px;
+    letter-spacing: 0.05em;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 29px;
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+h5 {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 600;
+    &.x-small {
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0.1em;
+    }
+    &.small {
+        font-size: 32px;
+        line-height: 34px;
+        letter-spacing: 0.05em;
+    }
+    &.medium {
+        font-size: 40px;
+        line-height: 42px;
+        letter-spacing: 0.05em;
+    }
+    &.large {
+        font-size: 60px;
+        line-height: 62px;
+        letter-spacing: 0.04em;
+    }
+    &.x-large {
+        font-size: 70px;
+        line-height: 72px;
+        letter-spacing: 0.03em;
+    }
+}
+
+p {
+    font-size: 16px;
+    line-height: 26px;
+    &.x-small {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    &.small {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    &.large {
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 0.03em;
+    }
+}
+
+a {
+    color: #0071c1;
+    text-decoration: none;
+    &:hover,
+    &.active {
+        color: #0054a8;
+    }
+}
+
+// TODO: Remove deprecated #column-breaker
+#column-breaker,
+.column-breaker {
+    background: #f5f5f5;
+    text-transform: uppercase;
+    padding: 2px;
+    text-align: center;
+    border: solid 1px #bdbdbd;
+    font-size: 12px;
+    color: #848484;
+}

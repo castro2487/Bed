@@ -1,0 +1,84 @@
+{
+    "name": "drēmər Beddings",
+    "description": "",
+    "group": "hastens_dremer",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "body",
+                    "name": "Body text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "slideText1",
+                    "name": "Slide text 1",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "slideText2",
+                    "name": "Slide text 2",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "slideText3",
+                    "name": "Slide text 3",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "slideText4",
+                    "name": "Slide text 4",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "slideText5",
+                    "name": "Slide text 5",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "slideText6",
+                    "name": "Slide text 6",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "slideText7",
+                    "name": "Slide text 7",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "slideText8",
+                    "name": "Slide text 8",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

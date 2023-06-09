@@ -1,0 +1,86 @@
+{
+    "name": "Image Text Story 2",
+    "description": "",
+    "group": "hastens_textstories",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "body",
+                    "name": "Body",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.richTextEditor",
+                        "configuration": {
+                            "toolbar": "bold italic"
+                        }
+                    },
+                    "required": true
+                },
+                {
+                    "id": "image",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "imagePlacement",
+                    "name": "Image placement",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Left",
+                                    "value": "left"
+                                },
+                                {
+                                    "name": "Right",
+                                    "value": "right"
+                                }
+                            ],
+                            "default_value": "left"
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "topSpacing",
+                    "name": "Top spacing",
+                    "description": "Override page level setting",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Show top spacing",
+                                    "value": "show-top-spacing"
+                                },
+                                {
+                                    "name": "Hide top spacing",
+                                    "value": "hide-top-spacing"
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

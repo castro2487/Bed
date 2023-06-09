@@ -1,0 +1,11 @@
+<isif condition="${pdict.editMode}">
+    <p class="id-holder">
+        <span class="icon">&#9432;</span>
+        <span class="id pr-1"><b>Block id:</b> ${pdict.blockId}</span>
+    </p>
+</isif>
+<section data-hastens-block="${pdict.block}" id="${pdict.blockId}">
+    <isloop items="${pdict.regions}" var="region">
+        <isprint value="${region.render()}" encoding="off" />
+    </isloop>
+</section>

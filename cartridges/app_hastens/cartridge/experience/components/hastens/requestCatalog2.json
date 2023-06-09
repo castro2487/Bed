@@ -1,0 +1,71 @@
+{
+    "name": "Sleep Better Live Better Request A Catalog",
+    "description": "",
+    "group": "hastens_forms",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "body",
+                    "name": "Body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "buttonText",
+                    "name": "Button text",
+                    "description": "",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "confirmationHeading",
+                    "name": "Confirmation heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "confirmationBody",
+                    "name": "Confirmation body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "topSpacing",
+                    "name": "Top spacing",
+                    "description": "Override page level setting",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Show top spacing",
+                                    "value": "show-top-spacing"
+                                },
+                                {
+                                    "name": "Hide top spacing",
+                                    "value": "hide-top-spacing"
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

@@ -1,0 +1,41 @@
+<div class="js-select-return-items">
+    <div class="actions">
+        <p>Select items and quantity to return. Once selected, click a button below to print your label here or have it emailed to you.</p>
+    </div>
+    <div class="orderdetails">
+        <div class="order-shipments">
+            <iscomment>Shipment Items</iscomment>
+            <div class="order-shipment-table">
+                <div class="line-items">
+                    <isloop items="${shipment.items}" var="lineItem" status="pliloopstate">
+                        <div class="line-item" style="clear:both;" data-itemid="${lineItem.id}" data-orderitemid="${lineItem.orderItemID}">
+                            <div class="line-item-details">
+                                <iscomment>Display product line and product using module</iscomment>
+                                <isinclude template="account/tracking/trackingProductCard" />
+                                <div class="form-group pull-left">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input input-checkbox js-checkbox-return-item" id="${lineItem.orderItemID}" />
+                                        <label for="${lineItem.orderItemID}" class="custom-control-label checkout-checkbox">
+                                            <span>${Resource.msg('order.returnitem','order',null)}</span>
+                                        </label>
+                                    </div>
+                                    <iscomment>Show previously retrieved labels</iscomment>
+                                    <isif condition="${pdict.Labels.hasOwnProperty(lineItem.productID)}">
+                                        <div class="previous-label">Previous Label</div>
+                                        <div class="previous-label-link">
+                                            <isif condition="${pdict.Labels[lineItem.productID].labelType === 'pdf'}">
+                                                <a href="${'data:application/pdf;base64,' + pdict.Labels[lineItem.productID].label}" download="return-label">${pdict.Labels[lineItem.productID].trackNumber}</a>
+                                            <iselse/>
+                                                <a href="${'data:image/' + pdict.Labels[lineItem.productID].label + ';base64,'}" download="return-label">${pdict.Labels[lineItem.productID].trackNumber}</a>
+                                            </isif>
+                                        </div>
+                                    </isif>
+                                </div>
+                            </div>
+                        </div>
+                    </isloop>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

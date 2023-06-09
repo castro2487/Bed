@@ -1,0 +1,66 @@
+<isdecorate template="common/layout/checkout">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/checkout/checkoutLogin.css');
+        assets.addJs('/js/login.js');
+    </isscript>
+
+    <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="back-to-shopping-bag">
+                    <a href="${URLUtils.https('Cart-Show')}"
+                        title="${Resource.msg('link.back.to.cart', 'checkout', null)}">
+                        <span><i class="fa fa-angle-left"></i></span>
+                        <span> ${Resource.msg('link.back.to.cart', 'checkout', null)}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-sm-8">
+                <div class="card guest-card">
+                    <div class="card-header">
+                        <h2 class="card-header-custom headline-5">${Resource.msg('heading.guest.checkout', 'checkout', null)}</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            ${Resource.msg('msg.guest.checkout', 'checkout', null)}
+                        </p>
+                        <a href="${URLUtils.https('Checkout-Begin')}"
+                            class="btn btn-block btn-secondary checkout-as-guest">
+                            ${Resource.msg('button.checkout.as.guest', 'checkout', null)}
+                        </a>
+                    </div>
+                </div>
+                <div class="card returning-customers">
+                    <div class="card-header">
+                        <h2 class="card-header-custom headline-5">${Resource.msg('heading.returning.customers', 'checkout', null)}</h2>
+                    </div>
+                    <div class="card-body">
+                        <isinclude template="account/components/loginForm" />
+                        <isinclude template="account/password/requestPasswordResetModal" />
+                    </div>
+                </div>
+                <div class="card create-account-card">
+                    <div class="card-header">
+                        <h2 class="card-header-custom headline-5">${Resource.msg('heading.create.account', 'checkout', null)}</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            ${Resource.msg('msg.create.customer', 'checkout', null)}
+                        </p>
+                        <a href="${URLUtils.https('Login-Show', 'action', 'register')}"
+                            class="btn btn-block btn-tertiary">
+                            ${Resource.msg('button.create.customer.account', 'checkout', null)}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

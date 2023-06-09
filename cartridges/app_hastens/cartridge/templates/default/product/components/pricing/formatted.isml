@@ -1,0 +1,9 @@
+<iscomment>
+    Show custom range-low price label
+</iscomment>
+<isif condition="${isLowPrice == 'range-low'}">
+    <span class="article-4 from">${Resource.msg('product.price.from.label', 'productTile', null)}</span>
+    <span>${price.formatted}</span>
+<iselse/>
+    ${price.formatted}
+</isif>

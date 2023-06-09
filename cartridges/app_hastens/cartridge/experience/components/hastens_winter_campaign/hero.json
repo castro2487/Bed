@@ -1,0 +1,56 @@
+{
+    "name": "Winter Campaign Hero",
+    "description": "",
+    "group": "hastens_winter_campaign",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading part 1",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "heading2",
+                    "name": "Heading part 2",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "footerHeading",
+                    "name": "Footer heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "footerBody",
+                    "name": "Footer body text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "footerLinkText",
+                    "name": "Footer link text",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "footerLinkUrl",
+                    "name": "Footer link url",
+                    "description": "",
+                    "type": "url",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

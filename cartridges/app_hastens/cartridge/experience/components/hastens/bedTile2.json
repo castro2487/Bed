@@ -1,0 +1,35 @@
+{
+    "name": "Grand Vividus Bed Tile",
+    "description": "",
+    "group": "hastens",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "componentId",
+                    "name": "Block id",
+                    "description": "Block id should contain no spaces, use '-' to concat two words",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "image",
+                    "name": "Desktop image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "mobileImage",
+                    "name": "Mobile image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

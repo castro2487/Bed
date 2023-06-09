@@ -1,0 +1,40 @@
+// Controls
+$border-radius: 2px !default;
+$border-radius-lg: $border-radius !default;
+$border-radius-sm: $border-radius !default;
+
+$state-danger-text: #fff !default;
+$alert-success-text: #fff !default;
+
+// inputs
+$input-btn-padding-y: .5625rem !default;
+$input-btn-focus-box-shadow: 0 0 0 0 transparent !default;
+
+// Buttons
+$btn-padding-y: $input-btn-padding-y !default;
+$btn-padding-x: 25px !default;
+
+// Font sizes
+$base16-14px: 0.875em !default;
+
+// Bootstrap overrides
+$body-bg: $grey1 !default;
+$card-cap-bg: $white !default;
+$text-muted: $dark-grey !default;
+
+// Tabs
+$nav-tabs-border-width: 0 !default;
+$nav-tabs-border-radius: 0 !default;
+$nav-tabs-active-link-hover-bg: transparent !default;
+
+// breadcrumb
+$breadcrumb-bg: transparent !default;
+
+// table border
+$table-border-color: $grey3 !default;
+
+$svg-check: url("data:image/svg+xml;charset=utf8,%3Csvg enable-background='new 0 0 11 10' viewBox='0 0 11 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m10.8 1.4-6 8.1c-.1.2-.4.3-.7.4h-.1c-.3 0-.5-.1-.7-.3l-3-2.7c-.4-.3-.4-.9 0-1.3s1-.4 1.4 0l2.1 1.9 5.3-7.2c.3-.4.9-.5 1.4-.2s.6.9.3 1.3z' fill='white' /%3E%3C/svg%3E") !default;
+$svg-check-plp: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='15' height='15' stroke='black'/%3E%3C/svg%3E") !default;
+$svg-radio: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='12' height='12' rx='6' fill='black'/%3E%3C/svg%3E") !default;
+$svg-select: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='8' viewBox='0 0 16 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L8 7L15 1' stroke='black'/%3E%3C/svg%3E") !default;
+$svg-select-plp: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI1IiB2aWV3Qm94PSIwIDAgOSA1IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAwLjVMNC41IDMuNUw4IDAuNTAwMDAxIiBzdHJva2U9ImJsYWNrIi8+Cjwvc3ZnPgo=") !default;

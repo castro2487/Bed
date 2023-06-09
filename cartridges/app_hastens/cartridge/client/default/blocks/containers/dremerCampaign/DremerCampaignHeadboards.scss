@@ -1,0 +1,169 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-dremer-campaign__headboards {
+    .video-scroll-header {
+        position: relative;
+        padding: 135px 15px;
+        text-align: center;
+        @include media-breakpoint-up(md) {
+            padding: 165px 15px;
+            text-align: left;
+        }
+        .content-wrapper {
+            max-width: 300px;
+            margin: 0 auto;
+            @include media-breakpoint-up(md) {
+                max-width: 910px;
+            }
+            .dremer-logo {
+                background-image: url("../../../images/dremer-headboard-logo.svg");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                max-width: 408px;
+                &::before {
+                    content: "";
+                    display: block;
+                    padding-bottom: 22%;
+                }
+            }
+        }
+    }
+    .column-text {
+        max-width: 960px + 30px;
+        margin: 0 auto;
+        padding: 55px 15px 75px;
+        text-align: center;
+        @include media-breakpoint-up(md) {
+            display: flex;
+            align-items: center;
+            padding: 40px 15px 75px;
+            text-align: left;
+        }
+        .text-column {
+            white-space: pre-line;
+            margin-bottom: 20px;
+            @include media-breakpoint-up(md) {
+                width: 55%;
+                padding-right: 75px;
+            }
+        }
+        .image-column {
+            @include media-breakpoint-up(md) {
+                width: 45%;
+            }
+            &::after {
+                content: "";
+                display: block;
+                padding-bottom: 74%;
+                background-image: url("https://static.hastens.com/750/blocks/campaigns/dreamer/V2/headboard-fade.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                @include media-breakpoint-up(md) {
+                    width: 100% * 1.5;
+                    padding-bottom: 74% * 1.5;
+                }
+            }
+        }
+    }
+    .headboards {
+        max-width: 1010px;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            width: 100%;
+            padding: 10px 0;
+            @include media-breakpoint-up(md) {
+                width: 50%;
+            }
+            &::after {
+                content: "";
+                display: block;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                padding-bottom: 92%;
+            }
+            &.black-shadow::after {
+                background-image: url("https://static.hastens.com/750/blocks/campaigns/dreamer/V2/blsh-headboard.jpg");
+            }
+            &.traditional-blue::after {
+                background-image: url("https://static.hastens.com/750/blocks/campaigns/dreamer/V2/trbl-headboard.jpg");
+            }
+            &.phantom-charcoal::after {
+                background-image: url("https://static.hastens.com/750/blocks/campaigns/dreamer/V2/phch-headboard.jpg");
+            }
+            &.natural-shale::after {
+                background-image: url("https://static.hastens.com/750/blocks/campaigns/dreamer/V2/nash-headboard.jpg");
+            }
+        }
+        .label {
+            @include garamond-premier-pro;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #ac9652;
+            padding-left: 7%;
+            margin-bottom: 25px;
+            @include media-breakpoint-up(md) {
+                font-size: 20px;
+                line-height: 24px;
+                text-align: center;
+            }
+        }
+    }
+    .details {
+        text-align: center;
+        max-width: 750px;
+        margin: 0 auto 5px;
+        padding: 0 15px;
+        white-space: pre-line;
+        @include media-breakpoint-up(md) {
+            margin-bottom: 20px;
+        }
+    }
+    .newsletter-cta {
+        padding: 60px 15px;
+        @include media-breakpoint-up(md) {
+            padding: 30px 15px;
+            min-height: 140px;
+            display: flex;
+            align-items: center;
+        }
+        p {
+            @include garamond-premier-pro;
+            max-width: 960px + 30px;
+            margin: 0 auto;
+            padding: 0 15px;
+            font-size: 24px;
+            line-height: 29px;
+            letter-spacing: 1px;
+            color: #ceb867;
+            text-align: center;
+            white-space: pre-line;
+            @include media-breakpoint-up(md) {
+                font-size: 32px;
+                line-height: 38px;
+            }
+            button {
+                display: inline;
+                appearance: none;
+                border: 0;
+                margin: 0;
+                padding: 0;
+                background-color: transparent;
+                color: inherit;
+                text-transform: inherit;
+                text-decoration: underline;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

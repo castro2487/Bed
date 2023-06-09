@@ -1,0 +1,102 @@
+@import "../../../../shared/styles/utils/utils";
+
+$base-size: 40px;
+
+.has-book-bed-test-cta {
+    padding-top: 30px;
+    padding-bottom: 60px;
+    .book-sample-bed {
+        .text-header-text {
+            padding-bottom: 0;
+            margin-bottom: 30px;
+            @include media-breakpoint-up(sm) {
+                white-space: pre-line;
+            }
+        }
+
+        .steps-heading {
+            margin-top: 40px;
+            @include media-breakpoint-up(sm) {
+                white-space: pre-line;
+            }
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        .body-section {
+            padding-top: 0;
+            .text-container {
+                max-width: 960px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 2rem;
+                padding-top: 0;
+                .heading {
+                    text-align: center;
+                }
+            }
+
+            .grid-container {
+                margin: 0;
+                .information {
+                    padding: 4rem;
+                }
+            }
+            .image {
+                min-height: 36vh;
+                background-size: cover;
+                background-position: center;
+                @include media-breakpoint-up(md) {
+                    height: 100%;
+                }
+            }
+            .information-container {
+                max-width: 960px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 0;
+                .step-heading-1,
+                .step-heading-2 {
+                    display: block;
+                    text-transform: uppercase;
+                }
+                .step-heading-1 {
+                    color: #424242;
+                    font-size: 16px;
+                    line-height: 26px;
+                    @include media-breakpoint-up(sm) {
+                        white-space: pre-line;
+                    }
+                }
+                .step-heading-2 {
+                    line-height: 1.25;
+                    margin: 0;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    padding: 25px 0 10px;
+                    text-align: initial;
+                    font-size: $base-size - 20;
+                    @include media-breakpoint-up(sm) {
+                        white-space: pre-line;
+                    }
+                    @include media-breakpoint-down(md) {
+                        font-size: 15px;
+                    }
+                }
+                .information-body {
+                    @include media-breakpoint-up(sm) {
+                        white-space: pre-line;
+                    }
+                }
+            }
+            .even {
+                @include media-breakpoint-up(md) {
+                    flex-direction: row-reverse;
+
+                }
+            }
+        }
+    }
+}

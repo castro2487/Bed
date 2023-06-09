@@ -1,0 +1,5 @@
+<form method="post" action="${URLUtils.https('PayPalExpress-Submit')}">
+    <button type="submit" class="btn btn-block paypal-button js-paypal-button show-paypal-button'">
+        <img src="${URLUtils.staticURL('/images/paypal-logo.svg')}"/>
+    </button>
+</form>

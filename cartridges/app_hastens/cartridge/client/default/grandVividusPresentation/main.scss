@@ -1,0 +1,191 @@
+@import "../shared/styles/utils/utils";
+
+.has-grand-vividus-presentation {
+    background-color: #000;
+    color: #fff;
+    height: 100vh;
+    position: relative;
+    .layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        &.hidden {
+            display: none;
+        }
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .position {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        &.center {
+            justify-content: center;
+            align-items: center;
+        }
+        &.center-right {
+            justify-content: center;
+            align-items: center;
+            @include media-breakpoint-up(md) {
+                padding-left: 50%;
+            }
+        }
+        &.bottom-left {
+            justify-content: flex-end;
+            align-items: flex-start;
+            padding-bottom: 10%;
+            @include media-breakpoint-up(md) {
+                padding-left: 10%;
+            }
+        }
+        &.bottom-center {
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 20%;
+        }
+        &.top-left {
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-top: 10%;
+            @include media-breakpoint-up(md) {
+                padding-left: 10%;
+            }
+        }
+        &.top-center {
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 1%;
+        }
+    }
+    .intro {
+        color: #fff;
+        max-width: 990px;
+        text-align: center;
+        * {
+            font-family: "adobe-garamond-pro", serif;
+        }
+        h2 {
+            width: 100%;
+            max-width: 740px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+            &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                padding-bottom: 9%;
+                background-image: url("../images/grandVividus/topmovie-text-GRAND-VIVIDUS.svg");
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+        p {
+            white-space: pre-line;
+        }
+        .columns {
+            text-align: left;
+            columns: 400px 2;
+            column-gap: 60px;
+            overflow: hidden;
+            > div {
+                break-inside: avoid;
+            }
+        }
+    }
+    .quote {
+        color: #d0b669;
+        font-size: 25px;
+        text-transform: uppercase;
+        text-align: center;
+        max-width: 990px;
+        @include media-breakpoint-up(md) {
+            font-size: 36px;
+        }
+        * {
+            font-family: "adobe-garamond-pro", serif;
+        }
+        p:last-child {
+            font-size: 14px;
+            margin-top: 30px;
+            @include media-breakpoint-up(md) {
+                font-size: 18px;
+            }
+        }
+    }
+    .logos {
+        overflow: hidden;
+        width: 200px;
+        height: 200px;
+        background: url("../images/grandVividus/ferris_hastens_vert_neg.svg") 50% no-repeat;
+        background-size: 100% auto;
+        @include media-breakpoint-up(md) {
+            width: 400px;
+            height: 400px;
+        }
+    }
+    .master-craftmanship {
+        max-width: 710px;
+        h2 {
+            text-transform: uppercase;
+            color: #d0b669;
+            font-size: 30px;
+            font-family: "adobe-garamond-pro", serif;
+            letter-spacing: 5px;
+            @include media-breakpoint-up(md) {
+                font-size: 40px;
+            }
+            span:first-child {
+                display: block;
+                font-size: 14px;
+                color: #fff;
+                letter-spacing: 4px;
+                @include media-breakpoint-up(md) {
+                    font-size: 18px;
+                }
+            }
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+    .bed-color {
+        max-width: 100%;
+        h2 {
+            max-width: 100%;
+            width: 740px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 25px;
+            &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                padding-bottom: 16%;
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+        &.black-shadow h2::after {
+            background-image: url("../images/grandVividus/color-text-GRAND-VIVIDUS-BLACK-SHADOW.svg");
+        }
+        &.traditional-blue h2::after {
+            background-image: url("../images/grandVividus/color-text-GRAND-VIVIDUS-TRADITIONAL-BLUE.svg");
+        }
+    }
+}

@@ -1,0 +1,132 @@
+<isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+    <isinclude template="reporting/reportingUrls" />
+</isif>
+
+<!--- Search Results Banner --->
+
+<isset name="Site" value="${require('dw/system/Site')}" scope="page" />
+<isset name="listOfCountryWithPurchaseOption" value="${Site.getCurrent().getCustomPreferenceValue('listOfCountryWithPurchaseOption')}" scope="page" />
+
+<isset name="Locale" value="${require('dw/util/Locale')}" scope="page" />
+<isset name="currentCountry" value="${Locale.getLocale(request.getLocale()).country}" scope="page" />
+
+    <isset name="purchaseDisabled" value="${listOfCountryWithPurchaseOption.indexOf(currentCountry) < 0}" scope="page" />
+
+<isif condition="${pdict.productSearch.isCategorySearch}"> 
+    <isset name="imgName" value="${pdict.apiProductSearch  && pdict.apiProductSearch.category ? pdict.apiProductSearch.category.custom.categoryLandingImage : 'hastensPLPBg'}" scope="page" />
+    <isset name="imgPath" value="${'PLP_Images/'+ imgName + '.jpg'}" scope="page" />
+    <div class="search-banner-container">
+        <div class="hero slant-down search-banner"
+            <!--- If no image, default is specified in search.scss > .search-banner --->
+            <isif condition="${imgName}">
+                style="background-image: url(${URLUtils.staticURL(URLUtils.CONTEXT_LIBRARY, 'Hastens_shared_library', imgPath)})"
+            </isif>
+        >
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-11">
+                        <h1 class="header page-title">
+                            ${pdict.productSearch.category.name}
+                        </h1>
+                        <div class="categ-desc">
+                            <isif condition="${!empty(pdict.productSearch.category.description)}">
+                                <isprint value="${pdict.productSearch.category.description}" encoding="off"/>
+                            </isif>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="search-hr"/>
+    </div>
+<iselse>
+    <isslot id="search-result-banner-m" description="Banner for search results" context="global" />
+</isif>
+
+<div class="container search-results">
+    <div class="row search-nav">
+        <isif condition="${!pdict.productSearch.isCategorySearch}">
+            <div class="nav-tabs-wrapper">
+                <ul class="nav nav-tabs nav-fill" role="tablist">
+
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active product-search" href="#product-search-results" aria-controls="product-search-results" data-toggle="tab" role="tab" aria-selected="true" tabindex="0" id="product-tab">
+                            ${Resource.msg('tab.nav.search.productsresults', 'search', null)}
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link content-search" href="#content-search-results-pane" aria-controls="content-search-results-pane" data-toggle="tab" role="tab" aria-selected="false" tabindex="-1" id="articles-tab"
+                            data-url="${URLUtils.url('Search-Content', 'q', pdict.productSearch.searchKeywords, 'startingPage', 0)}">
+                            ${Resource.msg('tab.nav.search.artclesresults', 'search', null)}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </isif>
+    </div>
+    <div class="row">
+        <div class="tab-content">
+            <div class="tab-pane active" id="product-search-results" role="tabpanel" aria-label="${Resource.msg('tab.nav.search.productsresults', 'search', null)}">
+
+                    <isif condition="${pdict.productSearch.productIds.length > 0}">
+                        <div class="row grid-header ${!pdict.productSearch.isCategorySearch ? 'count-results' : ''}">
+                            <isif condition="${!pdict.productSearch.isCategorySearch}">
+                                <span class="col-12 col-lg-3 offset-lg-3 order-3 order-lg-1 search-result-count">
+                                    <isif condition="${pdict.productSearch.productIds.length > 0}">
+                                        <span>${Resource.msgf('label.resultsfor', 'search', null, pdict.productSearch.count)}&nbsp;</span>
+                                        <span class="search-keywords">
+                                            ${pdict.productSearch.searchKeywords ? pdict.productSearch.searchKeywords : ''}
+                                        </span>
+                                    </isif>
+                                </span>
+                            </isif>
+                            <div class="result-count text-center d-none">
+                    <iselse>
+                        <div class="row grid-header justify-content-center">
+                            <div class="result-count col">
+                    </isif>
+                        <isinclude template="search/resultsCount" />
+                    </div>
+                    <isif condition="${pdict.productSearch.productIds.length > 0}">
+                        <div class="text-right filters-select col-7 col-sm-6 order-2">
+                            <isinclude template="search/sortOrderMenu" />
+                        </div>
+
+                        <div class="col-5 col-sm-6 d-md-none order-1 filter-results-wrapper">
+                            <button type="button" class="btn btn-tertiary filter-results col-12">
+                                ${Resource.msg('button.filter', 'search', null)}
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </isif>
+                </div>
+
+                <isif condition="${pdict.productSearch.productIds.length > 0}">
+                    <!--- Refinement bar --->
+                    <div class="row">
+                        <div class="refinement-bar col-md-3">
+                            <isinclude url="${pdict.refineurl}"/>
+                        </div>
+
+                        <div class="col-sm-12 col-md-9 ${!pdict.productSearch.isCategorySearch ? 'count-results-wrapper' : ''}">
+                             <!--- Selected filters bar --->
+                             <div class="row filter-bar d-none">
+                                 <isinclude template="search/filterBar" />
+                             </div>
+
+                             <!--- Product Grid --->
+                             <div class="row product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">
+                                 <isinclude template="search/productGrid" />
+                             </div>
+                        </div>
+                    </div>
+                </isif>
+            </div>
+            <!--- Content Grid --->
+            <div class="tab-pane container" id="content-search-results-pane" role="tabpanel" aria-label="${Resource.msg('tab.nav.search.artclesresults', 'search', null)}">
+                <div id="content-search-results" class="content-grid-header"></div>
+            </div>
+
+        </div>
+    </div>
+</div>

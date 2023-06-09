@@ -1,0 +1,308 @@
+@import "../../../../../../../shared/styles/utils/utils";
+
+.has-bed-configurator-configuration-step {
+    background-color: #000;
+    @include media-breakpoint-down(xs) {
+        min-height: 100vh;
+    }
+    @include media-breakpoint-up(sm) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+    .close-button {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        color: #fff;
+        z-index: 5;
+        @include media-breakpoint-down(xs) {
+            top: 15px;
+            right: 15px;
+        }
+    }
+    &.configuration-is-open .close-button {
+        color: #000;
+        @include media-breakpoint-down(xs) {
+            color: #fff;
+        }
+    }
+    .bed-selection {
+        position: relative;
+        @include media-breakpoint-down(xs) {
+            right: 0;
+            padding-bottom: 124%;
+        }
+        @include media-breakpoint-up(sm) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transition: right 200ms;
+            will-change: right;
+        }
+        .selected-bed-title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            text-align: center;
+            color: #fff;
+            font-weight: 300;
+            text-transform: uppercase;
+            padding-top: 50px;
+            span {
+                display: block;
+                &:first-child {
+                    font-size: 21px;
+                    padding-bottom: 7px;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.54);
+                    width: 400px;
+                    margin: 0 auto;
+                    max-width: 75%;
+                    @include media-breakpoint-down(xs) {
+                        font-size: 16px;
+                    }
+                }
+                &:last-child {
+                    font-size: 29px;
+                    padding-top: 6px;
+                    @include media-breakpoint-down(xs) {
+                        font-size: 23px;
+                    }
+                }
+            }
+        }
+        .large-images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            > div {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-size: 90%;
+                background-position: center;
+                background-repeat: no-repeat;
+                opacity: 0;
+                transition: opacity 400ms;
+                &.selected {
+                    opacity: 1;
+                }
+            }
+        }
+        .bottom-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 3;
+            text-align: center;
+            .start-button {
+                margin-bottom: 50px;
+            }
+            .bed-select-field {
+                list-style: none;
+                margin: 0;
+                padding: 6px 20px 40px;
+                justify-content: center;
+                color: #fff;
+                overflow-x: auto;
+                white-space: nowrap;
+                text-align: center;
+                .listbox-option {
+                    display: inline-block;
+                    width: 98px;
+                    padding: 0 5px;
+                    opacity: 0.7;
+                    transition: opacity 200ms;
+                    white-space: normal;
+                    cursor: pointer;
+                    img {
+                        max-width: 72px;
+                        margin: 0 auto;
+                        transition: transform 200ms;
+                    }
+                    .bed-name {
+                        display: inline-block;
+                        margin-top: 17px;
+                        font-size: 9px;
+                        text-transform: uppercase;
+                        padding: 0 4px 4px;
+                        position: relative;
+                        &::after {
+                            content: "";
+                            display: block;
+                            width: 0;
+                            height: 1px;
+                            background-color: #fff;
+                            position: absolute;
+                            bottom: 0;
+                            left: 50%;
+                            transition: width 200ms, left 200ms;
+                        }
+                    }
+                    &.selected,
+                    &.focused,
+                    &:hover {
+                        opacity: 1;
+                    }
+                    &.selected {
+                        img {
+                            transform: scale(1.2);
+                        }
+                        .bed-name::after {
+                            width: 100%;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .bed-tabs {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            right: 0;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            @include media-breakpoint-down(xs) {
+                display: none;
+            }
+            li {
+                + li {
+                    margin-top: 12px;
+                }
+                button {
+                    background-color: transparent;
+                    color: #fff;
+                    border: 0;
+                    padding: 5px 12px;
+                    font-size: 16px;
+                    font-weight: 500;
+                    appearance: none;
+                }
+                button:disabled {
+                    opacity: 0.6;
+                    cursor: not-allowed;
+                }
+                &.complete button {
+                    padding-left: 32px;
+                    position: relative;
+                    svg {
+                        position: absolute;
+                        top: 50%;
+                        font-size: 20px;
+                        left: 6px;
+                        margin-top: -10px;
+                    }
+                }
+                &.active button {
+                    background-color: #fff;
+                    color: #000;
+                }
+            }
+        }
+    }
+    &.configuration-is-open .bed-selection {
+        @include media-breakpoint-up(sm) {
+            right: 425px;
+        }
+    }
+    .configuration-panels {
+        background-color: #fff;
+        @include media-breakpoint-up(sm) {
+            width: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            overflow: hidden;
+            height: 100%;
+            z-index: 3;
+            transition: width 200ms;
+            will-change: width;
+        }
+    }
+    &.configuration-is-open .configuration-panels {
+        @include media-breakpoint-up(sm) {
+            width: 425px;
+        }
+    }
+    .configuration-panel {
+        @include media-breakpoint-up(sm) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 425px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        &:not(.active) {
+            display: none;
+        }
+        header {
+            padding: 30px;
+            span {
+                display: block;
+                font-weight: 500;
+                text-transform: uppercase;
+                font-size: 19px;
+                margin-bottom: 4px;
+            }
+        }
+        .scroll-wrapper {
+            overflow: auto;
+            padding: 0 30px 10px;
+            flex: 1;
+        }
+        .control-name {
+            margin-bottom: 13px;
+            span {
+                font-size: 15px;
+                text-transform: uppercase;
+                font-weight: 500;
+                color: #000330;
+            }
+            .info-icon {
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 4px;
+                line-height: 1;
+                @include media-breakpoint-down(xs) {
+                    margin-left: 0;
+                    padding: 4px;
+                }
+                svg {
+                    font-size: 17px;
+                    color: #2c6fbc;
+                }
+            }
+        }
+        .configuration-control + .configuration-control {
+            margin-top: 25px;
+        }
+        footer {
+            padding: 30px;
+            display: flex;
+            justify-content: flex-end;
+            background-color: transparent; // Override global.css
+            button + button {
+                margin-left: 10px;
+            }
+        }
+    }
+}

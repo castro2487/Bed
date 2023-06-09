@@ -1,0 +1,12 @@
+@import "../../../../../shared/styles/utils/utils";
+
+.has-bed-tile__cta-buttons {
+    padding-bottom: 40px;
+    margin: -7px;
+    @include media-breakpoint-up(xl) {
+        padding-bottom: 62px;
+    }
+    > * {
+        margin: 7px;
+    }
+}

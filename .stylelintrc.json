@@ -1,0 +1,58 @@
+{
+    "extends": [
+        "stylelint-config-recommended-scss"
+    ],
+    "defaultSeverity": "error",
+    "ignoreFiles": [
+        "./cartridges/**/cartridge/client/default/scss/**/*.scss"
+    ],
+    "rules": {
+        "at-rule-blacklist": [
+            "extend"
+        ],
+        "block-closing-brace-newline-after": [
+            "always",
+            {
+                "ignoreAtRules": [
+                    "if",
+                    "else"
+                ]
+            }
+        ],
+        "block-closing-brace-newline-before": "always-multi-line",
+        "block-opening-brace-newline-after": "always-multi-line",
+        "block-opening-brace-space-before": "always-multi-line",
+        "color-hex-case": "lower",
+        "declaration-block-semicolon-newline-after": "always-multi-line",
+        "declaration-block-semicolon-newline-before": "never-multi-line",
+        "declaration-block-semicolon-space-after": "always-single-line",
+        "declaration-block-semicolon-space-before": "never",
+        "declaration-block-trailing-semicolon": "always",
+        "function-comma-space-after": "always-single-line",
+        "function-comma-space-before": "never",
+        "function-name-case": "lower",
+        "function-url-quotes": "always",
+        "function-whitespace-after": "always",
+        "length-zero-no-unit": true,
+        "no-descending-specificity": null,
+        "number-leading-zero": "always",
+        "number-no-trailing-zeros": true,
+        "property-case": "lower",
+        "selector-attribute-brackets-space-inside": "never",
+        "selector-attribute-operator-space-after": "never",
+        "selector-attribute-operator-space-before": "never",
+        "selector-combinator-space-after": "always",
+        "selector-combinator-space-before": "always",
+        "selector-max-id": 1,
+        "selector-pseudo-class-case": "lower",
+        "selector-pseudo-class-parentheses-space-inside": "never",
+        "selector-pseudo-element-case": "lower",
+        "selector-pseudo-element-colon-notation": "double",
+        "selector-type-case": "lower",
+        "shorthand-property-no-redundant-values": true,
+        "string-quotes": "double",
+        "unit-case": "lower",
+        "value-list-comma-space-after": "always-single-line",
+        "value-list-comma-space-before": "never"
+    }
+}

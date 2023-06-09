@@ -1,0 +1,62 @@
+@import "../thirdParty/slick";
+@import "../thirdParty/slick-theme";
+
+.carousel-container {
+    max-width: 1080px;
+    padding-bottom: 4.25rem;
+
+    &.container {
+        padding-right: 20px;
+        padding-left: 20px;        
+    }
+
+    .carousel-item {
+        margin-right: inherit;
+        border: none;
+    }
+
+    .slick-arrow {
+        transition: all .15s ease-in;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        text-decoration: none;
+        cursor: pointer;
+        color: inherit;
+        padding: 0;
+        margin: 0;
+
+        position:absolute;
+        top:50%;
+        -webkit-transform:translateY(-50%);
+        -ms-transform:translateY(-50%);
+        transform:translateY(-50%);
+        z-index:1;
+        width:1.625rem;
+        height:1.625rem;
+
+        &.prev-arrow {
+            left:0
+        }
+
+        &.next-arrow {
+            right:0
+        }
+
+        &:hover {
+            opacity:.6        
+        }
+    }
+
+    .product-grid {
+        border: none;
+        & > div::after {
+            border: none;
+            background: none;
+        }
+    }
+
+    .slick-list {
+        border: none;
+    }
+}

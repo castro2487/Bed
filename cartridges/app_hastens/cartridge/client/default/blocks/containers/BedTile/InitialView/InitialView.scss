@@ -1,0 +1,69 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-bed-tile__initial {
+    position: relative;
+    padding-bottom: 100%;
+    @include media-breakpoint-up(lg) {
+        padding-bottom: 70%;
+    }
+    &.ratio--10-6 {
+        @include media-breakpoint-up(lg) {
+            padding-bottom: 6 / 10 * 100%;
+        }
+    }
+    .content-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 10px 15px 30px;
+        @include media-breakpoint-up(md) {
+            padding: 10px 30px 30px;
+        }
+    }
+    .heading {
+        white-space: pre-line;
+        .small {
+            font-size: 14px;
+            line-height: 14px;
+            font-weight: 400;
+        }
+        sup {
+            font-size: 0.5em;
+            top: -0.7em;
+            font-weight: 400;
+        }
+    }
+    .grand-vividus-heading {
+        background-image: url("../../../../images/grandVividus/grand_vividus_life_well_lived_neg.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 50%;
+        height: 65px;
+        margin-top: 17px;
+        margin-bottom: 15px;
+    }
+    .initial-description,
+    .initial-description-2 {
+        margin-bottom: 3px;
+        @include media-breakpoint-up(lg) {
+            padding-right: 50%;
+        }
+    }
+    .initial-description-2 {
+        font-family: "Montserrat SemiBold", sans-serif;
+        font-weight: 400;
+    }
+    .price-from {
+        opacity: 0.7;
+    }
+    .has-expand-button {
+        position: absolute;
+        bottom: 26px;
+        left: 15px;
+        @include media-breakpoint-up(md) {
+            left: 30px;
+        }
+    }
+}

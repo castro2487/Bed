@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+
+
+    <field formid="isTermsAndConditions" type="boolean" checked="false" default-value="false" binding="isTermsAndConditions" mandatory="true"/>
+  
+</form>

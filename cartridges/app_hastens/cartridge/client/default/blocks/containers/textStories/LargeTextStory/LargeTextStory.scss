@@ -1,0 +1,16 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-large-text-story {
+    padding: 30px 15px;
+    position: relative;
+    @include media-breakpoint-up(md) {
+        padding: 60px 15px;
+    }
+    &.image-padding {
+        padding-bottom: 30%;
+    }
+    .button-wrapper {
+        text-align: center;
+        margin-top: 30px;
+    }
+}

@@ -1,0 +1,15 @@
+<!--- TEMPLATENAME: preloadScripts.isml --->
+<script>
+    var ulrs = [
+        'https://beacon.krxd.net',
+        (location.protocol === 'https:' ? 'https:' : 'http:') + '//cdn.krxd.net/controltag/udxtke77b.js'
+    ]
+
+    for (let index = 0; index < ulrs.length; index++) {
+        var preloadLink = document.createElement('link');
+        preloadLink.href = ulrs[index];
+        preloadLink.rel = 'preconnect';
+        preloadLink.as = 'script';
+        document.head.appendChild(preloadLink);
+    }
+</script>

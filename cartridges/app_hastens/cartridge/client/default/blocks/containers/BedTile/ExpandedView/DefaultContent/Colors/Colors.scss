@@ -1,0 +1,64 @@
+@import "../../../../../../shared/styles/utils/utils";
+
+.has-bed-tile__colors {
+    margin-bottom: 40px;
+    @include media-breakpoint-up(xl) {
+        margin-bottom: 62px;
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -7px;
+        padding: 0;
+    }
+    li {
+        width: calc(100% / 3);
+        padding: 7px;
+    }
+    .thumbnail {
+        display: block;
+        width: 100%;
+        padding-bottom: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-color: transparent;
+        appearance: none;
+        border: 0;
+    }
+    p {
+        margin-bottom: 5px;
+    }
+}
+
+.has-bed-tile__colors-dialog {
+    .dialog-content {
+        margin: auto 0;
+    }
+    .image {
+        padding-bottom: 60%;
+        width: 100vw;
+        max-width: 100%;
+        position: relative;
+        button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .video {
+        padding-top: 60% !important;
+    }
+    .close-button {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: transparent;
+        color: #fff;
+        border: 0;
+        z-index: 1;
+        font-size: 20px;
+    }
+}

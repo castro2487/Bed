@@ -1,0 +1,202 @@
+<isdecorate template="common/layout/page">
+<isinclude template="components/modules"/>
+
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/trackingpage.css');
+    assets.addJs('/js/tracking.js');
+</isscript>
+
+<isset name="OrderNumber" value="${pdict.OrderNo}" scope="page"/>
+
+<div class="container trackingpage">
+	<isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+	<div class="row justify-content-center">
+		<div class="col-sm-8 col-md-8">
+            <div class="card">
+            	<div class="card-header">
+                    <h4 class="pull-left">${Resource.msg('tracking.order', 'tracking', null)} ${OrderNumber} ${Resource.msg('tracking.shipmenttracking', 'tracking', null)}</h4>
+                </div>
+				<isif condition="${!empty(pdict.ShipData) && pdict.ShipData.length > 1}">
+					<div class="card-body">
+						<div class="tracking-overview">
+							<h2>${pdict.OrderShipStatus}</h2>
+							<p>${Resource.msgf('multitrack.message', 'tracking', null, pdict.ShipData.length)}</p>
+						</div>
+					</div>
+				</isif>
+            </div>
+            <isif condition="${!empty(pdict.ShipData)}">
+			<isloop items="${pdict.ShipData}" var="thisShipment" status="status">
+				<div class="card">
+					<div class="card-header">
+						<isif condition="${thisShipment.selectedShippingMethod.shipStatus == 'SHIPPED'}">
+							<h2 class="pull-left">${thisShipment.selectedShippingMethod.trackStatus}</h2>
+						
+							<div class="pull-right">
+								${thisShipment.selectedShippingMethod.trackingNumber}
+								<isif condition="${thisShipment.selectedShippingMethod.zenkraftCarrier == 'usps'}">
+									<img src="${URLUtils.staticURL('/images/usps-logo-black-transparent.png')}" class="ups-logo-top" alt="usps">
+								<iselseif condition="${thisShipment.selectedShippingMethod.zenkraftCarrier == 'fedex'}">
+									<img src="${URLUtils.staticURL('/images/fedex-logo.png')}" class="logo-top" alt="fedex">
+								<iselseif condition="${thisShipment.selectedShippingMethod.zenkraftCarrier == 'ups'}">
+									<img src="${URLUtils.staticURL('/images/ups-logo.png')}" class="logo-top" alt="ups">
+								</isif>
+							</div>
+						<iselse/>
+							<h2>${Resource.msg('tracking.status.notshipped', 'tracking', null)}</h2>
+						</isif>
+					</div>
+					<iscomment>Checkmarks start</iscomment>
+
+						<div class="card-body">
+							<div class="tracking-overview">
+								<div class="track-checkmarks">
+									<ul class="checkmark">
+										<iscomment>Only show for exceptions</iscomment>
+										<isif condition="${thisShipment.selectedShippingMethod.tracking_stage == 'EXCEPTION'}">
+										<li><span>&nbsp;</span>
+											<div class="title">${Resource.msg('tracking.stage.intransit','tracking',null)}</div>
+										</li>
+
+										<li class="active"><span>&nbsp;</span>
+											<div class="title">${Resource.msg('tracking.stage.delayed','tracking',null)}</div>
+										</li>
+
+										<li><span>&nbsp;</span>
+											<div class="title">${Resource.msg('tracking.stage.outfordelivery','tracking',null)}</div>
+										</li>
+
+										<li><span>&nbsp;</span>
+											<div class="title">${Resource.msg('tracking.stage.delivered','tracking',null)}</div>
+										</li>
+										<iselseif condition="${thisShipment.selectedShippingMethod.tracking_stage == 'SHIPMENT_VOIDED'}"/>
+										<iscomment>For cancellations</iscomment>
+										<li class="active"><span>&nbsp;</span>
+											<div class="title">${Resource.msg('tracking.stage.cancelled','tracking',null)}</div>
+										</li>
+
+										<li><span>&nbsp;</span>
+											<div class="title">${Resource.msg('tracking.stage.delayed','tracking',null)}</div>
+										</li>
+
+										<li><span>&nbsp;</span>
+											<div class="title">${Resource.msg('tracking.stage.outfordelivery','tracking',null)}</div>
+										</li>
+
+										<li><span>&nbsp;</span>
+											<div class="title">${Resource.msg('tracking.stage.delivered','tracking',null)}</div>
+										</li>
+										<iselseif condition="${thisShipment.selectedShippingMethod.tracking_stage == 'PENDING'}"/>
+										<iscomment>For pending</iscomment>
+										<li class="active"><span>&nbsp;</span>
+											<div class="title">${Resource.msg('tracking.stage.pending','tracking',null)}</div>
+										</li>
+
+										<li><span>&nbsp;</span>
+											<div class="title">${Resource.msg('tracking.stage.intransit','tracking',null)}</div>
+										</li>
+
+										<li><span>&nbsp;</span>
+											<div class="title">${Resource.msg('tracking.stage.outfordelivery','tracking',null)}</div>
+										</li>
+
+										<li><span>&nbsp;</span>
+											<div class="title">${Resource.msg('tracking.stage.delivered','tracking',null)}</div>
+										</li>
+										<iselseif condition="${thisShipment.selectedShippingMethod.tracking_stage == 'CREATED'}"/>
+										<div>${Resource.msg('tracking.stage.created','tracking',null)}</div>
+										<iselse/>
+										<iscomment>For non-exceptions</iscomment>
+										<isif condition="${thisShipment.selectedShippingMethod.tracking_stage == 'PICKED_UP'}">
+											<li class="active"><span>&nbsp;</span>
+										<iselse/>
+											<li><span>&nbsp;</span>
+										</isif>
+											<div class="title">${Resource.msg('tracking.stage.pickedup','tracking',null)}</div>
+										</li>
+
+										<isif condition="${thisShipment.selectedShippingMethod.tracking_stage == 'IN_TRANSIT'}">
+											<li class="active"><span>&nbsp;</span>
+										<iselse/>
+											<li><span>&nbsp;</span>
+										</isif>
+											<div class="title">${Resource.msg('tracking.stage.intransit','tracking',null)}</div>
+										</li>
+
+										<isif condition="${thisShipment.selectedShippingMethod.tracking_stage == 'OUT_FOR_DELIVERY'}">
+											<li class="active"><span>&nbsp;</span>
+										<iselse/>
+											<li><span>&nbsp;</span>
+										</isif>
+											<div class="title">${Resource.msg('tracking.stage.outfordelivery','tracking',null)}</div>
+										</li>
+
+										<isif condition="${thisShipment.selectedShippingMethod.tracking_stage == 'DELIVERED'}">
+											<li class="active"><span>&nbsp;</span>
+										<iselse/>
+											<li><span>&nbsp;</span>
+										</isif>
+											<div class="title">${Resource.msg('tracking.stage.delivered','tracking',null)}</div>
+										</li>
+										</isif>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					<iscomment>Checkmarks end</iscomment>
+					<div class="card-body">
+						<isif condition="${thisShipment.selectedShippingMethod.shipStatus == 'SHIPPED'}">
+								<a class="expand-tracking-details">${Resource.msg('tracking.expanddetails','tracking',null)} &#8595;</a>
+								<div class="tracking-details-window">
+									<div class="tracking-header">
+										<div class="track-column">${Resource.msg('datetime','tracking',null)}</div>
+										<div class="track-column">${Resource.msg('activity','tracking',null)}</div>
+										<div class="track-column">${Resource.msg('location','tracking',null)}</div>
+									</div>
+									<isloop items="${thisShipment.selectedShippingMethod.checkpoints}" alias="checkpoint">
+										<isscript>
+											let zenkraftHelper = require('~/cartridge/scripts/helpers/zenkraftHelper');
+											let formattedDate = zenkraftHelper.parseISOString(checkpoint.time);
+										</isscript>
+										<div class="tracking-data">
+										<div class="track-column">${formattedDate}</div>
+										<div class="track-column">${checkpoint.description}</div>
+										<div class="track-column">${!empty(checkpoint.location.city) ? checkpoint.location.city + ',' : ''} ${!empty(checkpoint.location.state) ? checkpoint.location.state : ''} ${!empty(checkpoint.location.postal_code) ? checkpoint.location.postal_code : ''}</div>
+										</div>
+									</isloop>
+								</div>
+						<iselse/>
+							<h5>${Resource.msg('multitrack.notyetshipped', 'tracking', null)}</h5>
+						</isif>
+					</div>
+					<div class="card-body tracking-contents">
+						<h3 class=>${Resource.msg('tracking.shipmentcontents','tracking',null)}</h3>
+						<isloop items="${thisShipment.productLineItems.items}" var="lineItem">
+							<isif condition="${lineItem.productType === 'bundle'}">
+								<isinclude template="cart/productCard/cartBundleCard" />
+							<iselse/>
+								<isif condition="${lineItem.noProduct === true}">
+									<isinclude template="cart/productCard/uncategorizedCartProductCard" />
+								<iselse/>
+									<isinclude template="account/tracking/trackingMultiProductCard" />
+								</isif>
+							</isif>
+						</isloop>
+					</div>
+				</div>
+			</isloop>
+            </isif>
+        </div>
+        <div class="col-sm-8 col-md-4">
+            <div class="card">
+           		<h2 class="card-header">${Resource.msg('tracking.recommended', 'tracking', null)}</h2>
+                <div class="card-body">
+                	<isslot id="tracking-page-content" description="Content For Branded Tracking Page" context="global" />
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+</isdecorate>

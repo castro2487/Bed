@@ -1,0 +1,32 @@
+<isset name="URLUtils" value="${require('dw/web/URLUtils')}" scope="page" />
+
+<isloop items="${continentCountries}" var="countryCode">
+    <isset name="countryLocales" value="${pdict.localesByCountry[countryCode]}" scope="page"/>
+    <isif condition="${countryLocales && countryLocales.length > 0}">
+        <div class="same-country-locales">
+            <isif condition="${pdict.listOfCountryWithPurchaseOption.indexOf(countryCode) > -1}">
+                <img class="shopping-bag-icon" alt="" src="${URLUtils.httpStatic('/images/icon-shoppingbag.png')}"/>
+            </isif>
+            <span class="${countryLocales.length === 1 ? 'underline-whole-row' : ''}">
+                <span class="${countryLocales.length > 1 ? 'plain-text-country' : ''}">
+                    <a class="country ${countryLocales[0].hasB2C ? 'B2C-country' : ''} notranslate" href="${countryLocales[0].hasB2C ? '#' : countryLocales[0].redirectUrl}" data-locale="${countryLocales[0].localID}" data-siteId="${countryLocales[0].siteID}"
+                        data-currencyCode="${countryLocales[0].currencyCode}">
+                        ${countryLocales[0].displayCountryEnglish}
+                    </a>
+                </span>
+                <isloop items="${countryLocales}" var="localeLink">
+                    <span class="language notranslate">| </span>
+                    <a class="language ${localeLink.hasB2C ? 'B2C-country' : ''}" href="${localeLink.hasB2C ? '#' : localeLink.redirectUrl}" data-locale="${localeLink.localID}" data-siteId="${localeLink.siteID}"
+                        data-currencyCode="${localeLink.currencyCode}" lang="${localeLink.language}">
+                        <span class="notranslate">
+                            ${localeLink.displayCountry}
+                            <isif condition="${'showLanguageCode' in pdict.localesByCountry[countryCode]}">
+                                <span class="language-code"> (${localeLink.language})</span>
+                            </isif>
+                        </span>
+                    </a>
+                </isloop>
+            </span>
+        </div>
+    </isif>
+</isloop>

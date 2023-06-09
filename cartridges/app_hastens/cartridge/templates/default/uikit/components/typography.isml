@@ -1,0 +1,88 @@
+<isdecorate template="uikit/layout">
+    <h2 class="section-title py-3">Typeface</h2>
+
+    <div class="row">
+        <div class="col-12">
+            <span style="font-weight: 300;font-size: 28px;line-height: 34px;">Montserrat Light</span>
+            <br /><span style="font-weight: 400;font-size: 28px;line-height: 34px;">Montserrat Regular</span>
+            <br /><span style="font-weight: 600;font-size: 28px;line-height: 34px;">Montserrat Semibold</span>
+            
+            <div class="my-2"></div>
+
+            Download for free on Google Fonts:  
+            <br /><a class="text-truncate d-block" href="https://fonts.google.com/specimen/Montserrat">https://fonts.google.com/specimen/Montserrat</a>
+        </div>
+        <div class="col-12 col-md-5">
+        </div>
+        <div class="col-12 col-md-7">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="py-4">&nbsp;</div>
+        </div>
+
+        <div class="col-12 col-lg-5 uikit-typo">
+            <h2 class="section-title py-3">Text styles ― M, L, XL</h2>
+
+            <p><h1 class="image-headline-1">Image Headline 1</h1></p>
+            <p><h2 class="image-headline-2">Image Headline 2</h2></p>
+            <p><h3 class="image-headline-3">Image headline 3</h3></p>
+
+            <p><h1 class="headline-1">Headline 1</h1></p>
+            <p><h2 class="headline-2">Headline 2</h2></p>
+            <p><h3 class="headline-3">Headline 3</h3></p>
+            <p><h4 class="headline-4">Headline 4</h4></p>
+            <p><h5 class="headline-5">Headline 5</h5></p>
+            <p><h6 class="headline-6">Headline 6</h6></p>
+
+            <p class="subhead-large">Subhead Large</p>
+            <p class="subhead-small">Subhead small</p>
+
+            <p class="product-label">Product label</p>
+
+            <p class="filter-title">Filter title</p>
+
+            <p class="text-link">Text link</p>
+
+
+            <p class="article-1 my-4">Intro copy. Aliquam vitae fermentum metus. Mauris in metus velit. Nulla eget tristique ex. Nunc aliquet ipsum a pretium interdum.</p>
+
+            <p class="article-2 my-4">Body copy. Our finest satin bed linen gives you a feeling of being enveloped in a downy soft cocoon. The special weave technique allows the threads to be packed very tightly, while still maintaining their breathability. The long-staple cotton gives the fabric a beautiful luster.</p>
+
+            <p class="article-3 my-4">Body small. Our finest satin bed linen gives you a feeling of being enveloped in a downy soft cocoon. The special weave technique allows the threads to be packed very tightly, while still maintaining their breathability. The long-staple cotton gives the fabric a beautiful luster.</p>
+
+            <p class="article-4 my-4">Body copy extra small. Aliquam vitae fermentum metus. Mauris in metus velit. Nulla eget tristique ex. Nunc aliquet ipsum a pretium interdum. Vestibulum at orci quis dolor dignissim dapibus in sit amet elit.</p>
+        </div>
+        <div class="col-12 col-lg-5 uikit-typo-mobile">
+            <h2 class="section-title py-3">Text styles – S</h2>
+
+            <p><h1 class="image-headline-1">Image Headline 1</h1></p>
+            <p><h2 class="image-headline-2">Image Headline 2</h2></p>
+            <p><h3 class="image-headline-3">Image headline 3</h3></p>
+
+            <p><h1 class="headline-1">Headline 1</h1></p>
+            <p><h2 class="headline-2">Headline 2</h2></p>
+            <p><h3 class="headline-3">Headline 3</h3></p>
+            <p><h4 class="headline-4">Headline 4</h4></p>
+            <p><h5 class="headline-5">Headline 5</h5></p>
+            <p><h6 class="headline-6">Headline 6</h6></p>
+
+            <p class="subhead-large">Subhead Large</p>
+            <p class="subhead-small">Subhead small</p>
+
+            <p class="product-label">Product label</p>
+
+            <p class="filter-title">Filter title</p>
+
+            <p class="text-link">Text link</p>
+
+
+            <p class="article-1 my-4">Intro copy. Aliquam vitae fermentum metus. Mauris in metus velit. Nulla eget tristique ex. Nunc aliquet ipsum a pretium interdum.</p>
+
+            <p class="article-2 my-4">Body copy. Our finest satin bed linen gives you a feeling of being enveloped in a downy soft cocoon. The special weave technique allows the threads to be packed very tightly, while still maintaining their breathability. The long-staple cotton gives the fabric a beautiful luster.</p>
+        </div>
+    </div>
+
+</isdecorate>

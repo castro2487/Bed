@@ -1,0 +1,14 @@
+<div class="quantity-form">
+    <input class="number-input quantity-stepper form-control" 
+        type="number" 
+        value="${StringUtils.formatInteger(lineItem.quantity)}" 
+        min="1" 
+        step="1" 
+        data-uuid="${lineItem.UUID}"
+        data-pid="${lineItem.id}"
+        data-action="${pdict.actionUrls.updateQuantityUrl}"
+        data-pre-select-qty="${lineItem.quantity}"
+        id="quantity-${lineItem.UUID}"
+        name="quantity-${lineItem.UUID}"
+        aria-label="quantity: ${StringUtils.formatInteger(lineItem.quantity)}">
+</div>

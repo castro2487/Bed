@@ -1,0 +1,83 @@
+{
+    "name": "Split Block",
+    "description": "",
+    "group": "hastens_layout",
+    "attribute_definition_groups": [
+        {
+            "id": "general",
+            "attribute_definitions": [
+                {
+                    "id": "splitPoint",
+                    "name": "Split point",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "25%",
+                                    "value": "25"
+                                },
+                                {
+                                    "name": "50%",
+                                    "value": "50"
+                                },
+                                {
+                                    "name": "75%",
+                                    "value": "75"
+                                }
+                            ]
+                        }
+                    },
+                    "required": true
+                },
+                {
+                    "id": "mobileReverse",
+                    "name": "Reverse direction on mobile",
+                    "description": "",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "removeOuterVerticalSpacing",
+                    "name": "Remove outer vertical spacing",
+                    "description": "",
+                    "type": "boolean",
+                    "required": false,
+                    "default_value": true
+                },
+                {
+                    "id": "topSpacing",
+                    "name": "Top spacing",
+                    "description": "Override page level setting",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Show top spacing",
+                                    "value": "show-top-spacing"
+                                },
+                                {
+                                    "name": "Hide top spacing",
+                                    "value": "hide-top-spacing"
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id": "items",
+            "name": "Items",
+            "max_components": 2,
+            "component_type_exclusions": []
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+<iscomment>Display checkbox for logged users (with newsLetterRegistration set to false) OR for guest users</iscomment>
+<isset name="displayCheckbox" value="${true}" scope="page" />
+<isif condition="${session.customer.profile && session.customer.profile.custom.newsLetterRegistration}">
+    <isset name="displayCheckbox" value="${false}" scope="page" />
+</isif>
+
+<isif condition="${displayCheckbox}">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox" id="newsLetterRegistration"
+                        <isprint value="${pdict.forms.shippingForm.shippingAddress.newsLetterRegistration.attributes}" encoding="off" />
+                        ${pdict.inputDisabled ? 'disabled' : ''}
+                    >
+                    <label for="newsLetterRegistration" class="custom-control-label checkout-checkbox">
+                        <span>
+                            ${Resource.msg('check.shipping.newsletter', 'checkout', null)}
+                        </span>
+                        <a href="${pdict.urls.privacyPolicy}" target="_blank">                        
+                            ${Resource.msg('link.shipping.newsletterPrivacy', 'checkout', null)}
+                        </a>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>    
+</isif>
+

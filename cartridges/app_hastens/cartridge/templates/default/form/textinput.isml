@@ -1,0 +1,13 @@
+<div class="form-group
+    <isif condition="${pdict.field.mandatory === true}">required</isif>">
+    <label class="form-control-label" for="${pdict.field.htmlName}">
+        <isprint value="${pdict.field.label}" encoding="htmlcontent" />
+    </label>
+    <input type="text" class="form-control" id="${pdict.field.htmlName}"
+        data-parsley-trigger="focusout" data-parsley-trigger-after-failure="focusout"
+        data-parsley-length-message="${pdict.rangeErrorMsg}"
+        data-parsley-pattern-message="${pdict.parseErrorMsg}"
+        data-parsley-required-message="${pdict.missingErrorMsg}"
+        <isprint value="${pdict.field.attributes}" encoding="off"/>>
+    <div class="invalid-feedback">${pdict.field.error || ''}</div>
+</div>

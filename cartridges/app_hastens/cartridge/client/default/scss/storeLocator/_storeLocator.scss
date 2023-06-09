@@ -1,0 +1,73 @@
+.store-locator-container {
+    .detect-location {
+        margin-bottom: 1em;
+    }
+
+    .store-name {
+        font-weight: 600;
+    }
+
+    .store-details {
+        display: block;
+        @include media-breakpoint-up(md) {
+            margin-left: 3.125em;
+        }
+        .paragraph-link {
+            margin-bottom: 10px;
+            a.list-links {
+                color: #444 !important;
+            }
+        }
+        hr {
+            margin: 5px 0 10px;
+            border: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .store-hours {
+            ul {
+                list-style-type: none;
+                padding-inline-start: 0;
+                li {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .striped {
+        min-height: 900px;
+        > div:nth-of-type(odd) {
+            background-color: $table-accent-bg;
+        }
+    }
+
+    .search-form {
+        width: 100%;
+        margin-bottom: 4rem;
+    }
+
+    .select-store {
+        @include media-breakpoint-up(sm) {
+            margin-top: -3rem;
+        }
+    }
+
+    .custom-radio {
+        .store-details {
+            margin-left: 1.125em;
+        }
+    }
+
+    .store-locator-no-results {
+        display: none;
+    }
+
+    .results {
+        width: 100%;
+        @include media-breakpoint-up(md) {
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: 21.875em;
+        }
+    }
+}

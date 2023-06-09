@@ -1,0 +1,8 @@
+<div class="order-details">
+    <span class="headline-6">
+        ${Resource.msg('label.orderhistory.shippedto', 'account', null)}
+    </span>
+    <span>
+        ${order.shippedToFirstName} ${order.shippedToLastName}
+    </span>
+</div>

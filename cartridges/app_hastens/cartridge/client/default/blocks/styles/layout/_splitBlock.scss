@@ -1,0 +1,89 @@
+.experience-hastens-splitBlock {
+    display: flex;
+}
+
+.experience-split--25,
+.experience-split--50,
+.experience-split--75 {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    @include media-breakpoint-up(lg) {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    &.mobile-reverse {
+        flex-direction: column-reverse;
+        @include media-breakpoint-up(lg) {
+            flex-direction: row;
+        }
+    }
+    > .experience-component {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        section {
+            width: 100%;
+            height: 100%;
+        }
+        .has-background {
+            height: 100%;
+        }
+        // TODO: Find a better solution for this
+        .has-popup-video,
+        .has-popup-video > .button-wrapper {
+            height: 100%;
+        }
+    }
+}
+
+.show-component-spacing {
+    .experience-split--25,
+    .experience-split--50,
+    .experience-split--75 {
+        margin: -5px;
+        @media (max-width: $max-block-width) {
+            margin: -5px 5px;
+        }
+        &.no-outer-vertical-padding-mobile {
+            @media (max-width: $max-block-width) {
+                margin: -5px;
+            }
+        }
+        > .experience-component {
+            padding: 5px;
+        }
+    }
+}
+
+.experience-split--50 > .experience-component {
+    @include media-breakpoint-up(lg) {
+        width: 50%;
+    }
+}
+
+.experience-split--25 > .experience-component:nth-child(even) {
+    @include media-breakpoint-up(lg) {
+        width: 75%;
+    }
+}
+
+.experience-split--25 > .experience-component:nth-child(odd) {
+    @include media-breakpoint-up(lg) {
+        width: 25%;
+    }
+}
+
+.experience-split--75 > .experience-component:nth-child(even) {
+    @include media-breakpoint-up(lg) {
+        width: 25%;
+    }
+}
+
+.experience-split--75 > .experience-component:nth-child(odd) {
+    @include media-breakpoint-up(lg) {
+        width: 75%;
+    }
+}

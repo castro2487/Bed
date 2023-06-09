@@ -1,0 +1,40 @@
+<isdecorate template="common/layout/pageMyAccount">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/orderHistory.js');
+        assets.addCss('/css/account/profile.css');
+    </isscript>
+
+    <div class="container">
+        <!---Breadcrumbs--->
+        <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+        <div class="container-order-history">
+            <div class="row justify-content-center order-history-titles">
+                <div class="col-12 col-sm-6 col-md-3 text-align-center-sm-only">
+                    <h2 class="headline-2" style="font-family: 'Montserrat SemiBold';">${Resource.msg('label.orderhistory', 'account', null)}</h2>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 text-align-center-sm-only">
+                    <div class="form-group">
+                        <span class="custom-select-label">${Resource.msg('label.order.view', 'order', null)}</span>
+                        <select class="form-control custom-select order-history-select no-border-custom-select"
+                            aria-label="${Resource.msg('label.filter.order.history', 'account', null)}">
+                            <isloop items="${pdict.filterValues}" var="filterValue">
+                                <option value="${filterValue.optionValue}" <isif
+                                    condition="${pdict.orderFilter === filterValue.displayValue || pdict.filterValues === Resource.msg('orderhistory.sixmonths.option',
+                                               'order', null) || pdict.filterValues === Resource.msg('orderhistory.twelvemonths.option', 'order', null)}"> selected
+                                    </isif>>
+                                    ${filterValue.displayValue}
+                                </option>
+                            </isloop>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="container order-list-container">
+                    <isinclude template="account/order/orderList" />
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

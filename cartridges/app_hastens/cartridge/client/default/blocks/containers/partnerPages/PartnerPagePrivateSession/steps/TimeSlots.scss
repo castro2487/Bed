@@ -1,0 +1,100 @@
+@import "../../../../../shared/styles/utils/utils";
+
+.has-partner-page_private-session_time-slots {
+    padding: 40px 15px;
+    text-align: center;
+    background-color: #eee;
+    color: #000;
+    @include media-breakpoint-up(sm) {
+        padding: 70px 15px;
+    }
+    .content-wrapper {
+        margin: 0 auto;
+        max-width: 960px;
+        .heading {
+            margin-bottom: 15px;
+        }
+        .body {
+            margin-bottom: 20px;
+            @include media-breakpoint-up(sm) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    .pickers {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+            align-items: stretch;
+        }
+    }
+    .date-picker {
+        background-color: #fff;
+        color: #000;
+        margin: 15px 0;
+        padding: 5px 10px;
+        border-radius: 0;
+        width: 100%;
+        max-width: 330px;
+        @include media-breakpoint-up(md) {
+            margin: 0 15px;
+            width: auto;
+            max-height: 320px;
+            overflow: auto;
+        }
+    }
+    .time-slots {
+        background-color: #fff;
+        color: #000;
+        margin: 15px 0;
+        position: relative;
+        border-radius: 0;
+        width: 100%;
+        max-width: 330px;
+        min-height: 45px;
+        @include media-breakpoint-up(md) {
+            margin: 0 15px;
+            max-height: 320px;
+            overflow: auto;
+        }
+        .list {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .list-item {
+            border-bottom: 1px solid #e2e2e2;
+        }
+        .list-item-text {
+            font-size: 14px;
+            text-align: center;
+        }
+        .progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            .bar {
+                background-color: #000;
+            }
+        }
+    }
+    .no-time-slots-message {
+        padding: 30px 15px;
+        font-style: italic;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.38);
+    }
+    .button-container {
+        margin-top: 20px;
+        @include media-breakpoint-up(md) {
+            margin-top: 50px;
+        }
+        .has-button + .has-button {
+            margin-left: 10px;
+        }
+    }
+}

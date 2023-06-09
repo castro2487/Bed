@@ -1,0 +1,169 @@
+@import "variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/mixins/breakpoints";
+
+.trackingpage {
+    margin: 1.875rem auto 2.5rem;
+
+    .view-track-btn {
+        width: 11.8253rem;
+        margin-bottom: 10.5625rem;
+    }
+
+    .track-shipment-btn {
+        width: 11.8253rem;
+        margin-bottom: 1.875rem !important;
+    }
+
+    .headline-6 {
+        font-size: 1rem;
+        line-height: 1.625rem;
+    }
+
+    .no-bold {
+        font-weight: normal;
+        color: $grey5;
+    }
+
+    .card {
+        margin-bottom: 1.25rem;
+    }
+
+    .card-body {
+        padding: 0 1.25rem 1.875rem;
+    }
+
+    .card-header h2,
+    .card-header h3 {
+        padding-top: 0;
+        margin-bottom: 0;
+        font-family: 'Montserrat SemiBold';
+        letter-spacing: normal;
+        text-transform: none;
+    }
+
+    .card-header h2 {
+        padding-bottom: 1.25rem;
+    }
+
+    ul.checkmark {
+        align-items: center;
+        justify-content: center;
+
+        .headline-6 {
+            font-size: 1rem;
+            line-height: 1.625rem;
+            margin-top: 1em;
+            width: 200%;
+            margin-left: -50%;
+            white-space: nowrap;
+
+            @include media-breakpoint-down(sm) {
+                font-size: 0.625rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .conjunction-line {
+            flex: 1;
+            height: 0.3125rem;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        li::after {
+            transform: rotate(45deg) translate(-50%, -50%);
+            left: calc(50% - 0.6rem);
+            top: 55%;
+
+            @media only screen and (max-width: 991px) {
+                left: calc(50% - 0.4rem);
+                top: 60%;
+            }
+        }
+    }
+
+    .tracking-container {
+        margin: 0;
+    }
+
+    .tracking-header .track-column {
+        font-size: 1rem;
+        padding: 0.5625rem 0 0.5625rem 0.6875rem;
+        line-height: 1.625rem;
+        background-color: $white;
+        border-bottom: none;
+        padding-bottom: 0.625rem;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .tracking-data .track-column {
+        font-size: 1rem;
+        padding: 0.5625rem 0 0.5625rem 0.6875rem;
+        line-height: 1.625rem;
+        font-style: normal;
+        font-weight: normal;
+    }
+
+    .card-header {
+        border-bottom: none;
+        padding: 1.875rem 1.25rem;
+
+        .pull-left {
+            width: 100%;
+        }
+    }
+
+    .new-track-order-header {
+        margin-top: 1.5625rem;
+    }
+
+    .tracking-data:nth-child(even) {
+        background-color: rgba(176, 192, 208, 0.2);
+    }
+
+
+
+
+    .tracking-overview {
+        @include media-breakpoint-up(lg) {
+            padding: 0 5rem;
+        }
+
+        li {
+            background: $hastens-bright-blue;
+            margin: 0;
+        }
+    }
+
+    .order-tracking-group .tracking-overview li {
+        background: $hastens-bright-blue;
+    }
+
+    .tracking-overview li::before {
+        display: none;
+    }
+
+    .active {
+        background: $hastens-bright-blue;
+    }
+
+    .order-tracking-group .active {
+        background: $hastens-bright-blue;
+    }
+    
+    .active~li {
+        background: $light-grey;
+    }
+
+    .order-tracking-group .active~li {
+        background: $light-grey;
+    }
+}

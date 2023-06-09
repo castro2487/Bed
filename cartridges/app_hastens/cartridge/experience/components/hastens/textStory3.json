@@ -1,0 +1,68 @@
+{
+    "name": "Small Text Story",
+    "description": "",
+    "group": "hastens_textstories",
+    "attribute_definition_groups": [
+        {
+            "id": "content",
+            "name": "",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "headingWeight",
+                    "name": "Heading weight",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Regular",
+                                    "value": "regular"
+                                },
+                                {
+                                    "name": "Bold",
+                                    "value": "bold"
+                                }
+                            ],
+                            "default_value": "bold"
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "body",
+                    "name": "Body",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.richTextEditor",
+                        "configuration": {
+                            "toolbar": "bold italic"
+                        }
+                    },
+                    "required": true
+                },
+                {
+                    "id": "theme",
+                    "name": "Theme",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.theme"
+                    },
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

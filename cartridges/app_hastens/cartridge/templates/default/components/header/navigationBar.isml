@@ -1,0 +1,120 @@
+<header>
+    <isinclude template="/components/header/skipNav" />
+
+    <iscomment> List of countries for which online shopping is not enabled </iscomment>
+    <isset name="Site" value="${require('dw/system/Site')}" scope="page" />
+    <isset name="listOfCountryWithPurchaseOption" value="${Site.getCurrent().getCustomPreferenceValue('listOfCountryWithPurchaseOption')}" scope="page" />
+
+    <iscomment> Customer's country </iscomment>
+    <isset name="Locale" value="${require('dw/util/Locale')}" scope="page" />
+    <isset name="currentCountry" value="${Locale.getLocale(request.getLocale()).country}" scope="page" />
+
+    <isset name="purchaseDisabled" value="${listOfCountryWithPurchaseOption.indexOf(currentCountry) < 0}" scope="page" />
+
+    <nav role="navigation" content="noindex">
+        <div class="header container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="navbar-header">
+                        <div class="pull-left">
+                            <div class="brand d-lg-none">
+                                <a class="logo-home" rel="nofollow" href="${URLUtils.url('Home-Show')}"
+                                    title="${Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null))}"
+                                    aria-label="${Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null))}">
+                                    <img src="${URLUtils.staticURL('/images/logo.svg')}"
+                                        alt="" width="140" height="45" />
+                                </a>
+                            </div>
+                            <button class="navbar-toggler d-lg-none" type="button" aria-controls="sg-navbar-collapse"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fa fa-bars text-white" aria-hidden="true"></i>
+                            </button>
+
+
+                            <div class="close-menu clearfix d-lg-none d-none">
+                                <iscomment> <div class="back pull-left">
+                                    <button role="button" aria-label="${Resource.msg('label.header.menu.back', 'common', null)}">
+                                        <span class="caret-left"></span>
+                                        ${Resource.msg('link.header.menu.back', 'common', null)}
+                                    </button>
+                                </div>   </iscomment>
+                                <div class="close-button">
+                                    <button class="text-white p-0" role="button" aria-label="${Resource.msg('label.header.menu.close', 'common', null)}">
+                                        <i aria-hidden="true" class="fa fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+
+                            <div class="brand hidden-sm-down">
+                                <a class="logo-home" rel="nofollow" href="${URLUtils.url('Home-Show')}"
+                                    title="${Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null))}"
+                                    aria-label="${Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null))}">
+                                    <img src="${URLUtils.staticURL('/images/logo.svg')}"
+                                        alt="" width="140" height="45" />
+                                </a>
+                            </div>
+                            <div class="main-menu navbar-toggleable-sm menu-toggleable-left multilevel-dropdown d-none d-lg-block"
+                                id="sg-navbar-collapse">
+                                <div class="container">
+                                    <div class="row">
+                                        <isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}" />
+                                    </div>
+                                </div>
+                                <div class="blue-check-icon blue-check-icon-mobile">
+                                    <a href="${URLUtils.url('Search-Show', 'cgid', 'bed-fabrics')}" rel="nofollow">
+                                        <i></i>
+                                        <span class="sr-only">
+                                            ${Resource.msg('global.bed.fabrics', 'common', null)}
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pull-right ${purchaseDisabled ? 'short-pull-right' : ''}">
+                            <div class="search search-desktop hidden-xs-down ${purchaseDisabled ? 'search-right-margin' : ''}">
+                                <isset name="searchPrefix" value="desktop" scope="pdict" />
+                                <isinclude template="components/header/search" />
+                                <button class="fa fa-search search-toggle" title="Search"></button>
+                            </div>
+                            <div class="search-mobile d-sm-none">
+                                <isset name="searchPrefix" value="mobile" scope="pdict" />
+                                <isinclude template="components/header/search" />
+                                <button class="fa fa-search search-toggle" title="Search"></button>
+                            </div>
+
+                            <iscomment> Remove Login if online shopping is not enabled </iscomment>
+                            <isif condition="${!purchaseDisabled}">
+                                <!-- Manual set style to debug easier -->
+                                <div class="hidden-md-down" style="display: inline-block">
+                                    <isinclude url="${URLUtils.url('Account-Header')}" />
+                                </div>
+                            </isif>
+
+                            <iscomment> Remove Cart if online shopping is not enabled </iscomment>
+                            <isif condition="${!purchaseDisabled}">
+                                <div class="minicart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
+                                    <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
+                                </div>
+                            </isif>
+                            <div class="blue-check-icon blue-check-icon-desktop" title="blue-check-icon">
+                                <a href="${URLUtils.url('Search-Show', 'cgid', 'bed-fabrics')}" rel="nofollow">
+                                    <i></i>
+                                    <span class="sr-only">
+                                        ${Resource.msg('global.bed.fabrics', 'common', null)}
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <iscomment>Display breadcrumbs and browse all categories nav if showAllCategories is true or it's PDP page or it's a page designer page</iscomment>
+    <isif condition="${(pdict.apiProductSearch && pdict.apiProductSearch.category && pdict.apiProductSearch.category.custom && pdict.apiProductSearch.category.custom.showAllCategories)
+                         || pdict.pdpShowAllMenu || pdict.pageDesignerShowAllMenu}">
+        <isinclude template="components/header/browseAllCategories" />
+    </isif>
+</header>
+<isinclude url="${URLUtils.url('Page-Geoblock')}" />

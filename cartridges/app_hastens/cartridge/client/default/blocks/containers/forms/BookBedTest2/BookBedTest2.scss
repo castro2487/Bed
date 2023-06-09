@@ -1,0 +1,67 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-book-a-bed-test-2 {
+    background-color: #000431;
+    .banner {
+        background-color: #000;
+        background-image: url("https://static.hastens.com/768/blocks/campaigns/we-sleep-do-you/2000T_blue-check-2.jpg");
+        background-position: center bottom;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        color: #fff;
+        padding-bottom: 50%;
+        @include media-breakpoint-up(sm) {
+            padding-bottom: 43%;
+        }
+        @include media-breakpoint-up(md) {
+            background-image: url("https://static.hastens.com/1200/blocks/campaigns/we-sleep-do-you/2000T_blue-check-2.jpg");
+        }
+        @include media-breakpoint-up(lg) {
+            background-image: url("https://static.hastens.com/1500/blocks/campaigns/we-sleep-do-you/2000T_blue-check-2.jpg");
+        }
+        .text {
+            max-width: 990px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 40px 15px 0;
+            text-align: center;
+            @include media-breakpoint-up(sm) {
+                padding-top: 80px;
+            }
+            header {
+                h2 {
+                    margin-top: 0;
+                    margin-bottom: 0.15em;
+                    sup {
+                        font-size: 65%;
+                    }
+                }
+                p {
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    margin-bottom: 30px;
+                    font-size: 14px;
+                    letter-spacing: 0.05em;
+                    @include media-breakpoint-up(md) {
+                        font-size: 16px;
+                    }
+                }
+            }
+            .body {
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .buttons {
+                margin-top: 40px;
+                button {
+                    margin: 10px;
+                }
+            }
+        }
+    }
+    .expandable-view {
+        // Add a border to fix problem with block growing upwards when expanded in Chrome/Firefox
+        border-top: 1px solid #000;
+    }
+}

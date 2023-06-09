@@ -1,0 +1,104 @@
+{
+    "name": "Storefront Page",
+    "description": "",
+    "attribute_definition_groups": [
+        {
+            "id": "general",
+            "attribute_definitions": [
+                {
+                    "id": "componentSpacing",
+                    "name": "Component spacing",
+                    "description": "Hide or show component spacing.",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Show component spacing",
+                                    "value": "show-component-spacing"
+                                },
+                                {
+                                    "name": "Hide component spacing",
+                                    "value": "hide-component-spacing"
+                                }
+                            ],
+                            "default_value": "show-component-spacing"
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "bottomSpacing",
+                    "name": "Bottom spacing",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Show bottom spacing",
+                                    "value": "show-bottom-spacing"
+                                },
+                                {
+                                    "name": "Hide bottom spacing",
+                                    "value": "hide-bottom-spacing"
+                                }
+                            ],
+                            "default_value": "show-bottom-spacing"
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "pageTheme",
+                    "name": "Page theme",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Light",
+                                    "value": "default"
+                                },
+                                {
+                                    "name": "Dark",
+                                    "value": "dark"
+                                }
+                            ],
+                            "default_value": "default"
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "catalogPopup",
+                    "name": "Enable catalog popup",
+                    "description": "",
+                    "type": "boolean",
+                    "required": false,
+                    "default_value": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id": "main",
+            "name": "Main Region",
+            "component_type_exclusions": [
+                {
+                    "type_id": "hastens.cta4"
+                }
+            ]
+        },
+        {
+            "id": "footer",
+            "name": "Footer",
+            "component_type_exclusions": []
+        }
+    ]
+}

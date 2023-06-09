@@ -1,0 +1,98 @@
+@import "../variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+// @import "account";
+
+.profile-back-to-account-link {
+    color: $primary;
+    text-decoration: underline;
+    display: block;
+    text-align: center;
+}
+
+.my-account-order-img {
+    width: 100%;
+}
+
+.tracking-consent {
+    color: $blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.container-order-history {
+    padding-top: 1.875rem;
+    padding-bottom: 2.75rem;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 1.25rem;
+        padding-bottom: 6rem;
+    }
+
+    .order-history-titles {
+        padding-bottom: 4px;
+
+        .form-group {
+
+            @include media-breakpoint-up(sm) {
+                float: right;
+            }
+        }
+
+        .custom-select-label {
+            font-size: 0.875rem;
+            color: $grey4;
+            font-family: 'Montserrat SemiBold';
+            margin-right: 10px;
+        }
+
+        .no-border-custom-select {
+            color: $black;
+            font-size: 0.875rem;
+            border: 0;
+            width: auto;
+            padding-left: 15px;
+            cursor: pointer;
+            font-family: 'Montserrat SemiBold';
+            background-color: $white;
+        }
+    }
+
+    .card {
+        .card-header {
+            padding: 1.25rem;
+            border-bottom: 0;
+
+            h3 {
+                @extend .headline-6;
+            }
+        }
+
+        .card-body {
+            padding-top: 0;
+            padding-bottom: 1.875rem;
+
+            .container-total {
+                display: flex;
+                align-items: baseline;
+                text-transform: uppercase;
+                margin-top: 1.25rem;
+
+                .product-card-total-label {
+                    font-family: 'Montserrat SemiBold';
+                }
+
+                .dotted-row {
+                    margin: 0 3px;
+                    flex: 1;
+                    width: 100%;
+                    height: 1px;
+                    background-image: linear-gradient(to right, $grey5 10%, rgba(255, 255, 255, 0) 0%);
+                    background-position: top;
+                    background-size: 15px 1px;
+                    background-repeat: repeat-x;
+                }
+            }
+        }
+    }
+}

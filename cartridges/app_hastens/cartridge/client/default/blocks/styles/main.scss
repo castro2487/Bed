@@ -1,0 +1,17 @@
+@import "~react-responsive-carousel/lib/styles/carousel.min.css";
+
+@import "../../shared/styles/utils/utils";
+@import "./base";
+@import "./layout/layout";
+
+/**
+ * Model viewer
+ */
+
+.QRModal {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    z-index: 1300 !important;
+    iframe {
+        border: 0;
+    }
+}

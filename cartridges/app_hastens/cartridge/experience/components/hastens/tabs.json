@@ -1,0 +1,75 @@
+{
+    "name": "Tabs",
+    "description": "",
+    "group": "hastens_layout",
+    "attribute_definition_groups": [
+        {
+            "id": "tab1",
+            "name": "Tab 1",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "linkText1",
+                    "name": "Text",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "linkSlug1",
+                    "name": "Slug",
+                    "description": "Text used in url",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "pageTitle1",
+                    "name": "Page title",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "tab2",
+            "name": "Tab 2",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "linkText2",
+                    "name": "Text",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "linkSlug2",
+                    "name": "Slug",
+                    "description": "Text used in url",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "pageTitle2",
+                    "name": "Page title",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id": "tab1",
+            "name": "Tab 1",
+            "component_type_exclusions": []
+        },
+        {
+            "id": "tab2",
+            "name": "Tab 2",
+            "component_type_exclusions": []
+        }
+    ]
+}

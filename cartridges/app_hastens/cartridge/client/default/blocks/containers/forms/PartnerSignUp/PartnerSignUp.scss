@@ -1,0 +1,100 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-partner-sign-up {
+    background-color: #010330;
+
+    .container {
+        color: #ffffff;
+        padding: 20px 15px 60px;
+        max-width: 990px;
+        margin: auto;
+        padding-top: 50px;
+        background-color: #010330;
+
+        .heading {
+            white-space: pre-line;
+        }
+
+        .body {
+            max-width: 800px;
+            padding: 0 10px;
+            padding-bottom: 20px;
+            margin: auto;
+            padding-top: 15px;
+            white-space: pre-line;
+            @include media-breakpoint-up(sm) {
+                padding: 0 40px 40px;
+            }
+        }
+
+        .form {
+            textarea {
+                resize: none;
+                height: 100px;
+            }
+
+            .g-recaptcha {
+                display: inline-block;
+            }
+
+            .checkbox {
+                font-weight: bold;
+
+                svg {
+                    color: #ffffff;
+                }
+
+                &:hover {
+                    background-color: rgba(#ffffff, 0.2);
+                }
+            }
+
+            .description-container {
+                padding-bottom: 0;
+            }
+
+            .checkbox-container {
+                padding-left: 18px;
+                padding-top: 0;
+                .label {
+                    font-size: 12px;
+                    line-height: 18px;
+                    display: block;
+                }
+            }
+
+            .meet-consent {
+                padding: 20px;
+                background-color: #5f7090;
+            }
+        }
+
+        .step-header,
+        .recaptcha-block,
+        .button-container {
+            text-align: center;
+        }
+
+        .recaptcha-block {
+            margin-top: 10px;
+        }
+
+        .input-support {
+            text-align: end;
+            margin: 15px 0 5px;
+            padding: 0;
+        }
+
+        .thank-you-container {
+            text-align: center;
+            .button-container {
+                margin-top: 55px;
+            }
+            h2,
+            p {
+                white-space: pre-line;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,22 @@
+@import "../../shared/styles/utils/utils";
+
+.has-slider {
+    .control-dots {
+        bottom: 30px;
+        left: 0;
+        margin: 0;
+        line-height: 0;
+        .dot {
+            opacity: 1;
+            width: 10px;
+            height: 10px;
+            border: solid 1px #fff;
+            background-color: transparent;
+            margin: 0 6px;
+            box-shadow: none;
+            &.selected {
+                background-color: #fff;
+            }
+        }
+    }
+}

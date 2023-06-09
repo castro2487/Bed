@@ -1,0 +1,33 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-three-split-text-story {
+    @include media-breakpoint-up(lg) {
+        display: flex;
+    }
+    .has-background {
+        @include media-breakpoint-up(lg) {
+            flex: 1;
+        }
+    }
+    .content-wrapper {
+        position: relative;
+        color: #fff;
+        padding: 80px 15px;
+        @include media-breakpoint-up(md) {
+            padding: 80px 45px;
+        }
+        .logo {
+            display: block;
+            max-width: 400px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+        }
+    }
+    .image-spacer {
+        @include media-breakpoint-down(md) {
+            padding-bottom: 140%;
+        }
+    }
+}

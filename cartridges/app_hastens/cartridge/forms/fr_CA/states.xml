@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+	<field formid="stateCode" label="label.input.state" type="string" mandatory="true" binding="stateCode" missing-error="address.state.missing" value-error="address.field.invalid" parse-error="error.message.required">
+		<options>
+			<option optionid="" label="resource.select" value="" />
+			<option optionid="AB" value="AB" label="state.ca.AB" />
+			<option optionid="BC" value="BC" label="state.ca.BC" />
+			<option optionid="MB" value="MB" label="state.ca.MB" />
+			<option optionid="NB" value="NB" label="state.ca.NB" />
+			<option optionid="NS" value="NS" label="state.ca.NS" />
+			<option optionid="NU" value="NU" label="state.ca.NU" />
+			<option optionid="ON" value="ON" label="state.ca.ON" />
+			<option optionid="QC" value="QC" label="state.ca.QC" />
+			<option optionid="SK" value="SK" label="state.ca.SK" />
+			<option optionid="NL" value="NL" label="state.ca.NL" />
+			<option optionid="NT" value="NT" label="state.ca.NT" />
+			<option optionid="YT" value="YT" label="state.ca.YT" />
+			<option optionid="PE" value="PE" label="state.ca.PE" />
+		</options>
+	</field>
+</form>

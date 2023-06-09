@@ -1,0 +1,181 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-button {
+    font-family: "Montserrat SemiBold", sans-serif; // TODO: Should be font weight 600
+    font-weight: 400;
+    display: inline-block;
+    padding: 0;
+    position: relative;
+    background: transparent;
+    border-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+    transition: color 0.2s, background-color 0.2s, border 0.2s;
+    cursor: pointer;
+    text-align: center;
+    appearance: none;
+    &:hover {
+        text-decoration: none;
+    }
+    &.appearance--simple {
+        font-size: 1rem;
+        @include media-breakpoint-up(md) {
+            font-size: 1.125rem;
+        }
+        &.color--primary {
+            color: $brand-primary;
+        }
+        &.color--secondary {
+            color: $brand-secondary;
+        }
+        &.color--light {
+            color: #fff;
+        }
+        &.color--dark {
+            color: #000;
+        }
+    }
+    &.appearance--standard {
+        border-radius: 2px;
+        line-height: 1.5;
+        &.color--primary {
+            background-color: $brand-primary;
+            border-color: $brand-primary;
+            color: #fff;
+            &:hover:not([disabled]) {
+                background-color: transparent;
+                border-color: $brand-primary;
+                color: $brand-primary;
+            }
+        }
+        &.color--secondary {
+            background-color: $brand-secondary;
+            border-color: $brand-secondary;
+            color: #fff;
+            &:hover:not([disabled]) {
+                background-color: $brand-secondary-hover;
+                border-color: $brand-secondary-hover;
+            }
+        }
+        &.color--light {
+            background-color: #fff;
+            border-color: #fff;
+            color: #000;
+            &:hover:not([disabled]) {
+                background-color: transparent;
+                border-color: #fff;
+                color: #fff;
+            }
+        }
+        &.color--dark {
+            background-color: #000;
+            border-color: #000;
+            color: #fff;
+            &:hover:not([disabled]) {
+                background-color: transparent;
+                border-color: #000;
+                color: #000;
+            }
+        }
+        &:disabled:not(.pending) {
+            background-color: #757575;
+            border-color: #757575;
+            color: #fff;
+            cursor: not-allowed;
+            opacity: 0.65;
+        }
+        &.size--small {
+            font-size: 0.875rem;
+            padding: 0.3125rem 15px;
+        }
+        &.size--medium {
+            font-size: 1rem;
+            padding: 0.5625rem 25px;
+        }
+        &.size--large {
+            font-size: 1rem;
+            padding: 0.5625rem 25px;
+            @include media-breakpoint-up(md) {
+                font-size: 1.125rem;
+                padding: 0.875rem 26px;
+                line-height: 1.4;
+            }
+        }
+    }
+    &.appearance--outlined {
+        border-radius: 2px;
+        line-height: 1.5;
+        &.color--light {
+            background: transparent;
+            border-color: #fff;
+            color: #fff;
+            &:hover:not([disabled]) {
+                background: #fff;
+                color: #000;
+            }
+        }
+        &.color--dark {
+            background: transparent;
+            border-color: #000;
+            color: #000;
+            &:hover:not([disabled]) {
+                background: #000;
+                color: #fff;
+            }
+        }
+        &:disabled:not(.pending) {
+            border-color: #757575;
+            color: #757575;
+            cursor: not-allowed;
+            opacity: 0.65;
+        }
+        &.size--small {
+            font-size: 0.875rem;
+            padding: 0.3125rem 15px;
+        }
+        &.size--medium {
+            font-size: 1rem;
+            padding: 0.5625rem 25px;
+        }
+        &.size--large {
+            font-size: 1rem;
+            padding: 0.5625rem 25px;
+            @include media-breakpoint-up(md) {
+                font-size: 1.125rem;
+                padding: 0.875rem 26px;
+                line-height: 1.4;
+            }
+        }
+    }
+    &.with-arrow .text {
+        &::after {
+            content: "\203A";
+            font-size: 1em;
+            margin-left: 0.4em;
+            position: relative;
+            line-height: 1;
+        }
+    }
+    &.should-animate-arrow .text {
+        &::after {
+            left: 0;
+            transition: left 0.15s ease;
+        }
+        &:hover::after {
+            left: 0.15em;
+        }
+    }
+    &.pending {
+        position: relative;
+        .text {
+            color: transparent;
+        }
+        .circular-progress {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -10px;
+            margin-left: -10px;
+        }
+    }
+}

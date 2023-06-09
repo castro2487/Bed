@@ -1,0 +1,147 @@
+{
+    "name": "News Tile",
+    "description": "",
+    "group": "hastens",
+    "attribute_definition_groups": [
+        {
+            "id": "group1",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "body",
+                    "name": "Body",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.richTextEditor",
+                        "configuration": {
+                            "toolbar": "undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link removeformat",
+                            "plugins": "advlist autolink lists link image charmap print preview anchor | searchreplace visualblocks code fullscreen | paste"
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "image1",
+                    "name": "Image 1 (featured)",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "video1",
+                    "name": "Video 1 (featured)",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "image2",
+                    "name": "Image 2",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "video2",
+                    "name": "Video 2",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "image3",
+                    "name": "Image 3",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "video3",
+                    "name": "Video 3",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "image4",
+                    "name": "Image 4",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "video4",
+                    "name": "Video 4",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "image5",
+                    "name": "Image 5",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "video5",
+                    "name": "Video 5",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "image6",
+                    "name": "Image 6",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "video6",
+                    "name": "Video 6",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "image7",
+                    "name": "Image 7",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "video7",
+                    "name": "Video 7",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "image8",
+                    "name": "Image 8",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "video8",
+                    "name": "Video 8",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

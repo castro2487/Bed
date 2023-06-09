@@ -1,0 +1,15 @@
+<iscontent type="text/html" charset="UTF-8" compact="true" />
+
+<isdecorate template="common/layout/pdStorePage">
+    <div class="store-page show-component-spacing" id="partner-page">
+        <div class="content-wrapper">
+            <div class="experience-region experience-main">
+                <isloop items=${pdict.blocks} var="block">
+                    <div class="experience-component">
+                        <isprint value="${block}" encoding="off" />
+                    </div>
+                </isloop>
+            </div>
+        </div>
+    </div>
+</isdecorate>

@@ -1,0 +1,25 @@
+<p class="summary-section-label billing-addr-label headline-6">${Resource.msg('label.order.billing.address', 'confirmation', null)}</p>
+<isif condition="${pdict.order.billing.billingAddress.address !== null}">
+    <isset name="address" value="${pdict.order.billing.billingAddress.address}" scope="page"/>
+    <iselse>
+    <isset name="address" value="{}" scope="page"/>
+</isif>
+
+<div class="summary-details billing">
+     <isinclude template="checkout/addressSummary" />
+   <iscomment>   <isif condition="${pdict.order.orderEmail !== null}">
+        <span class="order-summary-email">${pdict.order.orderEmail}</span>
+	</isif> </iscomment>
+    
+    <isif condition="${pdict.order.billing.billingAddress.address !== null}">
+        <div class="order-summary-phone mt-4">${pdict.order.billing.billingAddress.address.prefix || ''} ${pdict.order.billing.billingAddress.address.phone}</div>
+        <iselse>
+        <div class="order-summary-phone mt-4"></div>
+    </isif>
+</div>
+
+<!--- Payment information --->
+<div class="summary-details">
+    <p class="summary-section-label payment-info-label headline-6">${Resource.msg('label.order.payment.info', 'confirmation', null)}</p>
+    <isinclude template="checkout/billing/paymentOptions/paymentOptionsSummary" />
+</div>

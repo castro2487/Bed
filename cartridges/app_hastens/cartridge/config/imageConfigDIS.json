@@ -1,0 +1,33 @@
+{
+	"large": {
+		"scaleWidth": 800,
+		"scaleHeight": 800
+	},
+	"medium": {
+		"scaleWidth": 400,
+		"scaleHeight": 400
+	},
+	"small": {
+		"scaleWidth": 140,
+		"scaleHeight": 140
+	},
+	"swatch": {
+		"scaleWidth": 35,
+		"scaleHeight": 35
+	},
+	"missingImages": {
+		"large": "large_missing.jpg",
+		"medium": "large_missing.jpg",
+		"small": "large_missing.jpg",
+		"swatch": "large_missing.jpg"
+    },
+    "mobile": {
+        "scaleWidth": 768
+    },
+    "tablet": {
+        "scaleWidth": 1200
+    },
+    "desktop": {
+        "scaleWidth": 1500
+    }
+}

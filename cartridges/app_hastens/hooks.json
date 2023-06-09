@@ -1,0 +1,16 @@
+{
+  "hooks": [
+    {
+      "name": "app.template.afterFooter",
+      "script": "./cartridge/scripts/hooks/ga4_datalayer"
+    },
+    {
+      "name": "app.template.loqateInclude",
+      "script": "~/cartridge/scripts/hooks/loqateInclude"
+    },
+    {
+      "name": "dw.system.request.onRequest",
+      "script": "~/cartridge/scripts/hooks/redirectToGeolocationLocale"
+    }
+  ]
+}

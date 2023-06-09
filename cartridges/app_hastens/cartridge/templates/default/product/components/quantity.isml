@@ -1,0 +1,5 @@
+<label for="quantity-${loopState && loopState.count ? loopState.count : '1' }">${Resource.msg('label.quantity', 'common', null)}</label>
+<input class="number-input quantity-stepper form-control" id="quantity-${loopState && loopState.count ? loopState.count : '1' }" 
+    type="number" value="1" min="1" max="${product.availability.allocation}" step="1" data-url="${product.quantities.url}"/>
+
+  

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+	
+	<field formid="firstname" label="forms.contactus.firstname.label" type="string" mandatory="true" binding="firstName" max-length="50"/>
+	<field formid="lastname" label="forms.contactus.lastname.label" type="string" mandatory="true" binding="lastName" max-length="50"/>
+	<field formid="email" label="forms.contactus.email.label" type="string" mandatory="true" regexp="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$" parse-error="forms.contactus.email.parse-error" binding="email" max-length="50"/>	
+	<field formid="prefix" label="forms.contactus.prefix.label" type="string" mandatory="false" min-length="2" max-length="5" binding="prefix"/>
+	<field formid="prefixCountry" type="string" mandatory="false" binding="prefixCountry" min-length="2" max-length="2"/>
+	<field formid="phone" label="forms.contactus.phone.label" type="string" mandatory="false" min-length="7" max-length="15" regexp="^[0-9]+$" parse-error="error.message.parse.phone.profile.form" binding="phoneHome"/>		
+ 	<field formid="ordernumber" label="forms.contactus.ordernumber.label" type="string" mandatory="false" binding="orderNumber"/>
+
+	<field formid="myquestion" label="forms.contactus.myquestion.label" type="string" mandatory="true" binding="passwordQuestion">
+		<options>
+			<option optionid="Change/Cancel order" value="Change/Cancel order" label="forms.contactus.changecancelorder"/>
+			<option optionid="Delivery/Shipping questions" value="Delivery/Shipping questions" label="forms.contactus.deliveryshippingquestions"/>
+			<option optionid="Other order questions" value="Other order questions" label="forms.contactus.otherorderquestions"/>
+			<option optionid="Returns" value="Returns" label="forms.contactus.returns"/>
+			<option optionid="Claims" value="Claims" label="forms.contactus.claims"/>
+			<option optionid="General questions" value="General questions" label="forms.contactus.generalquestions"/>
+		</options>	
+	</field>
+	<field formid="comment" label="forms.contactus.comment" type="string" mandatory="true" binding="comment" max-length="500"/>
+
+	<action formid="send" valid-form="true"/>
+</form>

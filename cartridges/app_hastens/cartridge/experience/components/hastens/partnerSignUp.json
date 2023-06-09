@@ -1,0 +1,64 @@
+{
+    "name": "Partner Sign Up",
+    "description": "",
+    "group": "hastens_forms",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "formHeading",
+                    "name": "Form heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "formBody",
+                    "name": "Form body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "confirmationHeading",
+                    "name": "Confirmation heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "confirmationBody",
+                    "name": "Confirmation body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "topSpacing",
+                    "name": "Top spacing",
+                    "description": "Override page level setting",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Show top spacing",
+                                    "value": "show-top-spacing"
+                                },
+                                {
+                                    "name": "Hide top spacing",
+                                    "value": "hide-top-spacing"
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

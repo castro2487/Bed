@@ -1,0 +1,48 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-play-button {
+    position: relative;
+    padding: 0;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: hsla(0, 0%, 100%, 0.3);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    @include media-breakpoint-up(sm) {
+        width: 120px;
+        height: 120px;
+    }
+    &:not(:disabled):hover {
+        background: hsla(0, 0%, 100%, 0.5);
+    }
+    &:not(.pending)::before {
+        content: "";
+        position: absolute;
+        transition: all 0.3s;
+        display: block;
+        width: 0;
+        height: 0;
+        z-index: 1;
+        top: 20px;
+        left: 24px;
+        border-top: 11px solid transparent;
+        border-bottom: 11px solid transparent;
+        border-left: 18px solid #000;
+        @include media-breakpoint-up(sm) {
+            top: 30px;
+            left: 43px;
+            border-top-width: 30px;
+            border-bottom-width: 30px;
+            border-left-width: 48px;
+        }
+    }
+    .progress {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -10px;
+        margin-top: -10px;
+    }
+}

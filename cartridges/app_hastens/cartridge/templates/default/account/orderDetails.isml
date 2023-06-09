@@ -1,0 +1,17 @@
+<isdecorate template="common/layout/pageMyAccount">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/account/profile.css');
+        assets.addCss('/css/account/orderTrack.css');
+    </isscript>
+
+    <div class="container receipt" <isif condition=" ${pdict.order.shipping.length > 1}">multi-ship</isif>">
+        <!---Breadcrumbs--->
+        <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+        <div class="row justify-content-center container-recipt container-order-history">
+            <div class="col-12 col-md-6">
+                <isinclude template="checkout/confirmation/confirmationDetails" />
+            </div>
+        </div>
+    </div>
+</isdecorate>

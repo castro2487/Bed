@@ -1,0 +1,95 @@
+{
+    "name": "Heritage Text Story",
+    "description": "",
+    "group": "hastens_textstories",
+    "attribute_definition_groups": [
+        {
+            "id": "content",
+            "name": "",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "body",
+                    "name": "Left body",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.richTextEditor",
+                        "configuration": {
+                            "toolbar": "bold italic"
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "body2",
+                    "name": "Right body",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.richTextEditor",
+                        "configuration": {
+                            "toolbar": "bold italic"
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "theme",
+                    "name": "Theme",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.theme"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "image",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "imageCaption",
+                    "name": "Image caption",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "imagePosition",
+                    "name": "Image position",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Left",
+                                    "value": "left"
+                                },
+                                {
+                                    "name": "Right",
+                                    "value": "right"
+                                }
+                            ],
+                            "default_value": "left"
+                        }
+                    },
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

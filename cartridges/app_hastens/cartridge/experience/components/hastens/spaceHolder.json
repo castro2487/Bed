@@ -1,0 +1,31 @@
+{
+    "name": "Space Holder (Use with Split Block)",
+    "description": "",
+    "group": "hastens_layout",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "theme",
+                    "name": "Theme",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.theme"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "visibility",
+                    "name": "Hide on Mobile",
+                    "description": "",
+                    "type": "boolean",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

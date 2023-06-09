@@ -1,0 +1,6 @@
+<isif condition="${pdict.heading}">
+    <div class="has-grid-heading-container"><h2 class="has-heading size--md">${pdict.heading}</h2></div>
+</isif>
+
+
+<isprint value="${pdict.regions.items.setClassName(pdict.containerClassName).setAttribute('data-hastens-wrapper-block', pdict.block).render()}" encoding="off" />

@@ -1,0 +1,47 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-wait-list-cta {
+    padding: 30px 15px 35px;
+    text-align: center;
+    background-image: url("https://static.hastens.com/750/blocks/grand-vividus/gv-marketing-2.jpg");
+    background-size: cover;
+    background-position: bottom center;
+    @include media-breakpoint-up(sm) {
+        padding: 30px 15px 55px;
+    }
+    @include media-breakpoint-up(lg) {
+        background-image: url("https://static.hastens.com/1500/blocks/grand-vividus/gv-marketing-2.jpg");
+    }
+    p {
+        margin: 0 0 30px;
+        letter-spacing: 1px;
+        font-size: 15px;
+        text-transform: uppercase;
+        font-family: "adobe-garamond-pro", serif;
+        line-height: 1.5;
+        @include media-breakpoint-up(sm) {
+            font-size: 20px;
+        }
+    }
+    .join-button {
+        display: inline-block;
+        padding: 4px 30px;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 1px;
+        background: #d0b669;
+        border: 1px solid #d0b669;
+        color: #fff;
+        font-family: "adobe-garamond-pro", serif;
+        font-size: 18px;
+        text-transform: uppercase;
+        transition: color 0.2s, background-color 0.2s, border 0.2s;
+        appearance: none;
+        text-decoration: none;
+        &:hover {
+            background: transparent;
+            border: 1px solid #d0b669;
+            color: #d0b669;
+        }
+    }
+}

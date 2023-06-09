@@ -1,0 +1,64 @@
+{
+    "name": "Winter Campaign CTA",
+    "description": "",
+    "group": "hastens_winter_campaign",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "body",
+                    "name": "Body text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "linkText",
+                    "name": "Link text",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "linkUrl",
+                    "name": "Link url",
+                    "description": "",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "image",
+                    "name": "Background image",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Excel",
+                                    "value": "excel"
+                                },
+                                {
+                                    "name": "2000T",
+                                    "value": "2000t"
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

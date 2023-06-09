@@ -1,0 +1,23 @@
+<section class="colors-grids-container container-fluid">
+    <isif condition="${!!pdict.heading}">
+        <h2 class="image-headline-3 mb-2">${pdict.heading}</h2>
+    </isif>
+    <div class="row m-0 p-0">
+        <isif condition="${!!pdict.leftText}">
+            <div class="col-12  m-0 p-0 ${pdict.rightText ? 'col-sm-6 pr-sm-2' : ''}">
+                <p class="article-3">${pdict.leftText}</p>
+            </div>
+        </isif>
+        <isif condition="${!!pdict.rightText}">
+            <div class="col-12  m-0 p-0 col-sm-6 pl-sm-2">
+                <p class="article-3">${pdict.rightText}</p>
+            </div>
+        </isif>
+    </div>
+    <isif condition="${!!pdict.gridHeading}">
+        <h3 class="article-3 font-weight-bold mt-2 mb-0">${pdict.gridHeading}</h3>
+    </isif>
+    <div class="region border-top border-bottom">
+        <isprint value="${pdict.regions.colors.setClassName("inner-wrapper").render()}" encoding="off" />
+    </div>
+</section>

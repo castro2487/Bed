@@ -1,0 +1,24 @@
+@import "../../../../../shared/styles/utils/utils";
+
+.has-bed-tile__animated-container {
+    overflow: hidden;
+    position: relative;
+    transition: height 600ms, opacity 600ms;
+    @include media-breakpoint-up(lg) {
+        display: flex;
+        flex-direction: row;
+        margin: 0 -5px;
+    }
+    .column-1,
+    .column-2 {
+        transition: all 600ms;
+        @include media-breakpoint-up(lg) {
+            width: 50%;
+            padding: 0 5px;
+        }
+    }
+    .slot-2,
+    .slot-3 {
+        transition: all 600ms;
+    }
+}

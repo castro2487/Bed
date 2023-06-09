@@ -1,0 +1,89 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-partner-page-store-info {
+    background: #fcfcfc;
+    color: #000;
+    .map {
+        margin-top: -10px;
+    }
+    .info {
+        padding: 50px 15px;
+        @include media-breakpoint-up(md) {
+            max-width: 1020px;
+            margin: auto;
+        }
+        .info-block {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        .string-opening-hours {
+            font-size: 14px;
+            ul {
+                list-style: none;
+                padding-left: 0;
+                li {
+                    margin-top: 5px;
+                }
+            }
+        }
+        h3 {
+            font-size: 18px;
+            line-height: 24px;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        p, h3, li,
+        .social-icons,
+        .string-opening-hours .info {
+            text-align: center;
+            @include media-breakpoint-up(md) {
+                text-align: left;
+            }
+        }
+        .opening-hours {
+            text-align: left;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 8px;
+            @include media-breakpoint-up(md) {
+                margin-left: 0;
+                width: 100%;
+            }
+            p {
+                margin: 0;
+            }
+            p:first-child {
+                padding-right: 15px;
+            }
+            p:last-child {
+                padding-left: 15px;
+            }
+        }
+        a {
+            text-decoration: none;
+        }
+        .social-icons {
+            a {
+                .icon-rounded {
+                    display: inline-block;
+                    border-radius: 60px;
+                    border: 1px solid #505050;
+                    height: 35px;
+                    width: 35px;
+                    text-align: center;
+                    line-height: 35px;
+                    font-size: 20px;
+                    margin-right: 10px;
+                }
+                &:hover {
+                    .icon-rounded {
+                        color: #fff;
+                        background-color: #505050;
+                    }
+                }
+            }
+        }
+    }
+}

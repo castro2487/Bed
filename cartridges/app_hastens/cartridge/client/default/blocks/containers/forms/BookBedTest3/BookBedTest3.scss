@@ -1,0 +1,79 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-book-a-bed-test-3 {
+    $content-width: 990px;
+    background-color: #000431;
+    .banner {
+        background-color: #000;
+        color: #fff;
+        position: relative;
+        &.with-border::after {
+            $width: 72.5%;
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 50% - $width / 2;
+            width: $width;
+            height: 1px;
+            background-color: #fff;
+            z-index: 1;
+        }
+        .text {
+            max-width: $content-width;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 40px 15px;
+            text-align: center;
+            @include media-breakpoint-up(sm) {
+                padding: 60px 15px;
+                text-align: left;
+            }
+            @include media-breakpoint-up(md) {
+                padding: 80px 15px;
+            }
+            header {
+                h2 {
+                    margin-top: 0;
+                    margin-bottom: 0.15em;
+                    @media (min-width: $content-width + 1px) {
+                        max-width: 670px;
+                    }
+                    span {
+                        display: block;
+                        font-weight: 400;
+                        text-transform: none;
+                        font-size: 80%;
+                    }
+                }
+            }
+            .body {
+                margin-bottom: 30px;
+                @media (min-width: $content-width + 1px) {
+                    max-width: 400px;
+                }
+            }
+            .image {
+                padding-bottom: 65%;
+                background-image: url("https://static.hastens.com/768/blocks/campaigns/discover-whats-missing/hastens-image1.jpg");
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                margin: 6% 0 -10%;
+                @include media-breakpoint-up(sm) {
+                    background-position: right center;
+                }
+                @include media-breakpoint-up(md) {
+                    background-image: url("https://static.hastens.com/1200/blocks/campaigns/discover-whats-missing/hastens-image1.jpg");
+                }
+                @media (min-width: $content-width + 1px) {
+                    margin: -100px -120px -130px;
+                }
+            }
+        }
+    }
+    .expandable-view {
+        // Add a border to fix problem with block growing upwards when expanded in Chrome/Firefox
+        border-top: 1px solid #000;
+    }
+}

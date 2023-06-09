@@ -1,0 +1,22 @@
+<isif condition="${pdict.countryFound}">
+    <div class="geoblockContainerBlur ${pdict.hidden}">
+        <div class="container geoblockContainer country-selector-js" data-physical-locale="${pdict.physicalCountryModel.localID}" 
+            data-url="${URLUtils.url('Page-SetLocale')}"
+            data-error-url="${URLUtils.url('Home-ErrorNotFound')}"
+            data-current-locale="${pdict.currentLocale}">
+            <div class="geoblock-content">
+                <div class="message">${Resource.msg('banner.message','geoblock',null)}</div>
+                <a href="${pdict.physicalCountryModel.hasB2C ? '#' : pdict.physicalCountryModel.redirectUrl}"
+                    data-locale="${pdict.physicalCountryModel.localID}"
+                    data-currencycode="${pdict.physicalCountryModel.currencyCode}"
+                    data-siteId="${pdict.physicalCountryModel.siteID}"
+                    class="btn btn-secondary redirect-button ${pdict.physicalCountryModel.hasB2C ? 'B2C-country' : ''}" role="button">
+                    <span class="flag-icon flag-icon-squared flag-icon-${pdict.physicalCountryModel.countryCode.toLowerCase()}"></span>
+                    <span>${Resource.msgf('banner.button','geoblock',null,pdict.physicalCountryModel.displayLanguageEnglish)}</span>
+                </a>
+            </div>
+            <button id="geoblock-close" class="geoblock-close btn btn-light fa fa-times" aria-label="Close">
+            </button>
+        </div>
+    </div>
+</isif>

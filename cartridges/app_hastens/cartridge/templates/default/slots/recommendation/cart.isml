@@ -1,0 +1,8 @@
+<isif condition="${slotcontent}">
+    <div class="row">
+        <div class="col-12 recommendations">
+            <h5 class="headline-5">${Resource.msg('label.recommendations', 'cart', null)}</h5>
+            <isinclude template="components/productCarousel" />
+        </div>
+    </div>
+</isif>

@@ -1,0 +1,15 @@
+<footer id="footercontent">
+    <div class="container">
+        <div class="footer-container row">
+            <div class="footer-item col-12 text-align-center">
+                <iscontentasset aid="Footer-statement" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-6 offset-lg-3 copyright-notice text-align-center">
+                <iscontentasset aid="Footer-copyright" />
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,111 @@
+@import "../components/footer";
+
+.CookieBotDeclarationWrapper {
+    max-width: 1440px;
+    background: #e0e0e0;
+    color: #000;
+    margin: 0 auto;
+    padding: 30px 15px;
+    margin-bottom: 76px;
+    overflow-x: hidden;
+    @include media-breakpoint-up(sm) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+.CookieBotDeclarationWrapper h1 {
+    max-width: 740px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.25;
+    @include media-breakpoint-up(sm) {
+        font-size: 40px;
+        max-width: 990px;
+    }
+}
+
+.CookieDeclaration {
+    max-width: 990px;
+    margin: 0 auto;
+}
+
+.CookieDeclaration a {
+    color: #000060;
+    border-bottom: 1px solid #000060;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+        color: #000060;
+        text-decoration: none;
+    }
+}
+
+#CookieDeclarationConsentIdAndDate {
+    word-break: break-word;
+}
+
+#CookieDeclarationChangeConsent {
+    margin-top: 20px;
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    @include media-breakpoint-up(sm) {
+        flex-direction: row;
+    }
+}
+
+#CookieDeclarationUserStatusLabelWithdraw {
+    color: transparent;
+    font-size: 0;
+    margin-top: 10px;
+    @include media-breakpoint-up(sm) {
+        margin-top: 0;
+        margin-left: 10px;
+    }
+}
+
+#CookieDeclarationChangeConsentChange,
+#CookieDeclarationChangeConsentWithdraw {
+    @extend .has-button-footer.appearance--standard.color--dark;
+    display: inline-block;
+    padding: 0.75em 1.45em;
+    font-size: 14px;
+}
+.CookieDeclarationTypeHeader {
+    margin-top: 40px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.CookieDeclarationType {
+    display: block;
+    margin: 12px 0 12px 0;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+.CookieDeclarationTable {
+    border: 1px solid #a6a6a6 !important;
+    font-size: 12px !important;
+}
+
+.CookieDeclarationTableHeader {
+    background-color: #d2d2d2 !important;
+    text-transform: uppercase;
+}
+
+.CookieDeclarationTableHeader,
+.CookieDeclarationTableCell {
+    padding: 10px 15px !important;
+    border-bottom: 1px solid #a6a6a6 !important;
+}
+
+.CookieDeclarationTableHeader + .CookieDeclarationTableHeader,
+.CookieDeclarationTableCell + .CookieDeclarationTableCell {
+    border-left: 1px solid #a6a6a6;
+}

@@ -1,0 +1,57 @@
+<form action="${pdict.actionUrl}" class="login" method="POST" name="login-form" data-parsley-validate="">
+    <div class="form-group required">
+        <label class="form-label" for="login-form-email">
+            ${Resource.msg('label.input.login.email', 'login', null)}
+        </label>
+        <input type="email" id="login-form-email" required aria-required="true" class="form-control required" aria-describedby="login-form-email-error" name="loginEmail" value="${pdict.userName}"
+            <isprint value="${pdict.profileForm.customer.email.attributes}" encoding="off" />
+            data-parsley-type-message="${Resource.msg('error.message.parse.email.profile.form', 'forms', null)}"
+            data-parsley-required-message="${Resource.msg('error.card.info.missing.email', 'forms', null)}"
+            data-parsley-trigger="focusout" data-parsley-trigger-after-failure="focusout"
+        >
+        <div class="invalid-feedback" id="login-form-email-error"></div>
+    </div>
+
+    <div class="form-group required">
+        <label class="form-label" for="login-form-password">
+                ${Resource.msg('label.input.login.password', 'login', null)}
+        </label>
+        <input type="password" id="login-form-password" required aria-required="true" class="form-control required" aria-describedby="login-form-password-error" name="loginPassword"
+            <isprint value="${pdict.profileForm.login.password.attributes}" encoding="off" />
+            data-parsley-pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[A-Za-z\d\W]+$"
+            data-parsley-required-message="${Resource.msg('error.message.required', 'forms', null)}"
+            data-parsley-pattern-message="${Resource.msg('error.message.currentpasswordnomatch', 'forms', null)}"
+            data-parsley-length-message="${Resource.msg('error.message.currentpasswordnomatch', 'forms', null)}"
+            data-parsley-trigger="focusout" data-parsley-trigger-after-failure="focusout"
+        >
+        <div class="invalid-feedback" id="login-form-password-error"></div>
+    </div>
+
+    <div class="clearfix checkbox-form-container login-checkbox-form-container">
+        <div class="form-group custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="rememberMe" name="loginRememberMe" value="true"
+                <isif condition="${pdict.rememberMe}">checked</isif>
+            >
+            <label class="custom-control-label" for="rememberMe">
+                ${Resource.msg('label.checkbox.login.rememberme', 'login', null)}
+            </label>
+        </div>
+
+        <div class="forgot-password">
+
+            <a
+                id="password-reset"
+                title="${Resource.msg('link.login.forgotpassword', 'login', null)}"
+                rel="nofollow"
+                data-toggle="modal"
+                href="${URLUtils.url('Account-PasswordResetDialogForm')}"
+                data-target="#requestPasswordResetModal">
+                ${Resource.msg('link.login.forgotpassword', 'login', null)}
+            </a>
+        </div>
+    </div>
+
+    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+
+    <button type="submit" class="btn btn-block btn-primary">${Resource.msg('button.text.loginform', 'login', null)}</button>
+</form>

@@ -1,0 +1,35 @@
+{
+    "name": "Interior Design Collaborations",
+    "description": "",
+    "group": "hastens_forms",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "name": "",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "body",
+                    "name": "Body",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.richTextEditor",
+                        "configuration": {
+                            "useExtendedToolBar": true
+                        }
+                    },
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

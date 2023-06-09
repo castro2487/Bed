@@ -1,0 +1,54 @@
+<isscript>
+    var regularWoff2 = URLUtils.staticURL('/fonts/Montserrat-Regular.woff2');
+    var lightWoff2 = URLUtils.staticURL('/fonts/Montserrat-Light.woff2');
+    var semiBoldWoff2 = URLUtils.staticURL('/fonts/Montserrat-SemiBold.woff2');
+    var boldWoff2 = URLUtils.staticURL('/fonts/Montserrat-Bold.woff2');
+
+    var regularWoff = URLUtils.staticURL('/fonts/Montserrat-Regular.woff');
+    var lightWoff = URLUtils.staticURL('/fonts/Montserrat-Light.woff');
+    var semiBoldWoff = URLUtils.staticURL('/fonts/Montserrat-SemiBold.woff');
+    var boldWoff = URLUtils.staticURL('/fonts/Montserrat-Bold.woff');
+
+    var garamondWoff2 = URLUtils.staticURL('/fonts/Garamond-Premier-Pro-Regular.woff2');
+    var garamondWoff = URLUtils.staticURL('/fonts/Garamond-Premier-Pro-Regular.woff');
+</isscript>
+
+<link rel="preload" as="font" href="${regularWoff2}" type="font/woff2" crossorigin />
+
+<style>
+    @font-face { font-family: "Montserrat"; src: url("${regularWoff2}") format("woff2"), url("${regularWoff}") format("woff"); font-style: normal; font-weight: 400; font-display: swap; }
+    @font-face { font-family: "Garamond Premier Pro"; src: url("${garamondWoff2}") format("woff2"), url("${garamondWoff}") format("woff"); font-style: normal; font-weight: 400; font-display: swap; }
+</style>
+
+<iscomment> Fallback for browsers without css font loading API </iscomment>
+<style id="fonts-supplementary" media="none">
+    @font-face { font-family: "Montserrat"; src: url("${lightWoff2}") format("woff2"), url("${lightWoff}") format("woff"); font-style: normal; font-weight: 300; font-display: swap; }
+    @font-face { font-family: "Montserrat SemiBold"; src: url("${semiBoldWoff2}") format("woff2"), url("${semiBoldWoff}") format("woff"); font-style: normal; font-weight: 400; font-display: swap; }
+    @font-face { font-family: "Montserrat"; src: url("${boldWoff2}") format("woff2"), url("${boldWoff}") format("woff"); font-style: normal; font-weight: 600; font-display: swap; }
+</style>
+
+<script>
+    if ("fonts" in document) {
+        var regular;
+        var light = new FontFace("Montserrat", "url(${lightWoff2}) format('woff2')", { weight: "300" });
+        var semiBold = new FontFace("Montserrat SemiBold", "url(${semiBoldWoff2}) format('woff2')", { weight: "400" });
+        var bold = new FontFace("Montserrat", "url(${boldWoff2}) format('woff2')", { weight: "600" });
+
+        document.fonts.forEach(function(font) {
+            if (font.family.indexOf("Montserrat") !== -1) {
+                regular = font;
+            }
+        });
+
+        Promise.all([regular.load(), light.load(), semiBold.load(), bold.load()]).then(function(fonts) {
+            fonts.forEach(function(font) {
+                document.fonts.add(font);
+            });
+        });
+    } else {
+        var styleEl = document.getElementById("fonts-supplementary");
+        if (styleEl) {
+            styleEl.media = "all";
+        }
+    }
+</script>

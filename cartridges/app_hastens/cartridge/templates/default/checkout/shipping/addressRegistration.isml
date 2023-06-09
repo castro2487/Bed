@@ -1,0 +1,20 @@
+<iscomment> Display checkbox for logged users with empty Address Book (set to true by default) </iscomment>
+
+<isif condition="${pdict.customer.registeredUser && pdict.customer.addresses.length === 0}">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox" id="addressRegistration"
+                        <isprint value="${true}" encoding="off" />
+                    >
+                    <label for="addressRegistration" class="custom-control-label checkout-checkbox">
+                        <span>
+                            ${Resource.msg('check.shipping.address', 'checkout', null)}
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>    
+</isif>

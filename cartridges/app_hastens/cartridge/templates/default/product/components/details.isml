@@ -1,0 +1,5 @@
+<isif condition="${product.longDescription}">
+    <div class="value content">
+        <isprint value="${product.longDescription}" encoding="off" />
+    </div>
+</isif>

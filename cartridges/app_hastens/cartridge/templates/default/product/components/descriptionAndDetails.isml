@@ -1,0 +1,121 @@
+<isinclude template="/components/modules" />
+<div class="description-and-detail">
+
+    <isif condition="${product.attributes && product.attributes.length}">
+        <hr class="d-sm-none">
+    </isif>
+
+    <div class="product-details accordion" id="product-details-accordion">
+        <div class="card detail detail-overview">
+            <div class="card-header col-sm-12" id="heading-detail-overview">
+                <div class="row">
+                    <div class="accordion-trigger"></div>
+                    <button class="col-12 col-sm-4 title btn text-left btn-block"
+                        data-toggle="collapse"
+                        data-target="${'#detail-overview'}"
+                        aria-controls="detail-overview"
+                        aria-expanded="true"
+                    >
+                        <span class="title headline-5">${Resource.msg('product.overview.label', 'product', null)}</span>
+                    </button>
+                    <div class="col-12 col-sm-8 card-body content value collapse show" 
+                        id="detail-overview"
+                        aria-labelledby="heading-detail-overview"
+                    >
+                        <div>
+                            <isinclude template="product/components/details" />
+                        </div>
+                    </div>
+                    <i class="fa fa-plus"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card detail detail-material">
+            <div class="card-header col-sm-12" id="heading-detail-material">
+                <div class="row">
+                    <div class="accordion-trigger"></div>
+                    <button class="col-12 col-sm-4 title btn text-left btn-block"
+                        data-toggle="collapse"
+                        data-target="${'#detail-material'}"
+                        aria-controls="detail-material"
+                        aria-expanded="true"
+                    >
+                        <span class="title headline-5">${Resource.msg('product.material.label', 'product', null)}</span>
+                    </button>
+                    <div class="col-12 col-sm-7 card-body content value collapse show" 
+                        id="detail-material"
+                        aria-labelledby="heading-detail-material"
+                    >
+                        <isif condition="${product.composition}">
+                            <div class="col-12 value content">
+                                <isprint value="${Resource.msg('product.material.' + product.composition, 'product', null)}" encoding="off" />
+                            </div>
+                        </isif>
+                    </div>
+                    <i class="fa fa-plus"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card detail detail-care d-none">
+            <div class="card-header col-sm-12" id="heading-detail-care">
+                <div class="row">
+                    <div class="accordion-trigger"></div>
+                    <button class="col-12 col-sm-4 title btn text-left btn-block collapsed"
+                        data-toggle="collapse"
+                        data-target="${'#detail-care'}"
+                        aria-controls="detail-care"
+                        aria-expanded="false"
+                    >
+                        <span class="title headline-5">${Resource.msg('product.care-instructions.label', 'product', null)}</span>
+                    </button>
+                    <div class="col-12 col-sm-7 card-body content value collapse" 
+                        id="detail-care"
+                        aria-labelledby="heading-detail-care"
+                    >
+                        <isif condition="${product.primaryCategory}">
+                            <div class="col-12 value content">
+                                ${Resource.msg('product.care-instructions.text', 'product', null)}
+                                <div class="download-file">
+                                    <isset name="pdfName" value="${product.primaryCategory.custom.careInstructionPdf}" scope="page" />
+                                    <isset name="pdfPath" value="${'care_instructions/'+ pdfName + '.pdf'}" scope="page" />
+                                    <i class="fa fa-file-pdf-o text-hastens-blue"></i>                      
+                                    <a href="${URLUtils.staticURL(URLUtils.CONTEXT_LIBRARY, 'Library - Hastens_EU', pdfPath)}" target="_blank" class="force-hover uppercase font-normal">
+                                        ${Resource.msg('product.care-instructions.pdf', 'product', null)}
+                                    </a>
+                                </div>
+                            </div>
+                        </isif>
+                    </div>
+                    <i class="fa fa-plus"></i>
+                </div>
+            </div>
+        </div>
+        <iscomment> hide shipping and return accordion when online shopping is not enabled </iscomment>
+        <isif condition="${!purchaseDisabled}">
+            <div class="card detail detail-shipping">
+                <div class="card-header col-sm-12" id="heading-detail-shipping">
+                    <div class="row">
+                        <div class="accordion-trigger"></div>
+                        <button class="col-12 col-sm-4 title btn text-left btn-block collapsed"
+                            data-toggle="collapse"
+                            data-target="${'#detail-shipping'}"
+                            aria-controls="detail-shipping"
+                            aria-expanded="false"
+                        >
+                            <span class="title headline-5">${Resource.msg('product.shipping-returns.label', 'product', null)}</span>
+                        </button>
+                        <div class="col-12 col-sm-7 card-body content value collapse" 
+                            id="detail-shipping"
+                            aria-labelledby="heading-detail-shipping"
+                        >
+                            <div>
+                                <iscontentasset aid="pdp-shipping-and-returns" />
+                            </div>
+                        </div>
+                        <i class="fa fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </isif>
+    </div>
+</div>

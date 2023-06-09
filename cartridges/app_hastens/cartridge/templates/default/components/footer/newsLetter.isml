@@ -1,0 +1,31 @@
+<div class="has-newsletter-footer">
+    <iscomment> email subscription form </iscomment>
+    <div class="has-newsletter-form-footer">
+        <h2>${Resource.msg('newsletter.form.heading', 'hastens', null)}</h2>
+        <form class="form-wrapper" role="form" autocomplete="off" data-url="${URLUtils.url('Backend-NewsletterSubscribe')}">
+            <input type="text" id="newsletter-input" placeholder="${Resource.msg('newsletter.form.emailplaceholder', 'hastens', null)}" aria-label="${Resource.msg('newsletter.form.emailplaceholder', 'hastens', null)}">
+            <button type="submit" id="newsletter-button" class="has-button-footer color--secondary appearance--standard size--medium" disabled="true">
+                <span class="text">${Resource.msg('newsletter.form.submit', 'hastens', null)}</span>
+            </button>
+        </form>
+    </div>
+
+
+    <iscomment> subscription confirmation pop-up </iscomment>
+
+    <isset name="URLUtils" value="${require('dw/web/URLUtils')}" scope="page" />
+    <isscript>
+        var homePage = URLUtils.url('Home-Show');
+        var requestCatalog = "#request-catalog";
+        var url = homePage + requestCatalog;
+    </isscript>
+
+    <div class="has-newsletter-confirmation-footer">
+        <div class="content-wrapper">
+            <h2>${Resource.msg('newsletter.confirmation.heading', 'hastens', null)}</h2>
+            <p class="has-paragraph size--md">${Resource.msg('newsletter.confirmation.message2', 'hastens', null)} <b class="has-email"></b>.</p>
+            <p class="has-paragraph size--md">${Resource.msg('newsletter.getacatalog', 'hastens', null)} <a id="request-catalog-link" class="btn-text-link" href="${url}">${Resource.msg('newsletter.getacataloglinktext', 'hastens', null)}</a>
+            </p>
+        </div>
+    </div>
+</div>

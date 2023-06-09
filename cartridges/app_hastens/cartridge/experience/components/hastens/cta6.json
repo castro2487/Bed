@@ -1,0 +1,225 @@
+{
+    "name": "Book A Bed Test CTA",
+    "description": "",
+    "group": "hastens_cta",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "linkText",
+                    "name": "Link text",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "linkUrl",
+                    "name": "Link url",
+                    "description": "",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "anchor",
+                    "name": "Anchor",
+                    "description": "The anchor is used to scroll to block on same page or another page when different 'Link url' is provided. You can copy block id by hovering over the 'i' tag on the required block. Block id is easier copied when page is in preview.",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "intro",
+                    "name": "Intro text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "stepsHeading",
+                    "name": "Steps heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "topSpacing",
+                    "name": "Top spacing",
+                    "description": "Override page level setting",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Show top spacing",
+                                    "value": "show-top-spacing"
+                                },
+                                {
+                                    "name": "Hide top spacing",
+                                    "value": "hide-top-spacing"
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "componentId",
+                    "name": "Block id",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "step1",
+            "name": "Step 1",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "stepHeading1Part1",
+                    "name": "Heading part 1",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "stepHeading1Part2",
+                    "name": "Heading part 2",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "stepBody1",
+                    "name": "Body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "stepImage1",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "step2",
+            "name": "Step 2",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "stepHeading2Part1",
+                    "name": "Heading part 1",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "stepHeading2Part2",
+                    "name": "Heading part 2",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "stepBody2",
+                    "name": "Body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "stepImage2",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "step3",
+            "name": "Step 3",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "stepHeading3Part1",
+                    "name": "Heading part 1",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "stepHeading3Part2",
+                    "name": "Heading part 2",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "stepBody3",
+                    "name": "Body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "stepImage3",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "step4",
+            "name": "Step 4",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "stepHeading4Part1",
+                    "name": "Heading part 1",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "stepHeading4Part2",
+                    "name": "Heading part 2",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "stepBody4",
+                    "name": "Body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "stepImage4",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

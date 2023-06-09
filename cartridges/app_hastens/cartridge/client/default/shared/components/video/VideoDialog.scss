@@ -1,0 +1,15 @@
+@import "../../styles/utils/utils";
+
+.has-video-dialog {
+    .dialog-content {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        .player-container {
+            width: 100%;
+            max-width: $max-block-width;
+            margin: 0 auto;
+            align-self: center;
+        }
+    }
+}

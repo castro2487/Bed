@@ -1,0 +1,55 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-newsletter-form {
+    padding: 60px 15px;
+    @include media-breakpoint-up(md) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 15px;
+        min-height: 140px;
+    }
+    h2 {
+        font-size: 16px;
+        font-weight: inherit;
+        margin: 0;
+        text-align: center;
+        @include media-breakpoint-up(md) {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin: 0 20px 0 0;
+            flex-shrink: 0;
+            font-size: 18px;
+            text-align: left;
+        }
+    }
+    .form-wrapper {
+        display: flex;
+        margin: 20px 0 0;
+        @include media-breakpoint-up(md) {
+            margin: 0;
+        }
+    }
+    input {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 0.5625rem 26px;
+        color: #fff;
+        border-radius: 2px;
+        font-size: 16px;
+        line-height: 1.5;
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        @include media-breakpoint-up(md) {
+            width: 400px;
+            font-size: 18px;
+        }
+    }
+    button {
+        flex-shrink: 0;
+        margin: 0 0 0 10px;
+    }
+}

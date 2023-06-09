@@ -1,0 +1,39 @@
+<isinclude template="search/components/productTiles" />
+
+<div class="col-12 grid-footer veiled" id="test"
+     data-sort-options="${JSON.stringify(pdict.productSearch.productSort)}"
+     data-page-size="${pdict.productSearch.pageSize}"
+     data-page-number="${pdict.productSearch.pageNumber}"
+>
+    <!--- More button --->
+    <isif condition="${pdict.productSearch.showMoreUrl !== ''}">
+        <div class="show-more">
+            <div class="text-center">
+                <button class="btn btn-secondary col-8 col-sm-4 more"
+                        data-url="${pdict.productSearch.showMoreUrl}"
+                >
+                    ${Resource.msg('button.more', 'search', null)}
+                </button>
+            </div>
+        </div>
+    <iselse/>
+        <iscomment> <button class="back-to-top" title="${Resource.msg('button.back_to_top', 'common', null)}" aria-label="${Resource.msg('button.back_to_top', 'common', null)}">
+            <span class="fa-stack fa-lg" aria-hidden="true">
+                <i class="fa fa-circle fa-inverse fa-stack-2x"></i>
+                <i class="fa fa-arrow-up fa-stack-1x"></i>
+            </span>
+        </button> </iscomment>
+        <div class="btn-to-top">
+            <div class="text-center">
+                <button class="btn btn-secondary col-8 col-sm-4 more back-to-top" title="${Resource.msg('button.back_to_top', 'common', null)}" aria-label="${Resource.msg('button.back_to_top', 'common', null)}">
+                    ${Resource.msg('button.back_to_top', 'common', null)}
+                </button>
+            </div>
+        </div>
+    </isif>
+
+    <input type="hidden" class="permalink" value="${pdict.productSearch.permalink}" />
+    <isif condition="${pdict.productSearch.category != null}">
+        <input type="hidden" class="category-id" value="${pdict.productSearch.category.id}" />
+    </isif>
+</div>

@@ -1,0 +1,70 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-news-tile-2 {
+    .image-spacer {
+        display: block;
+        padding-bottom: 100%;
+        position: relative;
+        cursor: pointer;
+    }
+    .image-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        color: #fff;
+        padding: 10% 5%;
+        text-align: center;
+        font-size: 100%;
+        .image-heading {
+            font-size: 2.3em;
+            line-height: 1.05em;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            text-transform: uppercase;
+            white-space: pre-line;
+            margin-bottom: 3%;
+        }
+        .image-body {
+            font-size: 1em;
+            line-height: 1.5em;
+            white-space: pre-line;
+        }
+    }
+    .placeholder {
+        display: block;
+        background-color: #eaeaea;
+        background-image: url("../../../images/hastens-white.svg");
+        padding-bottom: 100%;
+        background-size: 20%;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+    > .text {
+        padding: 20px;
+    }
+    .heading {
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .excerpt {
+        margin: 0 0 20px;
+    }
+    &.push-button-to-bottom {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        > .text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .read-more-button {
+            margin-top: auto;
+        }
+    }
+}

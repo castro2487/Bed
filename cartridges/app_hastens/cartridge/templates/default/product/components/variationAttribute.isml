@@ -1,0 +1,98 @@
+<iscomment>
+
+Template Notes:
+
+- This template is intended to be referenced from an <isinclude> tag within an <isloop> in another
+  source template.  The <isloop> is expected to have a "status" attribute, named "attributeStatus".
+- ${attributeStatus.last} is checked to see whether a particular attribute row should include the
+  Quantity drop-down menu
+
+</iscomment>
+<isinclude template="/components/modules" />
+
+<div class="attribute color-attribute-container">
+    <isif condition="${attr.swatchable}">
+
+        <isif condition="${product.hideColorSelection}">
+            <isif condition="${product.colorContentAssetId}">
+                <iscontentasset aid="${product.colorContentAssetId}" />
+            <iselse/>
+                ${Resource.msg('label.color', 'common', null)}
+            </isif>            
+        <iselse/>
+            <iscomment>Check the pre-selected color</iscomment>
+            <isset name="selectedColor" value="${null}" scope="page" />
+            <isloop items="${attr.values}" var="attrValue">
+                <isif condition="${attrValue.selected}">
+                    <isset name="selectedColor" value="${attrValue.displayValue}" scope="page" />                
+                </isif>
+            </isloop>
+
+            <!-- Select <Attribute> Label -->
+            <isif condition="${selectedColor}">
+                <span class="${attr.id} non-input-label">
+                    ${selectedColor}
+                </span>
+            <iselse/>
+                <span class="${attr.id} non-input-label">
+                    <iscomment> replace size label when online shopping is not enabled </iscomment>
+                    <isif condition="${attr.displayName === "size" && purchaseDisabled}"> 
+                        ${Resource.msg('available.sizes', 'common', null)}
+                    <iselse>
+                        ${Resource.msg('label.select', 'common', null)} ${attr.displayName}
+                    </isif>
+                </span>
+            </isif>
+
+            <!-- Circular Swatch Image Attribute Values -->
+            <isloop items="${attr.values}" var="attrValue">
+                <isif condition="${!(isBundle && product.productType === 'variant' && !attrValue.selected) }">
+                    <button class="color-attribute"
+                            aria-label="${Resource.msg('label.select', 'common', null)} ${attr.displayName} ${attrValue.displayValue}"
+                            aria-describedby="${attrValue.id}"
+                            data-url="${attrValue.url}" ${ product.productType === "variant" && isBundle ? "disabled" : "" }
+                    >
+                        <span data-attr-value="${attrValue.value}"
+                            class="
+                                ${attr.id}-value
+                                swatch-circle
+                                swatch-value
+                                ${attrValue.selected ? 'selected' : ''}
+                                ${attrValue.selectable ? 'selectable' : ''}
+                            "
+                            style="background-image: url(${attrValue.images['swatch'].length > 0 ? attrValue.images['swatch'][0].url : ''})"
+                        >
+                        </span>
+                    </button>
+                    <span id="${attrValue.id}" class="sr-only selected-assistive-text">
+                        ${attrValue.selected ? Resource.msg('msg.assistive.selected.text', 'common', null) : ''}
+                    </span>
+                </isif>
+            </isloop>            
+        </isif>
+    <iselse>
+        <isif condition="${product.hideSizeSelection}">
+            ${Resource.msg('label.size', 'common', null)}<a href="${URLUtils.https('Search-Show', 'cgid', 'experience-the-difference', 't', 'catalog-request') + '#request-catalog'}"> ${Resource.msg('link.size.catalog', 'common', null)}</a>
+        <iselse/>   
+            <!-- Select <Attribute> Label -->
+            <label class="${attr.id}" for="${attr.id}-${loopState && loopState.count ? loopState.count : '1' }">
+                ${Resource.msg('label.select', 'common', null)} ${attr.displayName}
+            </label>
+
+            <!-- Attribute Values Drop Down Menu -->
+            <select class="custom-select form-control select-${attr.id}" id="${attr.id}-${loopState && loopState.count ? loopState.count : '1' }" ${ product.productType === "variant" && isBundle ? "disabled" : "" }>
+                <option value="${attr.resetUrl}">
+                    ${Resource.msg('label.select', 'common', null)} ${attr.displayName}
+                </option>
+                <isloop items="${attr.values}" var="attrValue">
+                    <option value="${attrValue.url}" data-attr-value="${attrValue.value}"
+                        ${!attrValue.selectable ? 'disabled' : ''}
+                        ${attrValue.selected ? 'selected' : ''}
+                    >
+                        ${attrValue.displayValue}
+                    </option>
+                </isloop>
+            </select>
+        </isif>
+    </isif>
+</div>

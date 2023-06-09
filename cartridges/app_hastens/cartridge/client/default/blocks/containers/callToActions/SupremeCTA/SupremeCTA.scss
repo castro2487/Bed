@@ -1,0 +1,59 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-supreme-cta {
+    background-image: url("https://static.hastens.com/1500/blocks/campaigns/supreme/Supreme_A_Oiled_Beech_Retouch-6.jpg");
+    background-size: auto 260px;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    @include media-breakpoint-up(md) {
+        background-size: auto 290px;
+    }
+    @media (min-width: $max-block-width + 1) {
+        background-size: 100% auto;
+    }
+    .content-wrapper {
+        max-width: 1440px;
+        height: 580px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 120px 15px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        @include media-breakpoint-up(md) {
+            height: 600px;
+        }
+        @include media-breakpoint-up(lg) {
+            height: 700px;
+            padding: 150px 15px;
+        }
+        .heading {
+            margin: 0;
+            @include media-breakpoint-up(md) {
+                white-space: pre-line;
+            }
+        }
+        .logo {
+            display: inline-block;
+            margin-bottom: 35px;
+            background-image: url("https://static.hastens.com/400/blocks/campaigns/supreme/Supreme-logo-newyork.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 190px;
+            @include media-breakpoint-up(md) {
+                width: 235px;
+            }
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 55px;
+            }
+            &::after {
+                content: "";
+                display: block;
+                padding-bottom: 35%;
+            }
+        }
+    }
+}

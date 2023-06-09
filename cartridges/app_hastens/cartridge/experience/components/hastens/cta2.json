@@ -1,0 +1,188 @@
+{
+    "name": "Banner CTA",
+    "description": "",
+    "group": "hastens_cta",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "trackingId",
+                    "name": "Tracking id",
+                    "description": "Must contain only alphanumeric characters. Will default to a unique id if not specified.",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.string"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "body",
+                    "name": "Body text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "position",
+                    "name": "Position",
+                    "description": "Content position",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Left",
+                                    "value": "left"
+                                },
+                                {
+                                    "name": "Right",
+                                    "value": "right"
+                                }
+                            ],
+                            "default_value": "left"
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "linkText",
+                    "name": "Link text",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "linkUrl",
+                    "name": "Link url",
+                    "description": "",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "anchor",
+                    "name": "Anchor",
+                    "description": "The anchor is used to scroll to block on same page or another page when different 'Link url' is provided. You can copy block id by hovering over the 'i' tag on the required block. Block id is easier copied when page is in preview.",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "disablePageReload",
+                    "name": "Disable page reload",
+                    "description": "",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "theme",
+                    "name": "Theme",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.theme"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "buttonColor",
+                    "name": "Button color",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.buttonColor"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "buttonAppearance",
+                    "name": "Button type",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Standard",
+                                    "value": "standard"
+                                },
+                                {
+                                    "name": "Simple",
+                                    "value": "simple"
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "image",
+                    "name": "Desktop image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "tabletImage",
+                    "name": "Tablet image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "mobileImage",
+                    "name": "Mobile image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "disableImageInheritance",
+                    "name": "Disable image inheritance",
+                    "description": "",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "imageAlt",
+                    "name": "Image description",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "topSpacing",
+                    "name": "Top spacing",
+                    "description": "Override page level setting",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Show top spacing",
+                                    "value": "show-top-spacing"
+                                },
+                                {
+                                    "name": "Hide top spacing",
+                                    "value": "hide-top-spacing"
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

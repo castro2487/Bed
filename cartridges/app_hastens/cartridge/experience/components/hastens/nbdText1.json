@@ -1,0 +1,49 @@
+{
+    "name": "Quote Text Story",
+    "description": "",
+    "group": "hastens_textstories",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "body",
+                    "name": "Body text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "quote",
+                    "name": "Quote text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "quoteFooter",
+                    "name": "Quote by",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "quoteFooterSupport",
+                    "name": "Quote by sub text",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

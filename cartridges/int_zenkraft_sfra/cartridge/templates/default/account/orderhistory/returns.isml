@@ -1,0 +1,66 @@
+<isdecorate template="common/layout/page">
+<isinclude template="components/modules"/>
+
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addJs('/js/zenkraft.js');
+    assets.addJs('/js/returns.js');
+    assets.addCss('/css/returns.css');
+</isscript>
+
+<div class="container">
+    <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+    <div class="d-none label-data" data-label-url=""></div>
+    <div class="row justify-content-center">
+        <div class="col-xs-12 col-lg-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3>
+                    <isprint value="${pdict.pageSettings.returnsRequireApproval ? 'Request Return' : 'Print Return Label'}" encoding="on" />
+                    </h3>
+                </div>
+                <div class="card-body">
+
+                    <isinclude template="account/orderhistory/returns/progress" />
+
+                    <isif condition="${!empty(pdict.order)}">
+                        <isset name="shipment" value="${pdict.order.shipping[0].productLineItems}" scope="page"/>
+
+                        <isinclude template="account/orderhistory/returns/items" />
+
+                        <isinclude template="account/orderhistory/returns/reasons" />
+
+                        <isinclude template="account/orderhistory/returns/label" />
+
+                        <div class="return-progress-next pull-right">
+                            <button class="btn btn-primary js-button-returns-back"  style="display:none;">Back</button>
+                            <button class="btn btn-primary js-button-returns-next"
+                                data-url="${URLUtils.https('Zenkraft-GetShippingLabel')}"
+                                data-locationurl="${URLUtils.https('Zenkraft-GetNearestDropOffLocation')}"
+                                data-orderid="${pdict.order.orderNumber}">Next</button>
+                        </div>
+                        <div class="invalid-feedback pull-right">Please select an item to return.</div>
+                    <iselse/>
+                        <isif condition="${pdict.CurrentCustomer.authenticated}">
+                            <div class="back">
+                                <a href="${URLUtils.https('Order-History')}" title="${Resource.msg('account.orderdetails.returnorder','account',null)}">
+                                    ${Resource.msg('account.orderdetails.returnorder','account',null)}
+                                </a>
+                            </div>
+                        </isif>
+                        <div class="not-found">
+                            ${Resource.msg('account.orders.notfound','account',null)}
+                        </div>
+                    </isif>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<isif condition="${!empty(dw.system.Site.getCurrent().getCustomPreferenceValue('googleMapsAPIKey'))}">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${dw.system.Site.getCurrent().getCustomPreferenceValue('googleMapsAPIKey')}&libraries=places"></script>
+</isif>
+
+</isdecorate>

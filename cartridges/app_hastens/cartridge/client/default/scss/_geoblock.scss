@@ -1,0 +1,125 @@
+@import "variables";
+@import "../shared/styles/utils/variables";
+
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+
+.geoblockHidden {
+    display: none !important;
+}
+
+#maincontent {
+    position: relative;
+    &.marginTop {
+        @include media-breakpoint-down(md) {
+            margin-top: 53px;
+        }
+    }
+}
+
+.geoblockContainerBlur {
+    position: sticky;
+    width: 100%;
+    z-index: 3;
+    top: 53px;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 1);
+    @include media-breakpoint-up(sm) {
+        height: 80px;
+    }
+    @include media-breakpoint-up(lg) {
+        top: 0;
+    }
+    .geoblockContainer {
+        max-width: $max-block-width;
+        width: 100%;
+        height: 100%;
+        list-style: none;
+        margin-left: auto;
+        margin-right: auto;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+
+        padding-top: 32px;
+        padding-bottom: 26px;
+        @include media-breakpoint-up(sm) {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .geoblock-content {
+            width: 100%;
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            padding-left: 14px;
+            @include media-breakpoint-up(sm) {
+                align-items: unset;
+                flex-direction: row;
+                padding-top: 0;
+                padding-bottom: 0;
+                text-align: left;
+                padding-left: unset;
+            }
+            .message {
+                font-family: $font-family-sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 20px;
+                align-self: center;
+                padding-bottom: 18px;
+                width: 90%;
+                @include media-breakpoint-up(sm) {
+                    width: 100%;
+                    padding-bottom: 0;
+                }
+            }
+            .redirect-button {
+                min-width: max-content;
+                margin-bottom: 0;
+                @include media-breakpoint-up(sm) {
+                    margin-right: 50px;
+                }
+                .flag-icon {
+                    vertical-align: middle;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 90%;
+                    margin-bottom: 3px;
+                }
+            }
+        }
+        .geoblock-close {
+            height: 21px;
+            width: 21px;
+            font-size: 20px;
+            color: $slightly-darker-gray;
+            padding: 0;
+            border: none;
+            background-color: $white;
+            transform: translate(-33%, -50%);
+            color: black;
+            border-radius: 0;
+            @include media-breakpoint-up(sm) {
+                transform: none;
+                font-size: 13px;
+                height: 14px;
+                width: 14px;
+                align-self: center;
+            }
+            &:focus {
+                outline: none;
+            }
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+}

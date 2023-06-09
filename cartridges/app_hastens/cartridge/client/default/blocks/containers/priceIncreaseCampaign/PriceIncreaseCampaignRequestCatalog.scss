@@ -1,0 +1,61 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-price-increase-campaign__request-catalog {
+    .banner {
+        background-image: url("https://static.hastens.com/768/blocks/price-increase-campaign/request-catalog-mobile.jpg");
+        background-size: 100%;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-color: #ededed;
+        color: #000;
+        padding-top: 76%;
+        position: relative;
+        @include media-breakpoint-up(md) {
+            background-image: url("https://static.hastens.com/1200/blocks/price-increase-campaign/request-catalog.jpg");
+            background-size: cover;
+            background-position: center;
+            padding-top: 0;
+        }
+        @include media-breakpoint-up(lg) {
+            background-image: url("https://static.hastens.com/1440/blocks/price-increase-campaign/request-catalog.jpg");
+        }
+        .content-wrapper {
+            position: relative;
+            padding: 40px 15px;
+            @include media-breakpoint-up(md) {
+                padding: 72px 45px;
+                max-width: 50%;
+                margin-left: 50%;
+            }
+        }
+        .heading {
+            margin: 0;
+        }
+        p {
+            margin-top: 15px;
+            @include media-breakpoint-up(lg) {
+                width: 75%;
+            }
+        }
+        .button-wrapper {
+            text-align: center;
+            @include media-breakpoint-up(md) {
+                text-align: left;
+            }
+            button {
+                margin-top: 10px;
+            }
+        }
+        .scroll-target {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+        }
+    }
+    .expandable-view {
+        background-color: #eee;
+        color: #000;
+    }
+}

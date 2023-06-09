@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>${Resource.msg('redirect.payment','common',null)}</title>
+    <meta http-equiv="Robots" content="noindex, follow" />
+</head>
+    <body>
+        <form name="adyenForm" id="adyenForm" action="https://${pdict.paypal.mode}.adyen.com/hpp/skipDetails.shtml" method="post">
+            <isloop items="${pdict.paypal.paramsMap.entrySet()}" var="keyvalue">
+                <input type="${pdict.paypal.inputType}" name="${keyvalue.key}" value="${keyvalue.value}" /></br>
+            </isloop>
+            <isif condition="${pdict.paypal.debug}">
+                <input type="submit" value='pay' style='margin-left:200px'/>
+            </isif>
+        </form>
+
+        <isif condition="${!pdict.paypal.debug}">
+            <script>document.forms[0].submit();</script>
+        </isif>
+    </body>
+</html>

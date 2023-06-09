@@ -1,0 +1,61 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-winter-campaign-cta {
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    padding-bottom: 100%;
+    position: relative;
+    @include media-breakpoint-up(md) {
+        padding-bottom: 75%;
+    }
+    @media (min-width: $max-block-width + 1) {
+        padding-bottom: 66.67%;
+    }
+    &.background--excel {
+        background-image: url("https://static.hastens.com/768/blocks/campaigns/wake-up/Hastens_Excel_Bow_Snow.jpg");
+        @include media-breakpoint-up(md) {
+            background-image: url("https://static.hastens.com/1200/blocks/campaigns/wake-up/Hastens_Excel_Bow_Snow.jpg");
+        }
+        @include media-breakpoint-up(lg) {
+            background-image: url("https://static.hastens.com/750/blocks/campaigns/wake-up/Hastens_Excel_Bow_Snow.jpg");
+        }
+    }
+    &.background--2000t {
+        background-image: url("https://static.hastens.com/768/blocks/campaigns/wake-up/Hastens_2000T_Bow_Snow.jpg");
+        @include media-breakpoint-up(md) {
+            background-image: url("https://static.hastens.com/1200/blocks/campaigns/wake-up/Hastens_2000T_Bow_Snow.jpg");
+        }
+        @include media-breakpoint-up(lg) {
+            background-image: url("https://static.hastens.com/750/blocks/campaigns/wake-up/Hastens_2000T_Bow_Snow.jpg");
+        }
+    }
+    .content-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        padding: 40px 15px 15px;
+        @include media-breakpoint-up(md) {
+            padding: 5% 15px 15px;
+        }
+        .heading {
+            @include heading-size-18;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 0;
+            white-space: pre-line;
+            @include media-breakpoint-up(md) {
+                @include heading-size-24;
+            }
+        }
+        p {
+            margin-bottom: 10px;
+        }
+    }
+}

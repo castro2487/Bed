@@ -1,0 +1,27 @@
+.has-bed-tile__information-table {
+    .table {
+        font-size: 9px;
+        table-layout: fixed;
+        margin: 0;
+        tbody {
+            border-bottom: solid rgb(252, 252, 252) 1px;
+            th, td {
+                padding: 5px;
+            }
+        }
+        .right-data {
+            background: #404040;
+            white-space: pre-line;
+        }
+        .left-data {
+            font-weight: 400;
+            width: 40%;
+            background: #262626;
+            text-transform: uppercase;
+            .no-uppercase {
+                text-transform: none;
+                display: block;
+            }
+        }
+    }
+}

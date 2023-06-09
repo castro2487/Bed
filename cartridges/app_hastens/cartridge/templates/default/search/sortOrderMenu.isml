@@ -1,0 +1,17 @@
+<isif condition="${pdict.productSearch.productIds.length > 0}">
+    <label class="filters-select" for="filters-select">${Resource.msg('filter.sortby.label', 'search', null)}</label>
+    <select name="sort-order" id="filters-select" class="custom-select" aria-label="${Resource.msg('label.sort.by', 'search', null)}">
+        <isloop items="${pdict.productSearch.productSort.options}" var="option">
+            <iscomment> Hide store exclusive and price related sorting rules when online shoppping is not enabled </iscomment>
+            <isset name="optionEnabled" value="${!(pdict.excludedSortingOptions.indexOf(option.id) >= 0)}" scope="page" />
+            <isif condition="${!purchaseDisabled || optionEnabled}">
+                <option class="${option.id}" value="${option.url}"
+                    data-id="${option.id}"
+                    ${pdict.productSearch.productSort.ruleId === option.id ? 'selected' : '' }
+                >
+                    ${option.displayName}
+                </option>
+            </isif>
+        </isloop>
+    </select>
+</isif>

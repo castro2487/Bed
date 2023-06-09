@@ -1,0 +1,47 @@
+{
+    "name": "Colors Grid",
+    "description": "",
+    "group": "hastens",
+    "attribute_definition_groups": [
+        {
+            "id": "general",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "leftText",
+                    "name": "Left text",
+                    "description": "If right text is not supplied, the text provided here takes all the available width on large screen",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "rightText",
+                    "name": "Right text",
+                    "description": "If provided, the view will be divided into two on large screens",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "gridHeading",
+                    "name": "Grid heading",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id": "colors",
+            "name": "Colors",
+            "component_type_exclusions": []
+        }
+    ]
+}

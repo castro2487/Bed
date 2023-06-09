@@ -1,0 +1,114 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+
+<isdecorate template="uikit/layout">
+    <h2 class="section-title py-3">Buttons</h2>
+
+    <div class="row py-2">
+        <div class="col-12 col-lg-3">
+            <button type="button" class="btn btn-primary">Add to bag</button> 
+        </div>
+        <div class="col-12 col-lg-6 mt-3">
+            <span>Primary button</span>
+        </div>
+    </div>
+
+    <div class="row py-2">
+        <div class="col-12 col-lg-3">
+            <button type="button" class="btn btn-primary active">Add to bag</button>
+        </div>
+        <div class="col-12 col-lg-6 mt-3">
+            <span>Primary button - Hover</span>
+        </div>
+    </div>
+
+    <div class="row py-2">
+        <div class="col-12 col-lg-3">
+            <button type="button" class="btn btn-secondary">Add to bag</button> 
+        </div>
+        <div class="col-12 col-lg-6 mt-3">
+            <span>Secondary button</span>
+        </div>
+    </div>
+
+    <div class="row py-2">
+        <div class="col-12 col-lg-3">
+            <button type="button" class="btn btn-secondary active">Add to bag</button>
+        </div>
+        <div class="col-12 col-lg-6 mt-3">
+            <span>Secondary button - Hover</span>
+        </div>
+    </div>
+
+    <div class="row py-2">
+        <div class="col-12 col-lg-3">
+            <button type="button" class="btn btn-tertiary">Add to bag</button>
+        </div>
+        <div class="col-12 col-lg-6 mt-3">
+            <span>Tertiary button</span>
+        </div>
+    </div>
+
+    <div class="row py-2">
+        <div class="col-12 col-lg-3">
+            <button type="button" class="btn btn-tertiary active">Add to bag</button>
+        </div>
+        <div class="col-12 col-lg-6 mt-3">
+            <span>Tertiary button - Hover</span>
+        </div>
+    </div>
+
+    <div class="row py-2">
+        <div class="col-12 col-lg-3">
+            <button type="button" class="btn btn-primary" disabled>Add to bag</button>
+        </div>
+        <div class="col-12 col-lg-6 mt-3">
+            <span>Primary and Secondary button – disabled</span>
+        </div>
+    </div>
+
+    <div class="row py-2">
+        <div class="col-12 col-lg-3">
+            <button type="button" class="btn btn-tertiary" disabled>Add to bag</button>
+        </div>
+        <div class="col-12 col-lg-6 mt-3">
+            <span>Tertiary button - disabled</span>
+        </div>
+    </div>
+
+    <div class="row py-2">
+        <div class="col-12 col-lg-3">
+            <a href="#link" class="btn-text-link">Browse all categories</a>
+        </div>
+        <div class="col-12 col-lg-6 mt-3">
+            <span>Text link</span>
+        </div>
+    </div>
+
+    <div class="row py-2">
+        <div class="col-12 col-lg-3">
+            <a href="#link" class="btn-text-link active">Browse all categories</a>
+        </div>
+        <div class="col-12 col-lg-6 mt-3">
+            <span>Text link hover</span>
+        </div>
+    </div>
+
+    <div class="row py-2">
+        <div class="col-12 col-lg-3">
+            <a href="#link" class="btn-product-label">Satin Pure Pillowcase</a>
+        </div>
+        <div class="col-12 col-lg-6 mt-3">
+            <span>Product label / nam</span>
+        </div>
+    </div>
+
+    <div class="row py-2">
+        <div class="col-12 col-lg-3">
+            <a href="#link" class="btn-product-label active">Satin Pure Pillowcase</a>
+        </div>
+        <div class="col-12 col-lg-6 mt-3">
+            <span>Product label / name on hover (on Product category page)</span>
+        </div>
+    </div>
+
+</isdecorate>

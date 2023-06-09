@@ -1,0 +1,54 @@
+[
+    {
+        "id": "europe",
+        "displayName": "europe",
+        "countries": [
+            "LU",
+            "CH",
+            "BE",
+            "AT",
+            "NL",
+            "IT",
+            "FR",
+            "DE",
+            "ES",
+            "DK",
+            "SE",
+            "FI",
+            "TR",
+            "CZ",
+            "RU",
+            "LT",
+            "SK",
+            "GB",
+            "EE",
+            "IS",
+            "LV",
+            "NO",
+            "PL",
+            "PT"
+        ]
+    },    {
+        "id": "asia",
+        "displayName": "asia",
+        "countries": [
+            "CN",
+            "JP",
+            "KR"
+        ]
+    },    {
+        "id": "america",
+        "displayName": "north and south america",
+        "countries": [
+            "US",
+            "CA",
+            "MX"
+        ]
+    },    {
+        "id": "other",
+        "displayName": "other locations",
+        "countries": [
+            "UN"
+        ]
+    }
+]

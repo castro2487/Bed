@@ -1,0 +1,182 @@
+
+<form action="${pdict.createAccountUrl}" class="registration" method="POST" name="${pdict.profileForm.htmlName}" data-parsley-validate="">
+    <fieldset>
+        <legend class="d-none">${Resource.msg('link.header.register.module', 'login', null)}</legend>
+        <div class="form-group
+            <isif condition=" ${!!pdict.profileForm.customer.firstname.mandatory === true}">required</isif>">
+            <label class="form-label" for="registration-form-fname">
+                <isprint value="${pdict.profileForm.customer.firstname.label}" encoding="htmlcontent" />*
+            </label>
+            <input type="text" class="form-control" id="registration-form-fname"
+                data-parsley-required-message="${Resource.msg('address.firstname.missing', 'forms', null)}"
+                data-range-error="${Resource.msg('error.message.50orless', 'forms', null)}"
+                aria-describedby="form-fname-error" <isprint value=${pdict.profileForm.customer.firstname.attributes}
+                encoding="off" />
+                data-parsley-max-message="${Resource.msg('error.message.50orless', 'forms', null)}"
+                data-parsley-trigger="focusout" data-parsley-trigger-after-failure="focusout"
+            >
+            <div class="invalid-feedback" id="form-fname-error"></div>
+        </div>
+
+        <div class="form-group
+            <isif condition=" ${!!pdict.profileForm.customer.lastname.mandatory === true}">required</isif>">
+            <label class="form-label" for="registration-form-lname">
+                <isprint value="${pdict.profileForm.customer.lastname.label}" encoding="htmlcontent" />*
+            </label>
+            <input type="text" class="form-control" id="registration-form-lname"
+                data-parsley-required-message="${Resource.msg('address.lastname.missing', 'forms', null)}"
+                data-range-error="${Resource.msg('error.message.50orless', 'forms', null)}"
+                aria-describedby="form-lname-error" <isprint value=${pdict.profileForm.customer.lastname.attributes}
+                encoding="off" />
+                data-parsley-trigger="focusout" data-parsley-trigger-after-failure="focusout"
+            >
+            <div class="invalid-feedback" id="form-lname-error"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group
+                    <isif condition=" ${!!pdict.profileForm.customer.prefixCountry.mandatory === true}">required</isif>">
+                    <input type="hidden" class="form-control prefix-country-code" id="registration-form-prefixCountry"
+                        value="${pdict.currentCountry}"
+                        aria-describedby="form-prefixCountry-error" <isprint value=${pdict.profileForm.customer.prefixCountry.attributes}
+                        encoding="off" />>
+                    <div class="invalid-feedback" id="form-prefixCountry-error"></div>
+                </div>
+                <div class="form-group
+                    <isif condition=" ${!!pdict.profileForm.customer.prefix.mandatory === true}">required</isif>">
+                    <label class="form-label" for="registration-form-prefix">
+                        <isprint value="${pdict.profileForm.customer.prefix.label}" encoding="htmlcontent" />*
+                    </label>
+                    <div class="dropdown prefix-selector d-inline-block" tabindex="0">
+                        <div class="input-wrapper">
+                            <i class="current-flag flag-icon flag-icon-${pdict.currentCountry.toLowerCase()}"></i>
+                            <input type="text" class="form-control custom-select btn dropdown-toggle prefix-input" id="registration-form-prefix"
+                                value="${pdict.prefixes[pdict.currentCountry]}"
+                                aria-describedby="form-prefix-error" <isprint value=${pdict.profileForm.customer.prefix.attributes} encoding="off" />
+                                autocomplete="off" readonly
+                                aria-expanded="false" aria-haspopup="true" data-toggle="dropdown">
+                        </div>
+                        <div class="dropdown-menu dropdown-prefix-selector">
+                            <isloop items="${Object.keys(pdict.prefixes)}" var="countryCode">
+                                <a class="dropdown-item" data-country="${countryCode.toLowerCase()}">
+                                    <i class="flag-icon flag-icon-${countryCode.toLowerCase()}"></i>
+                                    <span class="country-name">${pdict.countryNames[countryCode]} </span>
+                                    <span class="prefix-value">${pdict.prefixes[countryCode]}</span>
+                                </a>
+                            </isloop>
+                        </div>
+                    </div>
+                    <div class="invalid-feedback" id="form-prefix-error"></div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group
+                    <isif condition=" ${!!pdict.profileForm.customer.phone.mandatory === true}">required</isif>">
+                    <label class="form-label" for="registration-form-phone">
+                        <isprint value="${pdict.profileForm.customer.phone.label}" encoding="htmlcontent" />*
+                    </label>
+                    <input type="tel" class="form-control" id="registration-form-phone"
+                        data-parsley-required-message="${Resource.msg('address.phone.missing', 'forms', null)}"
+                        data-parsley-pattern-message="${Resource.msg('error.message.phone.constraints.not.matched', 'forms', null)}"
+                        data-parsley-length-message="${Resource.msg('error.message.phone.constraints.not.matched', 'forms', null)}"
+                        aria-describedby="form-phone-error" <isprint value=${pdict.profileForm.customer.phone.attributes}
+                        encoding="off" />
+                        data-parsley-trigger="focusout" data-parsley-trigger-after-failure="focusout"
+                    >
+                    <div class="invalid-feedback" id="form-phone-error"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group
+            <isif condition=" ${!!pdict.profileForm.customer.email.mandatory === true}">required</isif>">
+            <label class="form-label" for="registration-form-email">
+                <isprint value="${pdict.profileForm.customer.email.label}" encoding="htmlcontent" />*
+            </label>
+            <input type="email" class="form-control" id="registration-form-email"
+                data-parsley-required-message="${Resource.msg('error.card.info.missing.email', 'forms', null)}"
+                data-parsley-type-message="${Resource.msg('error.message.parse.email.profile.form', 'forms', null)}"
+                data-range-error="${Resource.msg('error.message.50orless', 'forms', null)}"
+                aria-describedby="registration-form-email-error" <isprint value=${pdict.profileForm.customer.email.attributes}
+                encoding="off" />
+                data-parsley-trigger="focusout" data-parsley-trigger-after-failure="focusout"
+            >
+            <div class="invalid-feedback" id="registration-form-email-error"></div>
+        </div>
+
+        <div class="form-group
+            <isif condition=" ${!!pdict.profileForm.customer.emailconfirm.mandatory === true}">required</isif>">
+            <label class="form-label" for="registration-form-email-confirm">
+                <isprint value="${pdict.profileForm.customer.emailconfirm.label}" encoding="htmlcontent" />*
+            </label>
+            <input type="text" class="form-control" id="registration-form-email-confirm"
+                data-parsley-equalto="#registration-form-email"
+                data-parsley-equalto-message="${Resource.msg('error.message.mismatch.email', 'forms', null)}"
+                data-parsley-pattern-message="${Resource.msg('error.message.parse.email.profile.form', 'forms', null)}"
+                data-parsley-required="true"
+                data-parsley-required-message="${Resource.msg('error.message.required', 'forms', null)}"
+                data-range-error="${Resource.msg('error.message.50orless', 'forms', null)}"
+                aria-describedby="form-email-confirm-error"
+                data-parsley-trigger="focusout" data-parsley-trigger-after-failure="focusout"
+                <isprint value=${pdict.profileForm.customer.emailconfirm.attributes} encoding="off" />
+            >
+            <div class="invalid-feedback" id="form-email-confirm-error"></div>
+        </div>
+
+        <div class="form-group
+            <isif condition=" ${!!pdict.profileForm.login.password.mandatory === true}">required</isif>">
+            <label class="form-label" for="registration-form-password">
+                <isprint value="${pdict.profileForm.login.password.label}" encoding="htmlcontent" />*
+            </label>
+            <input type="password" class="form-control" id="registration-form-password"
+                data-parsley-pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[A-Za-z\d\W]+$"
+                data-parsley-required-message="${Resource.msg('error.message.required', 'forms', null)}"
+                data-parsley-pattern-message="${Resource.msg('error.message.password.constraints.not.matched', 'forms', null)}"
+                data-parsley-length-message="${Resource.msg('error.message.password.constraints.not.matched', 'forms', null)}"
+                aria-describedby="registration-form-password-error" autocomplete="off"
+                <isprint value=${pdict.profileForm.login.password.attributes} encoding="off" />
+                data-parsley-trigger="focusout" data-parsley-trigger-after-failure="focusout"
+            >
+            <div class="invalid-feedback" id="registration-form-password-error"></div>
+        </div>
+
+        <div class="form-group
+            <isif condition=" ${!!pdict.profileForm.login.passwordconfirm.mandatory === true}">required</isif>">
+            <label class="form-label" for="registration-form-password-confirm">
+                <isprint value="${pdict.profileForm.login.passwordconfirm.label}" encoding="htmlcontent" />*
+            </label>
+            <input type="password" class="form-control" id="registration-form-password-confirm"
+                data-parsley-equalto="#registration-form-password"
+                data-parsley-equalto-message="${Resource.msg('error.message.mismatch.password', 'forms', null)}"
+                data-parsley-required="true"
+                data-parsley-required-message="${Resource.msg('error.message.mismatch.password', 'forms', null)}"
+                data-parsley-length-message="${Resource.msg('error.message.password.constraints.not.matched', 'forms', null)}"
+                aria-describedby="form-password-confirm-error" autocomplete="off"
+                data-parsley-trigger="focusout" data-parsley-trigger-after-failure="focusout"
+                <isprint value=${pdict.profileForm.login.passwordconfirm.attributes} encoding="off" />
+            >
+            <div class="invalid-feedback" id="form-password-confirm-error"></div>
+        </div>
+
+        <div class="form-legend">
+            ${Resource.msg('button.text.formlegend', 'login', null)}
+        </div>
+
+        <div class="form-group custom-control custom-checkbox checkbox-form-container">
+            <input type="checkbox" class="custom-control-input" id="add-to-email-list" <isprint
+                value=${pdict.profileForm.customer.addtoemaillist.attributes} encoding="off" />
+            >
+            <label class="custom-control-label" for="add-to-email-list">
+                ${Resource.msg('label.profile.signMeCheckbox', 'account', null)}
+                <a href="${pdict.privacyPolicyUrl}" class="btn-product-label active" target="_blank">${Resource.msg('link.privacy', 'account', null)}</a>
+            </label>
+        </div>
+
+        <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+
+        <button type="submit" class="btn btn-block btn-primary">
+            ${Resource.msg('button.createaccount.registration', 'registration', null)}
+        </button>
+    </fieldset>
+</form>

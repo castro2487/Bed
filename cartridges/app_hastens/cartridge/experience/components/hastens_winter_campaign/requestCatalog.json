@@ -1,0 +1,36 @@
+{
+    "name": "Winter Campaign Request A Catalog",
+    "description": "",
+    "group": "hastens_winter_campaign",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "bannerHeading",
+                    "name": "Banner heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "bannerBody",
+                    "name": "Banner body text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "bannerButtonText",
+                    "name": "Banner button text",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+
+}

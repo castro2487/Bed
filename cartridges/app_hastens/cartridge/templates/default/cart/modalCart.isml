@@ -1,0 +1,35 @@
+<!-- Modal Cart -->
+<isloop items="${pdict.items}" var="lineItem">
+    <div class="modal fade modal-cart" id="cart-modal-${lineItem.id}" tabindex="-1" role="dialog" aria-labelledby="cart-modal-${lineItem.id}Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title headline-5" id="exampleModalLabel">${Resource.msg('cart.modal.title.label', 'cart', null)}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-cart-desription">
+                ${Resource.msg('cart.modal.description.label', 'cart', null)}
+            </div> 
+            <div class="modal-cart-product-name">
+                <a class="line-item-name-link" href="${URLUtils.url('Product-Show', 'pid', lineItem.id)}">${lineItem.productName}</a>
+            </div> 
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-tertiary">${Resource.msg('cart.modal.cancel.button', 'cart', null)}</button>   
+            <button type="button" 
+            class="btn btn-secondary cart-delete-confirmation-btn"
+            data-pid="${lineItem.id}"
+            data-name="${lineItem.productName}"
+            data-action="${pdict.actionUrls.removeProductLineItemUrl}"
+            data-uuid="${lineItem.UUID}"    
+            aria-label="${Resource.msgf('text.remove.line.item','cart', null, lineItem.productName)}">
+                ${Resource.msg('cart.modal.yes.button', 'cart', null)}
+            </button>
+        </div>
+        </div>
+    </div>
+    </div>
+</isloop>

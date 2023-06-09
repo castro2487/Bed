@@ -1,0 +1,19 @@
+.has-grand-vividus-presentation {
+    background-image: url("../../images/editMode/grand-vividus-presentation.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    .preview-not-available {
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: #fff;
+        font-style: italic;
+        opacity: 0.6;
+        font-size: 14px;
+        margin: 0;
+    }
+}

@@ -1,0 +1,48 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+
+<isdecorate template="uikit/layout">
+    <h2 class="section-title py-3">Icons</h2>
+
+    <div class="p-4 bg-dark-grey">
+        <img class="logo py-3" src="${URLUtils.staticURL('/images/logo.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
+        <div class="h1">
+            <i class="p-2 fa fa-sign-in text-white" aria-hidden="true"></i>
+            <i class="p-2 fa fa-search text-white" aria-hidden="true"></i>
+            <i class="p-2 fa fa-shopping-bag text-white" aria-hidden="true"></i>
+
+            <i class="p-2 fa fa-plus" aria-hidden="true"></i>
+            <i class="p-2 fa fa-times" aria-hidden="true"></i>
+            <i class="p-2 fa fa-bars text-white" aria-hidden="true"></i>
+        </div>
+
+        <div class="h2">
+            <i class="p-2 fa fa-plus" aria-hidden="true"></i>
+            <i class="p-2 fa fa-times" aria-hidden="true"></i>
+        </div>
+
+        <div class="h2">
+            <i class="p-2 fa fa-times-circle text-mid-grey" aria-hidden="true"></i>
+            <i class="p-2 fa fa-file-pdf-o text-hastens-blue" aria-hidden="true"></i>
+        </div>
+
+        <div class="h2">
+            <i class="p-2 fa fa-angle-down" aria-hidden="true"></i>
+            <i class="p-2 fa fa-chevron-down text-hastens-blue" aria-hidden="true"></i>
+            <i class="p-2 fa fa-chevron-up text-hastens-blue" aria-hidden="true"></i>
+            <i class="p-2 fa fa-chevron-down" aria-hidden="true"></i>
+            <i class="p-2 fa fa-chevron-up" aria-hidden="true"></i>
+        </div>
+
+        <div class="h2">
+            <i class="p-2 fa fa-check text-white" aria-hidden="true"></i>
+        </div>
+
+    </div>
+
+    <div class="py-4">
+        <a href="${URLUtils.https('UIKit-Icons')}">List all icons
+        <i class="fa fa-angle-double-right"></i></a>
+    </div>
+
+
+</isdecorate>

@@ -1,0 +1,28 @@
+{
+    "name": "drēmər Quote",
+    "description": "",
+    "group": "hastens_dremer",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "quote",
+                    "name": "Quote",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "quoteBy",
+                    "name": "Quote by",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

@@ -1,0 +1,29 @@
+@import "../../shared/styles/utils/utils";
+
+@import "grandVividusPresentation";
+
+.experience-component {
+    position: relative;
+    .id-holder {
+        top: 24px;
+        right: 5px;
+        z-index: 1000;
+        cursor: text;
+        color: white;
+        padding: 5px 10px;
+        position: absolute;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.2);
+        .id {
+            display: none;
+        }
+        &:hover {
+            .icon {
+                display: none;
+            }
+            .id {
+                display: block;
+            }
+        }
+    }
+}

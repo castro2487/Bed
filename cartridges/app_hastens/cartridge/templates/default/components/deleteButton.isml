@@ -1,0 +1,8 @@
+<div class="cart-delete-confirmation-btn-container">
+    <button
+    class="cart-delete-btn btn-text-link" 
+    data-toggle="modal"
+    data-target="${'#'}cart-modal-${lineItem.id}">
+        ${Resource.msg('link.remove.product','cart',null)}
+    </button>
+</div>

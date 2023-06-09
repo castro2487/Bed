@@ -1,0 +1,93 @@
+// CAUTION
+// do not edit, this file is for ui kit purposes only
+// the original file is located here: scss/setup/variables/_typo.scss
+
+@import "variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+
+.uikit-typo {
+  display: none;
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+}
+
+.uikit-typo-mobile {
+  @include media-breakpoint-up(md) {
+    .image-headline-1 {
+      font-size: 28px;
+      line-height: 34px;
+    }
+
+    .image-headline-2 {
+      font-size: 24px;
+      line-height: 29px;
+    }
+
+    .image-headline-3 {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .headline-1 {
+      font-size: 26px;
+      line-height: 32px;
+    }
+
+    .headline-2 {
+      font-size: 22px;
+      line-height: 27px;
+    }
+
+    .headline-3 {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    .headline-4 {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    .headline-5 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    .headline-6 {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    .subhead-large {
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    .subhead-small {
+      font-size: 10px;
+      line-height: 12px;
+    }
+
+    .product-label {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    .text-link {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    .article-1 {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    .article-2 {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}

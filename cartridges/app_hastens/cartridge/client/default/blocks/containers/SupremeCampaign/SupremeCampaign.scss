@@ -1,0 +1,174 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-supreme-campaign {
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 15px 50px;
+    @include media-breakpoint-up(md) {
+        padding: 0 15px;
+    }
+    .view-in-3d-button,
+    .view-in-ar-button button,
+    .close-3d-button {
+        background-image: url("../../../images/view-in-ar.svg");
+        background-color: rgba(255, 255, 255, 0.5);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 145px;
+        height: 39px;
+        padding: 0;
+        appearance: none;
+        border: 1px solid rgba(0, 0, 0, 0.6);
+        border-radius: 4px;
+        transition: border-color 100ms;
+        &:hover {
+            border-color: rgba(0, 0, 0, 1);
+        }
+    }
+    .view-in-3d-button {
+        background-image: url("../../../images/view-in-3d.svg");
+    }
+    .view-in-ar-button button {
+        background-image: url("../../../images/view-in-ar.svg");
+    }
+    .close-3d-button {
+        background-image: url("../../../images/close-3d.svg");
+        width: 39px;
+        margin-left: 10px;
+    }
+    .initial-view {
+        width: 100%;
+        max-width: 1045px;
+        position: relative;
+        .button-wrapper {
+            display: flex;
+            justify-content: center;
+            margin: 60px 0 40px;
+            @include media-breakpoint-up(md) {
+                position: absolute;
+                top: 40px;
+                right: 0;
+                z-index: 1;
+                margin: 0;
+            }
+        }
+        .view-in-3d-button {
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+        .view-in-ar-button {
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+        }
+    }
+    .mv-view {
+        width: 100%;
+        max-width: 1045px;
+        position: relative;
+        .button-wrapper {
+            display: flex;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            z-index: 1;
+        }
+    }
+    .model-viewer {
+        position: relative;
+        padding-bottom: 54.856459%;
+        margin: 0;
+        width: 100%;
+        model-viewer { /* stylelint-disable-line selector-type-no-unknown */
+            width: 100%;
+            height: calc(100% - 8px);
+            position: absolute;
+            top: 0;
+        }
+    }
+    .logo {
+        display: none;
+        background-image: url("https://static.hastens.com/400/blocks/campaigns/supreme/Supreme-logo-newyork.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        max-width: 235px;
+        margin-top: 150px;
+        margin-bottom: 30px;
+        @include media-breakpoint-up(md) {
+            display: inline-block;
+        }
+        &::after {
+            content: "";
+            display: block;
+            padding-bottom: 35%;
+        }
+    }
+    .image {
+        background-image: url("https://static.hastens.com/768/blocks/campaigns/supreme/Supreme_A_Oiled_Beech_Retouch-5.jpg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        max-width: 760px;
+        margin: 0 auto;
+        @include media-breakpoint-up(md) {
+            background-image: url("https://static.hastens.com/1000/blocks/campaigns/supreme/Supreme_A_Oiled_Beech_Retouch-5.jpg");
+        }
+        &::after {
+            content: "";
+            display: block;
+            padding-bottom: 40%;
+        }
+    }
+    .description {
+        max-width: 550px;
+        margin-top: 30px;
+        @include media-breakpoint-up(md) {
+            margin-top: 45px;
+        }
+        h2 {
+            font-family: "Montserrat SemiBold", sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 22px;
+            margin: 0;
+        }
+    }
+    .bottom-text-1 {
+        font-family: "Montserrat SemiBold", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        text-transform: uppercase;
+        max-width: 600px;
+        margin-top: 20px;
+        margin-bottom: 0;
+        @include media-breakpoint-up(md) {
+            margin-top: 30px;
+        }
+    }
+    .bottom-text-2 {
+        max-width: 600px;
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+    .bottom-text-3 {
+        font-family: "Montserrat SemiBold", sans-serif;
+        font-weight: 400;
+        max-width: 600px;
+        margin-top: 50px;
+        margin-bottom: 0;
+    }
+    .supreme-video {
+        width: 100%;
+        margin-top: 50px;
+    }
+}

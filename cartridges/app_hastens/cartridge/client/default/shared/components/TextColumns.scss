@@ -1,0 +1,56 @@
+@import "../../shared/styles/utils/utils";
+
+.has-text-columns {
+    .content-wrapper {
+        max-width: 960px;
+        margin: 0 auto;
+        p {
+            margin-bottom: 10px;
+        }
+        .heading {
+            margin: 0 0 30px;
+            text-align: center;
+            @include media-breakpoint-up(sm) {
+                white-space: pre-line;
+            }
+        }
+        .body {
+            font-size: 16px;
+            text-align: left;
+            @include media-breakpoint-up(md) {
+                font-size: 18px;
+            }
+            p {  // style copied from Paragraph.scss
+                font-size: 14px;
+                line-height: 22px;
+                @include media-breakpoint-up(md) {
+                    font-size: 16px;
+                    line-height: 26px;
+                }
+            }
+        }
+    }
+    &.text-alignment--center .content-wrapper .body {
+        text-align: center;
+    }
+    &.columns--2.autobreak .content-wrapper .body {
+        columns: 400px 2;
+        column-gap: 60px;
+        overflow: hidden;
+    }
+    &.columns--2:not(.autobreak) .content-wrapper .body {
+        @include media-breakpoint-up(md) {
+            display: flex;
+        }
+        .column {
+            @include media-breakpoint-up(md) {
+                flex: 1;
+            }
+        }
+        .column + .column {
+            @include media-breakpoint-up(md) {
+                margin-left: 60px;
+            }
+        }
+    }
+}

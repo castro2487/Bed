@@ -1,0 +1,38 @@
+<isset name="Site" value="${require('dw/system/Site')}" scope="page" />
+<isset name="listOfCountryWithPurchaseOption" value="${Site.getCurrent().getCustomPreferenceValue('listOfCountryWithPurchaseOption')}" scope="page" />
+
+<isset name="Locale" value="${require('dw/util/Locale')}" scope="page" />
+<isset name="currentCountry" value="${Locale.getLocale(request.getLocale()).country}" scope="page" />
+
+<isset name="purchaseDisabled" value="${listOfCountryWithPurchaseOption.indexOf(currentCountry) < 0}" scope="page" />
+
+<iscomment> hide account when online shopping is not enabled </iscomment>
+<isif condition="${!purchaseDisabled}">
+    <isif condition="${pdict.name === null}">
+        <li class="nav-item login-li">
+            <a href="${URLUtils.https('Login-Show')}" rel="nofollow" class="nav-link">
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                <span class="user-message user-message-label">${Resource.msg('link.header.login', 'account', null)}</span>
+            </a>
+        </li>
+    <iselse/>
+        <li class="nav-item d-lg-none dropdown special-one" role="menuitem">
+            <a href="${URLUtils.https('Account-Show')}" rel="nofollow"></a>
+            <span class="nav-link dropdown-toggle user-info" role="button" data-toggle="dropdown">
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                <span class="user-message user-message-label">${Resource.msg('link.header.myaccount', 'account', null)}</span>
+            </span>
+            <ul class="dropdown-menu" role="menu" aria-hidden="true">
+                <li class="dropdown-item" role="menuitem">
+                    <a href="${URLUtils.https('Account-Show')}" rel="nofollow" class="dropdown-link" role="button">${Resource.msg('link.header.myaccount', 'account', null)}</a>
+                </li>
+                <li class="dropdown-item" role="menuitem">
+                    <a href="${URLUtils.url('Order-History')}" rel="nofollow" class="dropdown-link" role="button">${Resource.msg('label.myorders', 'account', null)}</a>
+                </li>
+                <li class="dropdown-item" role="menuitem">
+                    <a href="${URLUtils.url('Login-Logout')}" rel="nofollow" class="dropdown-link" role="button">${Resource.msg('link.header.logout', 'account', null)}</a>
+                </li>
+            </ul>
+        </li>
+    </isif>
+</isif>

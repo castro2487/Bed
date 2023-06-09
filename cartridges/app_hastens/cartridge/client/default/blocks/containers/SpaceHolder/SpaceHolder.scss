@@ -1,0 +1,41 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-space-holder {
+    position: relative;
+    min-height: 340px;
+    padding-bottom: (810/1440) * 100%;
+    @include media-breakpoint-up(lg) {
+        padding-bottom: 6 / 12 * 100%;
+    }
+    .content-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 15px;
+        & > section {
+            width: 80%;
+            text-align: center;
+            margin: 0 auto;
+            position: absolute;
+            top: 5%;
+            left: 10%;
+            @include media-breakpoint-up(lg) {
+                top: 0;
+                left: 0;
+                text-align: left;
+                position: relative;
+                margin: 0 0 0 150px;
+            }
+        }
+    }
+    &.hidden-on-mobile {
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+    }
+}

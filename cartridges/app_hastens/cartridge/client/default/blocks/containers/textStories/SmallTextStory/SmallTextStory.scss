@@ -1,0 +1,22 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-small-text-story {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 30px 15px;
+    @include media-breakpoint-up(md) {
+        padding: 50px 15px;
+    }
+    .content-wrapper {
+        max-width: 435px;
+        margin: 0 auto;
+        h2 {
+            margin-bottom: 10px;
+            white-space: pre-line;
+            &.weight--regular {
+                font-weight: 400; // TOOO: Add to Heading component?
+            }
+        }
+    }
+}

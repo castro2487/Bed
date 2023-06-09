@@ -1,0 +1,76 @@
+<isdecorate template="common/layout/page">
+    <div class="docs">
+        <div class="page-header">
+            <div class="content-wrapper">
+                <h1 class="image-headline-1">Docs - Component types</h1>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content-wrapper">
+                <div class="table-of-contents">
+                    <h2 class="headline-1">Table of contents</h2>
+                    <div class="column-wrapper">
+                        <isloop items="${pdict.componentTypes}" var="group">
+                            <div class="table-group">
+                                <h3 class="headline-4"><a href="${URLUtils.url('Docs-ComponentTypes')+'#'+group.id}">${group.name}</a></h3>
+                                <ul class="article-4">
+                                    <isloop items="${group.children}" var="component">
+                                        <li>
+                                            <a href="${URLUtils.url('Docs-ComponentTypes')+'#'+component.id}">${component.name}</a>
+                                            <isif condition="${component.children !== undefined}">
+                                                <ul>
+                                                    <isloop items="${component.children}" var="childComponent">
+                                                        <li>
+                                                            <a href="${URLUtils.url('Docs-ComponentTypes')+'#'+component.id}">${childComponent.name}</a>
+                                                        </li>
+                                                    </isloop>
+                                                </ul>
+                                            </isif>
+                                        </li>
+                                    </isloop>
+                                </ul>
+                            </div>
+                        </isloop>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <isloop items="${pdict.componentTypes}" var="group">
+            <div class="section" id="${group.id}">
+                <div class="content-wrapper">
+                    <div class="section-header">
+                        <h2>${group.name}</h2>
+                        <p class="article-2 my-3">${group.description}</p>
+                    </div>
+                    <isloop items="${group.children}" var="componentType">
+                        <div class="component-type" id="${componentType.id}">
+                            <div class="image-wrapper">
+                                <div class="image" style="background-image: url(${componentType.image})"></div>
+                            </div>
+                            <div class="text-wrapper">
+                                <h3 class="image-headline-2">${componentType.name}</h3>
+                                <p class="article-2 my-3">${componentType.description}</p>
+                                <isif condition="${componentType.compatibility}">
+                                    <div class="compatibility-list my-3">
+                                        <span>Compatible with: </span>
+                                        <ul>
+                                            <isloop items="${componentType.compatibility}" var="compatibilityItem" status="loopState">
+                                                <li>
+                                                    ${compatibilityItem}<isif condition="${loopState.last === false}">,</isif>
+                                                </li>
+                                            </isloop>
+                                        </ul>
+                                    </div>
+                                </isif>
+                                <isloop items="${componentType.children}" var="childComponentType">
+                                    <h4 class="image-headline-3 mt-5" id="${childComponentType.id}">${childComponentType.name}</h4>
+                                    <p class="article-2 mt-3 mb-5">${childComponentType.description}</p>
+                                </isloop>
+                            </div>
+                        </div>
+                    </isloop>
+                </div>
+            </div>
+        </isloop>
+    </div>
+</isdecorate>

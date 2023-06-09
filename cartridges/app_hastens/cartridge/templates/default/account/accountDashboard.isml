@@ -1,0 +1,26 @@
+<isdecorate template="common/layout/pageMyAccount">
+
+    <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/account/dashboard.css'); 
+        assets.addCss('/css/login.css'); 
+    </isscript>
+
+    <div class="hero slant-down account-image">
+    <img src="${URLUtils.staticURL(URLUtils.CONTEXT_LIBRARY, 'Hastens_shared_library', 'images/hastensMyAccountBg.jpg')}" alt="alt">
+        <div class="logout-hero">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+            <a href="${URLUtils.url('Login-Logout')}" rel="nofollow" role="menuitem" tabindex="-1">${Resource.msg('link.header.logout', 'account', null)}</a>
+        </div>
+        <h1 class="my-account-hero-title image-headline-1">${Resource.msg('page.title.myaccount', 'account', null)}
+        </h1>
+    </div>
+
+    <div class="container">
+        <isinclude template="account/dashboardProfileCards" />
+    </div>
+</isdecorate>

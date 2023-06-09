@@ -1,0 +1,11 @@
+@mixin circle($diameter, $color) { // Source:  https://gist.github.com/kogakure/4769904
+    border: 0.063em solid #e5e5e5 ;
+    // width: $diameter;
+    // height: $diameter;
+    width: 35px;
+    height: 35px;
+    background: $color;
+    // -moz-border-radius: $diameter/2;
+    // border-radius: $diameter/2;
+    border-radius: 0;
+}

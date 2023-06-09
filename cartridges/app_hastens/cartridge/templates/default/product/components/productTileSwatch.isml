@@ -1,0 +1,36 @@
+<div class="color-swatches">
+    <div class="swatches">
+        <isif condition="${product.variationAttributes && product.variationAttributes.length > 0}">
+            <isif condition="${!product.hideColorSelection}">
+                <isloop items="${product.variationAttributes[0].values}" var="swatch" status="loopState">
+                    <iscomment>Display a maximum of 8 colors</iscomment>
+                    <isif condition="${loopState.count < 9
+                                    && swatch.images != null
+                                    && swatch.images.swatch[0] != null
+                                    && swatch.images.swatch[0].url != null 
+                                    && swatch.variationImages != null
+                                    && swatch.variationImages.variation[0] != null
+                                    && swatch.variationImages.variation[0].url != null}">
+                        <a href="${swatch.url}" data-image="${swatch.variationImages.variation[0].url}">
+                            <span>
+                                <img class="swatch swatch-circle"
+                                    data-index="${loopState.count-1}"
+                                    style="background-image: url(${swatch.images.swatch[0].url})"
+                                    src="${swatch.images.swatch[0].url}"
+                                    alt="${product.productName + ' - ' + swatch.displayValue}"
+                                    title="${swatch.displayValue}" />
+                            </span>
+                        </a>
+                    <iselse/>
+                        <iscomment>Number of colors not displayed if there are more than 8</iscomment>
+                        <isset name="colorLeft" value="${product.variationAttributes[0].values.length-(loopState.count-1)}" scope="page" />                
+                        <span class="more-colors">
+                            <span class="subhead-small" href="${pdict.urls.product}">${Resource.msgf('product.more-images.label', 'productTile', null, colorLeft)}</span>
+                        </span>
+                        <isbreak>
+                    </isif>
+                </isloop>
+            </isif> 
+        </isif>
+    </div>
+</div>

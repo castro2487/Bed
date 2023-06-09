@@ -1,0 +1,13 @@
+<div class="row returns-progress-container">
+    <div class="col-4 returns-progress js-select-items-step">
+        <div class="progress-rectangle js-progress-rectangle active">Select Items</div><div class="progress-triangle js-progress-triangle active"></div>
+    </div>
+    <div class="col-4 returns-progress js-reasons-step">
+        <div class="progress-rectangle js-progress-rectangle">Select Reasons</div><div class="progress-triangle js-progress-triangle"></div>
+    </div>
+    <div class="col-4 returns-progress js-label-step">
+        <div class="progress-rectangle js-progress-rectangle final">
+            <isprint value="${pdict.pageSettings.returnsRequireApproval ? 'Request Return' : 'Get Label'}" encoding="on" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+<isset name="shippingAddress" value="${pdict.forms.shippingForm.shippingAddress}" scope="page"/>
+
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/shipping-methods.css');
+    assets.addJs('/js/zen-shipping.js');
+</isscript>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${dw.system.Site.getCurrent().getCustomPreferenceValue('googleMapsAPIKey')}&libraries=places"></script>
+
+<div class="row leading-lines shipping-method-list" data-select-shipping-method-url="${URLUtils.https('CheckoutShippingServices-SelectShippingMethod')}" data-action-url="${URLUtils.https('CheckoutShippingServices-UpdateShippingMethodsList')}">
+	<input name="shipmentUUID" type="hidden" value="${shippingModel.UUID}" />
+    <div style="display:none"><isprint value="${JSON.stringify(shippingModel.applicableShippingMethods)}"/></div>
+    <iscomment>
+    <isloop items="${shippingModel.applicableShippingMethods}" var="shippingMethod">
+        <div class="form-check col-9 start-lines">
+            <isinclude template="checkout/shipping/selectedShippingMethod"/>
+            <label class="form-check-label shipping-method-option" for="shippingMethod-${shippingMethod.ID}-${shippingModel.UUID}">
+                <span class="display-name">${shippingMethod.displayName}</span>
+                <isif condition="${shippingMethod.estimatedArrivalTime}">
+                    <span class="text-muted arrival-time">(${shippingMethod.estimatedArrivalTime})</span>
+                </isif>
+            </label>
+        </div>
+        <div class="col-3 text-right shipping-method-pricing end-lines">
+            <span class="shipping-cost">${shippingMethod.shippingCost}</span>
+        </div>
+    </isloop>
+    </iscomment>
+</div>
+
+<!---------------------------------------------------------------------------------->
+<!-- Template used by client to redraw shipping methods                           -->
+<!---------------------------------------------------------------------------------->
+<iscomment>
+<div id="shipping-method-template" style="display:none;">
+    <div class="form-check col-4 shipping-method-box">
+        <div class="inside-box">
+            <div class="arrival-time" style="display:none"></div>
+            <div class="shipping-cost"></div>
+            <div class="display-name"></div>
+            <div><input type="radio" id="shippingMethodRadioButton"></div>
+        </div>
+    </div>
+</div>
+</iscomment>
+<div id="shipping-method-template" style="display:none;">
+    <div class="form-check col-12">
+        <div class="row ship-method-row">
+            <div class="col-1 method-image"></div>
+            <div class="col-8 method-detail-area"><div class="arrival-time"></div><span class="display-name"></span><span class="dopu-distance-away"></span><span class="change-dopu-link"></span></div>
+            <div class="col-2"><div class="shipping-cost"></div></div>
+            <div class="col-1"><input type="radio" id="shippingMethodRadioButton"></div>
+        </div>
+    </div>
+</div>
+
+<div class="drop-off-location-container" style="display:none;"></div>
+<div class="drop-off-selection-container" style="display:none;"></div>
+
+<div id="dopu-selection-template" style="display:none;">
+    <div class="form-check col-12">
+        <div class="row ship-method-row">
+            <div class="col-7">
+                <div><div class="location-name"></div></div>
+                <div><div class="location-distance"></div></div>
+                <div class="dopu-address">
+                    <div class="dopu-section-header">Address:</div>
+                    <div class="location-street1"></div>
+                    <div class="location-city"></div>
+                    <div class="location-postal"></div>
+                </div>
+                <div class="dopu-address">
+                    <div class="dopu-section-header">Opening Times Tomorrow</div>
+                    <div><span class="location-hours-open"></span> - <span class="location-hours-close"></span></div>
+                </div>
+                <div class="row dopu-buttons">
+                    <div class="col-5"><button type="button" class="select-delivery btn btn-primary">Deliver Here</button></div>
+                    <div class="col-7" style="padding-left: 0px;"><button type="button" class="location-select btn btn-secondary">Other Nearby Locations</button></div>
+                </div>
+            </div>
+            <div class="col-5" style="text-align: center;">
+                <div id="dopu-map" class="dopu-map"><img class="map-static-image" style="border: 1px solid gray;" src=""/></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dopu-template" style="display:none;">
+    <div class="form-check col-12">
+        <div class="row ship-method-row">
+            <div class="location-data" style="display:none;" data-json=""></div>
+            <div class="col-8"><div class="location-name"></div><div class="location-street1"></div></div>
+            <div class="col-2"><div class="location-distance"></div></div>
+            <div class="col-2"><button type="button" class="select-location btn btn-primary" style="margin-top: 10px;">Select</button></div>
+        </div>
+    </div>
+</div>
+<iscomment>
+<div id="shipping-method-template" style="display:none;">
+    <div class="form-check col-9 start-lines">
+        <input type="radio" class="form-check-input" id="shippingMethodRadioButton">
+        <label class="form-check-label shipping-method-option" for="shippingMethodRadioButton">
+            <span class="display-name"></span>
+            <span class="text-muted arrival-time" style="display:none"></span>
+        </label>
+    </div>
+    <div class="col-3 text-right shipping-method-pricing end-lines">
+        <span class="shipping-cost"></span>
+    </div>
+</div>
+</iscomment>

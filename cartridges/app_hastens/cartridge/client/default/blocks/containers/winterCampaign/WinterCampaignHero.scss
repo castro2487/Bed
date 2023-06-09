@@ -1,0 +1,72 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-winter-campaign-hero {
+    text-align: center;
+    .top-text {
+        background-image: url("https://static.hastens.com/768/blocks/campaigns/wake-up/Hastens_Maranga_Bow_Snow_Mobile.jpg");
+        background-size: cover;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        padding: 40px 15px 62%;
+        @include media-breakpoint-up(md) {
+            background-image: url("https://static.hastens.com/1200/blocks/campaigns/wake-up/Hastens_Maranga_Bow_Snow.jpg");
+            padding: 60px 15px 64%;
+        }
+        @include media-breakpoint-up(lg) {
+            background-image: url("https://static.hastens.com/1500/blocks/campaigns/wake-up/Hastens_Maranga_Bow_Snow.jpg");
+            padding: 60px 15px 52%;
+        }
+        .heading {
+            margin: 0;
+            sup {
+                font-size: 60%;
+            }
+        }
+        p {
+            font-size: 14px;
+            text-transform: uppercase;
+            margin: 0;
+            @include media-breakpoint-up(md) {
+                font-size: 17px;
+            }
+            @include media-breakpoint-up(lg) {
+                font-size: 26px;
+            }
+        }
+        .snowflake {
+            background-image: url("../../../images/Snowflake_Logo.svg");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 32px;
+            margin: 10px 0 15px;
+            @include media-breakpoint-up(md) {
+                height: 40px;
+                margin: 15px 0 20px;
+            }
+            @include media-breakpoint-up(lg) {
+                height: 56px;
+                margin: 20px 0 25px;
+            }
+        }
+    }
+    .bottom-text {
+        padding: 0 15px 40px;
+        margin-top: -6%;
+        @include media-breakpoint-up(md) {
+            margin-top: -8.5%;
+        }
+        .heading {
+            @include heading-size-18;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 0;
+            @include media-breakpoint-up(md) {
+                @include heading-size-24;
+            }
+        }
+        p {
+            margin-bottom: 10px;
+        }
+    }
+}

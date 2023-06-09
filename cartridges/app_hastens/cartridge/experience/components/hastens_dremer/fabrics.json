@@ -1,0 +1,49 @@
+{
+    "name": "drēmər Fabrics",
+    "description": "",
+    "group": "hastens_dremer",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "details",
+                    "name": "Details",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "ctaBody",
+                    "name": "CTA body text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "linkText",
+                    "name": "Link text",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "linkUrl",
+                    "name": "Link url",
+                    "description": "",
+                    "type": "url",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

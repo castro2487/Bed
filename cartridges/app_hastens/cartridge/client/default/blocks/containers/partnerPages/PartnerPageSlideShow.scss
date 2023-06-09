@@ -1,0 +1,73 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-partner-slide-data,
+.has-hastens-partner-slide-1 {
+    position: relative;
+    padding-bottom: 141.666666667%;
+    @include media-breakpoint-up(md) {
+        padding-bottom: 56.25%;
+    }
+    .content {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.has-partner-slide-data {
+    .content {
+        max-width: 480px;
+        margin: auto;
+        @include media-breakpoint-up(md) {
+            max-width: 750px;
+        }
+        @include media-breakpoint-up(lg) {
+            width: 880px;
+        }
+        @include media-breakpoint-up(xl) {
+            max-width: 1290px;
+        }
+        .header {
+            text-transform: none;
+            margin-bottom: 8px;
+            @include media-breakpoint-up(md) {
+                margin-bottom: 10px;
+            }
+            small {
+                display: block;
+                color: inherit;
+                font-weight: inherit;
+                text-transform: uppercase;
+                line-height: 1;
+                font-size: 18px;
+                margin-bottom: 5px;
+                @include media-breakpoint-up(md) {
+                    font-size: 25px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+    }
+}
+
+.has-hastens-partner-slide-1 {
+    .content {
+        padding-top: 60px;
+        .header {
+            white-space: pre-wrap;
+            margin-bottom: 10px;
+        }
+        .body {
+            margin-bottom: 20px;
+            @include media-breakpoint-up(md) {
+                margin-bottom: 40px;
+            }
+        }
+    }
+}

@@ -1,0 +1,110 @@
+<isif condition="${pdict.editMode}">
+    <p class="id-holder">
+        <span class="icon">&#9432;</span>
+        <span class="id pr-1"><b>Block id:</b> ${pdict.blockId}</span>
+    </p>
+    <div class="has-grand-vividus-presentation">
+        <p class="preview-not-available">Preview not available</p>
+    </div>
+<iselse>
+    <section class="has-grand-vividus-presentation" data-magic-scroll>
+        <div class="layer">
+            <video class="video" preload="auto" muted playsinline data-video>
+                <source src="https://d9hnfkiekn5wa.cloudfront.net/video/grand-vividus/combined-sequences-compressed.ogv#t=1" type="video/ogg">
+                <source src="https://d9hnfkiekn5wa.cloudfront.net/video/grand-vividus/combined-sequences-compressed.mp4#t=1" type="video/mp4">
+            </video>
+        </div>
+        <div class="layer hidden tween" data-tween data-from="0.5" data-duration="1.2">
+            <div class="position center">
+                <div class="intro">
+                    <h2><span class="sr-only">Grand Vividus</span></h2>
+                    <div>
+                        <p>${pdict.texts.intro}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layer hidden tween" data-tween data-from="1.7" data-duration="0.7">
+            <div class="position center">
+                <div class="quote">
+                    <p>${pdict.texts.quote}</p>
+                    <p>${pdict.texts.quoteBy}</p>
+                </div>
+            </div>
+        </div>
+        <div class="layer hidden tween" data-tween data-from="2.4" data-duration="1.1">
+            <div class="position center-right">
+                <div class="logos"></div>
+            </div>
+        </div>
+        <div class="layer hidden tween" data-tween data-from="3.65" data-duration="1.2">
+            <div class="position bottom-left">
+                <div class="master-craftmanship">
+                    <h2>
+                        <span>${pdict.texts.masterCraftmanshipHeading}</span>
+                        <span>${pdict.texts.shagreenHeading}</span>
+                    </h2>
+                    <p>${pdict.texts.shagreenBody}</p>
+                </div>
+            </div>
+        </div>
+        <div class="layer hidden tween" data-tween data-from="5">
+            <div class="position bottom-left">
+                <div class="master-craftmanship">
+                    <h2>
+                        <span>${pdict.texts.masterCraftmanshipHeading}</span>
+                        <span>${pdict.texts.goldenBrassHeading}</span>
+                    </h2>
+                    <p>${pdict.texts.goldenBrassBody}</p>
+                </div>
+            </div>
+        </div>
+        <div class="layer hidden tween" data-tween data-from="6">
+            <div class="position top-left">
+                <div class="master-craftmanship">
+                    <h2>
+                        <span>${pdict.texts.masterCraftmanshipHeading}</span>
+                        <span>${pdict.texts.bedFabricHeading}</span>
+                    </h2>
+                    <p>${pdict.texts.bedFabricBody}</p>
+                </div>
+            </div>
+        </div>
+        <div class="layer hidden tween" data-tween data-from="7">
+            <div class="position bottom-center">
+                <div class="master-craftmanship">
+                    <h2>
+                        <span>${pdict.texts.masterCraftmanshipHeading}</span>
+                        <span>${pdict.texts.tannedLeatherHeading}</span>
+                    </h2>
+                    <p>${pdict.texts.tannedLeatherBody}</p>
+                </div>
+            </div>
+        </div>
+        <div class="layer hidden tween" data-tween data-from="8">
+            <div class="position bottom-center">
+                <div class="master-craftmanship">
+                    <h2>
+                        <span>${pdict.texts.masterCraftmanshipHeading}</span>
+                        <span>${pdict.texts.nubuckHeading}</span>
+                    </h2>
+                    <p>${pdict.texts.nubuckBody}</p>
+                </div>
+            </div>
+        </div>
+        <div class="layer hidden tween" data-tween data-from="10.52" data-duration="1.3">
+            <div class="position top-center">
+                <div class="bed-color black-shadow">
+                    <h2><span class="sr-only">Grand Vividus Black Shadow</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="layer hidden tween" data-tween data-from="18.2" data-duration="1.3">
+            <div class="position top-center">
+                <div class="bed-color traditional-blue">
+                    <h2><span class="sr-only">Grand Vividus Traditional Blue</span></h2>
+                </div>
+            </div>
+        </div>
+    </section>
+</isif>

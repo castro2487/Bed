@@ -1,0 +1,35 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-video-list {
+    padding: 40px 15px;
+    @include media-breakpoint-up(md) {
+        padding: 70px 15px;
+    }
+    .content-wrapper {
+        max-width: 1440px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .heading {
+        margin-bottom: 20px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .intro {
+        margin-bottom: 50px;
+        max-width: 790px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .video-wrapper .name {
+        background-color: #c6c6c6;
+        color: #000;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 7px 15px;
+        margin: 0;
+        font-family: "Montserrat SemiBold", sans-serif; // TODO: Should be font weight 600
+        font-weight: 400;
+    }
+}

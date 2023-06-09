@@ -1,0 +1,22 @@
+@import "../../../../../shared/styles/utils/utils";
+
+.has-bed-configurator-dialog-content {
+    position: relative;
+    @include media-breakpoint-up(sm) {
+        overflow: hidden;
+    }
+    .spacer {
+        @include media-breakpoint-up(sm) {
+            height: 918px;
+        }
+    }
+    .step-wrapper {
+        @include media-breakpoint-up(sm) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

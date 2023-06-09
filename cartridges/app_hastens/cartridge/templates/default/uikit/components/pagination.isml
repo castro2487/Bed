@@ -1,0 +1,24 @@
+<isdecorate template="uikit/layout">
+    <h2>Pagination</h2>
+    <nav class="mt-4" aria-label="Page navigation example">
+        <ul class="pagination align-items-center justify-content-center justify-content-lg-start">
+            <li class="page-item mr-auto mr-lg-4">
+                <button class="page-link btn btn-arrow btn-outline-primary btn-primary--arrow btn-editorial btn-editorial--arrow" disabled aria-label="Previous">
+                    <span class="btn-icon btn-icon--arrow left">
+                        <isicon w="25" h="25" symbol="arrow-3" />
+                    </span>
+                </button>
+            </li>
+            <li class="page-item"><a class="page-link active" aria-current="page" href="${'#'}">1</a></li>
+            <li class="page-item"><a class="page-link" href="${'#'}">2</a></li>
+            <li class="page-item"><a class="page-link" href="${'#'}">3</a></li>
+            <li class="page-item ml-auto ml-lg-4">
+                <button class="page-link btn btn-arrow btn-outline-primary btn-primary--arrow btn-editorial btn-editorial--arrow" aria-label="Next">
+                    <span class="btn-icon btn-icon--arrow">
+                        <isicon w="25" h="25" symbol="arrow-3" />
+                    </span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+</isdecorate>

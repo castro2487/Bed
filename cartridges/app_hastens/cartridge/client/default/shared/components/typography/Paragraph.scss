@@ -1,0 +1,30 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-paragraph {
+    &.size--xs {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    &.size--sm {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    &.size--md { // If this is updated, please update TextColumns.scss as well
+        font-size: 14px;
+        line-height: 22px;
+        @include media-breakpoint-up(md) {
+            font-size: 16px;
+            line-height: 26px;
+        }
+    }
+    &.size--lg {
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 300;
+        letter-spacing: 0.03em;
+        @include media-breakpoint-up(md) {
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+}

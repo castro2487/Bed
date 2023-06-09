@@ -1,0 +1,63 @@
+@import "../../shared/styles/utils/utils";
+
+.has-background {
+    position: relative;
+    @each $name, $props in $themes {
+        &.theme--#{$name} {
+            --has-link-color: #{map-get($props, "link-color")};
+            background-color: map-get($props, "background-color");
+            color: map-get($props, "color");
+        }
+    }
+    .bg {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+        &.bg-mobile {
+            @include media-breakpoint-down(sm) {
+                display: block;
+            }
+        }
+        &.bg-tablet {
+            @include media-breakpoint-only(md) {
+                display: block;
+            }
+        }
+        &.bg-desktop {
+            @include media-breakpoint-up(lg) {
+                display: block;
+            }
+        }
+    }
+    &.zoomable {
+        overflow: hidden;
+        .bg {
+            transition: transform 200ms, opacity 200ms;
+        }
+        &:hover .bg {
+            transform: scale(1.05);
+            opacity: 0.85;
+        }
+    }
+    &.size--contain .bg {
+        background-size: contain;
+    }
+    &.size--full-width {
+        overflow: hidden;
+        .bg {
+            background-size: cover;
+            &.bg-desktop {
+                background-size: auto 100%;
+            }
+        }
+    }
+    .hidden-image {
+        display: none;
+    }
+}

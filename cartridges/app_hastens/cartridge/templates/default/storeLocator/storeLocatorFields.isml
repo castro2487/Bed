@@ -1,0 +1,22 @@
+<div class="card-body">
+    <form action="${pdict.stores.actionUrl}" class="store-locator" method="get" name="storelocator" data-parsley-validate="">
+        <div class="form-group required">
+            <label class="form-control-label" for="store-query">${Resource.msg('field.query', 'storeLocator', null)}</label>
+            <!-- Should be updated with the result of the search -->
+            <input autofocus type="text" class="form-control" id="store-query" name="query" value=""
+                required
+                data-parsley-required-message="${Resource.msg('error.message.missing.value', 'forms', null)}"
+                data-parsley-trigger="focusout" data-parsley-trigger-after-failure="focusout">
+            <div class="invalid-feedback"></div>
+        </div>
+        <button class="btn btn-tertiary btn-block" type="submit">
+            ${Resource.msg('button.find.stores', 'storeLocator', null)}
+        </button>
+    </form>
+    <isif condition="${pdict.showMap === 'true'}">
+        <p class="text-center article-3 my-3">${Resource.msg('text.this.or.that', 'storeLocator', null)}</p>
+        <button type="submit" class="btn btn-primary btn-block detect-location" data-action="${pdict.stores.actionUrl}">
+            ${Resource.msg('button.use.my.location', 'storeLocator', null)}
+        </button>
+    </isif>
+</div>

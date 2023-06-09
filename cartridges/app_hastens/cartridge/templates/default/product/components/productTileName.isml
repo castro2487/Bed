@@ -1,0 +1,6 @@
+<div class="pdp-link">
+    <a class="link headline-6" href="${pdict.urls.product}">
+        <span>${product.productName}</span>
+    </a>
+    <isinclude template="product/components/productTileDesignerName" />
+</div>

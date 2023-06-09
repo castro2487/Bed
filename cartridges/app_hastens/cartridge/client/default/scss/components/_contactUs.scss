@@ -1,0 +1,163 @@
+.contact-us-form {
+  background-color: $white;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(100% - 30px);
+  padding: 15px;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: calc(100% - 100px);
+    padding: 60px 50px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 60px 100px;
+  }
+
+  h1 {
+    font-family: 'Montserrat SemiBold';
+    font-size: 26px;
+    line-height: 32px;
+    text-transform: capitalize;
+    color: $almost-black;
+    margin-bottom: 28px;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+
+  #CaseCreationForm {
+
+    label,
+    .dialog-required span {
+      font-family: 'Montserrat SemiBold';
+      font-size: 16px;
+      line-height: 24px;
+      color: $black;
+      margin-bottom: 10px;
+
+      &[for='dwfrm_contactus_ordernumber'],
+      &[for='dwfrm_contactus_myquestion'] {
+        margin-top: 13px;
+      }
+
+      &[for='dwfrm_contactus_comment'] {
+        margin-top: 13px;
+
+        @include media-breakpoint-up(sm) {
+          margin-top: 29px;
+        }
+      }
+    }
+
+    .dialog-required {
+      line-height: 1;
+      margin-bottom: 13px;
+
+      span {
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    fieldset {
+      >.form-group {
+        &.required {
+          &:nth-child(odd) {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+
+    textarea {
+      height: 120px;
+
+      @include media-breakpoint-up(xl) {
+        height: 86px;
+      }
+    }
+
+    button#sendBtn {
+      display: block;
+      margin: 0 auto;
+      padding-left: 70px;
+      padding-right: 70px;
+
+      @include media-breakpoint-up(sm) {
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .contact-us-privacy {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 22px;
+
+    @include media-breakpoint-up(sm) {
+      margin-bottom: 40px;
+    }
+
+    .contact-us-privacy-link {
+      text-decoration: underline;
+    }
+  }
+
+  .contact-us-reCaptcha {
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 40px;
+    }
+
+    @include media-breakpoint-up(sm) {
+      float: right;
+    }
+  }
+
+  .contact-us-text {
+    margin-bottom: 30px;
+    line-height: 26px;
+  }
+
+  .language-box {
+    min-height: 80px;
+    background: rgba(176, 192, 208, 0.3);
+    border: 1px solid $bluegrey;
+    box-sizing: border-box;
+    border-radius: 2px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+
+    .language-box-text {
+      margin-left: 20px;
+      font-family: 'Montserrat SemiBold';
+    }
+
+    .language-box-img {
+      width: 90px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

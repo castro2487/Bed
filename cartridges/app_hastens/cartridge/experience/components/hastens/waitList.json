@@ -1,0 +1,41 @@
+{
+    "name": "Wait List",
+    "description": "",
+    "group": "hastens_forms",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Form heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "body",
+                    "name": "Form body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "confirmationHeading",
+                    "name": "Confirmation heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "confirmationBody",
+                    "name": "Confirmation body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

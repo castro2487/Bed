@@ -1,0 +1,112 @@
+{
+    "name": "Grand Vividus Presentation",
+    "description": "",
+    "group": "hastens",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "intro",
+                    "name": "Introduction",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "quote",
+                    "name": "Quote",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "quoteBy",
+                    "name": "Quote by",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "masterCraftmanshipHeading",
+                    "name": "Master craftmanship heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "shagreenHeading",
+                    "name": "Shagreen heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "shagreenBody",
+                    "name": "Shagreen body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "goldenBrassHeading",
+                    "name": "Golden brass heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "goldenBrassBody",
+                    "name": "Golden brass body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "bedFabricHeading",
+                    "name": "Bed fabric heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "bedFabricBody",
+                    "name": "Bed fabric body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "tannedLeatherHeading",
+                    "name": "Tanned leather heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "tannedLeatherBody",
+                    "name": "Tanned leather body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "nubuckHeading",
+                    "name": "Nubuck heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "nubuckBody",
+                    "name": "Nubuck body",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

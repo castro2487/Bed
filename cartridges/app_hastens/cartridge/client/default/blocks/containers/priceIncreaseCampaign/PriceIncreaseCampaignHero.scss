@@ -1,0 +1,42 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-price-increase-campaign__hero {
+    text-align: center;
+    overflow: hidden;
+    .content-wrapper {
+        padding: 60px 15px 30px;
+        @include media-breakpoint-up(md) {
+            padding: 60px 15px 40px;
+        }
+        @include media-breakpoint-up(lg) {
+            padding: 100px 15px 70px;
+        }
+        .heading {
+            margin-bottom: 20px;
+            @include media-breakpoint-up(lg) {
+                white-space: pre-line;
+            }
+        }
+        p {
+            font-size: 14px;
+            @include media-breakpoint-up(md) {
+                font-size: 26px;
+            }
+        }
+    }
+    .image {
+        background-image: url("https://static.hastens.com/768/blocks/price-increase-campaign/price-increase-hero.jpg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-bottom: 70%;
+        @include media-breakpoint-up(md) {
+            background-image: url("https://static.hastens.com/1200/blocks/price-increase-campaign/price-increase-hero.jpg");
+            padding-bottom: 50%;
+            margin-bottom: -5%;
+        }
+        @include media-breakpoint-up(lg) {
+            background-image: url("https://static.hastens.com/1440/blocks/price-increase-campaign/price-increase-hero.jpg");
+        }
+    }
+}

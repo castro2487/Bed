@@ -1,0 +1,162 @@
+@import "variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "storeLocator/storeLocator";
+@import "thirdParty/parsley";
+
+.card-body {
+    position: relative;
+    .store-details {
+        display: block;
+        position: relative;
+        .headline-3 {
+            cursor: pointer;
+        }
+        table.table-borderless {
+            max-width: 450px;
+            font-size: 14px;
+            @media (min-width: 769px) {
+                font-size: 12px;
+            }
+            @media (min-width: 1025px) {
+                font-size: inherit;
+            }
+        }
+        margin-left: 0 !important;
+        @media (min-width: 1025px) {
+            margin-left: 3.125em !important;
+        }
+        .article-3 {
+            @media (min-width: 769px) {
+                font-size: 13px;
+            }
+            @media (min-width: 1025px) {
+                font-size: inherit;
+            }
+        }
+        .btn-sm {
+            height: auto;
+            font-size: 1rem;
+            padding: 0.5625rem 25px;
+        }
+    }
+    .map-marker {
+        float: left;
+        width: 2em;
+        height: 2em;
+        text-align: center;
+        line-height: 2em;
+        border-radius: 0.375em;
+        color: #fff;
+        background-color: $map-blue;
+        position: absolute;
+        right: 5px;
+        top: 10px;
+        z-index: 1;
+        cursor: pointer;
+        &::after {
+            position: absolute;
+            bottom: -0.625em;
+            left: 50%;
+            transform: translate(-50%, 0);
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 1em 0.5em 0;
+            border-color: $map-blue transparent transparent transparent;
+        }
+        &:hover {
+            background-color: $light-blue;
+            &::after {
+                border-color: $light-blue transparent transparent transparent;
+            }
+        }
+        @media (min-width: 1025px) {
+            position: relative;
+        }
+    }
+}
+
+
+.gm-style-iw {
+    .store-details {
+        margin-left: 0;
+        font-family: $font-family-sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        line-height: 1.5;
+        margin: 0 10px;
+        hr {
+            margin: 5px 0;
+        }
+        @include media-breakpoint-up(sm) {
+            .table,
+            .article-3 {
+                font-size: 12px;
+            }
+            hr {
+                margin: 5px 0;
+                min-width: 350px;
+            }
+        }
+        .btn-sm {
+            height: auto;
+            font-size: 12px;
+            padding: 0.5625rem 25px;
+        }
+    }
+
+    a {
+        &:not(.btn) {
+            color: $blue;
+        }
+    }
+}
+
+.map-canvas {
+    height: 50vh;
+
+    @include media-breakpoint-up(sm) {
+        height: 28.125em;
+        display: block;
+    }
+
+    button.gm-ui-hover-effect {
+        margin: 10px !important;
+    }
+    .gm-style-iw-c { // Todo fix className
+        padding: 25px 10px 10px;
+    }
+}
+
+.store-name {
+    font-weight: 600;
+}
+
+.store-locator-no-apiKey {
+    display: none;
+}
+
+.store-locator-no-results {
+    display: none;
+}
+
+.store-locator-hero {
+    background-image: url('../images/storelocator.jpg');
+    margin-bottom: 0.625em;
+
+    @include media-breakpoint-up(sm) {
+        display: none;
+    }
+}
+
+.results {
+
+    @include media-breakpoint-up(md) {
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 21.875em;
+        margin-right: -0.938em;
+    }
+}

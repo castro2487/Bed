@@ -1,0 +1,23 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-video-subscription {
+    .has-text-columns {
+        padding: 30px 15px;
+        @include media-breakpoint-up(md) {
+            padding: 60px 15px;
+        }
+    }
+    .subscription-form {
+        text-align: center;
+        > .content-wrapper {
+            padding: 0 15px 30px;
+            @include media-breakpoint-up(md) {
+                padding: 0 15px 60px;
+            }
+            .success-text {
+                font-weight: 500;
+                white-space: pre-line;
+            }
+        }
+    }
+}

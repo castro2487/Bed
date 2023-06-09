@@ -1,0 +1,36 @@
+'use strict';
+
+var RenderHelper = require('~/cartridge/experience/utilities/RenderHelper.js');
+var ImageHelper = require('~/cartridge/experience/utilities/ImageHelper.js');
+var Resource = require('dw/web/Resource');
+
+module.exports.render = RenderHelper.renderStandardComponentWithContext('NewsTile', function(context) {
+
+    var media = [];
+
+    for (let index = 1; index <= 8; index++) {
+        var image = context.content['image' + index];
+        var video = context.content['video' + index];
+
+        if (image) {
+            media.push({
+                image: {
+                    sizes: ImageHelper.getSizes({
+                        desktop: image,
+                    }),
+                },
+                video: video,
+            });
+        }
+    }
+
+    return {
+        heading: context.content.heading,
+        body: context.content.body.value,
+        media: media,
+        text: {
+            readMore: Resource.msg('readmore', 'hastens', null),
+        },
+    };
+
+});

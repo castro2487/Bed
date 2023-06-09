@@ -1,0 +1,126 @@
+<isdecorate template="common/layout/page">
+
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/productDetail.min.js');
+        assets.addJs('/js/uikit.min.js');
+        assets.addCss('/css/product/detail.css');
+    </isscript>
+
+    <isset name="purchaseDisabled" value="${pdict.purchaseDisabled}" scope="page" />    
+
+    <isset name="product" value="${pdict.product}" scope="page" />
+    <isset name="isQuickView" value="${false}" scope="page" />
+    <isset name="isProductSet" value="${pdict.product.productType === 'set'}" scope="page" />
+    <isobject object="${product.raw}" view="detail" />
+        <div class="container product-detail product-wrapper" data-pid="${product.id}">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-5 order-2 order-sm-0">
+                    <!-- Product Brand -->
+                    <div class="row">
+                        <div class="col">
+                            <div class="brand-title subhead-large">
+                                ${Resource.msg('product.brand.label', 'productTile', null)}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Name -->
+                    <div class="row">
+                        <div class="col product-main-info">
+                            <h1 class="product-name">${product.productName}</h1>
+                            <isif condition="${product.designerName}">
+                                <div class="pdp-designer subhead-large">
+                                    <span>${Resource.msgf('product.designer.label', 'productTile', null, product.designerName.toUpperCase())}</span>
+                                </div>
+                            </isif>
+                        </div>
+                    </div>
+
+                    <div class="attributes">
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- Prices -->
+                                <div class="prices">
+                                    <isif condition="${!product.isStoreExclusive && !purchaseDisabled}">
+                                        <isset name="price" value="${product.price}" scope="page" />
+                                        <isinclude template="product/components/pricing/main" />
+                                    </isif>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Attributes and Quantity -->
+                        <isinclude template="product/components/mainAttributes" />
+
+                        <isset name="isBundle" value="${false}" scope="page" />
+                        <isset name="loopState" value="{count: 1}" scope="page" />
+                        <div class="size-and-color-wrapper">
+                            <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+                                <div class="row ${attr.id === 'size' ? 'order-2 order-sm-1' : ''}" data-attr="${attr.id}">
+                                    <div class="col-12">
+                                        <isinclude template="product/components/variationAttribute" />
+                                    </div>
+                                </div>
+                                    <isif condition="${attributeStatus.last && !isBundle}">
+                                        <div class="row order-3 order-sm-2 row--quantity <isif condition="${product.isStoreExclusive || purchaseDisabled}">storeExclusive</isif>" data-attr="${attr.id}"> <!-- Quantity Drop Down Menu -->
+                                            <div class="attribute quantity col-5 col-lg-4">
+                                                <isinclude template="product/components/quantity" />
+                                            </div>
+                                            <div class="col-7 col-lg-8">
+                                                <!-- Cart and [Optionally] Apple Pay -->
+                                                <isinclude template="product/components/addToCartProduct" />
+                                            </div>
+                                        </div>
+                                    </isif>                            
+                            </isloop>
+                        </div>
+
+                        <isif condition="${!product.variationAttributes}">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="simple-quantity">
+                                        <isinclude template="product/components/quantity" />
+                                    </div>
+                                </div>
+                            </div>
+                        </isif>
+
+
+                        <!-- Product Availability -->
+                        
+                            <iscomment> Remove availability status when online shopping is not enabled </iscomment> 
+                            <isif condition="${!purchaseDisabled}">
+                                <isinclude template="product/components/productAvailability" />
+                            </isif>
+
+                                                   
+                            <isinclude template="product/components/findInStore" />                            
+                        
+
+                    </div>
+                </div>
+                <!-- Product Images Carousel -->
+                <isinclude template="product/components/images" />
+            </div>
+
+            <div>
+                <isslot id="cts-recommendations-m" description="Complete the set products" context="global" context-object="${pdict.product.raw}" />
+            </div>
+
+        </div>
+
+        <div class="container product-detail-accordion" data-pid="${product.id}">
+        
+            <isset name="loopState" value="{count: 1}" scope="page" />
+            <isinclude template="product/components/descriptionAndDetails" />
+
+            <div class="recommendations content-slot-container">
+                <isslot id="product-recommendations-m" description="Recommended products" context="global" context-object="${pdict.product.raw}" />
+            </div>
+
+        </div>
+    </isobject>
+    
+    <isinclude template="/components/footer/newsLetter" />
+</isdecorate>

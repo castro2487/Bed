@@ -1,0 +1,219 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-designer-cta {
+    white-space: pre-line;
+    .variation-1 {
+        position: relative;
+        padding-bottom: 141.666666667%;
+
+        @include media-breakpoint-up(md) {
+            padding-bottom: 110%;
+        }
+        @include media-breakpoint-up(lg) {
+            padding-bottom: 6 / 12 * 100%;
+        }
+        .content-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 15px;
+            & > div {
+                width: 80%;
+                text-align: center;
+                margin: 0 auto;
+                position: absolute;
+                top: 10%;
+                left: 10%;
+                @include media-breakpoint-up(lg) {
+                    top: 0;
+                    left: 0;
+                    text-align: left;
+                    position: relative;
+                    margin: 38px;
+                }
+                @include media-breakpoint-up(xl) {
+                    margin: 0 0 0 220px;
+                }
+                .has-button {
+                    margin-top: 10px;
+                }
+            }
+            .has-designer-header {
+                p {
+                    line-height: 1.6;
+                }
+                .collection-name {
+                    line-height: 1;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    .variation-2 {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #fff;
+        padding: 90px 0 40px;
+        @include media-breakpoint-up(md) {
+            padding: 140px 0;
+        }
+        .content-wrapper {
+            max-width: 990px;
+            margin: 0 auto;
+            padding: 0 30px;
+            @include media-breakpoint-up(md) {
+                padding: 0 15px;
+            }
+            .top-text {
+                text-transform: uppercase;
+                font-size: 12px;
+                margin-bottom: 5px;
+                @include media-breakpoint-up(md) {
+                    font-size: 14px;
+                }
+
+            }
+            .body {
+                margin-bottom: 20px;
+                max-width: 240px;
+                @include media-breakpoint-up(md) {
+                    max-width: none;
+                }
+            }
+        }
+    }
+    .variation-3 {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 110px 0;
+        @include media-breakpoint-down(sm) {
+            padding-top: 90%;
+        }
+        .content-wrapper {
+            max-width: 990px;
+            margin: 0 auto;
+            padding: 0 30px;
+            text-align: center;
+            @include media-breakpoint-up(md) {
+                text-align: left;
+                padding: 0 15px;
+            }
+            .heading {
+                @include media-breakpoint-up(md) {
+                    max-width: 300px;
+                    margin-bottom: 13px;
+                }
+            }
+            .designer {
+                margin-bottom: 25px;
+                @include media-breakpoint-up(md) {
+                    max-width: 300px;
+                    margin-bottom: 30px;
+                }
+                .upper {
+                    text-transform: uppercase;
+                }
+            }
+            .body {
+                margin-bottom: 30px;
+                @include media-breakpoint-up(md) {
+                    max-width: 300px;
+                }
+            }
+        }
+    }
+    .variation-4 {
+        padding: 30px 15px;
+        @include media-breakpoint-only(xs) {
+            background-repeat: no-repeat;
+            height: 40% !important;
+            background-position: 50% 50% !important;
+        }
+        .content-wrapper {
+            max-width: 990px;
+            margin: 0 auto;
+            padding-top: 7 / 12 * 100%;
+            padding-bottom: 10px;
+            @include media-breakpoint-up(md) {
+                padding: 60px 15px 80px;
+                top: 0;
+                left: 0;
+                text-align: left;
+                position: relative;
+            }
+
+            .content {
+                top: 0;
+                left: 0;
+                text-align: center;
+                position: relative;
+                @include media-breakpoint-up(md) {
+                    text-align: left;
+                }
+            }
+
+            .story {
+                margin-top: 30px;
+                margin-bottom: 20px;
+                line-height: 1.25;
+                font-weight: 400;
+                letter-spacing: 1px;
+                white-space: pre-line;
+                @include media-breakpoint-up(md) {
+                    margin-right: 50%;
+                }
+            }
+        }
+    }
+    .variation-5 {
+        .image-spacer {
+            padding-bottom: 54%;
+        }
+        .content-wrapper {
+            text-align: center;
+            padding: 30px 15px;
+            max-width: 510px;
+            margin: 0 auto;
+            .heading {
+                font-weight: 400;
+                font-size: 20px;
+                margin-bottom: 8px;
+                font-family: "Montserrat SemiBold", sans-serif; // TODO: Should be font weight 600
+                @include media-breakpoint-up(md) {
+                    font-size: 24px;
+                }
+            }
+            .subheading {
+                font-size: 10px;
+                margin-bottom: 20px;
+                @include media-breakpoint-up(md) {
+                    font-size: 11px;
+                }
+                .upper {
+                    text-transform: uppercase;
+                }
+            }
+            .body {
+                margin-top: 12px;
+                margin-bottom: 20px;
+                color: #666;
+            }
+            a {
+                font-size: 14px;
+                font-family: "Montserrat SemiBold", sans-serif; // TODO: Should be font weight 600
+                @include media-breakpoint-up(md) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

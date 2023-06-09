@@ -1,0 +1,15 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+<div class="modal fade modal-splash" id="splash-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <iscontentasset aid="Splash-title-and-description" />
+                <button type="button" id="splash-modal-close" class="close fa fa-times" data-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <isinclude template="components/footer/countrySelector/splashPageContent" />
+            </div>
+        </div>
+    </div>
+</div>

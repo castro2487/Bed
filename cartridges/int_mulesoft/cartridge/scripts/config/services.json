@@ -1,0 +1,5 @@
+{
+    "serviceCallbacks" : {
+        "mulesoft.create.order" : "/int_mulesoft/cartridge/scripts/services/service/order/order:createOrderCallbacks"
+    }
+}

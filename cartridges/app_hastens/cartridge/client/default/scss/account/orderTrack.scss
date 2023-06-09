@@ -1,0 +1,165 @@
+@import "../variables";
+// @import "../checkout/checkoutComponents";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+
+.section-label {
+    // font-size: $receipt-font-size;
+    font-weight: bolder;
+}
+
+.my-account {
+    text-align: center;
+    margin-bottom: 0.938em;
+}
+
+.history-wrapper .line-item-divider {
+    margin: 1.25rem 0;
+    margin-left: 0;
+    width: 100%;
+    display: block;
+}
+
+.container-recipt {
+
+    .card-header-confirmation {
+        padding: 1.875rem 1.25rem 0;
+
+        .order-details-title {
+            margin-bottom: 0.625rem;
+        }
+
+        .grand-total-label {
+            font-size: 11px;
+            font-family: 'Montserrat SemiBold';
+            text-transform: uppercase;
+        }
+
+        h2 {
+            margin: 0;
+
+            &.headline-2 {
+                font-family: 'Montserrat SemiBold';
+            }
+        }
+    }
+
+    &.container-order-history .card .card-body {
+        padding: 1.25rem 1.25rem 1.875rem;
+
+        .product-card-total-label-order-details {
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+
+        .item-image {
+            margin-right: 1.25rem;
+            margin-left: 5px;
+
+            @include media-breakpoint-down(xs) {
+                width: 52px;
+                margin-top: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .item-image-attributes {
+        width: 100%;
+        display: flex;
+
+        .item-attributes {
+            width: 100%;
+        }
+    }
+
+    .order-total-summary {
+        padding: 1.875rem 1.25rem 1.25rem;
+
+        hr {
+            margin-top: 0.9375rem;
+            margin-bottom: 1.25rem;
+            margin-left: 0;
+            width: 100%;
+            border-top: 1px solid $black;
+        }
+    }
+
+    .recipt-order-detail-section {
+        margin-bottom: 1.875rem;
+    }
+
+    .line-item-name {
+        margin-bottom: 0.9375rem;
+    }
+
+    .shipping-addr-label {
+        margin-bottom: 0.5rem;
+    }
+
+    .shipping-method,
+    .shipping-method-price {
+        margin-bottom: 0;
+    }
+
+    .shipping-method-label,
+    .payment-info-label {
+        margin-top: 1.25rem;
+        margin-bottom: 0.4375rem;
+    }
+
+    .product-line-item:last-child .line-item-divider {
+        display: none;
+    }
+
+    .billing-addr-label {
+        margin-top: 1.875rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .line-item-attributes {
+        font-size: 14px;
+        margin-top: 4px;
+        color: $black;
+        text-transform: capitalize;
+
+        span:first-child {
+            font-family: 'Montserrat SemiBold';
+        }
+
+        .line-item-attributes-value {
+            color: $grey5;
+        }
+    }
+
+    .line-item-unit-price {
+        display: flex;
+
+        .line-item-pricing-info {
+            font-family: 'Montserrat SemiBold';
+        }
+
+        .price .sales {
+            font-size: 14px;
+            color: $dark-grey;
+            font-weight: normal;
+            margin-left: 4px;
+        }
+    }
+}
+
+.grand-total {
+    p {
+        margin-bottom: 0;
+    }
+
+    p.text-right {
+        margin-bottom: 0;
+    }
+}
+
+.track-shipment-btn {
+    width: 11.8253rem;
+    margin-bottom: 30px;  /* 1.9176rem */
+}

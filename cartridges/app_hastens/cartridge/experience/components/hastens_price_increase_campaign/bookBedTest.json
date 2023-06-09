@@ -1,0 +1,36 @@
+{
+    "name": "Price Increase Campaign Book A Bed Test",
+    "description": "",
+    "group": "hastens_price_increase_campaign",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "bannerHeading",
+                    "name": "Banner heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "bannerBody",
+                    "name": "Banner body text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "bannerButtonText",
+                    "name": "Banner button text",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+
+}

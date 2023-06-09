@@ -1,0 +1,3 @@
+<div class="brand-title subhead-small">
+    ${Resource.msg('product.brand.label', 'productTile', null)}
+</div>

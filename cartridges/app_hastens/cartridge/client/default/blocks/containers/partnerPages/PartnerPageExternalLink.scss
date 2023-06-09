@@ -1,0 +1,26 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-partner-external-link {
+    min-height: 300px;
+    position: relative;
+    margin-top: -10px;
+    &.text-align-left {
+        text-align: left;
+    }
+    &.text-align-center {
+        text-align: center;
+    }
+    &.text-align-right {
+        text-align: right;
+    }
+
+    .content-wrapper {
+        padding-top: 60px;
+        padding-bottom: 70px;
+        position: relative;
+        margin-left: 10%;
+        margin-right: 10%;
+
+    }
+
+}

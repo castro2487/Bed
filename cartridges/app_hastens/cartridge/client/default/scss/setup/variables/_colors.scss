@@ -1,0 +1,104 @@
+// @import "~common/utils/mixins";
+
+// Color system
+
+$white: #fff !default;
+$black: #000 !default;
+$blue: #0070d2 !default;
+$blue-footer: #000030 !default;
+$green: #008827 !default;
+$primary: #0072E3 !default;
+$red: #c00 !default;
+$success: $green !default;
+$danger: $red !default;
+$light-blue: #7ed0ee !default;
+
+// Consolidated values
+$grey1: #f9f9f9 !default;
+$grey2: #eee !default;
+$grey3: #ccc !default;
+$grey4: #999 !default;
+$grey5: #666 !default;
+$grey6: #444 !default;
+$grey7: #222 !default;
+$grey8: #333 !default;
+$grey-transparent-1: rgba(0, 0, 0, 0.65) !default;
+$grey-transparent-2: rgba(0, 0, 0, 0.25) !default;
+
+$light-gray: $grey1 !default;
+$slightly-darker-gray: $grey4 !default;
+$dark-gray: $grey6 !default;
+$darker-gray: $grey7 !default;
+$horizontal-rule-grey: $grey3 !default;
+$product-number-grey: $grey3 !default;
+$horizontal-border-grey: $grey4 !default;
+$menu-link: $grey6 !default;
+$close-menu-bg: #313131 !default;
+$link-color: $dark-gray !default;
+$hr-border-color: $grey3 !default;
+
+// Brand colors palette
+
+// HÄSTENS DARK BLUE
+$hastens-dark-blue: #000030 !default;
+
+// HÄSTENS BLUE
+$hastens-blue: #0071c1 !default;
+
+// HÄSTENS BRIGHT BLUE
+$hastens-bright-blue: #0072e3 !default;
+
+// BLUEGREY
+$bluegrey: #b0c0d0 !default;
+
+// BLUEGREY AT 30% OPACITY
+$bluegrey-opct-30: rgba(176, 192, 208, 0.3) !default;
+
+// BLACK
+// $black: #000000 !default;
+
+// ALMOST BLACK
+$almost-black: #313131 !default;
+
+// DARK GREY
+$dark-grey: #666666 !default;
+
+// MID GREY
+$mid-grey: #adadad !default;
+
+// LIGHT GREY
+$light-grey: #e5e5e5 !default;
+
+// LIGHTEST GREY
+$lightest-grey: #f2f2f2 !default;
+
+// WHISPER GREY
+$whisper-grey: #E5E5E5 !default;
+
+// ERROR RED
+$error-red: #e94d4d !default;
+
+// VALIDATION GREEN
+$validation-green: #0abf53 !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+(
+"hastens-dark-blue": $hastens-dark-blue,
+"hastens-blue": $hastens-blue,
+"hastens-bright-blue": $hastens-bright-blue,
+"bluegrey": $bluegrey,
+"bluegrey-opct-30": $bluegrey-opct-30,
+"black": $black,
+"almost-black": $almost-black,
+"dark-grey": $dark-grey,
+"mid-grey": $mid-grey,
+"light-grey": $light-grey,
+"lightest-grey": $lightest-grey,
+"error-red": $error-red,
+"validation-green": $validation-green
+),
+$theme-colors
+);
+
+$map-blue: #0E70D2;

@@ -1,0 +1,71 @@
+<!--- Close button --->
+<div class="filter-header">
+    <div class="header-bar d-md-none clearfix">
+        <button class="close">
+            <span class="sr-only">${Resource.msg('button.close', 'search', null)}</span>
+            <i class="fa fa-close"></i>
+        </button>
+        <div class="d-md-none result-count article-2">
+            <isinclude template="search/resultsCount" />
+        </div>
+        <!--- Results count and Reset button --->
+        <isif condition="${pdict.productSearch.productIds.length > 0}">
+            <div class="col-6 col-sm-4">
+                <div class="secondary-bar d-md-none">
+                    <button class="reset btn btn-block btn-secondary" data-href="${pdict.productSearch.resetLink}">
+                        ${Resource.msg('link.reset', 'search', null)}
+                    </button>
+                </div>
+            </div>
+        </isif>
+    </div>
+</div>
+
+<div>
+    <div class="refinements accordion" id="refinements-accordion">
+        <isloop items="${pdict.productSearch.refinements}" var="refinement">
+            <div class="card refinement refinement-${refinement.id.toLowerCase().replace(/ /g, '-')}">
+                <div class="card-header col-sm-12" id="heading-refinement-${refinement.id.toLowerCase().replace(/ /g, '-')}">
+                    <button class="title btn text-left btn-block ${refinement.id.toLowerCase().replace(/ /g, '-') === 'collection' ? '' : 'collapsed'}"
+                       data-toggle="collapse"
+                       data-target="${'#refinement-' + refinement.id.toLowerCase().replace(/ /g, '-')}"
+                       aria-controls="refinement-${refinement.id.toLowerCase().replace(/ /g, '-')}"
+                       aria-expanded="${refinement.id.toLowerCase().replace(/ /g, '-') === 'collection'}"
+                    >
+                        <h2 class="filter-title">${refinement.displayName}</h2>
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+                <div class="card-body content value collapse ${refinement.id.toLowerCase().replace(/ /g, '-') === 'collection' ? ' show' : ''}" 
+                    id="refinement-${refinement.id.toLowerCase().replace(/ /g, '-')}"
+                    aria-labelledby="heading-refinement-${refinement.id.toLowerCase().replace(/ /g, '-')}" 
+                >
+                    <!--- CATEGORY REFINEMENTS --->
+                    <isif condition="${refinement.isCategoryRefinement}">
+                        <isset name="categories" value="${refinement.values}" scope="page" />
+                        <isinclude template="search/refinements/categories" />
+                    </isif>
+
+                    <!--- ATTRIBUTE REFINEMENTS --->
+                    <isif condition="${refinement.isAttributeRefinement || refinement.isPromotionRefinement}">
+                        <isinclude template="search/refinements/attributes" />
+                    </isif>
+
+                    <!--- PRICE REFINEMENTS --->
+                    <isif condition="${refinement.isPriceRefinement}">
+                        <isinclude template="search/refinements/prices" />
+                    </isif>
+                </div>
+            </div>
+        </isloop>
+    </div>
+    <isif condition="${pdict.productSearch.productIds.length > 0 && pdict.productSearch.refinements.length > 0}">
+        <div class="col-12 col-lg-6 d-none d-md-block secondary-bar-wrapper">
+            <div class="secondary-bar">
+                <button class="reset btn btn-block btn-secondary" data-href="${pdict.productSearch.resetLink}">
+                    ${Resource.msg('link.reset', 'search', null)}
+                </button>
+            </div>
+        </div>
+    </isif>
+</div>

@@ -1,0 +1,69 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-dremer-campaign__cta {
+    background-image: url("https://static.hastens.com/768/blocks/campaigns/dreamer/dremer_final_art_lowres.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include media-breakpoint-up(md) {
+        background-image: url("https://static.hastens.com/1200/blocks/campaigns/dreamer/dremer_final_art_lowres.jpg");
+        background-position: center bottom;
+    }
+    @include media-breakpoint-up(lg) {
+        background-image: url("https://static.hastens.com/1440/blocks/campaigns/dreamer/dremer_final_art_lowres.jpg");
+    }
+    .content-wrapper {
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 580px;
+        padding: 0 30px 25px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        @include media-breakpoint-up(md) {
+            height: 600px;
+            padding: 0 15px 45px;
+        }
+        @include media-breakpoint-up(lg) {
+            height: 925px;
+        }
+        .main-text {
+            text-shadow: -1px 1px #000;
+            h2 {
+                font-size: 21px;
+                line-height: 25px;
+                font-weight: 400;
+                text-align: center;
+                margin: 0 auto;
+                font-family: "Montserrat SemiBold", sans-serif;
+                -webkit-font-smoothing: antialiased;
+                @include media-breakpoint-up(md) {
+                    font-size: 32px;
+                    line-height: 38px;
+                    white-space: pre-line;
+                }
+            }
+            p {
+                font-size: 14px;
+                line-height: 22px;
+                margin: 5px auto 0;
+                @include media-breakpoint-up(md) {
+                    font-size: 18px;
+                    line-height: 28px;
+                    margin: 10px auto 0;
+                }
+                @include media-breakpoint-up(lg) {
+                    white-space: pre-line;
+                }
+            }
+            .has-button {
+                margin-top: 10px;
+                @include media-breakpoint-up(lg) {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+<div class="container carousel-container">
+    <div class="row product-grid slider fade" style="opacity: 1;">
+        <isloop items="${slotcontent.content}" var="product">
+            <div class="col-10 offset-1">
+                <isobject object="${product}" view="recommendation">
+                    <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'swatches', true, 'ratings', true, 'showQuickView', false)}" />
+                </isobject>
+            </div>
+        </isloop>
+    </div>
+</div>
+
+<script>
+    $('.slider').slick({
+        "slidesToScroll": 1,
+        "slidesToShow": 3,
+        "infinite": true,
+        "arrows": true,
+        "prevArrow": '<button class="slide-arrow prev-arrow"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>',
+        "nextArrow": '<button class="slide-arrow next-arrow"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>',
+        "rows": 1,
+        "responsive": [
+            {
+                "breakpoint": 769,
+                "settings": {
+                    "slidesToShow": 2
+                }
+            },
+            {
+                "breakpoint": 544,
+                "settings": {
+                    "slidesToShow": 1
+                }
+            }
+        ]
+    });
+</script>

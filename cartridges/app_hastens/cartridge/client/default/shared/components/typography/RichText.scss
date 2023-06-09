@@ -1,0 +1,73 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-rich-text {
+    h2 {
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 0.05em;
+        margin-bottom: 30px;
+        @include media-breakpoint-up(md) {
+            font-size: 32px;
+            line-height: 34px;
+        }
+    }
+    h3 {
+        font-size: 20px;
+        line-height: 24px;
+        @include media-breakpoint-up(md) {
+            font-size: 24px;
+            line-height: 29px;
+        }
+    }
+    h4 {
+        font-size: 18px;
+        line-height: 24px;
+        @include media-breakpoint-up(md) {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+    h5 {
+        font-size: 14px;
+        line-height: 17px;
+        @include media-breakpoint-up(md) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+    h2, h3, h4, h5 {
+        font-weight: 600;
+        &.x-small {
+            @include heading-xs;
+        }
+        &.small {
+            @include heading-sm;
+        }
+        &.medium {
+            @include heading-md;
+        }
+        &.large {
+            @include heading-lg;
+        }
+        &.x-large {
+            @include heading-xl;
+        }
+    }
+    a {
+        font-weight: 400;
+        font-family: "Montserrat SemiBold", sans-serif;
+        color: var(--has-link-color, #0071c1);
+    }
+    p {
+        @include paragraph-md;
+        &.x-small {
+            @include paragraph-xs;
+        }
+        &.small {
+            @include paragraph-sm;
+        }
+        &.large {
+            @include paragraph-lg;
+        }
+    }
+}

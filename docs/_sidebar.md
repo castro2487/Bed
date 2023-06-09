@@ -1,0 +1,5 @@
+- [Getting Started](/)
+- [Backend](02-backend.md)
+- [Frontend](03-frontend.md)
+- [Store Locator](04-storelocator.md)
+- [Todo and questions](99-todo.md)

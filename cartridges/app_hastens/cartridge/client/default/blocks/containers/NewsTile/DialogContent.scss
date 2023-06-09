@@ -1,0 +1,117 @@
+@import "~slick-carousel/slick/slick";
+
+.has-news-tile--dialog-content {
+    .media-slider {
+        .slick-track {
+            margin-left: 0;
+        }
+        .slick-list {
+            font-size: 0;
+        }
+        .slick-dots {
+            list-style: none;
+            margin: 0;
+            padding: 12px 0 3px;
+            text-align: center;
+            line-height: 0;
+            font-size: 0;
+            li {
+                display: inline-block;
+            }
+            button {
+                width: 10px;
+                height: 10px;
+                padding: 0;
+                margin: 0 6px;
+                border-radius: 50%;
+                background-color: transparent;
+                border: 1px solid #252525;
+                color: transparent;
+                overflow: hidden;
+            }
+            .slick-active button {
+                background-color: #252525;
+            }
+        }
+        .slick-prev,
+        .slick-next {
+            position: absolute;
+            display: block;
+            background-color: transparent;
+            color: #fff;
+            top: 50%;
+            transform: translate(0, -50%);
+            padding: 0;
+            border: none;
+            z-index: 1;
+            appearance: none;
+            font-size: 12px;
+            &.slick-disabled {
+                opacity: 0.5;
+                cursor: default;
+                pointer-events: none;
+            }
+            i {
+                padding: 6px 0;
+                text-shadow: 0 0 5px #000;
+            }
+        }
+        .slick-prev {
+            left: 15px;
+            i {
+                transform: rotate(90deg);
+            }
+        }
+        .slick-next {
+            right: 15px;
+            i {
+                transform: rotate(270deg);
+            }
+        }
+    }
+    .media-slide {
+        .image-media {
+            padding-bottom: 100%;
+            position: relative;
+            button {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        .video-media {
+            padding-bottom: 100%;
+            background-color: #000;
+            position: relative;
+            .inner-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .video-react {
+                height: 100%;
+            }
+            .video-react-big-play-button {
+                display: none;
+            }
+        }
+    }
+    .text {
+        padding: 55px 20px 20px;
+    }
+    .media-slider + .text {
+        padding: 20px;
+    }
+    .heading {
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+}

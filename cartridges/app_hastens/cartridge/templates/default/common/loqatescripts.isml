@@ -1,0 +1,9 @@
+<isset name="isloqateAccountEnabled" value="${dw.system.Site.getCurrent().preferences.custom.loqateAccountEnabled}" scope="page" />
+<isset name="loqateAccountCode" value="${dw.system.Site.getCurrent().preferences.custom.loqateAccountCode}" scope="page" />
+<input type="hidden" name="loqateAccountCode" id="loqateAccountCode" value="${loqateAccountCode}"/>
+<isset name="limitedCountryCode" value="${require('dw/util/Locale').getLocale(request.getLocale()).getISO3Country()}" scope="page" />
+<div class="loqate-code" style="display: none;">
+<isif condition="${isloqateAccountEnabled === true}">    
+${dw.system.HookMgr.callHook('app.template.loqateInclude', 'loqateInclude', limitedCountryCode)}
+</isif>
+</div>

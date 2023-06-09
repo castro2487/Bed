@@ -1,0 +1,11 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-partner-page-description {
+    position: relative;
+    padding: 60px 15px;
+    margin-top: -10px;
+    .has-rich-text {
+        max-width: 960px;
+        margin: auto;
+    }
+}

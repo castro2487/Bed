@@ -1,0 +1,11 @@
+<iscontent type="text/html" charset="UTF-8" compact="true" />
+
+<isdecorate template="common/layout/pdStorePage">
+    <div class="store-page ${pdict.className}">
+        <div class="content-wrapper">
+            <h1 class="sr-only"><isprint value="${pdict.CurrentPageMetaData.title}" encoding="off" /></h1>
+            <isprint value="${pdict.regions.main.render()}" encoding="off" />
+            <isprint value="${pdict.regions.footer.render()}" encoding="off" />
+        </div>
+    </div>
+</isdecorate>

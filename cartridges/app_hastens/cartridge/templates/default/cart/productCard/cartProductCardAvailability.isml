@@ -1,0 +1,25 @@
+<div class="line-item-availability availability-${lineItem.UUID}">
+    <isif condition="${miniCart}">
+        <isif condition="${lineItem.quantity > lineItem.availability.allocation}">
+            <isloop items="${lineItem.availability.messages}" var="message">
+                <p class="line-item-attributes invalid-feedback d-block invalid-feedback-minicart">${message}</p>
+            </isloop>
+        </isif>
+    <iselse/>
+        <isif condition="${lineItem.quantity > lineItem.availability.allocation}">
+            <isloop items="${lineItem.availability.messages}" var="message">
+                <p class="line-item-attributes invalid-feedback d-block">${message}</p>
+            </isloop>
+        <iselseif condition="${cart}" />
+            <isloop items="${lineItem.availability.messages}" var="message">
+                <p class="line-item-attributes">${message}</p>
+            </isloop>
+        </isif>        
+    </isif>
+    
+    <isif condition="${lineItem.availability.inStockDate}">
+        <p class="line-item-attributes line-item-instock-date">
+            ${lineItem.availability.inStockDate}
+        </p>
+    </isif>
+</div>

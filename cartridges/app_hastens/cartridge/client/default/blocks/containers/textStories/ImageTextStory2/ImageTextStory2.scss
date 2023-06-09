@@ -1,0 +1,36 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-image-text-story-2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 30px;
+    img {
+        height: 280px;
+    }
+    .text {
+        margin: 40px auto;
+        max-width: 240px;
+        text-align: center;
+        @include media-breakpoint-up(lg) {
+            margin: 15px;
+            max-width: none;
+            text-align: left;
+        }
+        h2 {
+            font-size: 25px;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+    }
+    &.image-placement--left {
+        @include media-breakpoint-up(lg) {
+            flex-direction: row;
+        }
+    }
+    &.image-placement--right {
+        @include media-breakpoint-up(lg) {
+            flex-direction: row-reverse;
+        }
+    }
+}

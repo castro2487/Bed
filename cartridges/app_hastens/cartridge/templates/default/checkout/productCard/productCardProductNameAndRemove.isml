@@ -1,0 +1,15 @@
+<div class="line-item-name">
+    <a href="${URLUtils.url('Product-Show', 'pid', lineItem.id)}">${lineItem.productName}</a>
+</div>
+<isif condition="${!lineItem.isBonusProductLineItem}"/>
+    <iscomment> <div class="remove-line-item"> </iscomment>
+        <button type="button" class="remove-btn cart-delete-confirmation-btn btn btn-light"
+                data-pid="${lineItem.id}"
+                data-name="${lineItem.productName}"
+                data-action="${pdict.actionUrls.removeProductLineItemUrl}"
+                data-uuid="${lineItem.UUID}"
+                aria-label="${Resource.msgf('text.remove.line.item','cart', null, lineItem.productName)}">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+    <iscomment> </div> </iscomment>
+</isif>

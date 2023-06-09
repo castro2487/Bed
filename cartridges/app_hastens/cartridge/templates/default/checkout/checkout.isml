@@ -1,0 +1,140 @@
+<isdecorate template="common/layout/checkout">
+    <isinclude sf-toolkit="off" template="/common/loqatescripts" />
+    <!----------------------------------------------------------------------------------->
+    <!-- Load Static Assets -->
+    <!----------------------------------------------------------------------------------->
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/checkout.min.js');
+        assets.addCss('/css/checkout/checkout.css');
+    </isscript>
+
+    <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+
+    <div id="checkout-main" class="container data-checkout-stage <isif condition=" ${pdict.order.usingMultiShipping && pdict.order.shipping.length > 1}">multi-ship</isif>" data-customer-type="${pdict.customer.registeredUser ? 'registered' : 'guest'}" data-checkout-stage="${pdict.currentStage}"
+        data-checkout-get-url="${URLUtils.https('CheckoutServices-Get')}">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="back-to-shopping-bag">
+                    <a href="${URLUtils.https('Cart-Show')}"
+                        title="${Resource.msg('link.back.to.cart', 'checkout', null)}">
+                        <span><i class="fa fa-angle-left"></i></span>
+                        <span>${Resource.msg('link.back.to.cart', 'checkout', null)}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+
+                <!----------------------------------------------------------------------------------->
+                <!-- Checkout Forms: Shipping, Payment, Coupons, Billing, etc -->
+                <!----------------------------------------------------------------------------------->
+
+                <div class="alert alert-danger error-message" role="alert">
+                    <p class="error-message-text"></p>
+                </div>
+
+                <!-- Step 1: Shipping -->
+                <isinclude template="checkout/shipping/shipping" />
+                <div class="card shipping-summary">
+                    <div class="card-header clearfix">
+                        <h2 class="card-header-custom headline-2">${Resource.msg('heading.checkout.shipping', 'checkout', null)}</h2>
+                        <isif condition="${!pdict.disableEditButtons}">
+                            <span class="edit-button btn-text-link">${Resource.msg('action.edit.step', 'checkout', null)}</span>
+                        </isif>
+                    </div>
+                    <div class="card-body">
+                        <isinclude template="checkout/shipping/shippingSummary" />
+                    </div>
+                </div>
+
+                <!-- Step 2: Payment and Billing-->
+                <isinclude template="checkout/billing/billing" />
+                <div class="card payment-summary">
+                    <div class="card-header clearfix">
+                        <h2 class="pull-left card-header-custom headline-2">${Resource.msg('heading.payment', 'checkout', null)}
+                        </h2>
+                        <isif condition="${!pdict.disableEditButtons}">
+                            <span class="edit-button pull-right btn-text-link">${Resource.msg('action.edit.step', 'checkout', null)}</span>
+                        </isif>
+                    </div>
+
+                    <div class="card-body">
+                        <isinclude template="checkout/billing/billingSummary" />
+                    </div>
+                </div>
+            </div>
+
+            <!----------------------------------------------------------------------------------->
+            <!-- Order Totals, Details and Summary -->
+            <!----------------------------------------------------------------------------------->
+            <div class="col-lg-4">
+
+                <div class="card order-summary">
+                    <div class="card-header">
+                        <h2 class="card-header-custom headline-5">${Resource.msg('heading.order.summary', 'checkout', null)}</h2>
+                    </div>
+                    <div class="card-body order-total-summary">
+                        <isinclude template="checkout/orderTotalSummary" />
+                    </div>
+                </div>
+
+                <isinclude template="checkout/orderProductSummary" />
+
+            </div>
+        </div>
+
+        <!----------------------------------------------------------------------------------->
+        <!-- Checkout Workflow Buttons -->
+        <!----------------------------------------------------------------------------------->
+        <div class="row">
+            <div class="col-12 col-lg-8 next-step-button">
+                <div class="mb-sm-3">
+
+                    <iscomment> use PayPal Express version of place-order when shipping address fields (except phone) are disabled </iscomment>
+                    <isif condition="${pdict.inputDisabled}">
+                        <button class="btn btn-primary btn-block place-order-paypal-express" style="display: block"
+                            data-action="${URLUtils.url('PayPalExpress-PlaceOrder')}" type="button" name="button">
+                            ${Resource.msg('button.next.place.order', 'checkout', null)}
+                        </button>
+                    <iselse>
+                        <button class="btn btn-secondary btn-block submit-shipping" type="submit" name="submit"
+                            value="submit-shipping" <isif
+                            condition="${pdict.order.usingMultiShipping && !pdict.order.shippable}">disabled</isif>>
+                            ${Resource.msg('button.next.payment', 'checkout', null)}
+                        </button>
+
+                        <button class="btn btn-secondary btn-block submit-payment" type="submit" name="submit"
+                            value="submit-payment">
+                            ${Resource.msg('button.next.place.order', 'checkout', null)}
+                        </button>
+
+                        <div class="card submit-payment-card paypal-container">
+                            <isinclude template="checkout/billing/termsAndConditionsSubmitPayment" />
+                            
+                            <div class="additionalFields" id="component_paypal" style="display:block"></div>
+
+                            <button class="btn btn-primary btn-block submit-payment" type="submit" name="submit"
+                                value="submit-payment" disabled>
+                                ${Resource.msg('button.place.order', 'checkout', null)}
+                            </button>
+                        </div>
+
+                        <div class="card place-order-card">
+                            <isinclude template="checkout/billing/termsAndConditions" />
+                            <button class="btn btn-primary btn-block place-order"
+                                data-action="${URLUtils.url(!pdict.disableEditButtons ? 'CheckoutServices-PlaceOrder' : 'PayPalExpress-ShowConfirmationPayment')}" type="submit" name="submit"
+                                value="place-order" disabled>${Resource.msg('button.place.order', 'checkout', null)}
+                            </button>
+                        </div>
+                    </isif>
+                </div>
+            </div>
+        </div>
+    </div>
+    <isinclude template="checkout/shipping/shippingAddressTemplate" />
+
+</isdecorate>

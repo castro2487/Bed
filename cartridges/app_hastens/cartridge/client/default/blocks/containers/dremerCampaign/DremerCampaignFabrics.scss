@@ -1,0 +1,147 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-dremer-campaign__fabrics {
+    padding: 55px 0 70px;
+    @include media-breakpoint-up(md) {
+        padding: 72px 0 80px;
+    }
+    h2 {
+        @include garamond-premier-pro;
+        max-width: 960px + 30px;
+        margin: 0 auto 60px;
+        padding: 0 15px;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 1px;
+        color: #ceb867;
+        text-align: center;
+        @include media-breakpoint-up(md) {
+            margin: 0 auto 135px;
+            font-size: 32px;
+            line-height: 38px;
+        }
+    }
+    .fabrics {
+        max-width: 1145px;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            width: 100%;
+            padding: 20px 0;
+            @include media-breakpoint-up(md) {
+                width: 50%;
+                padding: 20px 30px;
+            }
+            &::after {
+                content: "";
+                display: block;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                padding-bottom: 68%;
+            }
+            &.black-shadow::after {
+                background-image: url("https://static.hastens.com/750/blocks/campaigns/dreamer/V2/blsh-fabric_1.jpg");
+            }
+            &.traditional-blue::after {
+                background-image: url("https://static.hastens.com/750/blocks/campaigns/dreamer/V2/trbl-fabric.jpg");
+            }
+            &.phantom-charcoal::after {
+                background-image: url("https://static.hastens.com/750/blocks/campaigns/dreamer/V2/phch-fabric.jpg");
+            }
+            &.natural-shale::after {
+                background-image: url("https://static.hastens.com/750/blocks/campaigns/dreamer/V2/nash-fabric.jpg");
+            }
+        }
+        .label {
+            @include garamond-premier-pro;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #ac9652;
+            padding-left: 7%;
+            padding-right: 7%;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include media-breakpoint-up(md) {
+                font-size: 20px;
+                line-height: 24px;
+                justify-content: flex-start;
+            }
+            .view-3d {
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                border: 0;
+                padding: 0;
+                background-color: #808080;
+                appearance: none;
+                background-image: url("../../../images/3d.svg");
+                margin-left: 15px;
+                margin-top: -0.2em;
+                @include media-breakpoint-up(md) {
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+    .details {
+        text-align: center;
+        max-width: 750px;
+        margin: 20px auto 0;
+        padding: 0 15px;
+        white-space: pre-line;
+    }
+    .link-text {
+        @include garamond-premier-pro;
+        max-width: 960px + 30px;
+        margin: 65px auto 0;
+        padding: 0 15px;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 1px;
+        color: #ceb867;
+        text-align: center;
+        white-space: pre-line;
+        @include media-breakpoint-up(md) {
+            margin: 95px auto 0;
+            font-size: 32px;
+            line-height: 38px;
+        }
+        a {
+            color: inherit;
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.has-dremer-campaign__3d-dialog {
+    .corner-square {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 70px;
+        width: 70px;
+        background-color: #000;
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+    .sketchfab-embed-wrapper,
+    .sketchfab-embed-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+}

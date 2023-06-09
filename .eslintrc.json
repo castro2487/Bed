@@ -1,0 +1,106 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "overrides": [
+        {
+            "extends": [
+                "google",
+                "plugin:@typescript-eslint/recommended",
+                "plugin:react/recommended"
+            ],
+            "parser": "@typescript-eslint/parser",
+            "parserOptions": {
+                "ecmaFeatures": {
+                    "jsx": true
+                },
+                "ecmaVersion": 12,
+                "sourceType": "module"
+            },
+            "plugins": [
+                "react",
+                "@typescript-eslint"
+            ],
+            "files": [
+                "**/*.ts",
+                "**/*.tsx"
+            ],
+            "rules": {
+                "@typescript-eslint/consistent-type-definitions": [
+                    "error",
+                    "interface"
+                ],
+                "@typescript-eslint/explicit-module-boundary-types": "off",
+                "@typescript-eslint/no-explicit-any": "off",
+                "brace-style": [
+                    "error",
+                    "1tbs",
+                    {
+                        "allowSingleLine": true
+                    }
+                ],
+                "camelcase": "off",
+                "indent": [
+                    "error",
+                    4,
+                    {
+                        "SwitchCase": 1
+                    }
+                ],
+                "max-len": "off",
+                "new-cap": [
+                    "error",
+                    {
+                        "capIsNewExceptions": [
+                            "Krux"
+                        ]
+                    }
+                ],
+                "no-console": [
+                    "error",
+                    {
+                        "allow": [
+                            "warn",
+                            "error"
+                        ]
+                    }
+                ],
+                "no-irregular-whitespace": "off",
+                "no-restricted-imports": [
+                    "error",
+                    {
+                        "paths": [
+                            "lodash",
+                            "@material-ui/core",
+                            "@material-ui/icons",
+                            "@material-ui/lab"
+                        ]
+                    }
+                ],
+                "object-curly-spacing": [
+                    "error",
+                    "always"
+                ],
+                "padded-blocks": "off",
+                "quote-props": "off",
+                "react/jsx-closing-bracket-location": [
+                    "error",
+                    {
+                        "nonEmpty": "after-props",
+                        "selfClosing": "line-aligned"
+                    }
+                ],
+                "react/prop-types": "off",
+                "require-jsdoc": "off",
+                "valid-jsdoc": "off",
+                "linebreak-style": 0
+            }
+        }
+    ]
+}

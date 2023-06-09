@@ -1,0 +1,10 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-text-box {
+    padding: 30px 15px;
+    max-width: 990px;
+    margin: 0 auto;
+    @include media-breakpoint-up(md) {
+        padding: 60px 15px;
+    }
+}

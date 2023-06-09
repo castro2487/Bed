@@ -1,0 +1,93 @@
+<isdecorate template="uikit/layout">
+
+    <h2 class="section-title py-3">Breakpoints</h2>
+
+
+    <p>The breakpoints should be the following:</p>
+
+
+    <p><strong>XS (Extra small screen / phone)</strong><br />
+     Small 0px - 575px (or virtual px on xhdpi (retina))</p>
+
+    <p><strong>S (Small screen / phone)</strong><br />
+     Small 576px - 767px (or virtual px on xhdpi (retina))</p>
+
+    <p><strong>M (Medium screen / tablet)</strong><br />
+     Medium 768px - 991px (or virtual px on xhdpi)</p>
+
+    <p><strong>L (Large screen / desktop)</strong><br />
+     Large 992px - 1199px (or virtual px on xhdpi)</p>
+
+    <p><strong>XL (Extra large screen / wide desktop)</strong><br />
+     Extra-wide 1200 > infinity (from 1440px to infinity container is centered)</p>
+
+    <h2 class="section-title py-3">Container</h2>
+
+    <p><strong>XS </strong><br />
+    Full width</p>
+
+    <p><strong>S </strong><br />
+    Full width</p>
+
+    <p><strong>M</strong><br />
+     Full width</p>
+
+    <p><strong>L</strong><br />
+     Full width</p>
+
+    <p><strong>XL</strong><br />
+     Max 1440px (i.e. full with until it becomes 1440px)</p>
+
+    <h2 class="section-title py-3">Grid</h2>
+
+
+    <p>Layouts are using a 12 column grid, with a 20px gutter between columns.</p>
+
+    <p>On S, the external gutter is 15px</p>
+    <p>On M, the external gutter is 20px</p>
+    <p>On L, the external gutter is 40px</p>
+    <p>On XL, the layout container is centered</p>
+
+    <p>Example Grid:</p>
+
+    <div class="row bg-light-light py-3 text-center">
+        <div class="col-12 col-lg-1">
+            <div class="py-4 border border-primary border-top-0 border-bottom-0 bg-light">Col</div>
+        </div>
+        <div class="col-12 col-lg-1">
+            <div class="py-4 border border-primary border-top-0 border-bottom-0 bg-light">Col</div>
+        </div>
+        <div class="col-12 col-lg-1">
+            <div class="py-4 border border-primary border-top-0 border-bottom-0 bg-light">Col</div>
+        </div>
+        <div class="col-12 col-lg-1">
+            <div class="py-4 border border-primary border-top-0 border-bottom-0 bg-light">Col</div>
+        </div>
+        <div class="col-12 col-lg-1">
+            <div class="py-4 border border-primary border-top-0 border-bottom-0 bg-light">Col</div>
+        </div>
+        <div class="col-12 col-lg-1">
+            <div class="py-4 border border-primary border-top-0 border-bottom-0 bg-light">Col</div>
+        </div>
+        <div class="col-12 col-lg-1">
+            <div class="py-4 border border-primary border-top-0 border-bottom-0 bg-light">Col</div>
+        </div>
+        <div class="col-12 col-lg-1">
+            <div class="py-4 border border-primary border-top-0 border-bottom-0 bg-light">Col</div>
+        </div>
+        <div class="col-12 col-lg-1">
+            <div class="py-4 border border-primary border-top-0 border-bottom-0 bg-light">Col</div>
+        </div>
+        <div class="col-12 col-lg-1">
+            <div class="py-4 border border-primary border-top-0 border-bottom-0 bg-light">Col</div>
+        </div>
+        <div class="col-12 col-lg-1">
+            <div class="py-4 border border-primary border-top-0 border-bottom-0 bg-light">Col</div>
+        </div>
+        <div class="col-12 col-lg-1">
+            <div class="py-4 border border-primary border-top-0 border-bottom-0 bg-light">Col</div>
+        </div>
+    </div>
+
+    <pre><code>&lt;div class=&quot;container&quot;&gt;&#10;    &lt;div class=&quot;row&quot;&gt;&#10;        &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;&#10;    &lt;/div&gt;&#10;&lt;/div&gt;</code></pre>
+</isdecorate>

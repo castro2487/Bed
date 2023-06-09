@@ -1,0 +1,86 @@
+@import "../variables";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "../components/formFields";
+
+.login-oauth {
+    margin-top: 1rem;
+}
+
+.total-items-label {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.total-price {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.guest-card {
+    margin-top: 1rem;
+    margin-bottom: 1.875rem;
+
+    .card-header {
+        padding: 1.875rem 1.25rem 0;
+        border: 0;
+    }
+
+    .card-body {
+        padding-bottom: 1.875rem;
+
+        p {
+            color: $dark-grey;
+            margin-bottom: 1.875rem;
+        }
+    }
+}
+
+.returning-customers {
+    margin-bottom: 2.125rem;
+
+    .card-header {
+        padding: 1.875rem 1.25rem 0;
+        border: 0;
+    }
+
+    .card-body {
+        padding-top: 1.125rem;
+
+        .login .form-group:first-child {
+            .form-label {
+                margin-top: 0;
+            }
+        }
+
+        .forgot-password {
+            font-size: 0.875rem;
+        }
+    }
+}
+
+.create-account-card {
+    margin-bottom: 5.625rem;
+
+    .card-header {
+        padding: 1.875rem 1.25rem 0;
+        border: 0;
+    }
+
+    .card-body {
+        padding-bottom: 1.875rem;
+        padding-top: 0.625rem;
+
+        p {
+            color: $dark-grey;
+            margin-bottom: 1.875rem;
+        }
+    }
+}
+
+.back-to-shopping-bag {
+    margin-top: 1.25rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+}

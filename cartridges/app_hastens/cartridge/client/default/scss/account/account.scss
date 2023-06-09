@@ -1,0 +1,70 @@
+@import "../variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "../components/formFields";
+
+.account-image {
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+img.my-account-order-img {
+    width: 100%;
+}
+
+.card-footer>a {
+    color: $primary;
+    text-decoration: underline;
+}
+
+.card-header>a {
+    color: $primary;
+    float: right;
+    @extend .text-link;
+}
+
+.card-info-group {
+    p {
+        margin-bottom: 0;
+    }
+
+    // div {
+    //     margin-bottom: 1.25rem;
+    // }
+
+    div:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.order-history-control,
+.order-history {
+    h2 {
+        font-weight: bold;
+        margin-top: 0.5rem;
+    }
+}
+
+.dashboard-order-card-image {
+    width: 7rem;
+    padding-right: 1rem;
+}
+
+.dashboard-order-card-footer-columns:last-child {
+    text-align: right;
+}
+
+.dashboard-order-card-footer-value {
+    font-size: 1rem;
+}
+
+.card-header h2,
+.card-header h3 {
+    margin-bottom: 0;
+    @extend .headline-2;
+    font-family:'Montserrat SemiBold';
+    letter-spacing: normal;
+    text-transform: none;
+}

@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg bg-inverse col-12">
+    <div class="menu-group" role="navigation">
+        <ul class="nav navbar-nav">
+            <isif condition="${pdict.categories}">
+                <isloop items="${pdict.categories}" var="category">
+                    <li class="nav-item" role="presentation">
+                        <a href="<isprint value="${category.url}" encoding="htmldoublequote"/>" title='${category.name}' id="${category.id}" class="nav-link" rel="nofollow" role="link" tabindex="0">${category.name}</a>
+                    </li>
+                </isloop>
+            </isif>
+            <li class="nav-item" role="presentation">
+                <a href="${URLUtils.url('Stores-Find')}"  title="${Resource.msg('store.locator.label', 'common', null)}" class="nav-link" rel="nofollow" role="link" tabindex="0">
+                    ${Resource.msg('store.locator.label', 'common', null)}
+                </a>
+            </li>
+            <isinclude url="${URLUtils.url('Account-Header', 'mobile', true)}" />
+            <isinclude url="${URLUtils.url('Page-Locale', 'mobile', true)}" />
+        </ul>
+    </div>
+</nav>

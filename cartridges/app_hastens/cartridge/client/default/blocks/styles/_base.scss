@@ -1,0 +1,31 @@
+body {
+    font-family: $font-family;
+    background-color: #fff;
+    color: #000;
+}
+
+body:not(.tabbing) * {
+    outline: none;
+}
+
+b {
+    font-weight: 600;
+}
+
+/**
+ * Override global styles
+ */
+
+header {
+    background: none;
+    position: static;
+    z-index: auto;
+}
+
+.progress {
+    background-color: transparent;
+}
+
+.btn-text-link {
+    font-size: inherit;
+}

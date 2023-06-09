@@ -1,0 +1,65 @@
+.uikit {
+  .logo {
+    max-width: 400px;
+  }
+
+  .color-swatch-circle {
+    width: 80px;
+    height: 80px;
+    background: silver;
+    border-radius: 50%;
+    margin: auto;
+  }
+
+  .color-swatch-info {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  .color-swatch-code {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: #666666;
+  }
+
+  .section-title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    color: #CBCBCB;
+  }
+
+  code {
+    display: block;
+    color: #0072E3;
+    padding: 8px 16px;
+    background: rgba(#0072E3, 0.04);
+    border: 1px solid rgba(#0072E3, 0.1);
+    margin: 24px 0 12px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.uikit-hero {
+  background-image: url(../images/UIKit.jpg);
+  min-height: 200px;
+  // background-position-y: 20%;
+}

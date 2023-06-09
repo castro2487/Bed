@@ -1,0 +1,26 @@
+<isif condition="${pdict.localeModel.locale.localeLinks.length > 0}">
+    <div class="dropdown country-selector custom-footer-dropdown" data-url="${URLUtils.url('Page-SetLocale')}" tabindex="0">
+        <span class="btn dropdown-toggle" id="dropdownCountrySelector" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <i class="flag-icon flag-icon-${pdict.localeModel.locale.countryCode.toLowerCase()}"></i>
+            ${pdict.localeModel.locale.displayName}
+        </span>
+        <div class="dropdown-menu dropdown-country-selector" aria-labelledby="dropdownCountrySelector">
+            <isloop items="${pdict.localeModel.locale.localeLinks}" var="localeLink">
+                <isif condition="${!localeLink.hasB2C}">
+                    <a class="dropdown-item" href="${localeLink.redirectUrl}" lang="${localeLink.language}" data-locale="${localeLink.localID}"
+                        data-currencyCode="${localeLink.currencyCode}">
+                        <i class="flag-icon flag-icon-${localeLink.country.toLowerCase()}"></i>
+                        ${localeLink.displayName}
+                    </a>
+                <iselse/>
+                    <a class="dropdown-item B2C-country" href="${'#'}" lang="${localeLink.language}" data-locale="${localeLink.localID}"
+                        data-currencyCode="${localeLink.currencyCode}">
+                        <i class="flag-icon flag-icon-${localeLink.country.toLowerCase()}"></i>
+                        <span>${localeLink.displayName}</span>
+                    </a>
+                </isif>
+            </isloop>
+        </div>
+    </div>
+</isif>

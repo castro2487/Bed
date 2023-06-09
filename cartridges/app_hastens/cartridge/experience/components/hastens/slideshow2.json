@@ -1,0 +1,74 @@
+{
+    "name": "Bed Color Viewer",
+    "description": "",
+    "group": "hastens",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "bed",
+                    "name": "Bed",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "2000T",
+                                    "value": "2000t"
+                                },
+                                {
+                                    "name": "Eala",
+                                    "value": "eala"
+                                },
+                                {
+                                    "name": "Excel",
+                                    "value": "excel"
+                                },
+                                {
+                                    "name": "Herlewing",
+                                    "value": "herlewing"
+                                },
+                                {
+                                    "name": "Maranga",
+                                    "value": "maranga"
+                                },
+                                {
+                                    "name": "Marquis",
+                                    "value": "marquis"
+                                },
+                                {
+                                    "name": "Superia",
+                                    "value": "superia"
+                                },
+                                {
+                                    "name": "Vividus",
+                                    "value": "vividus"
+                                }
+                            ]
+                        }
+                    },
+                    "required": true
+                },
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "colorLabel",
+                    "name": "Color label",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

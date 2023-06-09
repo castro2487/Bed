@@ -1,0 +1,43 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/checkout/checkout.css');
+        assets.addJs('/js/checkoutRegistration.js');
+    </isscript>
+
+    <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+
+    <div class="container receipt <isif condition=" ${pdict.order.shipping.length > 1}">multi-ship</isif>">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3 text-align-center">
+                <h2 class="order-thank-you-msg headline-1">${Resource.msg('msg.placed.order.thank.you', 'confirmation', null)}</h2>
+                <isif condition="${pdict.order.orderEmail}">
+                    <p class="order-thank-you-email-msg">
+                        <span>
+                            ${Resource.msg('info.receive.email.confirmation', 'confirmation', null)}
+                        </span>
+                        <strong>
+                            <isprint
+                                value="${Resource.msgf('info.receive.email.confirmationValue', 'confirmation', null, pdict.order.orderEmail)}"
+                                encoding="htmlcontent" />
+                        </strong>
+                    </p>
+                </isif>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <isinclude template="checkout/confirmation/confirmationDetails" />
+                <div class="mb-3">
+                    <a href="${URLUtils.url('Home-Show')}"
+                        class="btn btn-secondary btn-block order-confirmation-continue-shopping" role="button"
+                        aria-pressed="true">
+                        ${Resource.msg('button.continue.shopping', 'confirmation', null)}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

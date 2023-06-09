@@ -1,0 +1,119 @@
+@import "../variables";
+
+.hero {
+    height: 25vw;
+    background-size: cover;
+    background-position: 50%;
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    h1.page-title {
+        top: 50%;
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 20px !important;
+        line-height: 1;
+        padding-top: 0;
+
+        @include media-breakpoint-only(xs) {
+            margin-bottom: 0 !important;
+            text-align: center;
+        }
+    }
+}
+
+.hero.slant-down.search-banner .categ-desc {
+    display: block !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    font-size: 16px !important;
+    line-height: 26px !important;
+    font-family: 'Montserrat' !important;
+    font-weight: 400 !important;
+    margin-bottom: 0 !important;
+    text-transform: none !important;
+    padding-bottom: 0 !important;
+
+    @include media-breakpoint-only(xs) {
+        display: none !important;
+    }
+}
+
+h1.page-title {
+    position: relative;
+    color: $grey8;
+    padding: 0.3125em 0.625em 0.3125em $grid-gutter-width / 2;
+    display: inline-block;
+    margin: 0.9375em 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    @include media-breakpoint-up(sm) {
+        font-size: 2rem;
+    }
+
+    @include media-breakpoint-up(md) {
+        font-size: 2.5rem;
+    }
+
+    // @include media-breakpoint-only(xl) {
+    //     left: calc((100% - #{map-get($container-max-widths, xl)}) / 2);
+    // }
+
+    // @include media-breakpoint-only(lg) {
+    //     left: calc((100% - #{map-get($container-max-widths, lg)}) / 2);
+    // }
+
+    // @include media-breakpoint-only(md) {
+    //     left: calc((100% - #{map-get($container-max-widths, md)}) / 2);
+    // }
+
+    @include media-breakpoint-down(sm) {
+        left: 0;
+    }
+}
+
+.hero.slant-down.search-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1.page-title {
+        top: auto;
+        margin: 0;
+        padding-bottom: 0;
+    }
+
+    .categ-desc {
+        position: relative;
+        color: $grey8;
+        padding: 0.3125em 0.625em 0.3125em $grid-gutter-width / 2;
+        padding-top: 0;
+        display: inline-block;
+        margin: 0.9375em 0;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 0;
+
+        @include media-breakpoint-up(sm) {
+            font-size: 2rem;
+        }
+
+        @include media-breakpoint-up(md) {
+            font-size: 2.5rem;
+        }
+    }
+
+    .container {
+        .row {
+            flex-direction: column;
+            .col-12.col-sm-11 {
+                width: calc(265px + 35%) !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,94 @@
+@import "../../../../../shared/styles/utils/utils";
+
+.has-bed-tile__grand-vividus {
+    overflow: hidden;
+    transition: height 600ms, opacity 600ms;
+    .inner-wrapper {
+        padding-bottom: 170%;
+        position: relative;
+        @include media-breakpoint-up(sm) {
+            padding-bottom: 100%;
+        }
+        @include media-breakpoint-up(lg) {
+            padding-bottom: 70%;
+        }
+    }
+    .content-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include media-breakpoint-up(md) {
+            justify-content: flex-start;
+        }
+        .heading {
+            position: relative;
+            z-index: 1;
+            height: 50px;
+            background-image: url("../../../../../images/grandVividus/grand_vividus_life_well_lived_neg.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            margin: 100px 15px 0;
+            @include media-breakpoint-up(md) {
+                height: 90px;
+                margin-top: 150px;
+            }
+        }
+        .button-wrapper {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 15px;
+            @include media-breakpoint-down(sm) {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+            }
+            @include media-breakpoint-up(md) {
+                margin-top: 40px;
+            }
+            .has-button {
+                @include media-breakpoint-only(xs) {
+                    display: block;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+            }
+        }
+    }
+    .close-button {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: transparent;
+        border: 0;
+        padding: 5px 10px;
+        appearance: none;
+        font-size: 14px;
+        color: #fff;
+        z-index: 1;
+        @include media-breakpoint-up(md) {
+            top: 20px;
+            right: 20px;
+        }
+    }
+    .bed-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        @include media-breakpoint-up(md) {
+            top: 30%;
+        }
+        @include media-breakpoint-up(lg) {
+            top: 10%;
+        }
+    }
+}

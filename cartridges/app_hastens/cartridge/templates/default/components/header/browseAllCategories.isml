@@ -1,0 +1,65 @@
+<iscomment>
+    Navbar for breadcrumbs and dropdown category menu
+    Used by PLP and PDP
+</iscomment>
+<div class="container menu-wrapper-container">
+    <div class="row menu-wrapper">
+        <div class="d-none d-md-block flex-fill">
+            <isif condition="${pdict.breadcrumbs}">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <isloop items="${pdict.breadcrumbs}" var="category" status="loopstate">
+                            <isif condition="${!loopstate.last}">
+                                <li class="breadcrumb-item">
+                                    <a href="${category.url}">${category.htmlValue}</a>
+                                </li>                        
+                            <iselse/>
+                                    <li class="breadcrumb-item active" aria-current="page">${category.htmlValue}</li>
+                            </isif>                        
+                        </isloop>
+                    </ol>
+                </nav>
+            </isif>      
+        </div>
+        <div>           
+            <div class="container-browse-categories">
+                <div class="row">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ${Resource.msg('browse.categories.label', 'search', null)}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="container container-filter-title">
+                                <div class="row">
+                                    <nav class="col-12 col-sm-8 col-categories" aria-labelledby="category-nav-title">
+                                        <span id="category-nav-title" class="filter-title">${Resource.msg('dropdown.categories.label', 'search', null)}</span>
+                                        <div>
+                                            <isloop items="${pdict.categoryFilters[0].subCategories}" var="category">                                  
+                                                <span>
+                                                    <a href="${category.url}" rel="nofollow" class="dropdown-link headline-6" title="${category.displayName}">${category.displayName}</a>
+                                                </span>
+                                            </isloop>
+                                        </div>
+                                    </nav>
+                                    <nav class="col-12 col-sm-4 col-designers" aria-labelledby="designer-category-nav-title">
+                                        <isif condition="${pdict.additionalCategory}">
+                                            <span id="designer-category-nav-title" class="filter-title">${pdict.additionalCategory[0].displayName.toUpperCase()}</span>
+                                            <div class="filter-links">
+                                                <isloop items="${pdict.additionalCategory[0].subCategories}" var="category">                                  
+                                                    <span>
+                                                        <a href="${category.url}" rel="nofollow" class="dropdown-link headline-6" title="${category.displayName}">${category.displayName}</a>
+                                                    </span>
+                                                </isloop>    
+                                            </div>                         
+                                        </isif>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>            
+        </div>    
+    </div>
+</div>
+<hr class="filter-hr"/>

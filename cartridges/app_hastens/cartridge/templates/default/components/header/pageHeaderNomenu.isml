@@ -1,0 +1,34 @@
+<header>
+    <isinclude template="/components/header/skipNav" />
+    <nav role="navigation">
+        <div class="header header-light container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="navbar-header">
+                        <div class="pull-left">
+                            <div class="navbar-header brand">
+                                <a class="logo-home" rel="nofollow" href="${URLUtils.url('Home-Show')}" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
+                                    <img class="hidden-md-down" src="${URLUtils.staticURL('/images/logo.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
+                                    <img class="d-lg-none" src="${URLUtils.staticURL('/images/logo-small.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
+                                </a>
+                            </div>
+                            <iscomment> <button class="navbar-toggler d-md-none" type="button" aria-controls="sg-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                                &#9776; <span class="hidden-xs-down">Menu</span>
+                            </button> </iscomment>
+                        </div>
+                        <div class="pull-right">
+                            <div class="blue-check-icon blue-check-icon-desktop" rel="nofollow">
+                                <a href="${URLUtils.url('Search-Show', 'cgid', 'bed-fabrics')}">
+                                    <i></i>
+                                    <span class="sr-only">
+                                        ${Resource.msg('global.bed.fabrics', 'common', null)}
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

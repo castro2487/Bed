@@ -1,0 +1,28 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-confirmation {
+    text-align: center;
+    padding: 55px 15px;
+    @include media-breakpoint-up(md) {
+        padding: 70px 15px;
+    }
+    .content-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    h2 {
+        white-space: pre-line;
+    }
+    p {
+        width: 100%;
+        font-size: 16px;
+        white-space: pre-line;
+        @include media-breakpoint-up(md) {
+            font-size: 18px;
+        }
+    }
+    button {
+        margin-top: 40px;
+    }
+
+}

@@ -1,0 +1,43 @@
+<head>
+    <isinclude template="account/emailCss/emailCss" />
+</head>
+
+<body>
+
+    <table bgcolor="#f9f9f9" style="color: #000; width:100%; border:0; padding:60px 0;" cellspacing="0">
+        <tr>
+            <td style="background-color:#f9f9f9; width:100px;"></td>
+            <td>
+
+                <isinclude template="account/emailHeader" />
+
+                <img src="${URLUtils.absStatic(URLUtils.CONTEXT_LIBRARY, 'Hastens_shared_library', 'images/hastensMyAccountBg.jpg')}"
+                    alt="hastens-background-img" style="width: 100%;" />
+
+                <table style="width:100%; background-color:#fff; padding: 30px 0 40px;" cellspacing="0">
+                    <tr>
+                        <td style="background-color:#fff; width:50px;"></td>
+                        <td style="background-color:#fff;">
+
+                            <div class="email-body">
+                                <div class="title-email-register">${Resource.msgf('email.msg.new.registration.dear', 'registration', null, pdict.firstName, pdict.lastName)}</div>
+
+                                <div class="register-body-1">${Resource.msg('email.msg.new.registration.body1', 'registration', null)}</div>
+
+                                <div class="register-link"><a href="${pdict.url}">${pdict.url}</a></div>
+
+                                <div class="register-body-2">${Resource.msg('email.msg.new.registration.body2', 'registration', null)}</div>
+                            </div>
+                        </td>
+                        <td style="background-color:#fff; width:50px;"></td>
+                    </tr>
+                </table>
+
+                <isinclude template="components/footer/emailFooter" />
+            </td>
+
+            <td style="background-color:#f9f9f9; width:100px;"></td>
+        </tr>
+    </table>
+
+</body>

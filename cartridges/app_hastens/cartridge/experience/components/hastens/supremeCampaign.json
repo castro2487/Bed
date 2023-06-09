@@ -1,0 +1,84 @@
+{
+    "name": "Supreme Campaign",
+    "description": "",
+    "group": "hastens",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "linkText",
+                    "name": "Link text",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "linkUrl",
+                    "name": "Link url",
+                    "description": "",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "body",
+                    "name": "Body text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "footer",
+                    "name": "Footer text 1",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "footer3",
+                    "name": "Footer text 2",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "footer2",
+                    "name": "Footer text 3",
+                    "description": "{0}: Contact email",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "contactEmail",
+                    "name": "Contact email",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "video",
+                    "name": "Video url",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoImage",
+                    "name": "Video image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

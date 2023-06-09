@@ -1,0 +1,54 @@
+{
+    "name": "Newsletter",
+    "description": "",
+    "group": "hastens_forms",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "newsletterType",
+                    "name": "Newsletter type",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Standard",
+                                    "value": "standard"
+                                },
+                                {
+                                    "name": "Supreme x Hästens",
+                                    "value": "supreme-x-hastens"
+                                }
+                            ],
+                            "default_value": "standard"
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "theme",
+                    "name": "Theme",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.theme"
+                    },
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

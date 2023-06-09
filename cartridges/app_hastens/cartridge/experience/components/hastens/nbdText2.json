@@ -1,0 +1,49 @@
+{
+    "name": "Invest Text Story",
+    "description": "",
+    "group": "hastens_textstories",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "body",
+                    "name": "Body text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "storeSize",
+                    "name": "Minimum store size",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "investment",
+                    "name": "Initial investment",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "roi",
+                    "name": "Expected roi",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

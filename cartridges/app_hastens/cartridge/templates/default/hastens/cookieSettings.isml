@@ -1,0 +1,11 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<isdecorate template="common/layout/pdStorePage">
+    <div class="store-page show-component-spacing" id="cookie-settings">
+        <div class="CookieBotDeclarationWrapper">
+             <h1>${Resource.msg('cookiesettings.header', 'hastens', null)}</h1>
+             <script id="CookieDeclaration" src="https://consent.cookiebot.com/601f0287-c149-4325-96d6-325b5b2be668/cd.js" type="text/javascript" async></script>
+             <div id="CookieDeclarationUserStatusPanel"></div>
+         </div>
+    </div>
+</isdecorate>

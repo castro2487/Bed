@@ -1,0 +1,71 @@
+<!--- Subtotal --->
+<div class="row">
+    <div class="col-12"> 
+        <p class="container-total">
+            <span>${Resource.msg('label.subtotal','cart',null)}</span>
+            <span class="dotted-row"></span>
+            <span class="dashboard-order-card-footer-value sub-total">
+                ${pdict.totals.subTotal}
+            </span>
+        </p>
+    </div> 
+</div>
+
+<div class="row">
+    <div class="col-12"> 
+        <p class="container-total">
+            <span>${Resource.msg('label.shipping.cost','cart',null)}</span>
+            <span class="dotted-row"></span>
+            <span class="dashboard-order-card-footer-value shipping-cost">
+                ${pdict.totals.totalShippingCost}
+            </span>
+        </p>
+    </div> 
+</div>
+
+<!--- Shipping Discount --->
+<div class="row shipping-discount <isif condition="${pdict.totals.shippingLevelDiscountTotal.value === 0}">hide-shipping-discount</isif>">
+    <div class="col-12"> 
+        <p class="container-total">
+            <span>${Resource.msg('label.shipping.discount', 'common', null)}</span>
+            <span class="dotted-row"></span>
+            <span class="dashboard-order-card-footer-value shipping-discount-total">
+                ${pdict.totals.shippingLevelDiscountTotal.formatted}
+            </span>
+        </p>
+    </div> 
+</div>
+
+<!-- Sales Tax -->
+<div class="row">
+    <div class="col-12"> 
+        <p class="container-total">
+            <span>${Resource.msgf(pdict.netTaxation && !pdict.avataxEnabled ? 'label.no.tax' : 'label.sales.tax','cart', null, pdict.taxRate.toString())}</span>
+            <span class="dotted-row"></span>
+        </p> 
+    </div> 
+</div>
+
+<hr class="cart-checkout-hr">
+
+<!--- Order Discount --->
+<div class="row order-discount <isif condition="${pdict.totals.orderLevelDiscountTotal.value === 0}">hide-order-discount</isif>">
+    <div class="col-12"> 
+        <p class="container-total">
+            <span>${Resource.msg('label.order.discount', 'common', null)}</span>
+            <span class="dotted-row"></span>
+            <span class="dashboard-order-card-footer-value order-discount-total">
+                ${pdict.totals.orderLevelDiscountTotal.formatted}            
+            </span>
+        </p> 
+    </div> 
+</div>
+
+<div class="row">
+    <div class="col-8">
+        <strong class="label-grand-total">${Resource.msg('label.estimatedtotal','cart',null)}</strong>
+    </div>
+    <div class="col-4">
+        <p class="text-right grand-total" data-net-taxation="${pdict.netTaxation}">${pdict.netTaxation ? pdict.totals.totalNetPrice : pdict.totals.grandTotal}</p>
+    </div>
+</div>

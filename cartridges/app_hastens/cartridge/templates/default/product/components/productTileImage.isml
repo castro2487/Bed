@@ -1,0 +1,11 @@
+<div class="image-container">
+    <a href="${pdict.urls.product}" tabindex="-1" aria-hidden="true">
+        <div>
+            <img class="tile-image"
+                src="${pdict.firstVariationProduct.images.medium[0].url}"
+                alt="${product.images.medium[0].alt}"
+                title="${product.images.medium[0].title}"
+                itemprop="image"/>
+        </div>
+    </a>
+</div>

@@ -1,0 +1,26 @@
+@import "../experience/variables.scss";
+
+.parsley-errors-list {
+  margin: 4px 0 3px 0;
+  padding: 0;
+  list-style-type: none;
+  opacity: 0;
+  color: #c00;
+
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 13px;
+}
+
+.parsley-errors-list.filled {
+  opacity: 1;
+}
+
+.parsley-error {
+  border: 1px solid #dc3545 !important;
+
+  &:focus{
+    outline: none !important;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,139 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-bed-color-viewer {
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    .top-section {
+        padding-top: 30px;
+        background: transparent; // Override global.css
+        @include media-breakpoint-up(lg) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+            padding-top: 50px;
+        }
+        .heading {
+            margin: 0;
+            text-align: center;
+            white-space: pre;
+        }
+    }
+    .main-section {
+        padding-bottom: 56.25%;
+        position: relative;
+        overflow: hidden;
+        .image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0ms linear 100ms;
+            @include media-breakpoint-up(lg) {
+                top: 10%;
+            }
+            &.selected {
+                opacity: 1;
+                z-index: 1;
+                transition: opacity 100ms linear 0ms;
+            }
+        }
+        .controls {
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            line-height: 1;
+            font-size: 15px;
+            top: 30%;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+            @include media-breakpoint-up(lg) {
+                font-size: 20px;
+                top: calc(50% - 10px);
+                width: 80%;
+                margin-right: 10%;
+                margin-left: 10%;
+            }
+            button {
+                height: 50px;
+                width: 50px;
+                background-color: transparent;
+                border: 0;
+                padding: 0;
+                appearance: none;
+                color: inherit;
+                transition: opacity 200ms;
+                &:hover:not([disabled]) {
+                    opacity: 0.6;
+                }
+                &.prev-button i {
+                    transform: rotate(90deg);
+                }
+                &.next-button i {
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+    }
+    .bottom-section {
+        position: relative;
+        margin-top: -45px;
+        z-index: 1;
+        @include media-breakpoint-up(lg) {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+            margin-top: 0;
+        }
+        .selected-name {
+            margin: 0;
+            text-align: center;
+            font-size: 15px;
+            position: relative;
+            @include media-breakpoint-up(lg) {
+                font-size: 22px;
+            }
+            .label {
+                text-transform: uppercase;
+                margin-right: 10px;
+            }
+            .value {
+                font-weight: 700;
+            }
+        }
+        .color-picker {
+            list-style: none;
+            margin: 0;
+            padding: 22px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            .listbox-option {
+                margin: 8px;
+                transition: transform 100ms;
+                cursor: pointer;
+                opacity: 0.8;
+                &.selected,
+                &.focused,
+                &:hover {
+                    transform: scale(1.15);
+                    opacity: 1;
+                }
+            }
+            .thumbnail {
+                width: 50px;
+                height: 50px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+}

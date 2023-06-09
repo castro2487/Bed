@@ -1,0 +1,47 @@
+@import "../../../../../shared/styles/utils/utils";
+
+.has-partner-page_private-session_personal-data {
+    padding: 40px 15px;
+    text-align: center;
+    background-color: #eee;
+    color: #000;
+    @include media-breakpoint-up(sm) {
+        padding: 70px 15px;
+    }
+    .content-wrapper {
+        margin: 0 auto;
+        max-width: 960px;
+        .heading {
+            margin-bottom: 15px;
+        }
+        .body {
+            margin-bottom: 30px;
+        }
+    }
+    .required-text {
+        text-align: right;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+    .consent-text {
+        text-align: left;
+        margin-bottom: 40px;
+    }
+    .has-recaptcha-field {
+        text-align: center;
+        min-height: 78px;
+        font-size: 0;
+        .g-recaptcha {
+            display: inline-block;
+        }
+    }
+    .button-container {
+        margin-top: 20px;
+        @include media-breakpoint-up(sm) {
+            margin-top: 30px;
+        }
+        .has-button + .has-button {
+            margin-left: 10px;
+        }
+    }
+}

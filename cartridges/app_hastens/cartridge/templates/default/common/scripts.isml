@@ -1,0 +1,57 @@
+
+<script data-cookieconsent="ignore">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("consent", "default", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        wait_for_update: 500,
+    });
+    gtag("set", "ads_data_redaction", true);
+</script>
+<script>
+    var hastens_globals = {
+        cookieSettingsLinkUrl: "${URLUtils.url('CookieSettings-Show')}",
+        cookieSettingsLinkText: "<isprint value="${Resource.msg('cookiebanner.details.categorylink', 'hastens', null)}" encoding="jsonvalue"/>",
+        cookieAcceptHeading: "<isprint value="${Resource.msg('cookiebanner.accept.heading', 'hastens', null)}" encoding="jsonvalue"/>",
+        cookieAcceptBody: "<isprint value="${Resource.msg('cookiebanner.accept.body', 'hastens', null)}" encoding="jsonvalue"/>",
+        cookieRejectHeading: "<isprint value="${Resource.msg('cookiebanner.reject.heading', 'hastens', null)}" encoding="jsonvalue"/>",
+        cookieRejectBody: "<isprint value="${Resource.msg('cookiebanner.reject.body', 'hastens', null)}" encoding="jsonvalue"/>",
+        translatedStrings: JSON.parse('<isprint value="${require("*/cartridge/scripts/helpers/translations.js")}" encoding="jsonvalue"/>'),
+    };
+</script>
+
+<script data-cookieconsent="ignore">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer',<isif condition="${require('dw/system/System').getInstanceType() === 2}">'GTM-P9W2NTX'<iselse>'GTM-W3KNTQQ'</isif>);</script>
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="601f0287-c149-4325-96d6-325b5b2be668" data-blockingmode="auto" type="text/javascript"></script>
+<isinclude sf-toolkit="off" template="common/krux"/>
+<script>
+    if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+        var script = document.createElement('script');
+        script.src = 'https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js';
+        script.defer = true;
+        document.head.appendChild(script);
+    }
+</script>
+<script defer nomodule type="text/javascript" src="${URLUtils.staticURL('/js/hastens/polyfills.js')}"></script>
+<script defer type="text/javascript" src="${URLUtils.staticURL('/js/main.min.js')}"></script>
+<script defer type="text/javascript" src="${URLUtils.staticURL('/js/krux.min.js')}"></script>
+<script defer type="text/javascript" src="${URLUtils.staticURL('/js/ga4.min.js')}"></script>
+
+<isloop items="${ require('*/cartridge/scripts/assets.js').libScripts }" var="script">
+    <script defer type="${script.type}" src="${script.src}"
+        <isif condition="${script.integrity != null}">integrity="${script.integrity}" crossorigin="anonymous"</isif>
+        >
+    </script>
+</isloop>
+<isloop items="${ require('*/cartridge/scripts/assets.js').scripts }" var="script">
+    <script defer type="${script.type}" src="${script.src}"
+        <isif condition="${script.integrity != null}">integrity="${script.integrity}" crossorigin="anonymous"</isif>
+        >
+    </script>
+</isloop>

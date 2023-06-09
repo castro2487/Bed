@@ -1,0 +1,139 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-large-cta {
+    position: relative;
+    padding-bottom: 141.666666667%;
+    @include media-breakpoint-up(md) {
+        padding-bottom: 56.25%;
+    }
+    .content-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 15px;
+        .main-text {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 60px 10px;
+            &.horizontal-alignment--left {
+                max-width: 990px;
+                width: 100%;
+                margin: 0 auto;
+                @include media-breakpoint-up(md) {
+                    text-align: left;
+                    align-items: flex-start;
+                }
+            }
+            &.horizontal-alignment--right {
+                max-width: 990px;
+                width: 100%;
+                margin: 0 auto;
+                @include media-breakpoint-up(md) {
+                    text-align: left;
+                    align-items: flex-end;
+                }
+                .heading,
+                .body {
+                    @include media-breakpoint-up(md) {
+                        max-width: 300px;
+                    }
+                }
+            }
+            &.vertical-alignment--center {
+                justify-content: center;
+            }
+            &.vertical-alignment--bottom {
+                justify-content: flex-end;
+            }
+            &.vertical-alignment--top-mobile {
+                @include media-breakpoint-down(sm) {
+                    justify-content: flex-start;
+                }
+            }
+            &.vertical-alignment--center-mobile {
+                @include media-breakpoint-down(sm) {
+                    justify-content: center;
+                }
+            }
+            &.vertical-alignment--bottom-mobile {
+                @include media-breakpoint-down(sm) {
+                    justify-content: flex-end;
+                }
+            }
+            &.push-button-bottom {
+                .has-button,
+                .has-app-store-button {
+                    @include media-breakpoint-up(md) {
+                        margin-top: auto;
+                    }
+                }
+            }
+            &.push-button-bottom-mobile {
+                .has-button,
+                .has-app-store-button {
+                    @include media-breakpoint-down(sm) {
+                        margin-top: auto;
+                    }
+                }
+            }
+            .heading {
+                margin: 0 0 0.15em;
+                @include media-breakpoint-up(md) {
+                    white-space: pre-line;
+                }
+                sup {
+                    font-size: 60%;
+                }
+            }
+            header p {
+                text-transform: uppercase;
+                font-weight: 600;
+                margin-bottom: 25px;
+                font-size: 14px;
+                letter-spacing: 0.05em;
+                @include media-breakpoint-up(md) {
+                    font-size: 16px;
+                }
+            }
+            .body {
+                max-width: 960px;
+                margin: 15px auto;
+                @include media-breakpoint-up(md) {
+                    white-space: pre-line;
+                }
+            }
+            .links {
+                margin-top: 35px;
+            }
+            &.text-shadow {
+                .heading {
+                    text-shadow: 0 0 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 0, 0, 0.6);
+                }
+                .body {
+                    text-shadow: 0 0 30px #000, 0 0 20px #000, 0 0 10px #000;
+                }
+            }
+        }
+        .bottom-text {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 18px;
+            p {
+                margin-bottom: 36px;
+                @media (min-width: $max-block-width) {
+                    margin-bottom: 56px;
+                }
+            }
+        }
+    }
+}

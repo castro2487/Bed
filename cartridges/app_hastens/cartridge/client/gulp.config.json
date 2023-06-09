@@ -1,0 +1,60 @@
+{
+    "paths": {
+        "source": {
+            "scripts": [
+              "cartridges/app_hastens/cartridge/client/default/js/main.js",
+              "cartridges/app_hastens/cartridge/client/default/js/productDetail.js",
+              "cartridges/app_hastens/cartridge/client/default/js/checkout.js",
+              "cartridges/app_hastens/cartridge/client/default/js/uikit.js",
+              "cartridges/app_hastens/cartridge/client/default/js/addressBook.js",
+              "cartridges/app_hastens/cartridge/client/default/js/search.js",
+              "cartridges/app_hastens/cartridge/client/default/js/krux.js",
+              "cartridges/app_hastens/cartridge/client/default/js/ga4.js"
+            ],
+            "styles": [
+              "cartridges/app_hastens/cartridge/client/default/scss/**/*.scss"
+            ],
+            "images": ["cartridges/app_hastens/cartridge/client/default/images/*.*", "assets/images/flags/**/*.*"],
+            "icons": "cartridges/app_hastens/cartridge/client/default/svg/*.svg",
+            "uikit": ["assets/uikit/uikit", "assets/uikit/widgets"],
+            "vendor": [
+            ],
+            "vendorCopy": []
+        },
+        "destination": {
+            "scripts": "cartridges/app_hastens/cartridge/static/default/js",
+            "styles": "cartridges/app_hastens/cartridge/static/default/css",
+            "images": "cartridges/app_hastens/cartridge/static/default/images",
+            "iconsdest": "cartridges/app_hastens/cartridge/static/default/images",
+            "uikit": "cartridges/app_hastens/cartridge/templates/default/uikit",
+            "vendor": "assets/vendor"
+        },
+        "upload": [
+            "cartridges/app_hastens/cartridge/static/default/**",
+            "cartridges/app_hastens/cartridge/controllers/**",
+            "cartridges/app_hastens/cartridge/models/**",
+            "cartridges/app_hastens/cartridge/scripts/**",
+            "cartridges/app_hastens/cartridge/templates/**"
+        ]
+    },
+    "sfcc": {
+        "config": "./dw.json"
+    },
+    "modernizr": {
+      "classPrefix": "",
+      "enableClasses": true,
+      "enableJSClass": true,
+      "scriptGlobalName": "window",
+      "usePrefixes": true,
+      "minify": true,
+      "options": [
+        "setClasses"
+      ],
+      "feature-detects": [
+        "css/flexbox",
+        "css/objectfit",
+        "css/positionsticky"
+      ]
+    },
+    "enableUpload": false
+}

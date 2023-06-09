@@ -1,0 +1,330 @@
+{
+    "name": "Video List",
+    "description": "",
+    "group": "hastens_media",
+    "attribute_definition_groups": [
+        {
+            "id": "general",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "intro",
+                    "name": "Intro text",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "theme",
+                    "name": "Theme",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.theme"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "topSpacing",
+                    "name": "Top spacing",
+                    "description": "Override page level setting",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "Show top spacing",
+                                    "value": "show-top-spacing"
+                                },
+                                {
+                                    "name": "Hide top spacing",
+                                    "value": "hide-top-spacing"
+                                }
+                            ]
+                        }
+                    },
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "video1",
+            "name": "Video 1",
+            "attribute_definitions": [
+                {
+                    "id": "videoUrl1",
+                    "name": "Url",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoName1",
+                    "name": "Name",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoImage1",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "video2",
+            "name": "Video 2",
+            "attribute_definitions": [
+                {
+                    "id": "videoUrl2",
+                    "name": "Url",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoName2",
+                    "name": "Name",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoImage2",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "video3",
+            "name": "Video 3",
+            "attribute_definitions": [
+                {
+                    "id": "videoUrl3",
+                    "name": "Url",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoName3",
+                    "name": "Name",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoImage3",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "video4",
+            "name": "Video 4",
+            "attribute_definitions": [
+                {
+                    "id": "videoUrl4",
+                    "name": "Url",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoName4",
+                    "name": "Name",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoImage4",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "video5",
+            "name": "Video 5",
+            "attribute_definitions": [
+                {
+                    "id": "videoUrl5",
+                    "name": "Url",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoName5",
+                    "name": "Name",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoImage5",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "video6",
+            "name": "Video 6",
+            "attribute_definitions": [
+                {
+                    "id": "videoUrl6",
+                    "name": "Url",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoName6",
+                    "name": "Name",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoImage6",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "video7",
+            "name": "Video 7",
+            "attribute_definitions": [
+                {
+                    "id": "videoUrl7",
+                    "name": "Url",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoName7",
+                    "name": "Name",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoImage7",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "video8",
+            "name": "Video 8",
+            "attribute_definitions": [
+                {
+                    "id": "videoUrl8",
+                    "name": "Url",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoName8",
+                    "name": "Name",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoImage8",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "video9",
+            "name": "Video 9",
+            "attribute_definitions": [
+                {
+                    "id": "videoUrl9",
+                    "name": "Url",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoName9",
+                    "name": "Name",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoImage9",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "video10",
+            "name": "Video 10",
+            "attribute_definitions": [
+                {
+                    "id": "videoUrl10",
+                    "name": "Url",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoName10",
+                    "name": "Name",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "videoImage10",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

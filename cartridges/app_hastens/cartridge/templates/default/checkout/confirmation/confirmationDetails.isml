@@ -1,0 +1,51 @@
+<isset name="Site" value="${require('dw/system/Site')}" scope="page" />
+<isset name="carrier" value="${Site.getCurrent().getCustomPreferenceValue('zenkraftCarrier')}" scope="page" />
+<isset name="trackingPageEnabled" value="${Site.getCurrent().getCustomPreferenceValue('enableZenkraftTrackingPage')}" scope="page" />
+
+<isset name="Site" value="${require('dw/web/URLUtils')}" scope="page" />
+
+<div class="card confirm-details">
+    <div class="card-header-confirmation">
+        <h2 class="headline-2">${Resource.msg('title.receipt', 'confirmation', null)}</h2>
+    </div>
+
+    <div class="card-body">
+        <p class="recipt-order-detail-section">
+            <span class="summary-section-label order-number-label headline-6">${Resource.msg('label.order.number', 'confirmation', null)}</span>
+            <span class="summary-details order-number">${pdict.order.orderNumber}</span>
+            <br />
+            <span class="summary-section-label order-date-label headline-6">${Resource.msg('label.order.date', 'confirmation', null)}</span>
+            <span class="summary-details order-date">
+                <isprint value="${pdict.order.creationDate}" style="DATE_SHORT" /></span>
+            <br />
+            <span
+                class="summary-section-label order-status-label headline-6">${Resource.msg('label.orderhistory.orderstatus', 'account', null)}</span>
+            <span class="summary-details order-status">
+                <isprint
+                    value="${Resource.msg('label.order.status.' + (pdict.order.zenkraftOrderShippingStatus != null ? pdict.order
+                           .zenkraftOrderShippingStatus.replace(/ /g, '') : 'default'), 'order', null)}"
+                    style="DATE_SHORT" />
+            </span>
+        </p>
+
+        <isif condition="${trackingPageEnabled && pdict.order.zenkraftOrderTrackingNumber}">
+            <a class="btn btn-primary track-shipment-btn" href="${URLUtils.url('Zenkraft-Track', 'tracknumber', pdict.order.zenkraftOrderTrackingNumber, 'carrier', carrier)}">
+                ${Resource.msg('tracking.orderdetail.button.label', 'tracking', null)}
+            </a>
+        </isif>
+
+        <isinclude template="checkout/shipping/shippingSummary" />
+        <isinclude template="checkout/billing/billingSummary" />
+
+    </div>
+</div>
+
+<div class="history-wrapper">
+    <isinclude template="checkout/orderProductSummary" />
+</div>
+
+<div class="card checkout-order-total-summary">
+    <div class="card-body order-total-summary">
+        <isinclude template="checkout/orderTotalSummary" />
+    </div>
+</div>

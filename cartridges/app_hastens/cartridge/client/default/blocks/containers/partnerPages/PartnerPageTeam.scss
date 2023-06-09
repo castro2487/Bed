@@ -1,0 +1,93 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-partner-page-team {
+    margin: 0 auto;
+    padding: 45px 15px 60px;
+    max-width: 1440px;
+    background: #e0e0e0;
+    color: #343434;
+    header {
+        margin: 0 auto;
+        text-align: center;
+        max-width: 960px;
+    }
+    h3 {
+        text-transform: uppercase;
+    }
+    .employees {
+        margin: 0 -7.5px;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        @include media-breakpoint-up(md) {
+            margin: 0 -10px;
+        }
+        > li {
+            width: 50%;
+            padding: 7.5px;
+            line-height: 1.4;
+            text-align: center;
+            @include media-breakpoint-up(md) {
+                width: 25%;
+                padding: 10px;
+            }
+            p,
+            a {
+                font-size: 12px;
+            }
+            p {
+                margin-bottom: 15px;
+            }
+            > a {
+                display: block;
+                margin-top: 7px;
+                margin-bottom: 7px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            a, a:hover, a:active {
+                color: #000000;
+                text-decoration: none !important;
+                border-bottom: none;
+            }
+            h4 {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    .employee-image {
+        margin-bottom: 20px;
+        .img {
+            background-repeat: no-repeat !important;
+            background-position: center !important;
+            background-size: cover !important;
+            padding-bottom: 100%;
+        }
+        .placeholder {
+            padding-bottom: 100%;
+            background-color: #9e9e9f;
+        }
+    }
+    .employee-group {
+        max-width: 960px;
+        margin: 30px auto 0;
+        .header {
+            background-color: $brand-primary;
+            text-align: center;
+
+            h3 {
+                font-size: 1rem;
+                color: #ffffff;
+                line-height: 2.1;
+                letter-spacing: 2px;
+                margin-bottom: 7.5px;
+                @include media-breakpoint-up(md) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}

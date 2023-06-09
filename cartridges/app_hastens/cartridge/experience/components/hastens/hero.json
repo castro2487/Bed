@@ -1,0 +1,97 @@
+{
+    "name": "Designer Hero",
+    "description": "",
+    "group": "hastens_designers",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "collection",
+                    "name": "Collection name",
+                    "description": "",
+                    "type": "text",
+                    "required": true
+                },
+                {
+                    "id": "designer",
+                    "name": "Designer name",
+                    "description": "",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "variation",
+                    "name": "Variation",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.select",
+                        "configuration": {
+                            "options": [
+                                {
+                                    "name": "None",
+                                    "value": "default"
+                                },
+                                {
+                                    "name": "Bigger collection name",
+                                    "value": "variation1"
+                                }
+                            ],
+                            "default_value": "default"
+                        }
+                    },
+                    "required": false
+                },
+                {
+                    "id": "textShadow",
+                    "name": "Add text shadow",
+                    "description": "",
+                    "type": "boolean",
+                    "required": false,
+                    "default_value": false
+                },
+                {
+                    "id": "theme",
+                    "name": "Theme",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.theme"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "image",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "tabletImage",
+                    "name": "Tablet image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "mobileImage",
+                    "name": "Mobile image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "imageAlt",
+                    "name": "Image description",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

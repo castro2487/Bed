@@ -1,0 +1,278 @@
+body {
+    #CybotCookiebotDialog {
+        visibility: hidden !important;
+        opacity: 0 !important;
+        transition: opacity 400ms, visibility 0ms ease 400ms !important;
+        display: block !important;
+        padding-bottom: 160px !important;
+        top: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        bottom: 0;
+        overflow-y: auto;
+        max-height: 100%;
+        @include media-breakpoint-up(sm) {
+            padding-bottom: 80px !important;
+            max-height: 50%;
+        }
+    }
+    #CybotCookiebotDialog,
+    #CybotCookiebotDialog ::after,
+    #CybotCookiebotDialog ::before,
+    #CybotCookiebotDialog::after,
+    #CybotCookiebotDialog::before,
+    #CybotCookiebotDialogBody *,
+    #CybotCookiebotDialogDetail *,
+    .CybotCookiebotDialogBodyButton,
+    .CybotCookiebotDialogBodyButton::after,
+    .CybotCookiebotDialogBodyButton::before {
+        box-sizing: border-box !important;
+    }
+    #CybotCookiebotDialog a,
+    #CybotCookiebotDialog div,
+    #CybotCookiebotDialogBodyContentControls,
+    #CybotCookiebotDialogBodyContentTitle {
+        font-family: "Montserrat", sans-serif !important;
+    }
+    #CybotCookiebotDialogBody {
+        max-width: 960px + 30px;
+        padding: 30px 15px 20px;
+    }
+    #CybotCookiebotDialogPoweredbyLink {
+        display: none;
+    }
+    #CybotCookiebotDialogBodyContent {
+        padding: 0 0 20px !important;
+    }
+    #CybotCookiebotDialogBodyContentTitle {
+        visibility: inherit !important;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: 0 0 15px;
+    }
+    #CybotCookiebotDialogBodyContentText {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    #CybotCookiebotDialogBodyLevelWrapper {
+        text-align: left;
+    }
+    #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelectionWrapper {
+        float: none;
+        display: flex !important;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px 0 0;
+        position: fixed;
+        bottom: 0;
+        left: 15px;
+        right: 15px;
+        height: 150px;
+        box-sizing: border-box;
+        background-color: #171717;
+        border-top: 1px solid #424141;
+        z-index: 15;
+        @include media-breakpoint-up(sm) {
+            flex-direction: row;
+            align-items: flex-start;
+            height: 80px;
+            left: auto;
+            right: auto;
+            width: 100%;
+            max-width: 960px;
+        }
+    }
+    a#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll,
+    a#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection,
+    a#CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll {
+        margin: 0 0 10px 0;
+        background-color: #fff;
+        border: 1px solid #fff;
+        color: #000;
+        font-size: 0.875rem;
+        padding: 0.3125rem 15px;
+        border-radius: 2px;
+        line-height: 1.5;
+        height: auto;
+        width: auto !important;
+        font-family: "Montserrat SemiBold", sans-serif !important;
+        font-weight: 400;
+        transition: color 0.2s, background-color 0.2s, border 0.2s;
+        @include media-breakpoint-up(sm) {
+            margin: 0 10px 10px 0;
+        }
+        &:hover:not([disabled]) {
+            background: #000;
+            border-color: #000;
+            color: #fff;
+        }
+    }
+    a#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll {
+        background: #0072e3;
+        border-color: #0072e3;
+        color: #fff;
+        &:hover:not([disabled]) {
+            background: #0054a8;
+            border-color: #0054a8;
+        }
+    }
+    #CybotCookiebotDialogBodyLevelButtons {
+        margin: 0 !important;
+        float: none;
+    }
+    #CybotCookiebotDialogBodyLevelButtonsTable {
+        display: block;
+        margin: 0;
+    }
+    #CybotCookiebotDialogBodyLevelButtonsRow {
+        display: block;
+    }
+    #CybotCookiebotDialogBodyLevelButtonsSelectPane {
+        display: block;
+        border: none;
+        padding: 0 0 15px;
+    }
+    #CybotCookiebotDialogBodyLevelDetailsWrapper {
+        display: inline-block;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+    }
+    .CybotCookiebotDialogBodyLevelButtonWrapper {
+        margin-right: 25px;
+        margin-bottom: 15px;
+    }
+    input[type=checkbox].CybotCookiebotDialogBodyLevelButton + label,
+    input[type=checkbox].CybotCookiebotDialogBodyLevelButton:checked + label,
+    input[type=checkbox].CybotCookiebotDialogBodyLevelButton:focus + label,
+    input[type=checkbox].CybotCookiebotDialogBodyLevelButton:checked:focus + label {
+        background-image: none;
+        padding: 0 0 0 30px;
+        line-height: 18px;
+        font-size: 14px;
+    }
+    input[type=checkbox].CybotCookiebotDialogBodyLevelButton + label::before {
+        content: "";
+        display: inline-block;
+        height: 18px;
+        width: 18px;
+        border: 2px solid #fff;
+        border-radius: 2px;
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+    }
+    input[type=checkbox].CybotCookiebotDialogBodyLevelButton:checked + label::before {
+        background-color: #6193ff;
+        border-color: #6193ff;
+    }
+    input[type=checkbox].CybotCookiebotDialogBodyLevelButton:checked + label::after {
+        content: "";
+        display: inline-block;
+        height: 12px;
+        width: 7px;
+        border-bottom: 2px solid #fff;
+        border-right: 2px solid #fff;
+        box-sizing: border-box;
+        position: absolute;
+        left: 6px;
+        top: 1px;
+        transform: rotate(45deg);
+    }
+    input[type=checkbox].CybotCookiebotDialogBodyLevelButton.CybotCookiebotDialogBodyLevelButtonDisabled + label {
+        color: #868686;
+    }
+    input[type=checkbox].CybotCookiebotDialogBodyLevelButton.CybotCookiebotDialogBodyLevelButtonDisabled
+        + label::before {
+        background-color: #868686;
+        border-color: #868686;
+    }
+    input[type=checkbox].CybotCookiebotDialogBodyLevelButton.CybotCookiebotDialogBodyLevelButtonDisabled
+        + label::after {
+        border-color: #161616;
+    }
+    a#CybotCookiebotDialogBodyLevelDetailsButton {
+        padding: 0 16px 0 0;
+        margin: 0;
+        background-image: none !important;
+        position: relative;
+        text-decoration: none;
+    }
+    a#CybotCookiebotDialogBodyLevelDetailsButton::after {
+        content: "";
+        display: inline-block;
+        height: 7px;
+        width: 7px;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        transform: rotate(45deg);
+        position: absolute;
+        right: 0;
+        top: 3px;
+    }
+    a#CybotCookiebotDialogBodyLevelDetailsButton.CybotCookiebotDialogBodyLevelDetailsButtonExpanded::after {
+        transform: rotate(225deg);
+        top: 6px;
+    }
+    #CybotCookiebotDialogDetailBody {
+        max-width: 990px;
+        padding: 8px 15px 30px;
+        box-sizing: border-box;
+        font-size: 14px;
+        line-height: 22px;
+    }
+    #CybotCookiebotDialogDetailBody h3 {
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+    #CybotCookiebotDialogDetailBody h3:not(:first-child) {
+        margin-top: 25px;
+    }
+    #CybotCookiebotDialogDetailBody p {
+        margin: 0;
+    }
+    #CybotCookiebotDialogDetailBody a:hover {
+        text-decoration: none;
+    }
+}
+
+body.cookiebanner-open #CybotCookiebotDialog {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transition: opacity 400ms !important;
+}
+
+.cookie-accept-confirmation,
+.cookie-reject-confirmation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #171717;
+    color: #fff;
+    .content-wrapper {
+        max-width: 960px + 30px;
+        padding: 30px 15px;
+        margin: 0 auto;
+    }
+    h2 {
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: 0 0 20px;
+    }
+    p {
+        font-size: 14px;
+        line-height: 22px;
+        margin: 0;
+    }
+}

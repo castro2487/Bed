@@ -1,0 +1,37 @@
+{
+    "name": "Animated Header",
+    "description": "",
+    "group": "hastens_headers",
+    "attribute_definition_groups": [
+        {
+            "id": "group",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "description": "",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "video",
+                    "name": "Video url",
+                    "description": "",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "theme",
+                    "name": "Theme",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "hastens.theme"
+                    },
+                    "required": false
+                }
+            ]
+        }],
+    "region_definitions": []
+}

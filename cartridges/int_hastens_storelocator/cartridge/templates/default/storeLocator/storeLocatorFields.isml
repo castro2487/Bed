@@ -1,0 +1,19 @@
+<div class="card-body">
+    <${pdict.isForm === 'true' ? 'form' : 'div'} action="${pdict.stores.actionUrl}" class="store-locator" method="get" name="storelocator">
+        <div class="form-group required">
+            <label class="form-control-label" for="store-query">${Resource.msg('field.query', 'storeLocator', null)}</label>
+            <!-- Should be updated with the result of the search -->
+            <input autofocus type="text" class="form-control" id="store-query" name="query" value="" required>
+            <div class="invalid-feedback"></div>
+        </div>
+        <button class="btn btn-tertiary btn-block" type="${pdict.isForm === 'true' ? 'submit' : 'button'}">
+            ${Resource.msg('button.find.stores', 'storeLocator', null)}
+        </button>
+    </${pdict.isForm === 'true' ? 'form' : 'div'}>
+    <isif condition="${pdict.showMap === 'true'}">
+        <p class="text-center article-3 my-3">${Resource.msg('text.this.or.that', 'storeLocator', null)}</p>
+        <button type="submit" class="btn btn-primary btn-block detect-location" data-action="${pdict.stores.actionUrl}">
+            ${Resource.msg('button.use.my.location', 'storeLocator', null)}
+        </button>
+    </isif>
+</div>

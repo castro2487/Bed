@@ -1,0 +1,13 @@
+{
+    "name": "StringEditor",
+    "description": "",
+    "resources": {
+        "scripts": [
+            "/js/hastens/bmMain.js"
+        ],
+        "styles": [
+            "/css/hastens/bmMain.css",
+            "https://cdnjs.cloudflare.com/ajax/libs/design-system/2.8.3/styles/salesforce-lightning-design-system.min.css"
+        ]
+    }
+}

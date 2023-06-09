@@ -1,0 +1,73 @@
+<table class="email-footer" style="border-top:10px solid #f9f9f9; background-color:trasparent;" cellspacing="0">
+    <tr>
+        <td style="background-color:#fff; width:50px;"></td>
+        <td style="background-color:#fff;">
+            <table style="padding-top:30px;">
+                <tr class="links">
+                    <td><a href="${URLUtils.abs('Search-Show', 'cgid', 'Hastens_beds')}">${Resource.msg('label.footer.beds', 'confirmation', null)}</a></td>
+                    <td><a href="${URLUtils.abs('Search-Show', 'cgid', 'Hastens_accessories')}">${Resource.msg('label.footer.accessories', 'confirmation', null)}</a></td>
+                    <td style="text-align:right"><a
+                            href="${URLUtils.url('Stores-Find')}">${Resource.msg('label.footer.store.locator', 'confirmation', null)}</a></td>
+                </tr>
+            </table>
+
+            <table class="table-social">
+                <tr>
+                    <td class="td-social"></td>
+                    <td style="width:20%;">
+                        <table>
+                            <tr class="social">
+                                <td>
+                                    <a href="https://www.facebook.com/hastensbeds">
+                                        <img class="fa"
+                                            src="${URLUtils.absStatic(URLUtils.CONTEXT_LIBRARY, 'Hastens_shared_library', 'emailIcons/facebook.png')}"
+                                            alt="${Resource.msg('global.storename', 'common', null)}" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="http://instagram.com/hastensbeds">
+                                        <img class="fa"
+                                            src="${URLUtils.absStatic(URLUtils.CONTEXT_LIBRARY, 'Hastens_shared_library', 'emailIcons/instagram.png')}"
+                                            alt="${Resource.msg('global.storename', 'common', null)}" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="https://www.youtube.com/user/HastensTv">
+                                        <img class="fa"
+                                            src="${URLUtils.absStatic(URLUtils.CONTEXT_LIBRARY, 'Hastens_shared_library', 'emailIcons/youtube.png')}"
+                                            alt="${Resource.msg('global.storename', 'common', null)}" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="https://www.pinterest.com/hastensbeds/">
+                                        <img class="fa"
+                                            src="${URLUtils.absStatic(URLUtils.CONTEXT_LIBRARY, 'Hastens_shared_library', 'emailIcons/pinterest.png')}"
+                                            alt="${Resource.msg('global.storename', 'common', null)}" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="https://www.linkedin.com/company/hastens-beds">
+                                        <img class="fa"
+                                            src="${URLUtils.absStatic(URLUtils.CONTEXT_LIBRARY, 'Hastens_shared_library', 'emailIcons/linkedin.png')}"
+                                            alt="${Resource.msg('global.storename', 'common', null)}" />
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="td-social"></td>
+                </tr>
+            </table>
+
+            <table style="padding-bottom:25px;">
+                <tr class="copy">
+                    <td colspan="5">
+                        <div class="copy-div">
+                            ${Resource.msg('label.footer.copyright', 'confirmation', null)}
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        <td style="background-color:#fff; width:50px;"></td>
+    </tr>
+</table>

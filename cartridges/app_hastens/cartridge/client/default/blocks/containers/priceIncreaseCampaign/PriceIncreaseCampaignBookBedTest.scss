@@ -1,0 +1,66 @@
+@import "../../../shared/styles/utils/utils";
+
+.has-price-increase-campaign__book-bed-test {
+    .banner {
+        background-image: url("https://static.hastens.com/768/blocks/price-increase-campaign/book-bed-test-mobile.jpg");
+        background-size: 100%;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-color: #c6c0be;
+        color: #000;
+        position: relative;
+        @include media-breakpoint-up(md) {
+            background-image: url("https://static.hastens.com/1200/blocks/price-increase-campaign/book-bed-test.jpg");
+            background-size: cover;
+            background-position: center;
+            background-color: #fff;
+            color: #000;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+        }
+        @include media-breakpoint-up(lg) {
+            background-image: url("https://static.hastens.com/1440/blocks/price-increase-campaign/book-bed-test.jpg");
+            min-height: 796px;
+        }
+        .content-wrapper {
+            position: relative;
+            padding: 108% 15px 40px;
+            @include media-breakpoint-up(md) {
+                padding: 55px;
+                max-width: 50%;
+                margin-right: 50%;
+            }
+            @include media-breakpoint-up(lg) {
+                padding: 45px 45px 45px 15%;
+            }
+        }
+        .heading {
+            margin: 0;
+            white-space: pre-line;
+        }
+        p {
+            margin-top: 15px;
+        }
+        .button-wrapper {
+            text-align: center;
+            @include media-breakpoint-up(md) {
+                text-align: left;
+            }
+            button {
+                margin-top: 10px;
+            }
+        }
+        .scroll-target {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+        }
+    }
+    .expandable-view {
+        background-color: #000431;
+        color: #fff;
+    }
+}

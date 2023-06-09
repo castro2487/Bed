@@ -1,0 +1,82 @@
+<isdecorate template="uikit/layout">
+
+	<h2 class="section-title py-3">Colors</h2>
+
+	<div class="my-5">
+		<div class="color-swatch-wrapper d-inline-block mr-4">
+			<div class="my-2 color-swatch-circle bg-hastens-dark-blue" >&nbsp;</div>
+			<div class="my-2 color-swatch-info">Hästens<br />dark blue</div>
+			<div class="my-2 color-swatch-code">${'#000030'}</div>
+		</div>
+		<div class="color-swatch-wrapper d-inline-block mr-4">
+			<div class="my-2 color-swatch-circle bg-hastens-blue" >&nbsp;</div>
+			<div class="my-2 color-swatch-info">Hästens<br />blue</div>
+			<div class="my-2 color-swatch-code">${'#0071C1'}</div>
+		</div>
+		<div class="color-swatch-wrapper d-inline-block mr-4">
+			<div class="my-2 color-swatch-circle bg-hastens-bright-blue" >&nbsp;</div>
+			<div class="my-2 color-swatch-info">Hästens<br />bright blue</div>
+			<div class="my-2 color-swatch-code">${'#0072E3'}</div>
+		</div>
+	</div>
+
+	<div class="my-5">
+		<div class="color-swatch-wrapper d-inline-block mr-4">
+			<div class="my-2 color-swatch-circle bg-bluegrey" >&nbsp;</div>
+			<div class="my-2 color-swatch-info">Bluegrey<br />&nbsp;</div>
+			<div class="my-2 color-swatch-code">${'#B0C0D0'}</div>
+		</div>
+		<div class="color-swatch-wrapper d-inline-block mr-4">
+			<div class="my-2 color-swatch-circle bg-bluegrey-opct-30">&nbsp;</div>
+			<div class="my-2 color-swatch-info">Bluegrey at<br />30% opacity</div>
+			<div class="my-2 color-swatch-code">${'#B0C0D0'}</div>
+		</div>
+	</div>
+
+	<div class="my-5">
+		<div class="color-swatch-wrapper d-inline-block mr-4">
+			<div class="my-2 color-swatch-circle bg-black" >&nbsp;</div>
+			<div class="my-2 color-swatch-info">black<br />&nbsp;</div>
+			<div class="my-2 color-swatch-code">${'#000000'}</div>
+		</div>
+		<div class="color-swatch-wrapper d-inline-block mr-4">
+			<div class="my-2 color-swatch-circle bg-almost-black" >&nbsp;</div>
+			<div class="my-2 color-swatch-info">Almost<br />black</div>
+			<div class="my-2 color-swatch-code">${'#313131'}</div>
+		</div>
+		<div class="color-swatch-wrapper d-inline-block mr-4">
+			<div class="my-2 color-swatch-circle bg-dark-grey" >&nbsp;</div>
+			<div class="my-2 color-swatch-info">dark grey<br />&nbsp;</div>
+			<div class="my-2 color-swatch-code">${'#666666'}</div>
+		</div>
+		<div class="color-swatch-wrapper d-inline-block mr-4">
+			<div class="my-2 color-swatch-circle bg-mid-grey" >&nbsp;</div>
+			<div class="my-2 color-swatch-info">Mid grey<br />&nbsp;</div>
+			<div class="my-2 color-swatch-code">${'#ADADAD'}</div>
+		</div>
+		<div class="color-swatch-wrapper d-inline-block mr-4">
+			<div class="my-2 color-swatch-circle bg-light-grey" >&nbsp;</div>
+			<div class="my-2 color-swatch-info">light grey<br />&nbsp;</div>
+			<div class="my-2 color-swatch-code">${'#E5E5E5'}</div>
+		</div>
+		<div class="color-swatch-wrapper d-inline-block mr-4">
+			<div class="my-2 color-swatch-circle bg-lightest-grey" >&nbsp;</div>
+			<div class="my-2 color-swatch-info">lightest<br />grey</div>
+			<div class="my-2 color-swatch-code">${'#F2F2F2'}</div>
+		</div>
+	</div>
+
+	<div class="my-5">
+		<div class="color-swatch-wrapper d-inline-block mr-4">
+			<div class="my-2 color-swatch-circle bg-error-red" >&nbsp;</div>
+			<div class="my-2 color-swatch-info">error<br />red</div>
+			<div class="my-2 color-swatch-code">${'#E94D4D'}</div>
+		</div>
+		<div class="color-swatch-wrapper d-inline-block mr-4">
+			<div class="my-2 color-swatch-circle bg-validation-green" >&nbsp;</div>
+			<div class="my-2 color-swatch-info">validation<br />green</div>
+			<div class="my-2 color-swatch-code">${'#0ABF53'}</div>
+		</div>
+	</div>
+
+</isdecorate>

@@ -1,0 +1,56 @@
+@import "../../../../shared/styles/utils/utils";
+.has-nbd-introduction-text-block {
+    padding-bottom: 10px;
+
+    .text {
+        max-width: 990px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: 40px auto 25px;
+        @include media-breakpoint-up(lg) {
+            margin-top: 80px;
+            margin-bottom: 65px;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 45px;
+                text-align: center;
+            }
+        }
+
+        .large {
+            font-size: 20px;
+            font-weight: 400;
+            @include media-breakpoint-up(md) {
+                font-size: 30px;
+            }
+        }
+
+        .small {
+            margin-top: 25px;
+            strong, span {
+                display: block;
+                color: #333;
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 1.4;
+                @include media-breakpoint-up(lg) {
+                    font-size: 14px;
+                }
+            }
+            strong {
+                font-weight: 600;
+            }
+        }
+    }
+
+    .column-1,
+    .column-2 {
+        @include media-breakpoint-up(lg) {
+            padding-left: 28px;
+        }
+    }
+
+}

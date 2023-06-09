@@ -1,0 +1,114 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-partner-slide {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 990px;
+    margin: auto;
+    justify-content: space-between;
+    padding: 50px 35px;
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+        justify-content: center;
+        padding: 60px 0;
+    }
+    .flex-column {
+        padding-left: 22px;
+        align-self: stretch;
+        @include media-breakpoint-up(md) {
+            display: flex;
+            min-height: 100%;
+            padding: 0;
+            flex-direction: column;
+            max-width: 420px;
+            justify-content: space-between;
+        }
+        @include media-breakpoint-up(lg) {
+            padding: 20px 50px;
+            padding-right: 0;
+        }
+    }
+    .slider-image {
+        width: 200px;
+        margin: 0 0 40px;
+        flex-shrink: 0;
+        @include media-breakpoint-up(md) {
+            margin: 0 40px 0 0;
+        }
+        @include media-breakpoint-up(lg) {
+            width: 300px;
+            margin: 0 50px 0 0;
+        }
+    }
+    .quote {
+        margin-top: 0;
+        padding-top: 0;
+        text-align: start;
+        position: relative;
+        margin-bottom: 20px;
+        font-weight: 400;
+        font-size: 120%;
+        @include media-breakpoint-up(lg) {
+            font-size: 160%;
+        }
+        &::before {
+            top: 0;
+            content: "";
+            width: 28px;
+            height: 10px;
+            left: -30px;
+            position: absolute;
+            display: inline-block;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url("https://static.hastens.com/polo/end-consumer/new_bussiness_development/quote.png");
+            @include media-breakpoint-up(lg) {
+                left: -40px;
+                width: 24px;
+                height: 20px;
+            }
+        }
+        .end-icon {
+            white-space: nowrap;
+            &::after {
+                content: "";
+                width: 26px;
+                height: 10px;
+                margin-bottom: 5px;
+                display: inline-block;
+                background-size: contain;
+                transform: rotate(180deg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url("https://static.hastens.com/polo/end-consumer/new_bussiness_development/quote.png");
+                @include media-breakpoint-up(lg) {
+                    width: 24px;
+                    height: 20px;
+                    margin-left: 2px;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+    .footer {
+        p {
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 80%;
+            text-align: start;
+
+            &.name-holder {
+                font-weight: 550;
+                text-transform: capitalize;
+                @include media-breakpoint-up(md) {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,138 @@
+<div class="card ghost payment">
+    <div class="card-header">
+        <span class="checkout-card-header">${Resource.msg('heading.payment', 'checkout', null)}</span>
+    </div>
+</div>
+
+<div class="card payment-form">
+    <div class="card-header">
+        <h2 class="card-header-custom headline-2">${Resource.msg('heading.payment', 'checkout', null)}</h2>
+    </div>
+    <div class="card-body">
+        <form autocomplete="on" method="POST" action="${URLUtils.url('CheckoutServices-SubmitPayment')}"
+            data-address-mode="${!pdict.order.billing.billingAddress.address ? 'new' : 'edit'}"
+            <isprint value=${pdict.forms.billingForm.attributes} encoding="off" /> novalidate
+            data-parsley-validate="">
+
+            <fieldset class="billing-address-block">
+                <!-------------------------------------------------------------------------->
+                <!-- Billing Address Selector                                             -->
+                <!-------------------------------------------------------------------------->
+                <fieldset class="address-selector-block">
+                    <div class="form-group">
+                        <label class="form-control-label" for="billingAddressSelector">
+                            ${Resource.msg('heading.billing.address', 'checkout', null)}*
+                        </label>
+
+                        <isinclude template="checkout/billing/addressSelector" />
+                        <div class="invalid-feedback"></div>
+                        <div class="row">
+                            <div class="col-12">
+                                <button class="btn-show-details btn-text-link" type="button">${Resource.msg('action.update.address', 'checkout', null)}</button>
+                                <button class="btn-add-new btn-text-link" type="button">${Resource.msg('action.add.new', 'checkout', null)}</button>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-------------------------------------------------------------------------->
+                <!-- Billing Address                                                      -->
+                <!-------------------------------------------------------------------------->
+                <fieldset class="billing-address">
+                    <isinclude template="checkout/billing/billingAddress" />
+                </fieldset>
+
+                <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+                <input type="hidden" name="localizedNewAddressTitle" value="${Resource.msg('msg.new.address', 'checkout', null)}"/>
+            </fieldset>
+
+            <!-------------------------------------------------------------------------->
+            <!-- Contact Info (Email and Phone)                                       -->
+            <!-------------------------------------------------------------------------->
+            <fieldset class="contact-info-block">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group
+                            <isif condition=${pdict.forms.billingForm.contactInfoFields.email.mandatory === true}>required</isif>
+                            ${pdict.forms.billingForm.contactInfoFields.email.htmlName}">
+
+                            <input type="hidden" class="form-control email" id="email"
+                                value="${pdict.order.orderEmail||''}" <isprint value=${pdict.forms.billingForm.contactInfoFields.email.attributes} encoding="off"/>
+                                aria-describedby="emailInvalidMessage" >
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <isset name="address" scope="page" value="${pdict.order.billing.billingAddress.address}">
+                        <div class="form-group d-none
+                            <isif condition=${pdict.forms.billingForm.contactInfoFields.prefixCountry.mandatory === true}>required</isif>
+                            ${pdict.forms.billingForm.contactInfoFields.prefixCountry.htmlName}">
+                            <input type="text" class="form-control prefixCountry prefix-country-code" id="prefixCountry"
+                                value="${address && address.prefixCountry && address.prefixCountry.length > 0 ? address.prefixCountry : pdict.currentCountry}"
+                                <isprint value=${pdict.forms.billingForm.contactInfoFields.prefixCountry.attributes} encoding="off" />
+                                aria-describedby="prefixCountryInvalidMessage" >
+                        </div>
+                        <div class="form-group
+                            <isif condition=${pdict.forms.billingForm.contactInfoFields.prefix.mandatory === true}>required</isif>
+                            ${pdict.forms.billingForm.contactInfoFields.prefix.htmlName}">
+                            <label class="form-label" for="billingAddressPrefix">${Resource.msg('field.billing.address.prefix','address',null)}</label>
+                            <div class="dropdown prefix-selector d-inline-block" tabindex="0">
+                                <div class="input-wrapper">
+                                        <i class="current-flag flag-icon 
+                                        flag-icon-${address && address.prefixCountry && address.prefixCountry.length > 0 ? address.prefixCountry.toLowerCase() : pdict.currentCountry.toLowerCase()}"></i>
+                                        <input type="text" class="form-control prefix custom-select btn dropdown-toggle prefix-input" id="prefix"
+                                            value="${address && address.prefix && address.prefix.length > 0 ? address.prefix : pdict.currentCountry}"
+                                            <isprint value=${pdict.forms.billingForm.contactInfoFields.prefix.attributes} encoding="off" />
+                                            readonly aria-describedby="prefixInvalidMessage" >
+                                </div>
+                                <div class="dropdown-menu dropdown-prefix-selector" >
+                                    <isloop items="${Object.keys(pdict.prefixes)}" var="countryCode">
+                                        <a class="dropdown-item" data-country="${countryCode.toLowerCase()}">
+                                            <i class="flag-icon flag-icon-${countryCode.toLowerCase()}"></i>
+                                            <span class="country-name">${pdict.countryNames[countryCode]} </span>
+                                            <span class="prefix-value">${pdict.prefixes[countryCode]}</span>
+                                        </a>
+                                    </isloop>
+                                </div>
+                            </div>
+                            <div class="invalid-feedback" id="form-prefix-error"></div>
+                        </div> 
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group
+                            <isif condition=${pdict.forms.billingForm.contactInfoFields.phone.mandatory === true}>required</isif>
+                            ${pdict.forms.billingForm.contactInfoFields.phone.htmlName}">
+                            <label class="form-label" for="phoneNumber">${Resource.msg('field.billing.address.phone','address',null)}</label>
+                            <input type="tel" class="form-control phone" id="phoneNumber"
+                                value="${pdict.order.billing.billingAddress.address
+                                ? pdict.order.billing.billingAddress.address.phone||''
+                                : ''}" <isprint value=${pdict.forms.billingForm.contactInfoFields.phone.attributes} encoding="off"/>
+                                data-parsley-required-message="${Resource.msg('address.phone.missing', 'forms', null)}"
+                                data-parsley-pattern-message="${Resource.msg('error.message.phone.constraints.not.matched', 'forms', null)}"
+                                data-parsley-length-message="${Resource.msg('error.message.phone.constraints.not.matched', 'forms', null)}"
+                                data-parsley-trigger="focusout" data-parsley-trigger-after-failure="focusout"
+                                aria-describedby="phoneInvalidMessage">
+                            <div class="invalid-feedback" id="phoneInvalidMessage"></div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-------------------------------------------------------------------------->
+            <!-- Payment Options                                                      -->
+            <!-------------------------------------------------------------------------->
+            
+            <div class="credit-card-content">
+                <fieldset>
+                    <isinclude template="checkout/billing/paymentOptions" />
+                </fieldset>
+            </div>
+
+        </form>
+    </div>
+</div>

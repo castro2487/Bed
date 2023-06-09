@@ -1,0 +1,176 @@
+{
+    "name": "Bed Colors (Use with Bed Tile)",
+    "description": "",
+    "group": "hastens",
+    "attribute_definition_groups": [
+        {
+            "id": "slot1",
+            "name": "Slot 1",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "image1",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "video1",
+                    "name": "Video",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "slot2",
+            "name": "Slot 2",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "image2",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "video2",
+                    "name": "Video",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "slot3",
+            "name": "Slot 3",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "image3",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "video3",
+                    "name": "Video",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "slot4",
+            "name": "Slot 4",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "image4",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "video4",
+                    "name": "Video",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "slot5",
+            "name": "Slot 5",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "image5",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "video5",
+                    "name": "Video",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "slot6",
+            "name": "Slot 6",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "image6",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "video6",
+                    "name": "Video",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "slot7",
+            "name": "Slot 7",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "image7",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "video7",
+                    "name": "Video",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "slot8",
+            "name": "Slot 8",
+            "description": "",
+            "attribute_definitions": [
+                {
+                    "id": "image8",
+                    "name": "Image",
+                    "description": "",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "video8",
+                    "name": "Video",
+                    "description": "",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

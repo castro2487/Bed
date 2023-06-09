@@ -1,0 +1,84 @@
+<isscript>
+    var storeAddress = JSON.stringify({
+        postalCountry: store.countryCode,
+        addressLines: [store.address1, store.address2],
+        postalCode: store.postalCode,
+        administrativeArea: store.stateCode,
+        locality: store.city,
+    });
+</isscript>
+
+<div class="store-details" data-store-id="${store.ID}">
+    <h3 class="headline-3"
+            data-store="${store.name}"
+            data-lat="${store.latitude}"
+            data-long="${store.longitude}">${store.name}</h3>
+    <div class="container-fluid p-0">
+        <p class="article-3" data-store-address="${storeAddress}">
+            <isif condition="${!store.address1 || !store.city}">${store.displayAddress}</isif>
+        </p>
+    </div>
+    <isif condition="${store.storeInfo}">
+        <div class="container-fluid p-0">
+           <p class="article-3">${store.storeInfo}</p>
+        </div>
+    </isIf>
+    <isif condition="${store.storeHours}">
+        <div class="container-fluid p-0">
+            <h5 class="headline-6 m-0 p-0">${Resource.msg('storelocator.hours', 'hastens', null)}</h5>
+            <hr />
+            <div class="row">
+                <div class="hours col-md-8 col-lg-6">
+                    <table
+                        class="table table-borderless table-sm store-hours"
+                        data-hours="${store.storeHours}"
+                        data-closed-text="${Resource.msg('closed', 'hastens', null)}">
+                        <tbody class="t-body"></tbody>
+                    </table>
+                </div>
+                <div class="col-md-4 col-lg-6 mt-2 contact">
+                    <isif condition="${store.urlSlug}">
+                        <a class="btn btn-primary mb-3 btn-sm tid-storelocator-partnerpage" data-store="${store.name}" role="button" href="${URLUtils.url('PartnerPage-Show') + '?s=' +  store.urlSlug}">
+                            <span class="sr-only">
+                                ${store.name}
+                                ${store.address1}
+                                <isif condition="${store.address2}">
+                                    ${store.address2}
+                                </isif>
+                                <isif condition="${store.city}">
+                                    ${store.city}
+                                </isif>
+                            </span>
+                            ${Resource.msg('storelocator.visitpage', 'hastens', null)}
+                        </a>
+                    </isif>
+
+                    <isif condition="${store.phone}">
+                        <div>
+                            <isloop items="${store.phone}" var="phone">
+                                <p class="article-3 paragraph-link mb-2">
+                                    <isif condition="${phone}">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                        <span><a class="list-links tid-storelocator-phone" data-store="${store.name}" data-number="${phone}" href="tel:${phone}">${phone}</a></span>
+                                    </isif>
+                                </p>
+                            </isloop>
+                        </div>
+                    </isif>
+
+                    <p class="article-3 paragraph-link">
+                        <i class="fa fa-road" aria-hidden="true"></i>
+                        <span>
+                            <u>
+                                <a class="list-links tid-storelocator-direction" data-store="${store.name}" target='_blank' href="https://maps.google.com/?daddr=${store.latitude},${store.longitude}">
+                                    ${Resource.msg('storelocator.direction','hastens',null)}
+                                    <span class="sr-only">(opens new window)</span>
+                                </a>
+                            </u>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </isif>
+</div>

@@ -1,0 +1,34 @@
+<footer id="footercontent">
+    <div class="container">
+        <div class="footer-container row">
+            <div class="footer-item col-12 text-align-center">
+                <iscontentasset aid="Footer-statement" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="footer-item col-12 col-md-8">
+                <div class="footer-links">
+                    <iscontentasset aid="Footer-links" />
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="title-footer-sections">${Resource.msg('label.follow.us', 'common', null)}</div>
+                <div class="container-social-footer">
+                    <iscontentasset aid="Footer-social" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 modal-splash-container" data-show-language-selector="${pdict.showLanguageSelectorOnPageLoad}">
+                <isinclude url="${URLUtils.url('Page-Splash')}" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-6 offset-lg-3 copyright-notice text-align-center">
+                <iscontentasset aid="Footer-copyright" />
+            </div>
+        </div>
+    </div>
+</footer>

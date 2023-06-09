@@ -1,0 +1,22 @@
+@import "../../../../shared/styles/utils/utils";
+
+.has-bed-tile__expanded {
+    position: relative;
+    width: calc(200% + 10px);
+    margin-top: -70%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    color: #fff;
+    will-change: opacity;
+    &.origin--fallback {
+        width: 100%;
+        margin-top: -100%;
+    }
+    &.origin--right-top {
+        margin-left: calc(-100% - 10px);
+    }
+}
+
+
